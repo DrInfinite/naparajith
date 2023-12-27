@@ -15,8 +15,8 @@ export default function Linktree({
   href?: string | undefined;
 }) {
   return (
-    <Card variant="classic" className="p-4">
-      <a href={href} target="_blank">
+    <a href={href} target="_blank">
+      <Card variant="classic" className="p-4">
         <Flex gap={"9"} align={"center"}>
           {icon}
           <Flex direction={"column"}>
@@ -24,7 +24,7 @@ export default function Linktree({
             <Text>{text}</Text>
           </Flex>
         </Flex>
-      </a>
-    </Card>
+      </Card>
+    </a>
   );
 }
