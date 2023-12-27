@@ -85,7 +85,7 @@ export default function Links() {
               T L Naparajith
             </Heading>
             <Text className="text-center sm:text-left">
-              <Em>Technical Intern</Em> &rarr; AT&T
+              <Em>Technical Intern</Em> &rarr; AT&T ACSI
             </Text>
             <Text className="text-center sm:text-left">
               <Code>CSE</Code> &rarr; Senior Year Undergrad
