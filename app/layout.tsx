@@ -17,14 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Theme
-          appearance="dark"
-          panelBackground="translucent"
-          radius="large"
-          accentColor="blue"
-        >
+        <Theme appearance="dark" radius="large" accentColor="blue">
           <Toaster position="top-right" containerStyle={{ zIndex: "100000" }} />
-          {/* <Navbar /> */}
           {children}
         </Theme>
       </body>
