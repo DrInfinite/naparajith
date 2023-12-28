@@ -1,6 +1,5 @@
-import ContactForm from "@/components/email/contact-form";
+import Form from "@/components/email/contact-form";
 import Linktree from "@/components/linktree";
-import profile from "@/public/Profile.jpg";
 import {
   DownloadIcon,
   GitHubLogoIcon,
@@ -109,7 +108,7 @@ export default function Links() {
       })}
       <Separator my="3" size="4" />
       <br />
-      <ContactForm />
+      <Form />
     </Flex>
   );
 }

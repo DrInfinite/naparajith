@@ -11,27 +11,29 @@ import {
 } from "@react-email/components";
 import { Tailwind } from "@react-email/tailwind";
 
-type ContactFormEmailProps = {
+type EmailTemplateProps = {
   message: string;
   senderEmail: string;
+  senderName: string;
 };
 
 export default function EmailTemplate({
   message,
   senderEmail,
-}: ContactFormEmailProps) {
+  senderName,
+}: EmailTemplateProps) {
   return (
     <Html>
       <Head />
-      <Preview>New message from your portfolio site</Preview>
+      <Preview>New Message from your Contact Form</Preview>
       <Tailwind>
         <Body className="bg-gray-100 text-black">
           <Container>
             <Section className="my-10 rounded-md bg-white px-10 py-4">
               <Heading className="leading-tight">
-                You received the following message from the contact form
+                {senderName} wants to connect with you
               </Heading>
-              <Text>{message}</Text>
+              <Text>Message: {message}</Text>
               <Hr />
               <Text>The sender&apos;s email is: {senderEmail}</Text>
             </Section>

@@ -4,5 +4,5 @@
 /* @import "@radix-ui/colors/blue.css"; */
 
 * {
-  @apply transition-all duration-300;
+  @apply transition-all duration-150;
 }
