@@ -44,7 +44,7 @@ export default function ContactForm() {
             <EnvelopeClosedIcon width={36} height={36} />
             <Flex direction={"column"}>
               <Heading>
-                Get in Touch <Badge color="green">New</Badge>
+                Get in Touch <Badge color="blue">Updated</Badge>
               </Heading>
               <Text>Drop a mail and let&apos;s connect!</Text>
             </Flex>
