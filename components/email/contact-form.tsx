@@ -1,12 +1,23 @@
 "use client";
 
 import { sendEmail } from "@/actions/send-email";
-import { EnvelopeClosedIcon, PaperPlaneIcon } from "@radix-ui/react-icons";
+import {
+  Root as Form,
+  FormControl,
+  FormField,
+  FormLabel,
+  FormMessage,
+  FormSubmit,
+} from "@radix-ui/react-form";
+import {
+  Cross1Icon,
+  EnvelopeClosedIcon,
+  PaperPlaneIcon,
+} from "@radix-ui/react-icons";
 import {
   Badge,
   Button,
   Card,
-  Dialog,
   DialogClose,
   DialogContent,
   DialogDescription,
@@ -15,6 +26,7 @@ import {
   DialogTrigger,
   Flex,
   Heading,
+  IconButton,
   Strong,
   Text,
   TextArea,
@@ -23,7 +35,7 @@ import {
 import { useFormStatus } from "react-dom";
 import toast from "react-hot-toast";
 
-export default function Form() {
+export default function ContactForm() {
   return (
     <DialogRoot>
       <DialogTrigger>
@@ -40,19 +52,27 @@ export default function Form() {
         </Card>
       </DialogTrigger>
       <DialogContent>
-        <DialogTitle>Let&apos;s Connect</DialogTitle>
+        <Flex justify={"between"} align={"baseline"}>
+          <DialogTitle>Let&apos;s Connect</DialogTitle>
+          <DialogClose>
+            <IconButton color="red" variant="ghost">
+              <Cross1Icon />
+            </IconButton>
+          </DialogClose>
+        </Flex>
         <DialogDescription size={"2"} mb={"4"}>
           Get in touch with me through this form or by using the email{" "}
           <Strong>
             <a
               href="mailto:naparajith@duck.com"
               className="hover:underline hover:underline-offset-4"
+              target="_blank"
             >
               naparajith@duck.com
             </a>
           </Strong>
         </DialogDescription>
-        <form
+        <Form
           action={async (formData) => {
             const { data, error } = await sendEmail(formData);
 
@@ -64,50 +84,95 @@ export default function Form() {
             toast.success("Email sent successfully");
           }}
         >
-          <Flex direction={"column"} gap={"3"}>
-            <label>
-              <Text as="div" size="2" mb="1" weight="bold">
-                Name<span className="text-red-500">*</span>
-              </Text>
-              <TextFieldInput
-                maxLength={100}
-                name="senderName"
-                placeholder="Your Name"
-                required
-                type="text"
-              />
-            </label>
-            <label>
-              <Text as="div" size="2" mb="1" weight="bold">
-                Email<span className="text-red-500">*</span>
-              </Text>
-              <TextFieldInput
-                maxLength={100}
-                name="senderEmail"
-                placeholder="Your Email"
-                required
-                type="email"
-              />
-            </label>
-            <label>
-              <Text as="div" size="2" mb="1" weight="bold">
-                Message<span className="text-red-500">*</span>
-              </Text>
-              <TextArea
-                name="message"
-                placeholder="Your message"
-                required
-                maxLength={2500}
-              />
-            </label>
-          </Flex>
-          <Flex gap="3" mt="4" justify="end">
+          <FormField name="senderEmail" autoFocus>
+            <Flex direction={"column"} gap={"3"} className="mb-3">
+              <Flex align={"baseline"} justify={"between"}>
+                <FormLabel>
+                  <Text as="div" size="2" mb="1" weight="bold">
+                    Email<span className="text-red-500">*</span>
+                  </Text>
+                </FormLabel>
+                <FormMessage match={"valueMissing"}>
+                  <Text as="div" size="2" mb="1" color="red">
+                    Please enter your email
+                  </Text>
+                </FormMessage>
+                <FormMessage match={"typeMismatch"}>
+                  <Text as="div" size="2" mb="1" color="red">
+                    Please enter a valid email
+                  </Text>
+                </FormMessage>
+              </Flex>
+              <FormControl asChild>
+                <TextFieldInput
+                  maxLength={100}
+                  name="senderEmail"
+                  placeholder="Your Email"
+                  required
+                  autoFocus
+                  type="email"
+                />
+              </FormControl>
+            </Flex>
+          </FormField>
+          <FormField name="senderName">
+            <Flex direction={"column"} gap={"3"} className="mb-3">
+              <Flex align={"baseline"} justify={"between"}>
+                <FormLabel>
+                  <Text as="div" size="2" mb="1" weight="bold">
+                    Name<span className="text-red-500">*</span>
+                  </Text>
+                </FormLabel>
+                <FormMessage match={"valueMissing"}>
+                  <Text as="div" size="2" mb="1" color="red">
+                    Please enter your name
+                  </Text>
+                </FormMessage>
+              </Flex>
+              <FormControl asChild>
+                <TextFieldInput
+                  maxLength={100}
+                  name="senderName"
+                  placeholder="Your Name"
+                  required
+                  type="text"
+                />
+              </FormControl>
+            </Flex>
+          </FormField>
+          <FormField name="message">
+            <Flex direction={"column"} gap={"3"} mb={"5"}>
+              <Flex align={"baseline"} justify={"between"}>
+                <FormLabel>
+                  <Text as="label" size="2" mb="1" weight="bold">
+                    Message<span className="text-red-500">*</span>
+                  </Text>
+                </FormLabel>
+                <FormMessage match={"valueMissing"}>
+                  <Text as="label" size="2" mb="1" color="red">
+                    Please enter a message
+                  </Text>
+                </FormMessage>
+              </Flex>
+              <FormControl asChild>
+                <TextArea
+                  name="message"
+                  placeholder="Your message"
+                  required
+                  maxLength={2500}
+                />
+              </FormControl>
+            </Flex>
+          </FormField>
+          <Flex gap="3" mt="4" justify="end" align={"center"}>
             <DialogClose>
-              <Button color="red">Cancel</Button>
+              <Button variant="soft" color="red">
+                Cancel
+              </Button>
             </DialogClose>
             <SubmitButton />
           </Flex>
-        </form>
+        </Form>
       </DialogContent>
     </DialogRoot>
   );
@@ -117,8 +182,8 @@ export function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
-    <DialogClose>
-      <Button type="submit" disabled={pending}>
+    <FormSubmit disabled={pending}>
+      <Button disabled={pending}>
         {pending ? (
           <>
             <svg
@@ -147,6 +212,6 @@ export function SubmitButton() {
           </>
         )}
       </Button>
-    </DialogClose>
+    </FormSubmit>
   );
 }

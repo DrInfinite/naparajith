@@ -1,4 +1,4 @@
-import Form from "@/components/email/contact-form";
+import ContactForm from "@/components/email/contact-form";
 import Linktree from "@/components/linktree";
 import { linktree } from "@/lib/data";
 import {
@@ -59,7 +59,7 @@ export default function Links() {
       })}
       <Separator my="3" size="4" />
       <br />
-      <Form />
+      <ContactForm />
     </Flex>
   );
 }
