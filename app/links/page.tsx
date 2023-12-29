@@ -22,7 +22,7 @@ export default function Links() {
               </>
             }
             text="Chat with me on WhatsApp."
-            href={process.env.WHATSAPP_LINK}
+            href={process.env.WHATSAPP_LINK as string}
           />
         </div>
       </div>
