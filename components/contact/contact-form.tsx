@@ -88,6 +88,8 @@ export function ContactForm({ open, setOpen }: { open: any; setOpen: any }) {
               </FormLabel>
               <FormControl>
                 <Input
+                  required
+                  minLength={15}
                   maxLength={100}
                   placeholder="Email Address"
                   type="email"
@@ -110,7 +112,13 @@ export function ContactForm({ open, setOpen }: { open: any; setOpen: any }) {
                 Name<span className="text-red-500">*</span>
               </FormLabel>
               <FormControl>
-                <Input maxLength={100} placeholder="Full Name" {...field} />
+                <Input
+                  required
+                  minLength={5}
+                  maxLength={100}
+                  placeholder="Full Name"
+                  {...field}
+                />
               </FormControl>
               <FormDescription>
                 The name you wish to share with me.
@@ -125,10 +133,12 @@ export function ContactForm({ open, setOpen }: { open: any; setOpen: any }) {
           render={({ field }) => (
             <FormItem>
               <FormLabel>
-                Name<span className="text-red-500">*</span>
+                Message<span className="text-red-500">*</span>
               </FormLabel>
               <FormControl>
                 <Textarea
+                  required
+                  minLength={25}
                   maxLength={2500}
                   placeholder="Your message"
                   {...field}
