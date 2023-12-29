@@ -1,7 +1,7 @@
-import { Theme } from "@radix-ui/themes";
-import "@radix-ui/themes/styles.css";
+import { ModeToggle } from "@/components/mode-toggle";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
-import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,11 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Theme appearance="dark" radius="large" accentColor="blue">
-          <Toaster position="top-right" containerStyle={{ zIndex: "100000" }} />
+      <body className="prose-lg">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Toaster position="bottom-right" richColors />
           {children}
-        </Theme>
+          <ModeToggle />
+        </ThemeProvider>
       </body>
     </html>
   );

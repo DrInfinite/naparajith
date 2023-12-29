@@ -1,8 +1,6 @@
-import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
-import { IconProps } from "@radix-ui/react-icons/dist/types";
-import { Card, Flex, Heading, Text } from "@radix-ui/themes";
-import { Url } from "url";
-
+import { Card, CardContent } from "@/components/ui/card";
+import { P } from "@/components/ui/typography/paragraph";
+import { H4 } from "../ui/typography/heading";
 export default function Linktree({
   icon,
   heading,
@@ -16,14 +14,14 @@ export default function Linktree({
 }) {
   return (
     <a href={href} target="_blank">
-      <Card variant="classic" className="p-4">
-        <Flex gap={"9"} align={"center"}>
+      <Card>
+        <CardContent className="flex flex-row items-center gap-6 md:gap-9">
           {icon}
-          <Flex direction={"column"}>
-            <Heading>{heading}</Heading>
-            <Text>{text}</Text>
-          </Flex>
-        </Flex>
+          <div className="flex flex-col items-start text-center">
+            <H4 className="whitespace-break-spaces">{heading}</H4>
+            <P>{text}</P>
+          </div>
+        </CardContent>
       </Card>
     </a>
   );
