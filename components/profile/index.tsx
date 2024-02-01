@@ -24,7 +24,8 @@ export function Profile() {
                 <div className="flex scale-90 flex-col items-center sm:scale-100 md:items-start">
                     <H3 className="mb-2 text-center">T L Naparajith</H3>
                     <P className="text-center">
-                        <Code>Technical Intern</Code> &rarr; AT&T
+                        <Code variant={"secondary"}>Technical Intern</Code>{" "}
+                        &rarr; AT&T
                     </P>
                     <P className="text-center">
                         <Code>B.E CSE</Code> &rarr; Senior Year
