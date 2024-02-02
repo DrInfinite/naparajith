@@ -1,7 +1,6 @@
-const million = require("million/compiler");
 /** @type {import('next').NextConfig} */
 
-let nextConfig = {};
+let nextConfig;
 
 if (process.env.NODE_ENV === "production") {
     nextConfig = {
@@ -9,7 +8,7 @@ if (process.env.NODE_ENV === "production") {
             return [
                 { source: "/", destination: "/links", permanent: false },
                 { source: "/about", destination: "/links", permanent: false },
-                { source: "/blog", destination: "/links", permanent: false },
+                // { source: "/blog", destination: "/links", permanent: false },
                 {
                     source: "/collaborate",
                     destination: "/links",
@@ -23,9 +22,27 @@ if (process.env.NODE_ENV === "production") {
                 },
             ];
         },
+        images: {
+            remotePatterns: [
+                {
+                    protocol: "https",
+                    hostname: "media.licdn.com",
+                },
+            ],
+        },
+        logging: { fetches: { fullUrl: false } },
     };
-} else if (process.env.NODE_ENV === "development") {
-    nextConfig = {};
+} else {
+    nextConfig = {
+        images: {
+            remotePatterns: [
+                {
+                    protocol: "https",
+                    hostname: "media.licdn.com",
+                },
+            ],
+        },
+    };
 }
 
-module.exports = million.next(nextConfig, { auto: { rsc: true } });
+module.exports = nextConfig;
