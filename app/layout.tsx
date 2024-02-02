@@ -3,11 +3,26 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import "./globals.css";
-import { TooltipProvider } from "@/components/ui/tooltip";
 
 export const metadata: Metadata = {
-    title: "Naparajith | Links",
-    description: "A collection of important links related to Naparajith.",
+    title: {
+        default: "Portfolio",
+        template: "%s | Naparajith",
+    },
+    description:
+        "The personal portfolio of T L Naparajith, a CSE Undergrad and software engineer from India",
+    authors: [
+        {
+            name: "DrInfinite",
+            url: "https://github.com/DrInfinite",
+        },
+        {
+            name: "Naparajith T L",
+            url: "https://in.linkedin.com/in/naparajith",
+        },
+    ],
+    creator: "Naparajith",
+    publisher: "Naparajith",
 };
 
 export default function RootLayout({
@@ -23,11 +38,9 @@ export default function RootLayout({
                     defaultTheme="system"
                     enableSystem
                 >
-                    <TooltipProvider>
-                        <Toaster position="bottom-right" richColors />
-                        {children}
-                        <ModeToggle />
-                    </TooltipProvider>
+                    <Toaster position="bottom-right" richColors />
+                    {children}
+                    <ModeToggle />
                 </ThemeProvider>
             </body>
         </html>
