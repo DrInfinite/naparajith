@@ -3,12 +3,12 @@ import { VariantProps, cva } from "class-variance-authority";
 import React, { DetailedHTMLProps, HTMLAttributes } from "react";
 
 const codeVariants = cva(
-    "font-mono border mb-3 text-primary bg-primary-foreground p-1 rounded font-semibold",
+    "font-mono mb-3 text-primary bg-primary-foreground p-1 rounded font-semibold",
     {
         variants: {
             variant: {
-                default: "text-primary bg-primary/20 border-primary",
-                secondary: "text-secondary bg-secondary/20 border-secondary",
+                default: "text-primary-foreground bg-primary",
+                secondary: "text-secondary-foreground bg-secondary",
                 accent: "text-accent bg-accent-foreground",
                 destructive: "text-destructive bg-destructive-foreground",
             },
