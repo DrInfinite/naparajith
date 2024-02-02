@@ -1,12 +1,23 @@
+import { Spotlight } from "@/components/spotlight";
+import { Metadata } from "next";
+import React from "react";
+
+export const metadata: Metadata = {
+    title: "Loading...",
+};
+
 export default function Loading() {
     return (
-        <div
-            className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-            role="status"
-        >
-            <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                Loading...
-            </span>
+        <div className="bg-grid-white/[0.02] relative flex h-[40rem] w-full overflow-hidden rounded-md bg-black/[0.96] antialiased md:items-center md:justify-center">
+            <Spotlight
+                className="-top-40 left-0 md:-top-20 md:left-60"
+                fill="orange"
+            />
+            <div className=" relative z-10  mx-auto w-full max-w-7xl  p-4 pt-20 md:pt-0">
+                <h1 className="bg-primary bg-opacity-50 bg-clip-text text-center text-4xl font-bold text-transparent md:text-7xl">
+                    Loading...
+                </h1>
+            </div>
         </div>
     );
 }

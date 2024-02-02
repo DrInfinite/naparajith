@@ -1,16 +1,20 @@
+import { Metadata } from "next";
+
 import { Contact } from "@/components/contact";
 import Linktree from "@/components/linktree";
 import { Profile } from "@/components/profile";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipTrigger,
-} from "@/components/ui/tooltip";
+
 import { linktree } from "@/lib/data";
 import { ChatBubbleIcon } from "@radix-ui/react-icons";
 import React from "react";
+
+export const metadata: Metadata = {
+    title: "Quick Links",
+    description:
+        "A collection of the most important links that gives an insight into the works and achievements of Naparajith",
+};
 
 export default function Links() {
     return (
@@ -19,21 +23,16 @@ export default function Links() {
                 <Profile />
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1 lg:grid-rows-2">
                     <Contact />
-                    <Tooltip>
-                        <TooltipTrigger>
-                            <Linktree
-                                icon={<ChatBubbleIcon width={36} height={36} />}
-                                heading={
-                                    <>
-                                        Chat with me <Badge>New</Badge>
-                                    </>
-                                }
-                                text="Chat with me on WhatsApp."
-                                href={process.env.WHATSAPP_LINK as string}
-                            />
-                        </TooltipTrigger>
-                        <TooltipContent>Chat on WhatsApp</TooltipContent>
-                    </Tooltip>
+                    <Linktree
+                        icon={<ChatBubbleIcon width={36} height={36} />}
+                        heading={
+                            <>
+                                Chat with me <Badge>New</Badge>
+                            </>
+                        }
+                        text="Chat with me on WhatsApp."
+                        href={process.env.WHATSAPP_LINK as string}
+                    />
                 </div>
             </div>
             <Separator className="my-9" />
@@ -41,19 +40,12 @@ export default function Links() {
                 {linktree.map(function (link, index) {
                     return (
                         <React.Fragment key={index}>
-                            <Tooltip key={link.href}>
-                                <TooltipTrigger key={index}>
-                                    <Linktree
-                                        icon={link.icon}
-                                        heading={link.heading}
-                                        text={link.text}
-                                        href={link.href}
-                                    />
-                                </TooltipTrigger>
-                                <TooltipContent key={index}>
-                                    {link.text}
-                                </TooltipContent>
-                            </Tooltip>
+                            <Linktree
+                                icon={link.icon}
+                                heading={link.heading}
+                                text={link.text}
+                                href={link.href}
+                            />
                         </React.Fragment>
                     );
                 })}
