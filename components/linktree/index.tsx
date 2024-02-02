@@ -12,8 +12,9 @@ export default function Linktree({
     text: React.ReactNode;
     href?: string | undefined;
 }) {
+    const Comp = href ? "a" : "span";
     return (
-        <a href={href} target="_blank">
+        <Comp href={href} target="_blank">
             <Card>
                 <CardContent className="flex flex-row items-center gap-6 md:gap-9">
                     {icon}
@@ -23,6 +24,6 @@ export default function Linktree({
                     </div>
                 </CardContent>
             </Card>
-        </a>
+        </Comp>
     );
 }
