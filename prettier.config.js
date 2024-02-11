@@ -7,6 +7,7 @@ module.exports = {
     semi: true,
     printWidth: 80,
     singleQuote: true,
+    jsxSingleQuote: false,
     useTabs: false,
     arrowParens: 'always',
     /*  overrides: [
