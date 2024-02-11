@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
     Dialog,
     DialogClose,
@@ -8,10 +8,10 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/components/ui/dialog";
-import { Dispatch, SetStateAction } from "react";
-import { ContactCard } from "./contact-card";
-import { ContactForm } from "./contact-form";
+} from '@/components/ui/dialog';
+import { Dispatch, SetStateAction } from 'react';
+import { ContactCard } from './contact-card';
+import { ContactForm } from './contact-form';
 
 export function ContactDialog({
     open,
@@ -32,7 +32,7 @@ export function ContactDialog({
                     </DialogTitle>
                     <DialogDescription>
                         Get in touch with me through this form or by using the
-                        email{" "}
+                        email{' '}
                         <strong>
                             <a
                                 href="mailto:naparajith@duck.com"
@@ -47,7 +47,7 @@ export function ContactDialog({
                 <ContactForm open={open} setOpen={setOpen} />
                 <DialogFooter>
                     <DialogClose asChild>
-                        <Button variant={"outline"} className="w-full">
+                        <Button variant={'outline'} className="w-full">
                             Cancel
                         </Button>
                     </DialogClose>

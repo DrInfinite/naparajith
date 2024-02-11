@@ -1,18 +1,18 @@
-"use client";
-import { cn } from "@/lib/utils";
+'use client';
+import { cn } from '@/lib/utils';
 import {
     domAnimation,
     LazyMotion,
     m,
     motion,
     MotionValue,
-} from "framer-motion";
-import React from "react";
-import { Button } from "../ui/button";
+} from 'framer-motion';
+import React from 'react';
+import { Button } from '../ui/button';
 
 const transition = {
     duration: 0,
-    ease: "linear",
+    ease: 'linear',
 };
 
 export const GoogleGeminiEffect = ({
@@ -27,19 +27,19 @@ export const GoogleGeminiEffect = ({
     className?: string;
 }) => {
     return (
-        <div className={cn("sticky top-[10rem]", className)}>
+        <div className={cn('sticky top-[10rem]', className)}>
             <motion.h1
                 className="md: pb-4 text-center text-3xl font-normal text-foreground md:text-7xl"
                 animate={{
                     y: [200, 0],
                 }}
                 transition={{
-                    ease: "easeInOut",
-                    type: "spring",
+                    ease: 'easeInOut',
+                    type: 'spring',
                     stiffness: 100,
                 }}
             >
-                {title || "Build with Naparajith"}
+                {title || 'Build with Naparajith'}
             </motion.h1>
             {/* <h1 className="pb-4 text-center text-3xl font-normal text-foreground md:text-7xl">
                 {title || `Build with Naparajith`}
@@ -55,8 +55,8 @@ export const GoogleGeminiEffect = ({
                 </button> */}
                 <Button
                     className="z-30 mx-auto mt-24 w-fit md:mt-24"
-                    variant={"default"}
-                    size={"lg"}
+                    variant={'default'}
+                    size={'lg'}
                 >
                     Learn more
                 </Button>

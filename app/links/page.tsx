@@ -1,19 +1,19 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
-import { Contact } from "@/components/contact";
-import Linktree from "@/components/linktree";
-import { Profile } from "@/components/profile";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { Contact } from '@/components/contact';
+import Linktree from '@/components/linktree';
+import { Profile } from '@/components/profile';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
 
-import { linktree } from "@/lib/data";
-import { ChatBubbleIcon } from "@radix-ui/react-icons";
-import React from "react";
+import { linktree } from '@/lib/data';
+import { ChatBubbleIcon } from '@radix-ui/react-icons';
+import React from 'react';
 
 export const metadata: Metadata = {
-    title: "Quick Links",
+    title: 'Quick Links',
     description:
-        "A collection of the most important links that gives an insight into the works and achievements of Naparajith",
+        'A collection of the most important links that gives an insight into the works and achievements of Naparajith',
 };
 
 export default function Links() {

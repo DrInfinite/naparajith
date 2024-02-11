@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
-import { Button } from "../ui/button";
+import { Dispatch, SetStateAction } from 'react';
+import { Button } from '../ui/button';
 import {
     Drawer,
     DrawerClose,
@@ -9,9 +9,9 @@ import {
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
-} from "../ui/drawer";
-import { ContactCard } from "./contact-card";
-import { ContactForm } from "./contact-form";
+} from '../ui/drawer';
+import { ContactCard } from './contact-card';
+import { ContactForm } from './contact-form';
 
 export function ContactDrawer({
     open,

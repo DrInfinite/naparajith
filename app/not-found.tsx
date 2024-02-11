@@ -1,11 +1,11 @@
-import { BackButton } from "@/components/ui/back-button";
-import { Boxes } from "../components/background-boxes";
-import { cn } from "@/lib/utils";
-import { Metadata } from "next";
+import { BackButton } from '@/components/ui/back-button';
+import { Boxes } from '../components/background-boxes';
+import { cn } from '@/lib/utils';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: { absolute: "Page not found" },
-    description: "The page that you are looking for is not found.",
+    title: { absolute: 'Page not found' },
+    description: 'The page that you are looking for is not found.',
 };
 
 export default function NotFound() {
@@ -16,7 +16,7 @@ export default function NotFound() {
             <Boxes />
             <h1
                 className={cn(
-                    "relative z-20 text-4xl text-foreground md:text-9xl",
+                    'relative z-20 text-4xl text-foreground md:text-9xl'
                 )}
             >
                 404

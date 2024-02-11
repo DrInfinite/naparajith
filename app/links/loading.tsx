@@ -1,9 +1,9 @@
-import { Spotlight } from "@/components/spotlight";
-import { Metadata } from "next";
-import React from "react";
+import { Spotlight } from '@/components/spotlight';
+import { Metadata } from 'next';
+import React from 'react';
 
 export const metadata: Metadata = {
-    title: "Loading...",
+    title: 'Loading...',
 };
 
 export default function Loading() {

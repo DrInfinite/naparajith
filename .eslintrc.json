@@ -4,7 +4,11 @@
         "node": true,
         "es6": true
     },
-    "plugins": ["@typescript-eslint"],
+    "plugins": [
+        "@typescript-eslint",
+        "eslint-plugin-react",
+        "eslint-plugin-tailwindcss"
+    ],
     "extends": [
         "next/core-web-vitals",
         "eslint:recommended",

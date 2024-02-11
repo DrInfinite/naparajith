@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { LaptopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { useTheme } from "next-themes";
-import * as React from "react";
+import { LaptopIcon, MoonIcon, SunIcon } from '@radix-ui/react-icons';
+import { useTheme } from 'next-themes';
+import * as React from 'react';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 
 export function ModeToggle() {
     const { setTheme } = useTheme();
@@ -31,21 +31,21 @@ export function ModeToggle() {
             <DropdownMenuContent align="end">
                 <DropdownMenuItem
                     className="flex items-center justify-between"
-                    onClick={() => setTheme("light")}
+                    onClick={() => setTheme('light')}
                 >
                     Light
                     <SunIcon className="h-[1.2rem] w-[1.2rem]" />
                 </DropdownMenuItem>
                 <DropdownMenuItem
                     className="flex items-center justify-between"
-                    onClick={() => setTheme("dark")}
+                    onClick={() => setTheme('dark')}
                 >
                     Dark
                     <MoonIcon className="h-[1.2rem] w-[1.2rem]" />
                 </DropdownMenuItem>
                 <DropdownMenuItem
                     className="flex items-center justify-between"
-                    onClick={() => setTheme("system")}
+                    onClick={() => setTheme('system')}
                 >
                     System
                     <LaptopIcon className="h-[1.2rem] w-[1.2rem]" />

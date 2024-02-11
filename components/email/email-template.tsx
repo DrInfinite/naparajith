@@ -8,8 +8,8 @@ import {
     Preview,
     Section,
     Text,
-} from "@react-email/components";
-import { Tailwind } from "@react-email/tailwind";
+} from '@react-email/components';
+import { Tailwind } from '@react-email/tailwind';
 
 type EmailTemplateProps = {
     message: string;
