@@ -1,7 +1,9 @@
-/** @type {import('next').NextConfig} */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const million = require('million/compiler');
 
 let nextConfig;
 
+/** @type {import('next').NextConfig} */
 if (process.env.NODE_ENV === 'production') {
     nextConfig = {
         async redirects() {
@@ -45,4 +47,4 @@ if (process.env.NODE_ENV === 'production') {
     };
 }
 
-module.exports = nextConfig;
+module.exports = million.next(nextConfig, { auto: true });
