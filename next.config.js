@@ -30,6 +30,10 @@ if (process.env.NODE_ENV === 'production') {
                     protocol: 'https',
                     hostname: 'media.licdn.com',
                 },
+                {
+                    protocol: 'https',
+                    hostname: 'avatars.githubusercontent.com',
+                },
             ],
         },
         logging: { fetches: { fullUrl: false } },
@@ -41,6 +45,10 @@ if (process.env.NODE_ENV === 'production') {
                 {
                     protocol: 'https',
                     hostname: 'media.licdn.com',
+                },
+                {
+                    protocol: 'https',
+                    hostname: 'avatars.githubusercontent.com',
                 },
             ],
         },

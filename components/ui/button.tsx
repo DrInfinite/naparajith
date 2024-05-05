@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
-import { cva, type VariantProps } from 'class-variance-authority';
+// import { type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@/lib/utils';
+// import { cn } from '@/lib/utils';
+import { cn, variants, type VariantProps } from '@naparajith/tailwind-helpers';
 
-const buttonVariants = cva(
-    'inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
+const buttonVariants = variants(
+    'inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
     {
         variants: {
             variant: {

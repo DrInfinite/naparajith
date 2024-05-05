@@ -7,7 +7,11 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 
 import { linktree } from '@/lib/data';
-import { ChatBubbleIcon } from '@radix-ui/react-icons';
+import {
+    ChatBubbleIcon,
+    GitHubLogoIcon,
+    PersonIcon,
+} from '@radix-ui/react-icons';
 import React from 'react';
 
 export const metadata: Metadata = {
@@ -16,11 +20,19 @@ export const metadata: Metadata = {
         'A collection of the most important links that gives an insight into the works and achievements of Naparajith',
 };
 
-export default function Links() {
+export const revalidate = 60 * 60 * 24;
+
+async function GithubProfile() {
+    const profile = await fetch('https://api.github.com/users/DrInfinite');
+    return profile.json();
+}
+
+export default async function Links() {
+    const data = await GithubProfile();
     return (
         <div className="container mx-auto my-auto flex flex-col items-stretch px-4 py-9">
             <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:grid-rows-1">
-                <Profile />
+                <Profile url={data.avatar_url} name={data.name} />
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1 lg:grid-rows-2">
                     <Contact />
                     <Linktree
@@ -34,6 +46,35 @@ export default function Links() {
                         href={process.env.WHATSAPP_LINK as string}
                     />
                 </div>
+            </div>
+            <Separator className="my-9" />
+
+            <div className="flex flex-col gap-6 md:grid md:grid-cols-2 md:grid-rows-1">
+                <Linktree
+                    icon={<PersonIcon width={36} height={36} />}
+                    heading="About me"
+                    text={data.bio}
+                    href=""
+                />
+                <Linktree
+                    icon={<GitHubLogoIcon width={36} height={36} />}
+                    heading={
+                        <>
+                            GitHub{' '}
+                            <Badge variant={'outline'}>{data.login}</Badge>
+                        </>
+                    }
+                    text={
+                        <>
+                            My Technical Projects
+                            <br />
+                            <Badge variant={'secondary'}>
+                                Repositories: {data.public_repos}
+                            </Badge>
+                        </>
+                    }
+                    href={data.html_url}
+                />
             </div>
             <Separator className="my-9" />
             <div className="flex flex-col gap-6 md:grid md:grid-cols-2 md:grid-rows-3">

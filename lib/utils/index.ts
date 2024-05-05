@@ -1,5 +1,6 @@
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { type ClassValue } from 'clsx';
+// import { twMerge } from 'tailwind-merge';
+import { merge as twMerge, concat as clsx } from '@naparajith/tailwind-helpers';
 
 export const validateString = (
     value: unknown,
