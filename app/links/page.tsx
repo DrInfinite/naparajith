@@ -20,8 +20,6 @@ export const metadata: Metadata = {
         'A collection of the most important links that gives an insight into the works and achievements of Naparajith',
 };
 
-export const revalidate = 60 * 60 * 24;
-
 async function GithubProfile() {
     const profile = await fetch('https://api.github.com/users/DrInfinite');
     return profile.json();
