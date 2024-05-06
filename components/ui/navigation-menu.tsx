@@ -1,9 +1,9 @@
-import * as React from 'react';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { cva } from 'class-variance-authority';
+import * as React from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@naparajith/tailwind-helpers';
 
 const NavigationMenu = React.forwardRef<
     React.ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -116,13 +116,13 @@ NavigationMenuIndicator.displayName =
     NavigationMenuPrimitive.Indicator.displayName;
 
 export {
-    navigationMenuTriggerStyle,
     NavigationMenu,
-    NavigationMenuList,
-    NavigationMenuItem,
     NavigationMenuContent,
-    NavigationMenuTrigger,
-    NavigationMenuLink,
     NavigationMenuIndicator,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
     NavigationMenuViewport,
+    navigationMenuTriggerStyle,
 };

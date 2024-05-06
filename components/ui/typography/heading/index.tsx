@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@naparajith/tailwind-helpers';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export interface HeadingProps

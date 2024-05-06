@@ -1,7 +1,7 @@
 import { BackButton } from '@/components/ui/back-button';
-import { Boxes } from '../components/background-boxes';
-import { cn } from '@/lib/utils';
+import { cn } from '@naparajith/tailwind-helpers';
 import { Metadata } from 'next';
+import { Boxes } from '../components/background-boxes';
 
 export const metadata: Metadata = {
     title: { absolute: 'Page not found' },

@@ -1,11 +1,9 @@
 import { Badge } from '@/components/ui/badge';
 import {
     DownloadIcon,
-    GitHubLogoIcon,
     GlobeIcon,
     LinkedInLogoIcon,
     ReaderIcon,
-    VideoIcon,
 } from '@radix-ui/react-icons';
 import React from 'react';
 

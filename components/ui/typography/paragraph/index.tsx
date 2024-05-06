@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@naparajith/tailwind-helpers';
 import { VariantProps, cva } from 'class-variance-authority';
 import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 

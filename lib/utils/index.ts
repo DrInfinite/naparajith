@@ -1,7 +1,3 @@
-import { type ClassValue } from 'clsx';
-// import { twMerge } from 'tailwind-merge';
-import { merge as twMerge, concat as clsx } from '@naparajith/tailwind-helpers';
-
 export const validateString = (
     value: unknown,
     maxLength: number
@@ -28,7 +24,3 @@ export const getErrorMessage = (error: unknown): string => {
 
     return message;
 };
-
-export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}

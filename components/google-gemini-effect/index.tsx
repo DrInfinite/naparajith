@@ -1,5 +1,5 @@
 'use client';
-import { cn } from '@/lib/utils';
+import { cn } from '@naparajith/tailwind-helpers';
 import {
     domAnimation,
     LazyMotion,
@@ -7,7 +7,6 @@ import {
     motion,
     MotionValue,
 } from 'framer-motion';
-import React from 'react';
 import { Button } from '../ui/button';
 
 const transition = {

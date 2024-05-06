@@ -1,7 +1,7 @@
 'use client';
 
-import { cn } from '@/lib/utils';
-import { m, LazyMotion, domMax } from 'framer-motion';
+import { cn } from '@naparajith/tailwind-helpers';
+import { LazyMotion, domMax, m } from 'framer-motion';
 import React from 'react';
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
