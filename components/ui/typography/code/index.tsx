@@ -1,8 +1,7 @@
-import { cn } from '@naparajith/tailwind-helpers';
-import { VariantProps, cva } from 'class-variance-authority';
+import { cn, variants, type VariantProps } from '@naparajith/tailwind-helpers';
 import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-const codeVariants = cva(
+const codeVariants = variants(
     'font-mono mb-3 text-primary bg-primary-foreground p-1 rounded font-semibold',
     {
         variants: {

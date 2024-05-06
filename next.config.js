@@ -1,9 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const million = require('million/compiler');
 
+/** @type {import('next').NextConfig} */
 let nextConfig;
 
-/** @type {import('next').NextConfig} */
 if (process.env.NODE_ENV === 'production') {
     nextConfig = {
         async redirects() {
@@ -24,6 +24,7 @@ if (process.env.NODE_ENV === 'production') {
                 },
             ];
         },
+        swcMinify: true,
         images: {
             remotePatterns: [
                 {
@@ -40,6 +41,7 @@ if (process.env.NODE_ENV === 'production') {
     };
 } else {
     nextConfig = {
+        swcMinify: true,
         images: {
             remotePatterns: [
                 {

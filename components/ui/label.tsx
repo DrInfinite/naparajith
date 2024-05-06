@@ -1,12 +1,11 @@
 'use client';
 
 import * as LabelPrimitive from '@radix-ui/react-label';
-import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
-import { cn } from '@naparajith/tailwind-helpers';
+import { cn, variants, type VariantProps } from '@naparajith/tailwind-helpers';
 
-const labelVariants = cva(
+const labelVariants = variants(
     'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
 );
 

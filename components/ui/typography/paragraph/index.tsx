@@ -1,8 +1,7 @@
-import { cn } from '@naparajith/tailwind-helpers';
-import { VariantProps, cva } from 'class-variance-authority';
+import { cn, variants, type VariantProps } from '@naparajith/tailwind-helpers';
 import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-const paragraphVariants = cva('mb-3 text-foreground', {
+const paragraphVariants = variants('mb-3 text-foreground', {
     variants: {
         align: {
             left: 'text-left rtl:text-right',
