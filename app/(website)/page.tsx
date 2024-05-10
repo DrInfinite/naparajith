@@ -1,6 +1,5 @@
 'use client';
 
-import { GoogleGeminiEffect } from '@/components/google-gemini-effect';
 import { useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -31,17 +30,7 @@ export default function Home() {
                 className="relative h-[400vh] w-full overflow-clip rounded-md pt-40 dark:border"
                 ref={ref}
             >
-                <GoogleGeminiEffect
-                    title="Hello, I'm Naps"
-                    description="I am a designer, software engineer and a CSE Undergrad from India"
-                    pathLengths={[
-                        pathLengthFirst,
-                        pathLengthSecond,
-                        pathLengthThird,
-                        pathLengthFourth,
-                        pathLengthFifth,
-                    ]}
-                />
+                Hello World
             </div>
         </>
     );
