@@ -1,11 +1,11 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: 'Personal Portfolio',
-    description:
-        'Naparajith is a software engineer who is highly motivated towards problem solving.',
+	title: "Personal Portfolio",
+	description:
+		"Naparajith is a software engineer who is highly motivated towards problem solving.",
 };
 
 export default function WebLayout({ children }: { children: React.ReactNode }) {
-    return <>{children}</>;
+	return <>{children}</>;
 }

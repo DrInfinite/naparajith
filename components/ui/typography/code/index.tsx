@@ -1,39 +1,39 @@
-import { cn, variants, type VariantProps } from '@naparajith/tailwind-helpers';
-import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { cn, variants, type VariantProps } from "@naparajith/tailwind-helpers";
+import React, { DetailedHTMLProps, HTMLAttributes } from "react";
 
 const codeVariants = variants(
-    'font-mono mb-3 text-primary bg-primary-foreground p-1 rounded font-semibold',
-    {
-        variants: {
-            variant: {
-                default: 'text-primary-foreground bg-primary',
-                secondary: 'text-secondary-foreground bg-secondary',
-                accent: 'text-accent bg-accent-foreground',
-                destructive: 'text-destructive bg-destructive-foreground',
-            },
-            size: { small: 'text-sm', default: 'text-md', large: 'text-xl' },
-        },
-        defaultVariants: { variant: 'default', size: 'default' },
-    }
+	"font-mono mb-3 text-primary bg-primary-foreground p-1 rounded-none font-semibold",
+	{
+		variants: {
+			variant: {
+				default: "text-primary-foreground bg-primary",
+				secondary: "text-secondary-foreground bg-secondary",
+				accent: "text-accent bg-accent-foreground",
+				destructive: "text-destructive bg-destructive-foreground",
+			},
+			size: { small: "text-sm", default: "text-md", large: "text-xl" },
+		},
+		defaultVariants: { variant: "default", size: "default" },
+	},
 );
 
 export interface CodeProps
-    extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>,
-        VariantProps<typeof codeVariants> {}
+	extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>,
+		VariantProps<typeof codeVariants> {}
 
 const Code = React.forwardRef<HTMLElement, CodeProps>(
-    ({ className, children, ...props }, ref) => {
-        return (
-            <code
-                className={cn(codeVariants({ className }))}
-                ref={ref}
-                {...props}
-            >
-                {children}
-            </code>
-        );
-    }
+	({ className, children, ...props }, ref) => {
+		return (
+			<code
+				className={cn(codeVariants({ className }))}
+				ref={ref}
+				{...props}
+			>
+				{children}
+			</code>
+		);
+	},
 );
-Code.displayName = 'Code';
+Code.displayName = "Code";
 
 export { Code, codeVariants };
