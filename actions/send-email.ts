@@ -1,11 +1,12 @@
 "use server";
 
 import EmailTemplate from "@/components/email/email-template";
+import { ENV } from "@/lib/constants";
 import { getErrorMessage, validateString } from "@/lib/utils";
 import React from "react";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(ENV.RESEND_API_KEY);
 
 export interface ContactFormData {
 	senderEmail: string;
@@ -41,7 +42,7 @@ export async function sendEmail({
 	try {
 		data = await resend.emails.send({
 			from: "Acme <onboarding@resend.dev>",
-			to: process.env.EMAIL_ADDRESS as string,
+			to: ENV.EMAIL_ADDRESS as string,
 			subject: `Message from ${senderName}`,
 			reply_to: senderEmail,
 			tags: [{ name: "contact", value: "contact_form_message" }],

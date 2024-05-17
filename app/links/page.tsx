@@ -13,6 +13,7 @@ import {
 	PersonIcon,
 } from "@radix-ui/react-icons";
 import React from "react";
+import { ENV } from "@/lib/constants";
 
 export const metadata: Metadata = {
 	title: "Quick Links",
@@ -37,7 +38,7 @@ export default async function Links() {
 						icon={<ChatBubbleIcon width={36} height={36} />}
 						heading={<>Chat with me</>}
 						text="Chat with me on WhatsApp."
-						href={process.env.WHATSAPP_LINK as string}
+						href={ENV.WHATSAPP_LINK as string}
 					/>
 				</div>
 			</div>
