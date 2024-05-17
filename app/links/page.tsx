@@ -1,28 +1,28 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
-import { Contact } from "@/components/contact";
-import Linktree from "@/components/linktree";
-import { Profile } from "@/components/profile";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { Contact } from '@/components/contact';
+import Linktree from '@/components/linktree';
+import { Profile } from '@/components/profile';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
 
-import { linktree } from "@/lib/data";
+import { ENV } from '@/lib/constants';
+import { linktree } from '@/lib/data';
 import {
 	ChatBubbleIcon,
 	GitHubLogoIcon,
 	PersonIcon,
-} from "@radix-ui/react-icons";
-import React from "react";
-import { ENV } from "@/lib/constants";
+} from '@radix-ui/react-icons';
+import React from 'react';
 
 export const metadata: Metadata = {
-	title: "Quick Links",
+	title: 'Quick Links',
 	description:
-		"A collection of the most important links that gives an insight into the works and achievements of Naparajith",
+		'A collection of the most important links that gives an insight into the works and achievements of Naparajith',
 };
 
 async function GithubProfile() {
-	const profile = await fetch("https://api.github.com/users/DrInfinite");
+	const profile = await fetch('https://api.github.com/users/DrInfinite');
 	return profile.json();
 }
 
@@ -55,19 +55,19 @@ export default async function Links() {
 					icon={<GitHubLogoIcon width={36} height={36} />}
 					heading={
 						<>
-							GitHub{" "}
-							<Badge variant={"outline"}>{data.login}</Badge>
+							GitHub{' '}
+							<Badge variant={'outline'}>{data.login}</Badge>
 						</>
 					}
 					text={
 						<>
 							My Technical Projects
 							<br />
-							<Badge variant={"secondary"}>
+							<Badge variant={'secondary'}>
 								Repositories: {data.public_repos}
 							</Badge>
 							<br />
-							<Badge variant={"secondary"}>
+							<Badge variant={'secondary'}>
 								Followers: {data.followers}
 							</Badge>
 						</>

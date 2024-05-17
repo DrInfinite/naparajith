@@ -1,19 +1,19 @@
-import { cn, variants, type VariantProps } from "@naparajith/tailwind-helpers";
-import React, { DetailedHTMLProps, HTMLAttributes } from "react";
+import { type VariantProps, cn, variants } from '@naparajith/tailwind-helpers';
+import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 const codeVariants = variants(
-	"font-mono mb-3 text-primary bg-primary-foreground p-1 rounded-none font-semibold",
+	'font-mono mb-3 text-primary bg-primary-foreground p-1 rounded-md font-semibold',
 	{
 		variants: {
 			variant: {
-				default: "text-primary-foreground bg-primary",
-				secondary: "text-secondary-foreground bg-secondary",
-				accent: "text-accent bg-accent-foreground",
-				destructive: "text-destructive bg-destructive-foreground",
+				default: 'text-primary-foreground bg-primary',
+				secondary: 'text-secondary-foreground bg-secondary',
+				accent: 'text-accent bg-accent-foreground',
+				destructive: 'text-destructive bg-destructive-foreground',
 			},
-			size: { small: "text-sm", default: "text-md", large: "text-xl" },
+			size: { small: 'text-sm', default: 'text-md', large: 'text-xl' },
 		},
-		defaultVariants: { variant: "default", size: "default" },
+		defaultVariants: { variant: 'default', size: 'default' },
 	},
 );
 
@@ -34,6 +34,6 @@ const Code = React.forwardRef<HTMLElement, CodeProps>(
 		);
 	},
 );
-Code.displayName = "Code";
+Code.displayName = 'Code';
 
 export { Code, codeVariants };

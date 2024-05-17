@@ -1,10 +1,10 @@
 // import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent } from "@/components/ui/card";
-import { Code } from "@/components/ui/typography/code";
-import { H3 } from "@/components/ui/typography/heading";
-import { P } from "@/components/ui/typography/paragraph";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
+import { Card, CardContent } from '@/components/ui/card';
+import { Code } from '@/components/ui/typography/code';
+import { H3 } from '@/components/ui/typography/heading';
+import { P } from '@/components/ui/typography/paragraph';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import Image from 'next/image';
 // import ProfilePicture from '../../public/Profile.png';
 
 export async function Profile({
@@ -42,7 +42,7 @@ export async function Profile({
 				<div className="flex scale-90 flex-col items-center sm:scale-100 md:items-start">
 					<H3 className="mb-2 text-center">{name}</H3>
 					<P className="text-center">
-						<Code variant={"secondary"}>AT&T</Code> &rarr; Staff
+						<Code variant={'secondary'}>AT&T</Code> &rarr; Staff
 						Associate, Technical Intern
 					</P>
 					<P className="text-center">

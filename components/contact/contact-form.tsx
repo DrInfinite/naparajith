@@ -1,8 +1,8 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
 
-import { sendEmail } from "@/actions/send-email";
-import { Button } from "@/components/ui/button";
+import { sendEmail } from '@/actions/send-email';
+import { Button } from '@/components/ui/button';
 import {
 	Form,
 	FormControl,
@@ -11,28 +11,28 @@ import {
 	FormItem,
 	FormLabel,
 	FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { PaperPlaneIcon, ReloadIcon } from "@radix-ui/react-icons";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import { SetStateAction } from "react";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { PaperPlaneIcon, ReloadIcon } from '@radix-ui/react-icons';
+import { SetStateAction } from 'react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 
 const ContactFormSchema = z.object({
 	senderEmail: z
 		.string()
-		.email({ message: "Enter a valid email address" })
-		.min(15, { message: "Email must be at least 15 characters" })
-		.max(100, { message: "Email must be at most 100 characters" }),
+		.email({ message: 'Enter a valid email address' })
+		.min(15, { message: 'Email must be at least 15 characters' })
+		.max(100, { message: 'Email must be at most 100 characters' }),
 	senderName: z
 		.string()
-		.min(5, { message: "Name must be at least 5 characters" })
-		.max(100, { message: "Name must be at most 100 characters" }),
+		.min(5, { message: 'Name must be at least 5 characters' })
+		.max(100, { message: 'Name must be at most 100 characters' }),
 	message: z
 		.string()
-		.min(25, { message: "Message must be at least 25 characters" })
-		.max(2500, { message: "Name must be at most 2500 characters" }),
+		.min(25, { message: 'Message must be at least 25 characters' })
+		.max(2500, { message: 'Name must be at most 2500 characters' }),
 });
 
 export function ContactForm({
@@ -45,9 +45,9 @@ export function ContactForm({
 	const form = useForm<z.infer<typeof ContactFormSchema>>({
 		resolver: zodResolver(ContactFormSchema),
 		defaultValues: {
-			senderEmail: "",
-			senderName: "",
-			message: "",
+			senderEmail: '',
+			senderName: '',
+			message: '',
 		},
 	});
 
@@ -83,16 +83,16 @@ export function ContactForm({
 					}
 					setOpen(!open);
 
-					toast.success("Email sent successfully", {
+					toast.success('Email sent successfully', {
 						description:
-							"I will personally get in touch with you very soon.",
+							'I will personally get in touch with you very soon.',
 					});
 				}}
 				className="grid items-start gap-4 px-4 pb-4 md:p-0"
 			>
 				<FormField
 					control={form.control}
-					name={"senderEmail"}
+					name={'senderEmail'}
 					render={({ field }) => (
 						<FormItem>
 							<FormLabel>
@@ -116,7 +116,7 @@ export function ContactForm({
 				/>
 				<FormField
 					control={form.control}
-					name={"senderName"}
+					name={'senderName'}
 					render={({ field }) => (
 						<FormItem>
 							<FormLabel>
@@ -139,7 +139,7 @@ export function ContactForm({
 				/>
 				<FormField
 					control={form.control}
-					name={"message"}
+					name={'message'}
 					render={({ field }) => (
 						<FormItem>
 							<FormLabel>

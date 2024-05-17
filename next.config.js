@@ -1,22 +1,22 @@
 /** @type {import('next').NextConfig} */
 let nextConfig;
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
 	nextConfig = {
 		async redirects() {
 			return [
-				{ source: "/", destination: "/links", permanent: false },
-				{ source: "/about", destination: "/links", permanent: false },
+				{ source: '/', destination: '/links', permanent: false },
+				{ source: '/about', destination: '/links', permanent: false },
 				// { source: "/blog", destination: "/links", permanent: false },
 				{
-					source: "/collaborate",
-					destination: "/links",
+					source: '/collaborate',
+					destination: '/links',
 					permanent: false,
 				},
-				{ source: "/design", destination: "/links", permanent: false },
+				{ source: '/design', destination: '/links', permanent: false },
 				{
-					source: "/projects",
-					destination: "/links",
+					source: '/projects',
+					destination: '/links',
 					permanent: false,
 				},
 			];
@@ -25,12 +25,12 @@ if (process.env.NODE_ENV === "production") {
 		images: {
 			remotePatterns: [
 				{
-					protocol: "https",
-					hostname: "media.licdn.com",
+					protocol: 'https',
+					hostname: 'media.licdn.com',
 				},
 				{
-					protocol: "https",
-					hostname: "avatars.githubusercontent.com",
+					protocol: 'https',
+					hostname: 'avatars.githubusercontent.com',
 				},
 			],
 		},
@@ -39,15 +39,16 @@ if (process.env.NODE_ENV === "production") {
 } else {
 	nextConfig = {
 		swcMinify: true,
+		reactStrictMode: true,
 		images: {
 			remotePatterns: [
 				{
-					protocol: "https",
-					hostname: "media.licdn.com",
+					protocol: 'https',
+					hostname: 'media.licdn.com',
 				},
 				{
-					protocol: "https",
-					hostname: "avatars.githubusercontent.com",
+					protocol: 'https',
+					hostname: 'avatars.githubusercontent.com',
 				},
 			],
 		},

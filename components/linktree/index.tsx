@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { P } from "@/components/ui/typography/paragraph";
-import { H4 } from "../ui/typography/heading";
+import { Card, CardContent } from '@/components/ui/card';
+import { P } from '@/components/ui/typography/paragraph';
+import { H4 } from '../ui/typography/heading';
 export default function Linktree({
 	icon,
 	heading,
@@ -12,7 +12,7 @@ export default function Linktree({
 	text: React.ReactNode;
 	href?: string | undefined;
 }) {
-	const Comp = href ? "a" : "span";
+	const Comp = href ? 'a' : 'span';
 	return (
 		<Comp href={href} target="_blank">
 			<Card>

@@ -1,15 +1,15 @@
-import { cn, variants, type VariantProps } from "@naparajith/tailwind-helpers";
-import React, { DetailedHTMLProps, HTMLAttributes } from "react";
+import { type VariantProps, cn, variants } from '@naparajith/tailwind-helpers';
+import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-const paragraphVariants = variants("mb-3 text-foreground", {
+const paragraphVariants = variants('mb-3 text-foreground', {
 	variants: {
 		align: {
-			left: "text-left rtl:text-right",
-			right: "text-right rtl:text-left",
-			center: "text-center",
+			left: 'text-left rtl:text-right',
+			right: 'text-right rtl:text-left',
+			center: 'text-center',
 		},
 	},
-	defaultVariants: { align: "left" },
+	defaultVariants: { align: 'left' },
 });
 
 export interface ParagraphProps
@@ -33,6 +33,6 @@ const P = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
 		);
 	},
 );
-P.displayName = "P";
+P.displayName = 'P';
 
 export { P, paragraphVariants };

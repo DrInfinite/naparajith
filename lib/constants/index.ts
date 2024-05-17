@@ -4,5 +4,5 @@ export const ENV = {
 	EMAIL_ADDRESS: process.env.EMAIL_ADDRESS,
 	WHATSAPP_LINK: process.env.WHATSAPP_LINK,
 
-	NODE_ENV: process.env.NODE_ENV || "development",
+	NODE_ENV: process.env.NODE_ENV || 'development',
 };

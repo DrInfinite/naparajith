@@ -1,8 +1,8 @@
-import { SlashIcon } from "@radix-ui/react-icons";
-import { Metadata } from "next";
+import { SlashIcon } from '@radix-ui/react-icons';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: "Loading...",
+	title: 'Loading...',
 };
 
 export default function Loading() {
