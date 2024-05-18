@@ -87,9 +87,6 @@ export async function LeetcodeProfile() {
 			},
 		],
 	};
-	console.table(solvedCount);
-	console.table(completedPercentage);
-	console.table(completedCount);
 
 	return { profile, completedCount, completedPercentage, chartData };
 }
