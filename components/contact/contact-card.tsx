@@ -12,7 +12,7 @@ export function ContactCard() {
 					<H4 className="flex items-center gap-2 whitespace-break-spaces">
 						Get in Touch
 					</H4>
-					<P>Drop a mail and let&apos;s connect!</P>
+					<P>Let's connect via mail!</P>
 				</div>
 			</CardContent>
 		</Card>
