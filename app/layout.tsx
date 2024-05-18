@@ -40,6 +40,7 @@ export default function RootLayout({
 					attribute="class"
 					defaultTheme="system"
 					enableSystem
+					disableTransitionOnChange
 				>
 					<Toaster position="bottom-right" richColors />
 					{children}
