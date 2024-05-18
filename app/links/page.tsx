@@ -60,7 +60,7 @@ export default async function Links() {
 						icon={<CodeIcon width={36} height={36} />}
 						heading={
 							<>
-								LeetCode <Badge>{profile?.realName}</Badge>
+								LeetCode <Badge>{profile?.ranking}</Badge>
 							</>
 						}
 						text={<>My DSA Skills</>}
