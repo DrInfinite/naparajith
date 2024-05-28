@@ -18,6 +18,8 @@ import {
 } from '@radix-ui/react-icons';
 import React from 'react';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
 	title: 'Quick Links',
 	description:
