@@ -24,6 +24,14 @@ export const metadata: Metadata = {
 	],
 	creator: 'Naparajith',
 	publisher: 'Naparajith',
+	openGraph: {
+		title: 'Naparajith',
+		description:
+			'The personal portfolio of T L Naparajith, a CSE Undergrad and software engineer from India',
+		siteName: 'Naparajith',
+		locale: 'en_IN',
+		type: 'website',
+	},
 };
 
 const jbMono = JetBrains_Mono({ subsets: ['latin'] });
