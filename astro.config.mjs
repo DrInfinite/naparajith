@@ -16,4 +16,5 @@ export default defineConfig({
 			? "http://localhost:4321/"
 			: "https://naparajith.vercel.app/",
 	output: "static",
+	redirects: { "/links": "/quick-view" },
 });
