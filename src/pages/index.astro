@@ -1,8 +1,46 @@
 ---
-import { Welcome } from 'astro:components';
-import Layout from '../layouts/Layout.astro';
+import { GithubProfile } from "@/actions/github-profile";
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+
+const github = await GithubProfile();
 ---
 
-<Layout>
-	<Welcome title="Welcome to Astro" />
+<Layout title="Home">
+	<h1 class="text-center">{github.name}</h1>
+	<article>
+		<figure>
+			<Image
+				src={github.avatar_url ?? "/favicon.svg"}
+				alt={github.profile ?? "DrInfinite"}
+				class="mx-auto place-self-center ~size-36/96"
+				width={260}
+				height={260}
+			/>
+			<figcaption class="text-center">
+				The image comes from my <a
+					href={github.html_url}
+					target="_blank"
+				>
+					GitHub Profile
+				</a>
+			</figcaption>
+		</figure>
+		<p><strong>{github.bio}</strong></p>
+	</article>
+	<main>
+		<p>
+			This is the personal web site of T L Naparajith. The content and
+			views showcased here are my own and do not reflect the views and
+			positions any organisation or corporate entity I work with or have
+			previously worked with. For the sake of separation, this site has
+			always been hosted elsewhere and managed separately.
+		</p>
+	</main>
+	<div class="flex flex-wrap border border-border ~gap-2/4 ~p-2/4">
+		<a href="/bio">About Me</a>
+		<a href="/quick-view">Quick View</a>
+		<a href="/quotes">Quotes</a>
+		<a href="/policy/license.md">License</a>
+	</div>
 </Layout>

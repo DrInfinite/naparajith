@@ -1,0 +1,25 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
+
+export const getStaticPaths = (async () => {
+	const bio = await getCollection("bio");
+	return bio.map((about) => ({
+		params: { slug: about.id },
+		props: { about },
+	}));
+}) satisfies GetStaticPaths;
+
+const { about } = Astro.props;
+const { Content } = await render(about);
+---
+
+<Layout title={about.data.title}>
+	<h1>{about.data.title}</h1>
+	<div class="-mb-4 flex flex-row flex-wrap justify-between">
+		<!-- <p>Created: <strong>{about.data.created.toDateString()}</strong></p>
+		<p>Updated: <strong>{about.data.updated?.toDateString()}</strong></p> -->
+	</div>
+	<Content />
+</Layout>

@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 222.2 47.4% 11.2%;
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 215.4 16.3% 46.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 47.4% 11.2%;
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 47.4% 11.2%;
+		--primary: 222.2 47.4% 11.2%;
+		--primary-foreground: 210 40% 98%;
+		--secondary: 210 40% 96.1%;
+		--secondary-foreground: 222.2 47.4% 11.2%;
+		--accent: 210 40% 96.1%;
+		--accent-foreground: 222.2 47.4% 11.2%;
+		--destructive: 0 100% 50%;
+		--destructive-foreground: 210 40% 98%;
+		--ring: 215 20.2% 65.1%;
+		--radius: 0.5rem;
+	}
+}
+
+@layer base {
+	body {
+		@apply container prose prose-sm mx-auto bg-background text-foreground ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl selection:bg-primary selection:text-primary-foreground;
+	}
+	button {
+		@apply bg-primary px-2 font-semibold text-primary-foreground hover:bg-primary/90;
+	}
+	a {
+		@apply text-primary hover:text-primary/80 hover:underline-offset-[0.375rem];
+	}
+	p {
+		@apply text-justify;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	a,
+	p,
+	strong {
+		@apply text-foreground;
+	}
+	details {
+		@apply border border-border ~px-4/8;
+	}
+	summary {
+		@apply font-semibold;
+	}
+	details[open] summary {
+		@apply border border-l-0 border-r-0 border-t-0 border-border ~pt-4/8;
+	}
+}

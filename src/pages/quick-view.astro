@@ -1,0 +1,82 @@
+---
+import { GithubProfile } from "@/actions/github-profile";
+import { LeetcodeProfile } from "@/actions/leetcode-profile";
+import Layout from "@/layouts/Layout.astro";
+
+const github = await GithubProfile();
+const leetcode = await LeetcodeProfile();
+---
+
+<Layout
+	title="Quick View"
+	description="A collection of Quick Links for my personal website"
+>
+	<h2>Quick View</h2>
+	<ul>
+		<li>
+			<a
+				href="https://flowcv.com/resume/mdrssqq018"
+				title="Resume"
+				target="_blank"
+			>
+				Resume
+			</a>
+		</li>
+		<li>
+			<a
+				href="https://www.linkedin.com/in/naparajith/"
+				title="LinkedIn - Naparajith T L"
+				target="_blank
+            "
+			>
+				LinkedIn
+			</a>
+		</li>
+		<li>
+			<a
+				href={github.html_url}
+				title={`GitHub - ${github.login}`}
+				target="_blank"
+			>
+				GitHub
+			</a>
+		</li>
+		<li>
+			<a
+				href={"https://leetcode.com/u/DrInfinite/"}
+				title={`LeetCode - ${leetcode.profile?.realName}`}
+				target="_blank"
+			>
+				LeetCode
+			</a>
+		</li>
+		<li>
+			<a href="/" title="Portfolio - Home"> Portfolio </a>
+		</li>
+		<li>
+			<a href="/contact" title="Portfolio - Contact"> Contact </a>
+		</li>
+	</ul>
+	<div>
+		<h4>GitHub Stats</h4>
+		<ol>
+			<li>Repositories: <strong>{github.public_repos}</strong></li>
+			<li>Followers: <strong>{github.followers}</strong></li>
+			<li>Following: <strong>{github.following}</strong></li>
+		</ol>
+	</div>
+	<div>
+		<h4>LeetCode Stats</h4>
+		<ol>
+			<li>Rank: <strong>{leetcode.profile?.ranking}</strong></li>
+			<li>
+				Solved: <strong>
+					{leetcode.completedCount.total} ({
+						leetcode.completedPercentage.total
+					})
+				</strong>
+			</li>
+			<li>Rating: <strong>{leetcode.profile?.starRating}</strong></li>
+		</ol>
+	</div>
+</Layout>

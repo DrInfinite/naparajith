@@ -1,0 +1,34 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const quotes = await getCollection("quotes");
+---
+
+<Layout title="Quotes">
+	<h3>Quote Collection</h3>
+	<p>
+		A collection of quotes from various people that I resonate with and want
+		to share with a wider audience.
+	</p>
+	{
+		quotes.map((quote) => (
+			<figure>
+				<blockquote cite={quote.data.cite}>
+					{quote.data.quote}
+				</blockquote>
+				<figcaption>
+					<cite>
+						-{" "}
+						<a
+							href={quote.data.cite}
+							title={`${quote.data.author} - ${quote.data.cite}`}
+						>
+							{quote.data.author}
+						</a>
+					</cite>
+				</figcaption>
+			</figure>
+		))
+	}
+</Layout>
