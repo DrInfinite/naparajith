@@ -76,11 +76,11 @@ const { title, description } = Astro.props;
 				Copyright &copy; {date}, Naparajith
 			</p>
 			<span class="flex justify-between ~gap-2/4">
-				<a href={`/policy/${license.id}`} title={license.data.title}>
+				<a href={`/policy/${license.slug}`} title={license.data.title}>
 					{license.data.title}
 				</a>
 				<a
-					href={`/policy/${privacy_policy.id}`}
+					href={`/policy/${privacy_policy.slug}`}
 					title={privacy_policy.data.title}
 				>
 					{privacy_policy.data.title}
