@@ -1,19 +1,13 @@
 ---
 import "@/styles/globals.css";
 import { Image } from "astro:assets";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
 	title: string;
 	description?: string;
 }
-
-const license = await getEntry({ collection: "policy", slug: "license" });
-const privacy_policy = await getEntry({
-	collection: "policy",
-	slug: "privacy-policy",
-});
 
 const policy = await getCollection("policy");
 
@@ -81,18 +75,15 @@ const { title, description } = Astro.props;
 			<span class="flex justify-between ~gap-2/4">
 				{
 					policy.map((policy) => (
-						<a href={`/policy/${policy.id}`}>{policy.data.title}</a>
+						<a
+							href={`/policy/${policy.id}`}
+							title={policy.data.title}
+							data-astro-prefetch="load"
+						>
+							{policy.data.title}
+						</a>
 					))
 				}
-				<!-- <a href={`/policy/${license.id}`} title={license.data.title}>
-					{license.data.title}
-				</a>
-				<a
-					href={`/policy/${privacy_policy.id}`}
-					title={privacy_policy.data.title}
-				>
-					{privacy_policy.data.title}
-				</a> -->
 			</span>
 		</footer>
 	</body>
