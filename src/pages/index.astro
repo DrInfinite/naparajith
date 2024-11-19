@@ -13,9 +13,9 @@ const github = await GithubProfile();
 			<Image
 				src={github.avatar_url ?? "/favicon.svg"}
 				alt={github.profile ?? "DrInfinite"}
-				class="mx-auto place-self-center ~size-36/96"
 				width={260}
 				height={260}
+				class="mx-auto place-items-center object-cover ~size-48/96"
 			/>
 			<figcaption class="text-center">
 				The image comes from my <a
@@ -38,9 +38,14 @@ const github = await GithubProfile();
 		</p>
 	</main>
 	<div class="flex flex-wrap border border-border ~gap-2/4 ~p-2/4">
-		<a href="/bio">About Me</a>
-		<a href="/quick-view" data-astro-prefetch="load">Quick View</a>
-		<a href="/quotes">Quotes</a>
-		<a href="/policy/license.md">License</a>
+		<a href="/bio" title="Bio">About Me</a>
+		<a href="/quick-view" title="Quick View" data-astro-prefetch="load">
+			Quick View
+		</a>
+		<a href="/quotes" title="Quotes">Quotes</a>
+		<a href="/children-of-the-soil" title="Children of the Soil"
+			>Children of the Soil</a
+		>
+		<a href="/policy/license.md" title="License">License</a>
 	</div>
 </Layout>

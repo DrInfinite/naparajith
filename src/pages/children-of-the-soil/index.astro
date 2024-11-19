@@ -1,0 +1,21 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const children = await getCollection("children-of-the-soil");
+---
+
+<Layout title="Children of the Soil">
+	<ul>
+		{
+			children.map((child) => (
+				<li>
+					<a href={`/children-of-the-soil/${child.id}`}>
+						{child.data.name}
+					</a>{" "}
+					- {child.data.description}
+				</li>
+			))
+		}
+	</ul>
+</Layout>

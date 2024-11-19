@@ -1,0 +1,67 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+
+export const getStaticPaths = (async () => {
+	const children = await getCollection("children-of-the-soil");
+	return children.map((child) => ({
+		params: { slug: child.id },
+		props: { child },
+	}));
+}) satisfies GetStaticPaths;
+
+const { child } = Astro.props;
+const { Content } = await render(child);
+---
+
+<Layout
+	title={`${child.data.name} | Children of the Soil`}
+	description={child.data.opinion}
+>
+	<h1 class="text-center">{child.data.name}</h1>
+	<figure>
+		<Image
+			src={child.data.image}
+			alt={child.data.full_name}
+			width={2262}
+			height={2928}
+			class="mx-auto place-items-center object-cover ~size-48/96"
+		/>
+		<figcaption class="text-center">
+			This image comes from <a
+				href={child.data.image}
+				title={child.data.full_name}
+				target="_blank"
+			>
+				{child.data.image_source}
+			</a>
+		</figcaption>
+	</figure>
+	<article>
+		<p>{child.data.opinion}</p>
+		<h2>Overview</h2>
+		<ul>
+			<li><strong>Full Name: </strong>{child.data.full_name}</li>
+			<li>
+				<strong>Popularly known as: </strong>{child.data.popular_name}
+			</li>
+			<li>
+				<strong>Born: </strong>{
+					typeof child.data.born === "string"
+						? child.data.born
+						: child.data.born.toDateString()
+				}
+			</li>
+			<li>
+				<strong>Died: </strong>{
+					typeof child.data.died === "string"
+						? child.data.born
+						: child.data.died.toDateString()
+				}
+			</li>
+		</ul>
+		<Content />
+	</article>
+</Layout>
