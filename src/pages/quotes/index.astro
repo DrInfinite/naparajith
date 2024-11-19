@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const quotes = await getCollection("quotes");
+quotes.sort((a, b) => parseInt(a.id) - parseInt(b.id));
 ---
 
 <Layout title="Quotes">
@@ -23,6 +24,7 @@ const quotes = await getCollection("quotes");
 						<a
 							href={quote.data.cite}
 							title={`${quote.data.author} - ${quote.data.cite}`}
+							target="_blank"
 						>
 							{quote.data.author}
 						</a>
