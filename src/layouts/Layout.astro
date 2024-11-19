@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
+import brainMade from "@/images/brain-made.png";
 
 interface Props {
 	title: string;
@@ -64,7 +65,7 @@ const { title, description } = Astro.props;
 				target="_blank"
 			>
 				<Image
-					src={"/src/images/brain-made.png"}
+					src={brainMade}
 					alt={"This site was built without using AI"}
 					class="~size-0/0 xs:scale-[50%] sm:scale-[60%] md:scale-[80%] lg:scale-[90%] xl:scale-100"
 					width={160}
