@@ -19,6 +19,7 @@ export default defineConfig({
 		remotePatterns: [
 			{ protocol: "https", hostname: "avatars.githubusercontent.com" },
 			{ protocol: "https", hostname: "upload.wikimedia.org" },
+			{ protocol: "https", hostname: "external-content.duckduckgo.com" },
 		],
 	},
 	integrations: [tailwind({ applyBaseStyles: false }), sitemap()],

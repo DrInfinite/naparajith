@@ -29,13 +29,13 @@
 
 @layer base {
 	body {
-		@apply container prose prose-sm mx-auto bg-background text-foreground ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl selection:bg-primary selection:text-primary-foreground;
+		@apply container prose prose-sm mx-auto bg-background font-serif text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold;
 	}
 	button {
-		@apply bg-primary px-2 font-semibold text-primary-foreground hover:bg-primary/90;
+		@apply bg-primary px-2 font-semibold text-primary-foreground hover:bg-primary/80;
 	}
 	a {
-		@apply text-primary hover:text-primary/80 hover:underline-offset-[0.375rem];
+		@apply text-primary hover:text-primary/80 hover:decoration-double;
 	}
 	p {
 		@apply text-justify;

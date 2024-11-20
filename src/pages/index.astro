@@ -13,8 +13,10 @@ const github = await GithubProfile();
 			<Image
 				src={github.avatar_url ?? "/favicon.svg"}
 				alt={github.profile ?? "DrInfinite"}
+				inferSize
 				width={260}
 				height={260}
+				loading={"eager"}
 				class="mx-auto place-items-center object-cover ~size-48/96"
 			/>
 			<figcaption class="text-center">
@@ -30,11 +32,12 @@ const github = await GithubProfile();
 	</article>
 	<main>
 		<p>
-			This is the personal web site of T L Naparajith. The content and
-			views showcased here are my own and do not reflect the views and
-			positions any organisation or corporate entity I work with or have
-			previously worked with. For the sake of separation, this site has
-			always been hosted elsewhere and managed separately.
+			This is a portfolio website. The content and views present here are
+			purely meant to showcase my skills and abilities. They are my own
+			and do not reflect the views and positions any organisation or
+			corporate entity I work with or have previously worked with. This
+			site is remotely hosted as a repository on GitHub. The site is
+			hosted and distributed using Vercel.
 		</p>
 	</main>
 	<div class="flex flex-wrap border border-border ~gap-2/4 ~p-2/4">
