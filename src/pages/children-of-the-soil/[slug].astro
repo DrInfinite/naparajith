@@ -26,6 +26,7 @@ const { Content } = await render(child);
 			src={child.data.image}
 			alt={child.data.full_name}
 			inferSize
+			loading={"eager"}
 			class="mx-auto place-items-center object-cover ~size-48/96"
 		/>
 		<figcaption class="text-center">
@@ -56,11 +57,13 @@ const { Content } = await render(child);
 			<li>
 				<strong>Died: </strong>{
 					typeof child.data.died === "string"
-						? child.data.born
+						? child.data.died
 						: child.data.died.toDateString()
 				}
 			</li>
 		</ul>
-		<Content />
+		<span>
+			<Content />
+		</span>
 	</article>
 </Layout>

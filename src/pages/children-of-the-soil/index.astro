@@ -6,16 +6,56 @@ const children = await getCollection("children-of-the-soil");
 ---
 
 <Layout title="Children of the Soil">
-	<ul>
-		{
-			children.map((child) => (
-				<li>
-					<a href={`/children-of-the-soil/${child.id}`}>
-						{child.data.name}
-					</a>{" "}
-					- {child.data.description}
-				</li>
-			))
-		}
-	</ul>
+	<article>
+		<h2>What is this?</h2>
+		<p>
+			A dedicated page with a collection of articles about the "Children
+			of the Soil", a group of people who contributed towards the growth,
+			progress, security and freedom of the wonderful nation of Bharat.
+		</p>
+	</article>
+	<article>
+		<h2>Why does this exist?</h2>
+		<p>
+			For the wonderful lives that we live today, a lot of innovation,
+			research, development, bloodshed and sacrifice was necessary. But
+			often times, we tend to forget those who contributed towards
+			bettering or safe-guarding our future.
+		</p>
+		<p>
+			This page exists as a Hall of Fame / Tribute to those who
+			contributed towards sovereignty and progress.
+		</p>
+	</article>
+	<table class="table-auto">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Who are they?</th>
+				<th>Legacy</th>
+			</tr>
+		</thead>
+		<tbody>
+			{
+				children.map((child) => (
+					<tr>
+						<td>
+							<a
+								href={`/children-of-the-soil/${child.id}`}
+								title={child.data.full_name}
+							>
+								{child.data.name}
+							</a>
+						</td>
+						<td>
+							<p>{child.data.description}</p>
+						</td>
+						<td>
+							<p>{child.data.opinion}</p>
+						</td>
+					</tr>
+				))
+			}
+		</tbody>
+	</table>
 </Layout>
