@@ -2,16 +2,17 @@
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const children = await getCollection("children-of-the-soil");
+const legends = await getCollection("indian-legends");
 ---
 
-<Layout title="Children of the Soil">
+<Layout title="Indian Legends">
 	<article>
 		<h2>What is this?</h2>
 		<p>
-			A dedicated page with a collection of articles about the "Children
-			of the Soil", a group of people who contributed towards the growth,
-			progress, security and freedom of the wonderful nation of Bharat.
+			A dedicated page with a collection of articles about "Indian
+			Legends", a group of people cemented in legend for their
+			contributions towards the growth, progress, security and freedom of
+			the wonderful nation of India.
 		</p>
 	</article>
 	<article>
@@ -24,34 +25,35 @@ const children = await getCollection("children-of-the-soil");
 		</p>
 		<p>
 			This page exists as a Hall of Fame / Tribute to those who
-			contributed towards sovereignty and progress.
+			contributed towards that future which we call the present, the world
+			we take for granted.
 		</p>
 	</article>
 	<table class="table-auto">
 		<thead>
 			<tr>
 				<th>Name</th>
-				<th>Who are they?</th>
+				<th>Description</th>
 				<th>Legacy</th>
 			</tr>
 		</thead>
 		<tbody>
 			{
-				children.map((child) => (
+				legends.map((legend) => (
 					<tr>
 						<td>
 							<a
-								href={`/children-of-the-soil/${child.id}`}
-								title={child.data.full_name}
+								href={`/indian-legends/${legend.id}`}
+								title={legend.data.full_name}
 							>
-								{child.data.name}
+								{legend.data.name}
 							</a>
 						</td>
 						<td>
-							<p>{child.data.description}</p>
+							<p>{legend.data.description}</p>
 						</td>
 						<td>
-							<p>{child.data.opinion}</p>
+							<p>{legend.data.opinion}</p>
 						</td>
 					</tr>
 				))

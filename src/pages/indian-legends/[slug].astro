@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
-	const children = await getCollection("children-of-the-soil");
+	const children = await getCollection("indian-legends");
 	return children.map((child) => ({
 		params: { slug: child.id },
 		props: { child },
@@ -62,8 +62,6 @@ const { Content } = await render(child);
 				}
 			</li>
 		</ul>
-		<span>
-			<Content />
-		</span>
+		<Content />
 	</article>
 </Layout>
