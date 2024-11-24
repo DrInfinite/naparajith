@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
 import brainMade from "@/images/brain-made.png";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
 	title: string;
@@ -27,6 +28,7 @@ const { title, description } = Astro.props;
 		<title>{title} | Naparajith</title>
 
 		<ViewTransitions />
+		<SpeedInsights />
 	</head>
 	<body>
 		{
