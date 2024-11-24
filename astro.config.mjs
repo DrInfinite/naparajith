@@ -10,10 +10,16 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-	adapter: vercel(),
+	adapter: vercel({
+		isr: {
+			expiration: 60 * 60,
+		},
+	}),
 	image: {
 		remotePatterns: [
 			{ protocol: "https", hostname: "avatars.githubusercontent.com" },
+			{ protocol: "https", hostname: "upload.wikimedia.org" },
+			{ protocol: "https", hostname: "external-content.duckduckgo.com" },
 		],
 	},
 	integrations: [tailwind({ applyBaseStyles: false }), sitemap()],

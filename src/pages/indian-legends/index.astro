@@ -1,0 +1,63 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const legends = await getCollection("indian-legends");
+---
+
+<Layout title="Indian Legends">
+	<article>
+		<h2>What is this?</h2>
+		<p>
+			A dedicated page with a collection of articles about "Indian
+			Legends", a group of people cemented in legend for their
+			contributions towards the growth, progress, security and freedom of
+			the wonderful nation of India.
+		</p>
+	</article>
+	<article>
+		<h2>Why does this exist?</h2>
+		<p>
+			For the wonderful lives that we live today, a lot of innovation,
+			research, development, bloodshed and sacrifice was necessary. But
+			often times, we tend to forget those who contributed towards
+			bettering or safe-guarding our future.
+		</p>
+		<p>
+			This page exists as a Hall of Fame / Tribute to those who
+			contributed towards that future which we call the present, the world
+			we take for granted.
+		</p>
+	</article>
+	<table class="table-auto">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Legacy</th>
+			</tr>
+		</thead>
+		<tbody>
+			{
+				legends.map((legend) => (
+					<tr>
+						<td>
+							<a
+								href={`/indian-legends/${legend.id}`}
+								title={legend.data.full_name}
+							>
+								{legend.data.name}
+							</a>
+						</td>
+						<td>
+							<p>{legend.data.description}</p>
+						</td>
+						<td>
+							<p>{legend.data.opinion}</p>
+						</td>
+					</tr>
+				))
+			}
+		</tbody>
+	</table>
+</Layout>

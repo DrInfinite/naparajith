@@ -1,5 +1,5 @@
 ---
-title: Not So Professional Bio
+title: Satirical Bio
 ---
 
 You've seen Pan-Indian Movies, Pan-Indian Songs, and even Pan-Indian Policies. But have you ever seen a Pan-Indian Person? That's right! With parts sourced from 4 different states, I was manufactured and assembled over a 9 month period, releasing for production in November of 2002.
