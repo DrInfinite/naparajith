@@ -42,7 +42,7 @@ const { Content } = await render(child);
 		</figcaption>
 	</figure>
 	<article>
-		<p>{child.data.opinion}</p>
+		<p transition:name={child.data.opinion}>{child.data.opinion}</p>
 		<h2>Overview</h2>
 		<ul>
 			<li><strong>Full Name: </strong>{child.data.full_name}</li>

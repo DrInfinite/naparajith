@@ -45,6 +45,7 @@ const legends = await getCollection("indian-legends");
 							<a
 								href={`/indian-legends/${legend.id}`}
 								title={legend.data.full_name}
+								transition:name={legend.data.name}
 							>
 								{legend.data.name}
 							</a>
@@ -53,7 +54,9 @@ const legends = await getCollection("indian-legends");
 							<p>{legend.data.description}</p>
 						</td>
 						<td>
-							<p>{legend.data.opinion}</p>
+							<p transition:name={legend.data.opinion}>
+								{legend.data.opinion}
+							</p>
 						</td>
 					</tr>
 				))
