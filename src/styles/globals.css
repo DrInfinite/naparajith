@@ -61,7 +61,7 @@
 
 @layer base {
 	body {
-		@apply container prose prose-sm mx-auto bg-background text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold;
+		@apply container prose prose-sm mx-auto scroll-smooth bg-background text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold;
 	}
 	button {
 		@apply rounded border border-black bg-gray-200 px-2 font-semibold hover:bg-gray-300;
