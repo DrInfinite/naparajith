@@ -1,5 +1,4 @@
 // @ts-check
-// @ts-check
 import { defineConfig } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
@@ -26,6 +25,11 @@ export default defineConfig({
 	output: "hybrid",
 	prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
 	redirects: { "/links": "/quick-view" },
+	experimental: {
+		clientPrerender: true,
+		directRenderScript: true,
+		contentCollectionCache: true,
+	},
 	site:
 		process.env.NODE_ENV === "development"
 			? "http://localhost:4321/"
