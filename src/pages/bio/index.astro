@@ -14,13 +14,7 @@ const bio = await getCollection("bio");
 		{
 			bio.map((about) => (
 				<li>
-					<a
-						href={`/bio/${about.id}`}
-						transition:name={about.data.title}
-						transition:animate="initial"
-					>
-						{about.data.title}
-					</a>
+					<a href={`/bio/${about.id}`}>{about.data.title}</a>
 				</li>
 			))
 		}
