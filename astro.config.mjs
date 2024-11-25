@@ -23,6 +23,10 @@ export default defineConfig({
 	},
 	integrations: [tailwind({ applyBaseStyles: false }), sitemap()],
 	output: "hybrid",
+	markdown: {
+		syntaxHighlight: "shiki",
+		shikiConfig: { theme: "catppuccin-mocha", langAlias: { cc: "cpp" } },
+	},
 	prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
 	redirects: { "/links": "/quick-view" },
 	experimental: {
