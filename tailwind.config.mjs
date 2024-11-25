@@ -12,7 +12,6 @@ export default {
 		fontSize,
 		extend: {
 			fontFamily: {
-				sans: ["Geist Sans", ...defaultTheme.fontFamily.sans],
 				mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
 			},
 			screens: { xs: "20rem" },

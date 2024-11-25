@@ -22,9 +22,6 @@ importers:
             "@fontsource/geist-mono":
                 specifier: ^5.1.0
                 version: 5.1.0
-            "@fontsource/geist-sans":
-                specifier: ^5.1.0
-                version: 5.1.0
             "@vercel/speed-insights":
                 specifier: ^1.1.0
                 version: 1.1.0
@@ -706,12 +703,6 @@ packages:
         resolution:
             {
                 integrity: sha512-MDFgmKUdDbV357vD2bOZAro597Nd2md01GAdr3GSZteCJQdPT/UhHUBCAxl9KUiH03aMPFM9Rx7x8/EtrJmpKg==,
-            }
-
-    "@fontsource/geist-sans@5.1.0":
-        resolution:
-            {
-                integrity: sha512-4AI/UxIcZiYgK6/cTo4R9oM4VHHLcFdHVv7m2+M42VyY16hhKJADrGe4HPjTxvolmce2IZX/jc6sFJ+GkLB64w==,
             }
 
     "@img/sharp-darwin-arm64@0.33.5":
@@ -5264,8 +5255,6 @@ snapshots:
     "@fetch-impl/fetcher@1.0.0": {}
 
     "@fontsource/geist-mono@5.1.0": {}
-
-    "@fontsource/geist-sans@5.1.0": {}
 
     "@img/sharp-darwin-arm64@0.33.5":
         optionalDependencies:
