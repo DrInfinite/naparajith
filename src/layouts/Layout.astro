@@ -2,9 +2,9 @@
 import "@/styles/globals.css";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import { ViewTransitions } from "astro:transitions";
 import brainMade from "@/images/brain-made.png";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
 	title: string;
@@ -27,16 +27,13 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<title>{title} | Naparajith</title>
 
-		<ViewTransitions />
+		<ViewTransitions fallback="swap" />
 		<SpeedInsights />
 	</head>
 	<body>
 		{
 			Astro.url.pathname !== "/" ? (
-				<header
-					class="my-10 border border-l-0 border-r-0 border-t-0 border-border pb-4"
-					transition:persist
-				>
+				<header class="my-10 border border-l-0 border-r-0 border-t-0 border-border pb-4">
 					<h2>Naparajith's Portfolio</h2>
 					<div class="flex justify-between">
 						<span class="flex flex-wrap gap-4">
@@ -54,7 +51,6 @@ const { title, description } = Astro.props;
 		<slot />
 		<footer
 			class="mt-10 flex flex-col-reverse items-center justify-evenly border-t border-border pt-4 md:flex-row"
-			transition:persist
 		>
 			<a
 				href="https://brainmade.org/"
