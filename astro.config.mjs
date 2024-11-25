@@ -24,7 +24,7 @@ export default defineConfig({
 	},
 	integrations: [tailwind({ applyBaseStyles: false }), sitemap()],
 	output: "hybrid",
-	prefetch: { prefetchAll: true, defaultStrategy: "load" },
+	prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
 	redirects: { "/links": "/quick-view" },
 	site:
 		process.env.NODE_ENV === "development"
