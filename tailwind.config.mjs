@@ -1,5 +1,4 @@
 import fluid, { extract, fontSize, screens } from "fluid-tailwind";
-import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 export default {
