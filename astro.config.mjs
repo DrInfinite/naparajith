@@ -28,7 +28,10 @@ export default defineConfig({
 		shikiConfig: { theme: "catppuccin-mocha", langAlias: { cc: "cpp" } },
 	},
 	prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
-	redirects: { "/links": "/quick-view" },
+	redirects: {
+		"/links": "/quick-view",
+		"/bio": "/profile",
+	},
 	experimental: {
 		clientPrerender: true,
 		directRenderScript: true,

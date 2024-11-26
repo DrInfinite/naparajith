@@ -7,14 +7,14 @@ const bio = await getCollection("bio");
 
 <Layout title="Bio">
 	<article>
-		I know that you know that I know that you wanna know more about me. So I
+		I know that you know that I know that you wanna know more Profile. So I
 		present to you, two options:
 	</article>
 	<ul>
 		{
 			bio.map((about) => (
 				<li>
-					<a href={`/bio/${about.id}`}>{about.data.title}</a>
+					<a href={`/profile/${about.id}`}>{about.data.title}</a>
 				</li>
 			))
 		}

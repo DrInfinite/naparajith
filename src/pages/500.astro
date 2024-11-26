@@ -11,8 +11,23 @@ import Layout from "@/layouts/Layout.astro";
 			Try reloading the page or better, go back home to start navigating
 			again. Sorry for any inconviences caused!
 		</p>
-		<a href="/" class="mx-auto place-self-center">
-			<button> Go Home </button>
-		</a>
+		<div class="flex flex-row justify-around">
+			<button class="mx-auto place-self-center" onclick="history.back()">
+				<span
+					class="bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
+				>
+					Go Back
+				</span>
+			</button>
+			<a href="/" class="mx-auto place-self-center">
+				<button>
+					<span
+						class="bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
+					>
+						Go Home
+					</span>
+				</button>
+			</a>
+		</div>
 	</div>
 </Layout>

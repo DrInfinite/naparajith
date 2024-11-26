@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 const legends = await getCollection("indian-legends");
 ---
 
-<Layout title="Indian Legends">
+<Layout title="Legends">
 	<article>
 		<h2>What is this?</h2>
 		<p>
@@ -43,7 +43,7 @@ const legends = await getCollection("indian-legends");
 					<tr>
 						<td>
 							<a
-								href={`/indian-legends/${legend.id}`}
+								href={`/legends/${legend.id}`}
 								title={legend.data.full_name}
 							>
 								{legend.data.name}
