@@ -67,7 +67,7 @@
 		@apply container prose prose-sm mx-auto scroll-smooth bg-background text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold;
 	}
 	button {
-		@apply rounded border bg-primary px-2 font-semibold text-primary-foreground hover:bg-primary/90;
+		@apply border border-accent bg-secondary px-2 font-semibold text-primary-foreground hover:bg-secondary/90;
 	}
 	a {
 		@apply text-primary decoration-[#d83333] hover:decoration-2 md:decoration-2 md:hover:decoration-4;
