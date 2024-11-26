@@ -7,9 +7,10 @@ const github = await GithubProfile();
 const learning = [
 	"How does a computer work on a hardware-level.",
 	"How do memory-corruption vulnerabilities work?",
-	"Building a compiler from scratch using LLVM",
-	"Fundamentals of C++",
+	"Building a programming language from scratch using LLVM",
+	"Fundamentals Game Development of C++",
 	"How the hell does a Syscall work?",
+	"Understanding the pitfalls of cross-platform application development.",
 ];
 ---
 
@@ -18,13 +19,13 @@ const learning = [
 	<article>
 		<figure>
 			<Image
-				src={github.avatar_url ?? "/favicon.svg"}
 				alt={github.profile ?? "DrInfinite"}
-				inferSize
-				width={260}
-				height={260}
-				loading={"eager"}
 				class="mx-auto place-items-center object-cover ~size-48/96"
+				height={260}
+				inferSize
+				loading={"eager"}
+				src={github.avatar_url ?? "/favicon.svg"}
+				width={260}
 			/>
 			<figcaption class="text-center">
 				This image comes from my <a
@@ -82,7 +83,11 @@ const learning = [
 			</ol>
 			<p>
 				If you would like to help me in any of these ways, please write
-				to <a href="mailto:naparajith@duck.com" target="_blank">
+				to <a
+					href="mailto:naparajith@duck.com"
+					title="E-Mail Address"
+					target="_blank"
+				>
 					naparajith@duck.com
 				</a>
 			</p>
