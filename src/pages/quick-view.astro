@@ -15,9 +15,12 @@ const leetcode = await LeetcodeProfile();
 	description="A collection of Quick Links for my personal website"
 >
 	<h2>Quick View</h2>
+
 	<h3>Links</h3>
-	<ul>
-		<li>
+	<div
+		class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~p-2/4"
+	>
+		<span>
 			<A
 				href="https://flowcv.com/resume/mdrssqq018"
 				title="Resume"
@@ -25,8 +28,8 @@ const leetcode = await LeetcodeProfile();
 			>
 				Resume
 			</A>
-		</li>
-		<li>
+		</span>
+		<span>
 			<A
 				href="https://www.linkedin.com/in/naparajith/"
 				title="LinkedIn - Naparajith T L"
@@ -34,8 +37,8 @@ const leetcode = await LeetcodeProfile();
 			>
 				LinkedIn
 			</A>
-		</li>
-		<li>
+		</span>
+		<span>
 			<A
 				href={github.html_url}
 				title={`GitHub - ${github.login}`}
@@ -43,8 +46,8 @@ const leetcode = await LeetcodeProfile();
 			>
 				GitHub
 			</A>
-		</li>
-		<li>
+		</span>
+		<span>
 			<A
 				href={"https://leetcode.com/u/DrInfinite/"}
 				title={`LeetCode - ${leetcode.profile?.realName}`}
@@ -52,34 +55,38 @@ const leetcode = await LeetcodeProfile();
 			>
 				LeetCode
 			</A>
-		</li>
-		<li>
+		</span>
+		<span>
 			<A href="/" title="Portfolio - Home"> Portfolio </A>
-		</li>
-		<li>
+		</span>
+		<span>
 			<A href="/contact" title="Portfolio - Contact"> Contact </A>
-		</li>
-	</ul>
-	<div>
-		<h3>GitHub Stats</h3>
-		<ol>
-			<li>Repositories: <strong>{github.public_repos}</strong></li>
-			<li>Followers: <strong>{github.followers}</strong></li>
-			<li>Following: <strong>{github.following}</strong></li>
-		</ol>
+		</span>
 	</div>
+
+	<h3>GitHub Stats</h3>
 	<div>
-		<h3>LeetCode Stats</h3>
-		<ol>
-			<li>Rank: <strong>{leetcode.profile?.ranking}</strong></li>
-			<li>
-				Solved: <strong>
-					{leetcode.completedCount.total} ({
-						leetcode.completedPercentage.total
-					})
-				</strong>
-			</li>
-			<li>Rating: <strong>{leetcode.profile?.starRating}</strong></li>
-		</ol>
+		<div
+			class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~p-2/4"
+		>
+			<span>Repositories: <strong>{github.public_repos}</strong></span>
+			<span>Followers: <strong>{github.followers}</strong></span>
+			<span>Following: <strong>{github.following}</strong></span>
+		</div>
+	</div>
+
+	<h3>LeetCode Stats</h3>
+	<div
+		class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~p-2/4"
+	>
+		<span>Rank: <strong>{leetcode.profile?.ranking}</strong></span>
+		<span>
+			Solved: <strong>
+				{leetcode.completedCount.total} ({
+					leetcode.completedPercentage.total
+				})
+			</strong>
+		</span>
+		<span>Rating: <strong>{leetcode.profile?.starRating}</strong></span>
 	</div>
 </Layout>
