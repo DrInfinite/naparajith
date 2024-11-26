@@ -1,11 +1,10 @@
 ---
 import "@/styles/globals.css";
-import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
-import brainMade from "@/images/brain-made.png";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import { ViewTransitions } from "astro:transitions";
 
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
 import "@fontsource/geist-mono/100.css";
 import "@fontsource/geist-mono/200.css";
 import "@fontsource/geist-mono/300.css";
@@ -21,10 +20,6 @@ interface Props {
 	description: string;
 }
 
-const policy = await getCollection("policy");
-
-const date = new Date().getFullYear();
-
 const { title, description } = Astro.props;
 ---
 
@@ -33,7 +28,7 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} property="" />
+		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<title>{title} | Naparajith</title>
 
@@ -41,62 +36,8 @@ const { title, description } = Astro.props;
 		<SpeedInsights />
 	</head>
 	<body>
-		{
-			Astro.url.pathname !== "/" ? (
-				<header class="my-10 border border-l-0 border-r-0 border-t-0 border-border pb-4">
-					<h2>Naparajith's Portfolio</h2>
-					<div class="flex justify-between">
-						<span class="flex flex-wrap gap-4">
-							<a href="/">Home</a>
-							<a href="/profile">Profile</a>
-							<a href="/quick-view">Quick View</a>
-						</span>
-						<button onclick="history.back()">
-							<span class="bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent">
-								Back
-							</span>
-						</button>
-					</div>
-				</header>
-			) : (
-				<div class="mb-20" />
-			)
-		}
+		{Astro.url.pathname !== "/" ? <Header /> : <div class="mb-20" />}
 		<slot />
-		<footer
-			class="mt-10 flex flex-col-reverse items-center justify-evenly border-t border-border pt-4 md:flex-row"
-		>
-			<a
-				href="https://brainmade.org/"
-				title="The Brainmade Mark"
-				target="_blank"
-				class="-my-6"
-			>
-				<Image
-					src={brainMade}
-					alt={"This site was built without using AI"}
-					class="xs:scale-50 sm:scale-[60%] md:scale-[70%] lg:scale-[80%] xl:scale-90 2xl:scale-100"
-					width={160}
-					height={50}
-					loading={"lazy"}
-				/>
-			</a>
-			<p>
-				Copyright &copy; {date}, Naparajith.
-			</p>
-			<span class="flex flex-row justify-between ~gap-2/4">
-				{
-					policy.map((policy) => (
-						<a
-							href={`/policy/${policy.id}`}
-							title={policy.data.title}
-							data-astro-prefetch="load"
-						>
-							{policy.data.title}
-						</a>
-					))
-				}
-			</span>
-		</footer>
+		<Footer />
 	</body>
 </html>

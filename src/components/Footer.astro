@@ -1,0 +1,44 @@
+---
+import brainMade from "@/images/brain-made.png";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const date = new Date().getFullYear();
+const policy = await getCollection("policy");
+---
+
+<footer
+	class="mt-10 flex flex-col-reverse items-center justify-evenly border-t border-border pt-4 md:flex-row"
+>
+	<a
+		href="https://brainmade.org/"
+		title="The Brainmade Mark"
+		target="_blank"
+		class="-my-6"
+	>
+		<Image
+			src={brainMade}
+			alt={"This site was built without using AI"}
+			class="xs:scale-50 sm:scale-[60%] md:scale-[70%] lg:scale-[80%] xl:scale-90 2xl:scale-100"
+			width={160}
+			height={50}
+			loading={"lazy"}
+		/>
+	</a>
+	<p>
+		Copyright &copy; {date}, Naparajith.
+	</p>
+	<span class="flex flex-row justify-between ~gap-2/4">
+		{
+			policy.map((policy) => (
+				<a
+					href={`/policy/${policy.id}`}
+					title={policy.data.title}
+					data-astro-prefetch="load"
+				>
+					{policy.data.title}
+				</a>
+			))
+		}
+	</span>
+</footer>
