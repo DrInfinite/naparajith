@@ -1,4 +1,5 @@
 ---
+import A from "@/components/A.astro";
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -45,12 +46,12 @@ const legends = await getCollection("indian-legends");
 				legends.map((legend) => (
 					<tr>
 						<td>
-							<a
+							<A
 								href={`/legends/${legend.id}`}
 								title={legend.data.full_name}
 							>
 								{legend.data.name}
-							</a>
+							</A>
 						</td>
 						<td>
 							<p>{legend.data.description}</p>

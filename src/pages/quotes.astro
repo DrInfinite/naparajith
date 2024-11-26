@@ -1,4 +1,5 @@
 ---
+import A from "@/components/A.astro";
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -21,13 +22,13 @@ quotes.sort((a, b) => parseInt(a.id) - parseInt(b.id));
 				<figcaption>
 					<cite>
 						-{" "}
-						<a
+						<A
 							href={quote.data.cite}
 							title={`${quote.data.author} - ${quote.data.cite}`}
 							target="_blank"
 						>
 							{quote.data.author}
-						</a>
+						</A>
 					</cite>
 				</figcaption>
 			</figure>

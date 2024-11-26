@@ -3,6 +3,7 @@ export const prerender = false;
 
 import { GithubProfile } from "@/actions/github-profile";
 import { LeetcodeProfile } from "@/actions/leetcode-profile";
+import A from "@/components/A.astro";
 import Layout from "@/layouts/Layout.astro";
 
 const github = await GithubProfile();
@@ -17,47 +18,46 @@ const leetcode = await LeetcodeProfile();
 	<h3>Links</h3>
 	<ul>
 		<li>
-			<a
+			<A
 				href="https://flowcv.com/resume/mdrssqq018"
 				title="Resume"
 				target="_blank"
 			>
 				Resume
-			</a>
+			</A>
 		</li>
 		<li>
-			<a
+			<A
 				href="https://www.linkedin.com/in/naparajith/"
 				title="LinkedIn - Naparajith T L"
-				target="_blank
-            "
+				target="_blank"
 			>
 				LinkedIn
-			</a>
+			</A>
 		</li>
 		<li>
-			<a
+			<A
 				href={github.html_url}
 				title={`GitHub - ${github.login}`}
 				target="_blank"
 			>
 				GitHub
-			</a>
+			</A>
 		</li>
 		<li>
-			<a
+			<A
 				href={"https://leetcode.com/u/DrInfinite/"}
 				title={`LeetCode - ${leetcode.profile?.realName}`}
 				target="_blank"
 			>
 				LeetCode
-			</a>
+			</A>
 		</li>
 		<li>
-			<a href="/" title="Portfolio - Home"> Portfolio </a>
+			<A href="/" title="Portfolio - Home"> Portfolio </A>
 		</li>
 		<li>
-			<a href="/contact" title="Portfolio - Contact"> Contact </a>
+			<A href="/contact" title="Portfolio - Contact"> Contact </A>
 		</li>
 	</ul>
 	<div>

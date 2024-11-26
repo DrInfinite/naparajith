@@ -1,4 +1,5 @@
 ---
+import A from "@/components/A.astro";
 import Layout from "@/layouts/Layout.astro";
 import type { GetStaticPaths } from "astro";
 import { Image } from "astro:assets";
@@ -32,13 +33,13 @@ const { Content } = await render(child);
 			class="mx-auto place-items-center object-cover ~size-48/96"
 		/>
 		<figcaption class="text-center">
-			This image comes from <a
+			This image comes from <A
 				href={child.data.image}
 				title={child.data.full_name}
 				target="_blank"
 			>
 				{child.data.image_source}
-			</a>
+			</A>
 		</figcaption>
 	</figure>
 	<article>

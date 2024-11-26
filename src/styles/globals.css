@@ -69,9 +69,6 @@
 	button {
 		@apply border border-accent bg-secondary px-2 font-semibold text-primary-foreground hover:bg-secondary/90;
 	}
-	a {
-		@apply text-primary decoration-[#d83333] hover:decoration-2 md:decoration-2 md:hover:decoration-4;
-	}
 	p {
 		@apply text-justify;
 	}

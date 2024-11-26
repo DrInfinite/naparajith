@@ -11,26 +11,15 @@ import Layout from "@/layouts/Layout.astro";
 			404 | The Page you are looking for has moved or doesn't exist ;(
 		</h3>
 		<p class="text-justify">
-			Try looking for another page or better, go back home to start
-			navigating again. Sorry for any inconviences caused!
+			Try looking for another page or better, go back to start navigating
+			again. Sorry for any inconviences caused!
 		</p>
-		<div class="flex flex-row justify-around">
-			<button class="mx-auto place-self-center" onclick="history.back()">
-				<span
-					class="bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
-				>
-					Go Back
-				</span>
-			</button>
-			<a href="/" class="mx-auto place-self-center">
-				<button>
-					<span
-						class="bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
-					>
-						Go Home
-					</span>
-				</button>
-			</a>
-		</div>
+		<button class="mx-auto place-self-center" onclick="history.back()">
+			<span
+				class="bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
+			>
+				Go Back
+			</span>
+		</button>
 	</div>
 </Layout>

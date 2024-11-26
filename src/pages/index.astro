@@ -1,5 +1,6 @@
 ---
 import { GithubProfile } from "@/actions/github-profile";
+import A from "@/components/A.astro";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
@@ -31,24 +32,24 @@ const learning = [
 				width={260}
 			/>
 			<figcaption class="text-center">
-				This image comes from my <a
+				This image comes from my <A
 					href={github.html_url}
 					target="_blank"
 				>
 					GitHub Profile
-				</a>
+				</A>
 			</figcaption>
 		</figure>
 		<p><strong>{github.bio}</strong></p>
 	</article>
 	<div class="flex flex-wrap border border-border ~gap-2/4 ~p-2/4">
-		<a href="/profile" title="Bio">Profile</a>
-		<a href="/quick-view" title="Quick View" data-astro-prefetch="load">
+		<A href="/profile" title="Bio">Profile</A>
+		<A href="/quick-view" title="Quick View" data-astro-prefetch="load">
 			Quick View
-		</a>
-		<a href="/quotes" title="Quotes">Quotes</a>
-		<a href="/legends" title="Legends">Legends</a>
-		<a href="/policy/license.md" title="License">License</a>
+		</A>
+		<A href="/quotes" title="Quotes">Quotes</A>
+		<A href="/legends" title="Legends">Legends</A>
+		<A href="/policy/license.md" title="License">License</A>
 	</div>
 	<main>
 		<p>
@@ -90,13 +91,13 @@ const learning = [
 			</ol>
 			<p>
 				If you would like to help me in any of these ways, please write
-				to <a
+				to <A
 					href="mailto:naparajith@duck.com"
 					title="E-Mail Address"
 					target="_blank"
 				>
 					naparajith@duck.com.
-				</a>
+				</A>
 			</p>
 		</div>
 	</main>

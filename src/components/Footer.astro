@@ -1,4 +1,5 @@
 ---
+import A from "@/components/A.astro";
 import brainMade from "@/images/brain-made.png";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
@@ -31,13 +32,13 @@ const policy = await getCollection("policy");
 	<span class="flex flex-row justify-between ~gap-2/4">
 		{
 			policy.map((policy) => (
-				<a
+				<A
 					href={`/policy/${policy.id}`}
 					title={policy.data.title}
 					data-astro-prefetch="load"
 				>
 					{policy.data.title}
-				</a>
+				</A>
 			))
 		}
 	</span>

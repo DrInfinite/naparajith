@@ -1,16 +1,20 @@
+---
+import A from "@/components/A.astro";
+---
+
 <header
 	class="my-10 border border-l-0 border-r-0 border-t-0 border-border pb-4"
 >
 	<h2>Naparajith's Portfolio</h2>
 	<div class="flex justify-between">
 		<span class="flex flex-wrap gap-4">
-			<a href="/">Home</a>
-			<a href="/profile">Profile</a>
-			<a href="/quick-view">Quick View</a>
+			<A href="/">Home</A>
+			<A href="/profile">Profile</A>
+			<A href="/quick-view">Quick View</A>
 		</span>
 		<button onclick="history.back()">
 			<span
-				class="bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
+				class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
 			>
 				Back
 			</span>

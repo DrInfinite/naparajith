@@ -1,0 +1,22 @@
+---
+interface Props {
+	class?: string | null | undefined;
+	href?: string | URL | null | undefined;
+	title?: string | null | undefined;
+	target?: astroHTML.JSX.HTMLAttributeAnchorTarget | null | undefined;
+}
+
+const { href, title, target } = Astro.props;
+---
+
+<a
+	class="group relative inline-flex w-fit flex-col no-underline decoration-0"
+	href={href}
+	title={title}
+	target={target}
+>
+	<slot />
+	<span
+		class="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-[#d83333] to-[#f041ff] group-hover:h-[4px]"
+	></span>
+</a>
