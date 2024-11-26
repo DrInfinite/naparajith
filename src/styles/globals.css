@@ -72,13 +72,13 @@
 	p {
 		@apply text-justify;
 	}
+	a,
 	h1,
 	h2,
 	h3,
 	h4,
 	h5,
 	h6,
-	a,
 	p,
 	strong {
 		@apply text-foreground;
@@ -95,7 +95,8 @@
 	details[open] summary {
 		@apply border border-l-0 border-r-0 border-t-0 border-border ~pt-4/8;
 	}
-	code {
+	code,
+	th {
 		@apply text-primary;
 	}
 }
