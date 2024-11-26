@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-description: This is a sample description
+description: The official Privacy Policy for Naparajith's Portfolio
 created: 11-15-2024
 updated: 11-26-2024
 ---

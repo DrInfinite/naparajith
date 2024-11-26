@@ -31,6 +31,7 @@ export default defineConfig({
 	redirects: {
 		"/links": "/quick-view",
 		"/bio": "/profile",
+		"/indian-legends": "/legends",
 	},
 	experimental: {
 		clientPrerender: true,
