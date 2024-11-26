@@ -1,8 +1,8 @@
 ---
 title: Privacy Policy
 description: This is a sample description
-created: 10-10-2024
-updated: 11-06-2024
+created: 11-15-2024
+updated: 11-26-2024
 ---
 
 ## API Policy
@@ -32,6 +32,10 @@ Across the site, I have linked to various internal and external sources. I follo
 
 ## JavaScript Policy
 
-There are several chunks of JavaScript that are executed to maintain a smooth user experience across the site. However, most of it is on the server and is of no concern to the end user. However, there are a few bits of JS that may be shipped and executed client-side.
+There are several chunks of JavaScript that are executed to maintain a smooth user experience across the site. A few kB of JS is shipped and executed in the client for prefetching routes and for ViewTransitions.
+
+### JavaScript for ViewTransitions
+
+There is about 12.13 kB (gzipped: 4.17 kB) worth of JS that is crucial towards enabling ViewTransitions in your browser. While it is non-essential in FireFox based browsers and Safari, which lack support for the feature, it is necessary to ensure a smooth experience on Chromium-based browsers. Disabling JS doesn't affect any of the site's core functionality, but does remove the smooth page transitions that are a staple of Single Page Applications.
 
 If you are not comfortable with script execution, don't like unauthorized access to local storage or just simply don't like non-free JavaScript, you can proceed by disabling JS for this site in particular or by installing the <a href="https://addons.mozilla.org/en-US/firefox/addon/librejs/" target="_blank">LibreJS</a> extension (only works on Mozilla-based browsers). Learn more about it <a href="https://www.gnu.org/software/librejs/" target="_blank">here</a>.
