@@ -70,7 +70,7 @@
 		@apply rounded border bg-primary px-2 font-semibold text-primary-foreground hover:bg-primary/90;
 	}
 	a {
-		@apply text-primary decoration-sky-500 hover:decoration-2 md:decoration-2 md:hover:decoration-4;
+		@apply text-primary decoration-[#d83333] hover:decoration-2 md:decoration-2 md:hover:decoration-4;
 	}
 	p {
 		@apply text-justify;

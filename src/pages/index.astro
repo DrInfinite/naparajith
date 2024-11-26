@@ -4,6 +4,13 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
 const github = await GithubProfile();
+const learning = [
+	"How does a computer work on a hardware-level.",
+	"How do memory-corruption vulnerabilities work?",
+	"Building a compiler from scratch using LLVM",
+	"Fundamentals of C++",
+	"How the hell does a Syscall work?",
+];
 ---
 
 <Layout title="Home">
@@ -30,16 +37,6 @@ const github = await GithubProfile();
 		</figure>
 		<p><strong>{github.bio}</strong></p>
 	</article>
-	<main>
-		<p>
-			This is a portfolio website. The content and views present here are
-			purely meant to showcase my skills and abilities. They are my own
-			and do not reflect the views and positions any organisation or
-			corporate entity I work with or have previously worked with. This
-			site is remotely hosted as a repository on GitHub. The site is
-			hosted and distributed using Vercel.
-		</p>
-	</main>
 	<div class="flex flex-wrap border border-border ~gap-2/4 ~p-2/4">
 		<a href="/bio" title="Bio">About Me</a>
 		<a href="/quick-view" title="Quick View" data-astro-prefetch="load">
@@ -49,4 +46,46 @@ const github = await GithubProfile();
 		<a href="/indian-legends" title="Indian Legends">Indian Legends</a>
 		<a href="/policy/license.md" title="License">License</a>
 	</div>
+	<main>
+		<p>
+			This is a portfolio website. The content and views present here are
+			purely meant to showcase my work, skills and abilities. They are my
+			own and do not reflect the views and positions any organisation or
+			corporate entity I work with or have previously worked with. The
+			source code for this site is remotely hosted as a repository on
+			GitHub. The site is deployed, hosted and distributed using Vercel.
+		</p>
+		<hr />
+		<div>
+			<p>
+				When I was a kid, I was told a really inspiring quote about
+				learning, which goes something like this:
+			</p>
+			<figure>
+				<blockquote cite={"Unknown Hindu Shloka"}>
+					From the teacher is learned a quarter, a quarter from the
+					student's own intelligence, a quarter from fellow students,
+					and a quarter with the passage of time.
+				</blockquote>
+				<figcaption>
+					<cite> - <strong> Unknown Hindu Shloka </strong></cite>
+				</figcaption>
+			</figure>
+			<p>
+				I intened to make learning my long-term commitment, and that
+				takes a lot of support, effort and cooperation. Here are a few
+				things I'm interested in getting help on (not an exhaustive
+				list):
+			</p>
+			<ol>
+				{learning.map((concept) => <li>{concept}</li>)}
+			</ol>
+			<p>
+				If you would like to help me in any of these ways, please write
+				to <a href="mailto:naparajith@duck.com" target="_blank">
+					naparajith@duck.com
+				</a>
+			</p>
+		</div>
+	</main>
 </Layout>
