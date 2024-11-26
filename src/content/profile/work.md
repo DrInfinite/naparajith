@@ -1,5 +1,5 @@
 ---
-title: Professional Bio
+title: Work Profile
 ---
 
 I am a Software Quality Engineer from India, passionate about solving coding challenges and leveraging technology. My career spans product management, marketing, sales, engineering, quality assurance, development, and strategy.

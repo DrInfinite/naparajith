@@ -4,7 +4,7 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
-	const bio = await getCollection("bio");
+	const bio = await getCollection("profile");
 	return bio.map((about) => ({
 		params: { slug: about.id },
 		props: { about },

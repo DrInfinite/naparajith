@@ -3,7 +3,20 @@ import A from "@/components/A.astro";
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const bio = await getCollection("bio");
+const profile = await getCollection("profile");
+const translations = [
+	{ lang: "Assamese", name: "নপৰজিত" },
+	{ lang: "Bengali", name: "নপরাজিৎ" },
+	{ lang: "Gujarati", name: "નાપરાજિત" },
+	{ lang: "Kannada", name: "ನಪರಾಜಿತ್" },
+	{ lang: "Malayalam", name: "നപരാജിത്ത്" },
+	{ lang: "Odia", name: "ନାପାରାଜିଥ୍" },
+	{ lang: "Punjabi", name: "ਨਪਰਾਜਿਤ" },
+	{ lang: "Sanskrit (and its derivatives)", name: "नपराजित" },
+	{ lang: "Tamil", name: "நபராஜித்" },
+	{ lang: "Telugu", name: "నాపరాజిత్" },
+	{ lang: "Tulu", name: "ನಪರಾಜಿತ್" },
+];
 ---
 
 <Layout
@@ -11,16 +24,49 @@ const bio = await getCollection("bio");
 	description="The official profile page for T L Naparajith, a Software Engineer from India"
 >
 	<article>
-		I know that you know that I know that you wanna know more Profile. So I
-		present to you, two options:
+		<p>
+			Naparajith is a name that originates in India. It is a title, that
+			roughly translates to: <strong>
+				<em>
+					<u>A person who is undefeated.</u>
+				</em>
+			</strong>
+		</p>
+		<p>
+			I am sure that you might be interested in reading more about me.
+			Here are 2 options, based on the purpose of your visit to this site
+			and/or current mood:
+		</p>
+		<ul>
+			{
+				profile.reverse().map((about) => (
+					<li>
+						<A href={`/profile/${about.id}`}>{about.data.title}</A>
+					</li>
+				))
+			}
+		</ul>
+
+		<table class="caption-top">
+			<caption class="mb-4 font-semibold italic">
+				Translations in select Indian languages
+			</caption>
+			<thead>
+				<tr>
+					<th>Language</th>
+					<th>Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				{
+					translations.map(({ lang, name }) => (
+						<tr>
+							<td>{lang}</td>
+							<td>{name}</td>
+						</tr>
+					))
+				}
+			</tbody>
+		</table>
 	</article>
-	<ul>
-		{
-			bio.map((about) => (
-				<li>
-					<A href={`/profile/${about.id}`}>{about.data.title}</A>
-				</li>
-			))
-		}
-	</ul>
 </Layout>

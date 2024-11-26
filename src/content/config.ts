@@ -18,7 +18,7 @@ const quotes = defineCollection({
 	}),
 });
 
-const bio = defineCollection({ schema: z.object({ title: z.string() }) });
+const profile = defineCollection({ schema: z.object({ title: z.string() }) });
 
 const legends = defineCollection({
 	schema: z.object({
@@ -36,7 +36,7 @@ const legends = defineCollection({
 
 export const collections = {
 	"indian-legends": legends,
-	bio: bio,
+	profile: profile,
 	policy: policy,
 	quotes: quotes,
 };
