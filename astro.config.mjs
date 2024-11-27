@@ -7,6 +7,8 @@ import sitemap from "@astrojs/sitemap";
 
 import vercel from "@astrojs/vercel/serverless";
 
+import ReadingTime from "./reading-time.mjs";
+
 // https://astro.build/config
 export default defineConfig({
 	adapter: vercel({
@@ -19,11 +21,13 @@ export default defineConfig({
 			{ protocol: "https", hostname: "avatars.githubusercontent.com" },
 			{ protocol: "https", hostname: "upload.wikimedia.org" },
 			{ protocol: "https", hostname: "external-content.duckduckgo.com" },
+			{ protocol: "https", hostname: "brainmade.org/white-logo.png" },
 		],
 	},
 	integrations: [tailwind({ applyBaseStyles: false }), sitemap()],
 	output: "hybrid",
 	markdown: {
+		remarkPlugins: [ReadingTime],
 		syntaxHighlight: "shiki",
 		shikiConfig: { theme: "catppuccin-mocha", langAlias: { cc: "cpp" } },
 	},

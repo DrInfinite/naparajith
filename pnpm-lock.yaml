@@ -19,9 +19,6 @@ importers:
             "@astrojs/vercel":
                 specifier: ^7.8.2
                 version: 7.8.2(astro@4.16.15(@types/node@22.10.0)(rollup@4.27.4)(typescript@5.7.2))
-            "@fontsource/geist-mono":
-                specifier: ^5.1.0
-                version: 5.1.0
             "@vercel/speed-insights":
                 specifier: ^1.1.0
                 version: 1.1.0
@@ -31,6 +28,12 @@ importers:
             leetcode-query:
                 specifier: ^1.2.3
                 version: 1.2.3
+            mdast-util-to-string:
+                specifier: ^4.0.0
+                version: 4.0.0
+            reading-time:
+                specifier: ^1.5.0
+                version: 1.5.0
             sharp:
                 specifier: ^0.33.5
                 version: 0.33.5
@@ -697,12 +700,6 @@ packages:
         resolution:
             {
                 integrity: sha512-UPUN9Yfjnk513Vc08iNW8/9L1nSwQMsTx6nOvmjPNfU2Rtbew/2KgAbQDPuoL6PrNgEmEmmyeM29BkcVBpt3gQ==,
-            }
-
-    "@fontsource/geist-mono@5.1.0":
-        resolution:
-            {
-                integrity: sha512-MDFgmKUdDbV357vD2bOZAro597Nd2md01GAdr3GSZteCJQdPT/UhHUBCAxl9KUiH03aMPFM9Rx7x8/EtrJmpKg==,
             }
 
     "@img/sharp-darwin-arm64@0.33.5":
@@ -3751,6 +3748,12 @@ packages:
             }
         engines: { node: ">= 14.16.0" }
 
+    reading-time@1.5.0:
+        resolution:
+            {
+                integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==,
+            }
+
     regex-recursion@4.2.1:
         resolution:
             {
@@ -5253,8 +5256,6 @@ snapshots:
             cross-fetch: 4.0.0
 
     "@fetch-impl/fetcher@1.0.0": {}
-
-    "@fontsource/geist-mono@5.1.0": {}
 
     "@img/sharp-darwin-arm64@0.33.5":
         optionalDependencies:
@@ -7115,6 +7116,8 @@ snapshots:
             picomatch: 2.3.1
 
     readdirp@4.0.2: {}
+
+    reading-time@1.5.0: {}
 
     regex-recursion@4.2.1:
         dependencies:

@@ -1,6 +1,5 @@
 ---
 import A from "@/components/A.astro";
-import brainMade from "@/images/brain-made.png";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
@@ -18,7 +17,7 @@ const policy = await getCollection("policy");
 		class="-my-6"
 	>
 		<Image
-			src={brainMade}
+			src="https://brainmade.org/white-logo.png"
 			alt={"This site was built without using AI"}
 			class="xs:scale-50 sm:scale-[60%] md:scale-[70%] lg:scale-[80%] xl:scale-90 2xl:scale-100"
 			width={160}
