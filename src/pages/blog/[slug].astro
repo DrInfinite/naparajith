@@ -3,7 +3,7 @@ import A from "@/components/A.astro";
 import Layout from "@/layouts/Layout.astro";
 import type { GetStaticPaths } from "astro";
 import { Image } from "astro:assets";
-import { getCollection, render } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
 	const result = await getCollection("blog");
@@ -15,7 +15,8 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const author = await getEntry(post.data.author);
+const { Content, remarkPluginFrontmatter } = await render(post);
 ---
 
 <Layout
@@ -45,9 +46,28 @@ const { Content } = await render(post);
 	<h1 class="text-center">
 		{post.data.title}
 	</h1>
-	<div class="-mb-4 flex flex-row flex-wrap justify-between">
+	<a
+		href={author.data.social}
+		target="_blank"
+		title={author.data.name}
+		class="flex flex-row items-center justify-center no-underline ~-my-2/4 ~gap-2/4"
+	>
+		<Image
+			src={author.data.image}
+			alt={author.data.name}
+			inferSize
+			width={48}
+			height={48}
+			class="rounded-full ~-my-2/4 ~size-6/12"
+		/>
+		<p>{author.data.name}</p>
+		<small class="text-white/60">{author.data.occupation}</small>
+	</a>
+	<div class="flex flex-row flex-wrap justify-between ~-mb-2/4">
 		<p>Created: <strong>{post.data.created.toDateString()}</strong></p>
-		<p>Updated: <strong>{post.data.updated.toDateString()}</strong></p>
+		<p>
+			Reading Time: <strong>{remarkPluginFrontmatter.minutesRead}</strong>
+		</p>
 	</div>
 	<Content />
 </Layout>

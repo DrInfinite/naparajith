@@ -1,10 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 
-const result = await getCollection("blog");
-const posts = result.filter((acc) => acc.data.draft !== true);
+let posts = await getCollection("blog");
+posts = posts.filter((acc) => acc.data.draft !== true);
 ---
 
 <Layout
@@ -13,13 +13,16 @@ const posts = result.filter((acc) => acc.data.draft !== true);
 >
 	<div class="flex flex-row flex-wrap justify-evenly ~gap-2/4">
 		{
-			posts.map((post) => (
+			posts.map(async (post) => (
 				<a
 					href={`/blog/${post.id}`}
 					class="flex w-full flex-col justify-evenly border border-border decoration-transparent"
 				>
-					<article class="~p-2/4">
-						<small>{post.data.updated.toDateString()}</small>
+					<article class="flex justify-between text-white/60 ~p-2/4">
+						<small>{post.data.created.toDateString()}</small>
+						<small>
+							{(await getEntry(post.data.author)).data.name}
+						</small>
 					</article>
 					<div>
 						<Image

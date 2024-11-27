@@ -2,9 +2,9 @@
 title: Who is Jivaka?
 description: A sneek peak into the father of Model Healing, some additional garbage that needs to be here.
 created: 11-27-2024
-updated: 11-27-2024
 image: https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpapercave.com%2Fwp%2FfAwVCh3.jpg&f=1&nofb=1&ipt=1959d34db2d3f8b107ff7fc4f082c35be2299282ada5f08d744ca80805d3836b&ipo=images
 image_source: pixground.com
+author: naparajith
 draft: false
 ---
 
