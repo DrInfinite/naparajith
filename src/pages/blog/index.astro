@@ -1,0 +1,45 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const result = await getCollection("blog");
+const posts = result.filter((acc) => acc.data.draft !== true);
+---
+
+<Layout
+	title="Blog"
+	description="The Official Blog for Naparajith, a Software Engineer from India"
+>
+	<div class="flex flex-row flex-wrap justify-evenly ~gap-2/4">
+		{
+			posts.map((post) => (
+				<a
+					href={`/blog/${post.id}`}
+					class="flex w-full flex-col justify-evenly border border-border decoration-transparent"
+				>
+					<article class="~p-2/4">
+						<small>{post.data.updated.toDateString()}</small>
+					</article>
+					<div>
+						<Image
+							src={post.data.image}
+							alt={post.data.title}
+							inferSize
+							loading="eager"
+							class="-my-px aspect-auto object-cover"
+							transition:persist
+							transition:animate="fade"
+						/>
+					</div>
+					<article class="flex flex-col ~gap-2/4 ~p-2/4">
+						<h4 class="-my-px">{post.data.title}</h4>
+						<small class="-my-px truncate">
+							{post.data.description}
+						</small>
+					</article>
+				</a>
+			))
+		}
+	</div>
+</Layout>

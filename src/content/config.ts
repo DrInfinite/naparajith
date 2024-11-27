@@ -1,5 +1,17 @@
 import { defineCollection, z } from "astro:content";
 
+const blog = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		created: z.coerce.date(),
+		updated: z.coerce.date(),
+		image: z.string(),
+		image_source: z.string(),
+		draft: z.boolean(),
+	}),
+});
+
 const policy = defineCollection({
 	schema: z.object({
 		title: z.string(),
@@ -35,8 +47,9 @@ const legends = defineCollection({
 });
 
 export const collections = {
+	blog: blog,
 	"indian-legends": legends,
-	profile: profile,
 	policy: policy,
+	profile: profile,
 	quotes: quotes,
 };

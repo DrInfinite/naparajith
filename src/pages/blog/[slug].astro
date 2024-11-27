@@ -1,0 +1,53 @@
+---
+import A from "@/components/A.astro";
+import Layout from "@/layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+
+export const getStaticPaths = (async () => {
+	const result = await getCollection("blog");
+	const posts = result.filter((acc) => acc.data.draft !== true);
+	return posts.map((post) => ({
+		params: { slug: post.id },
+		props: { post },
+	}));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout
+	title={`${post.data.title}`}
+	description=`Blog Post: ${post.data.title} - ${[post.data.description]}`
+>
+	<figure>
+		<Image
+			src={post.data.image}
+			alt={post.data.title}
+			inferSize
+			loading="eager"
+			class="aspect-auto w-full"
+			transition:persist
+			transition:animate="fade"
+		/>
+		<figcaption class="text-center">
+			This image comes from <A
+				href={post.data.image}
+				title={post.data.title}
+				target="_blank"
+			>
+				{post.data.image_source}
+			</A>
+		</figcaption>
+	</figure>
+	<h1 class="text-center">
+		{post.data.title}
+	</h1>
+	<div class="-mb-4 flex flex-row flex-wrap justify-between">
+		<p>Created: <strong>{post.data.created.toDateString()}</strong></p>
+		<p>Updated: <strong>{post.data.updated.toDateString()}</strong></p>
+	</div>
+	<Content />
+</Layout>
