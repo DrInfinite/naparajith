@@ -64,13 +64,13 @@
 		@apply dark;
 	}
 	body {
-		@apply container prose prose-sm mx-auto scroll-smooth bg-background text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold;
+		@apply prose prose-sm mx-auto scroll-smooth bg-background text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold;
 	}
 	button {
 		@apply border border-accent bg-secondary px-2 font-semibold text-primary-foreground hover:bg-secondary/90;
 	}
 	p {
-		@apply text-justify;
+		@apply text-pretty text-justify;
 	}
 	a,
 	h1,
@@ -90,7 +90,7 @@
 		@apply font-semibold;
 	}
 	blockquote {
-		@apply font-serif font-semibold text-primary ~text-sm/3xl;
+		@apply font-serif font-bold text-primary ~text-sm/2xl;
 	}
 	details[open] summary {
 		@apply border border-l-0 border-r-0 border-t-0 border-border ~pt-4/8;
