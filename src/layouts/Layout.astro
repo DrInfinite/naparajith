@@ -1,6 +1,5 @@
 ---
 import "@/styles/globals.css";
-import SpeedInsights from "@vercel/speed-insights/astro";
 import { ViewTransitions } from "astro:transitions";
 
 import Footer from "@/components/Footer.astro";
@@ -24,7 +23,6 @@ const { title, description } = Astro.props;
 		<title>{title} | Naparajith</title>
 
 		<ViewTransitions fallback="swap" />
-		<SpeedInsights />
 	</head>
 	<body>
 		{Astro.url.pathname !== "/" ? <Header /> : <div class="mb-20" />}
