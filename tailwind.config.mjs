@@ -12,7 +12,8 @@ export default {
 		fontSize,
 		extend: {
 			fontFamily: {
-				mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
+				sans: ["DejaVu Sans", ...defaultTheme.fontFamily.sans],
+				serif: ["DejaVu Serif", ...defaultTheme.fontFamily.serif],
 			},
 			screens: { xs: "20rem" },
 			colors: {
