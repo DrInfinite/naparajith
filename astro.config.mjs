@@ -5,17 +5,18 @@ import tailwind from "@astrojs/tailwind";
 
 import sitemap from "@astrojs/sitemap";
 
-import vercel from "@astrojs/vercel";
+// import vercel from "@astrojs/vercel";
 
 import ReadingTime from "./reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-	adapter: vercel({
-		isr: {
-			expiration: 60 * 60,
-		},
-	}),
+	// adapter: vercel({
+	// 	isr: {
+	// 		expiration: 60 * 60,
+	// 	},
+	// 	devImageService: "sharp",
+	// }),
 	image: {
 		remotePatterns: [
 			{ protocol: "https", hostname: "avatars.githubusercontent.com" },

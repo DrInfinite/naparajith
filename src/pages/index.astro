@@ -21,15 +21,22 @@ const learning = [
 >
 	<h1 class="text-center">{github.name}</h1>
 	<article>
-		<figure>
-			<Image
-				alt={github.profile ?? "DrInfinite"}
-				class="mx-auto place-items-center ~size-48/96"
-				inferSize
-				loading={"eager"}
-				src={github.avatar_url ?? "/favicon.svg"}
-			/>
-			<figcaption class="text-center">
+		<figure
+			class="flex flex-col content-around items-center justify-around ~gap-6/12"
+		>
+			<span class="-my-px ~size-48/96">
+				<Image
+					alt={github.profile ?? "DrInfinite"}
+					class="mx-auto"
+					inferSize
+					width={520}
+					height={520}
+					loading={"eager"}
+					src={github.avatar_url ?? "/favicon.svg"}
+				/>
+			</span>
+
+			<figcaption class="bg-background text-center ~p-2/4">
 				This image comes from my <A
 					href={github.html_url}
 					target="_blank"
