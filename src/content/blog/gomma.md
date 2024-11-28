@@ -8,6 +8,4 @@ author: naparajith
 draft: false
 ---
 
-### From Foundling to Healer: The Early Years
-
 Jīvaka's story began with mystery and fate. Abandoned as a child, he was discovered by the royal court of King Bimbisāra, where he was raised and nurtured. Despite his humble and uncertain beginnings, Jīvaka’s intellect and potential shone through. With an insatiable desire to learn, he journeyed to the ancient city of Takṣaśilā, a center of wisdom, where he honed his skills in medicine under a revered teacher. After seven years of rigorous study, he returned to Rājagṛha, where his talent as a healer would soon alter the course of history.
