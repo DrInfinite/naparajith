@@ -29,10 +29,10 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 							src={post.data.image}
 							alt={post.data.title}
 							inferSize
-							loading="eager"
-							class="-my-px aspect-auto object-cover"
-							transition:persist
-							transition:animate="fade"
+							width={1920}
+							height={1080}
+							loading={"eager"}
+							class="-my-px"
 						/>
 					</div>
 					<article class="flex flex-col ~gap-2/4 ~p-2/4">

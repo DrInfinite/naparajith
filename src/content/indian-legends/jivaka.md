@@ -6,8 +6,8 @@ born: 5th Century BCE
 died: 4th Century BCE
 description: The father of Model Healing
 opinion: A great individual who chose education, knowledge and progress in medicine over ascending a superficial throne.
-image: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Watkhungtaphao_Herbal_Garden%2C_zoom.jpg/220px-Watkhungtaphao_Herbal_Garden%2C_zoom.jpg
-image_source: Wikimedia Commons
+image: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VQzbo-FLhmXKPI8xNpd9AwHaEo%26pid%3DApi&f=1&ipt=603a962bf14ca8655113c6a7920b161e4a8ff1f8f00cedeb7c00b34fed0394a3&ipo=images
+image_source: eduindex.org
 ---
 
 ### From Foundling to Healer: The Early Years

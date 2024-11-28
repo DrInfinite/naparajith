@@ -28,10 +28,10 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 			src={post.data.image}
 			alt={post.data.title}
 			inferSize
+			width={1920}
+			height={1080}
 			loading="eager"
 			class="aspect-auto w-full"
-			transition:persist
-			transition:animate="fade"
 		/>
 		<figcaption class="text-center">
 			This image comes from <A
@@ -56,6 +56,7 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 			src={author.data.image}
 			alt={author.data.name}
 			inferSize
+			loading={"lazy"}
 			width={48}
 			height={48}
 			class="rounded-full ~-my-2/4 ~size-6/12"

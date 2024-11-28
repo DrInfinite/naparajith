@@ -90,7 +90,7 @@
 		@apply font-semibold;
 	}
 	blockquote {
-		@apply font-serif font-bold text-primary ~text-sm/2xl;
+		@apply font-serif font-bold text-primary ~text-sm/3xl;
 	}
 	details[open] summary {
 		@apply border border-l-0 border-r-0 border-t-0 border-border ~pt-4/8;
