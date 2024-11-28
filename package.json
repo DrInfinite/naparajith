@@ -6,6 +6,7 @@
 		"dev": "astro dev",
 		"build": "astro check && astro build",
 		"preview": "astro preview",
+		"info": "astro info",
 		"astro": "astro",
 		"format": "prettier . --write",
 		"prepare": "husky"
