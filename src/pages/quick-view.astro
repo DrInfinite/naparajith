@@ -85,9 +85,7 @@ const leetcode = await LeetcodeProfile();
 		<span>Rank: <strong>{leetcode.profile?.ranking}</strong></span>
 		<span>
 			Solved: <strong>
-				{leetcode.completedCount.total} ({
-					leetcode.completedPercentage.total
-				})
+				{leetcode.completedCount.total} ({leetcode.completedPercentage.total})
 			</strong>
 		</span>
 		<span>Rating: <strong>{leetcode.profile?.starRating}</strong></span>

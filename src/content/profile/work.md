@@ -6,23 +6,23 @@ I am a Software Quality Engineer from India, passionate about solving coding cha
 
 1. Working with Software Businesses:
 
-    - Scaled businesses successfully, emphasizing customer-centric decisions.
-    - Excel in executing ambitious projects and relying on data for decisions.
+   - Scaled businesses successfully, emphasizing customer-centric decisions.
+   - Excel in executing ambitious projects and relying on data for decisions.
 
 2. Working with Product Teams:
 
-    - Align, contribute to, and grow product teams (10 to 100 people).
-    - Fluent in technical and executive languages, crafting narratives for inspiration.
-    - Significantly contribute to project outcomes.
+   - Align, contribute to, and grow product teams (10 to 100 people).
+   - Fluent in technical and executive languages, crafting narratives for inspiration.
+   - Significantly contribute to project outcomes.
 
 3. Continuous Improvement:
 
-    - Dedicated to personal and professional growth.
-    - Constant learning, composure in adversity, and high-quality decision-making.
+   - Dedicated to personal and professional growth.
+   - Constant learning, composure in adversity, and high-quality decision-making.
 
 4. Networking and Collaboration:
 
-    - Enjoy meeting fellow developers and discussing emerging technologies.
+   - Enjoy meeting fellow developers and discussing emerging technologies.
 
 ### Professional Skills
 

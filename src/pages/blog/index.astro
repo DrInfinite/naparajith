@@ -20,9 +20,7 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 				>
 					<article class="flex justify-between text-white/60 ~p-2/4">
 						<small>{post.data.created.toDateString()}</small>
-						<small>
-							{(await getEntry(post.data.author)).data.name}
-						</small>
+						<small>{(await getEntry(post.data.author)).data.name}</small>
 					</article>
 					<div>
 						<Image
@@ -37,9 +35,7 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 					</div>
 					<article class="flex flex-col ~gap-2/4 ~p-2/4">
 						<h4 class="-my-px">{post.data.title}</h4>
-						<small class="-my-px truncate">
-							{post.data.description}
-						</small>
+						<small class="-my-px truncate">{post.data.description}</small>
 					</article>
 				</a>
 			))
