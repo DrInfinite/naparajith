@@ -15,7 +15,7 @@ export async function LeetcodeProfile() {
 		easy: acSubmissionNum?.at(1)?.count as number,
 		medium: acSubmissionNum?.at(2)?.count as number,
 		hard: acSubmissionNum?.at(3)?.count as number,
-	};
+	} as const;
 
 	const completedCount = {
 		total:
@@ -34,7 +34,7 @@ export async function LeetcodeProfile() {
 			acSubmissionNum?.at(3)?.count.toString() +
 			"/" +
 			allQuestionsCount?.at(3)?.count.toString(),
-	};
+	} as const;
 
 	const completedPercentage = {
 		total:
@@ -57,7 +57,7 @@ export async function LeetcodeProfile() {
 				((acSubmissionNum?.at(3)?.count as number) * 100) /
 				(allQuestionsCount?.at(3)?.count as number)
 			).toFixed(2) + "%",
-	};
+	} as const;
 
 	return { profile, completedCount, completedPercentage, solvedCount };
 }

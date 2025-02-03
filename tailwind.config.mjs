@@ -1,5 +1,4 @@
 import fluid, { extract, fontSize, screens } from "fluid-tailwind";
-import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -11,9 +10,6 @@ export default {
 		screens,
 		fontSize,
 		extend: {
-			fontFamily: {
-				mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
-			},
 			screens: { xs: "20rem" },
 			colors: {
 				border: "hsl(var(--border))",
