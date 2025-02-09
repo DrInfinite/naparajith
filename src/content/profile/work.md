@@ -2,7 +2,7 @@
 title: Work Profile
 ---
 
-I am a Software Quality Engineer from India, passionate about solving coding challenges and leveraging technology. My career spans product management, marketing, sales, engineering, quality assurance, development, and strategy.
+I am a Software Quality Engineer from India, passionate about solving coding challenges and leveraging technology. My career spans software development, engineering, quality assurance, test automation, and UX strategy.
 
 1. Working with Software Businesses:
 
