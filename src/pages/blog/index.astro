@@ -16,13 +16,9 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 			posts.map(async (post) => (
 				<a
 					href={`/blog/${post.id}`}
-					class="flex w-full flex-col justify-evenly border border-border decoration-transparent"
+					class="flex w-full flex-col justify-evenly rounded-lg border border-border decoration-transparent"
 				>
-					<article class="flex justify-between text-white/60 ~p-2/4">
-						<small>{post.data.created.toDateString()}</small>
-						<small>{(await getEntry(post.data.author)).data.name}</small>
-					</article>
-					<div>
+					<div class="p-2 ~rounded-xl">
 						<Image
 							src={post.data.image}
 							alt={post.data.title}
@@ -30,15 +26,20 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 							width={1920}
 							height={1080}
 							loading={"eager"}
-							class="-my-px"
+							class="-my-px ~rounded-xl"
 						/>
 					</div>
+					<article class="flex justify-between text-white/60 ~p-2/4">
+						<small>{post.data.created.toDateString()}</small>
+						<small>{(await getEntry(post.data.author)).data.name}</small>
+					</article>
 					<article class="flex flex-col ~gap-2/4 ~p-2/4">
-						<h4 class="-my-px">{post.data.title}</h4>
+						<h3 class="-my-px">{post.data.title}</h3>
 						<small class="-my-px truncate">{post.data.description}</small>
 					</article>
 				</a>
 			))
 		}
+		<h1>Coming Soon!</h1>
 	</div>
 </Layout>
