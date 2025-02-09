@@ -6,10 +6,10 @@ import Layout from "../layouts/Layout.astro";
 
 const github = await GithubProfile();
 const learning = [
-	"How does a computer work on a hardware-level.",
+	"How to effectively secure a router?",
 	"How do memory-corruption vulnerabilities work?",
 	"Building a programming language from scratch using LLVM",
-	"Fundamentals Game Development of C++",
+	"How to prevent DDoS attacks on various types of systems?",
 	"How the hell does a Syscall work?",
 	"Understanding the pitfalls of cross-platform application development.",
 ];
@@ -49,19 +49,21 @@ const learning = [
 	>
 		<A href="/profile" title="Bio">Profile</A>
 		<A href="/quick-view" title="Quick View"> Quick View </A>
+		<A href={"https://flowcv.com/resume/mdrssqq018"} target={"_blank"}>
+			Resume
+		</A>
 		<A href="/contact" title="Contact">Contact</A>
-		<A href="/quotes" title="Quotes">Quotes</A>
 		<A href="/blog" title="Blog">Blog</A>
-		<A href="/legends" title="Legends">Legends</A>
+		<A href="/quotes" title="Quotes">Quotes</A>
 	</div>
 	<main>
 		<p>
 			This is a portfolio website. The content and views present here are purely
 			meant to showcase my work, skills and abilities. They are my own and do
-			not reflect the views and positions any organisation or corporate entity I
-			work with or have previously worked with. The source code for this site is
-			remotely hosted as a repository on GitHub. The site is deployed, hosted
-			and distributed using Vercel.
+			not reflect the views and positions any organisation or entity I work with
+			or have previously worked with. The source code for this site is remotely
+			hosted as a repository on GitHub. The site is deployed, hosted and
+			distributed using Vercel.
 		</p>
 		<hr />
 		<div>
@@ -90,9 +92,9 @@ const learning = [
 				of support, effort and cooperation. Here are a few things I'm interested
 				in getting help on (not an exhaustive list):
 			</p>
-			<ol>
+			<ul>
 				{learning.map((concept) => <li>{concept}</li>)}
-			</ol>
+			</ul>
 			<p>
 				If you would like to help me in any of these ways, please write to <A
 					href="mailto:naparajith@duck.com"
