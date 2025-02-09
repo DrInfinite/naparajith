@@ -55,5 +55,5 @@ export default defineConfig({
 	site:
 		process.env.NODE_ENV === "development"
 			? "http://localhost:4321/"
-			: "https://naparajith.vercel.app/",
+			: "https://naparajith.in/",
 });
