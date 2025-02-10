@@ -1,6 +1,6 @@
 ---
 import "@/styles/globals.css";
-import { ClientRouter as ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<title>{title} | Naparajith</title>
 
-		<ViewTransitions fallback="swap" />
+		<ClientRouter fallback="animate" />
 	</head>
 	<body>
 		{Astro.url.pathname !== "/" ? <Header /> : <div class="~mb-10/20" />}
