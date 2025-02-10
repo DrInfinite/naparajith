@@ -1,24 +1,62 @@
 ---
 import A from "@/components/A.astro";
+
+const pathname = Astro.url.pathname;
 ---
 
 <header
 	class="my-10 border border-l-0 border-r-0 border-t-0 border-border pb-4"
 >
-	<h3 class="text-center">Naparajith's Portfolio</h3>
+	<h3 class="text-center">
+		{
+			pathname
+				.toString()
+				.replace("/", "")
+				.replace("-", " ")
+				.replace(/(?<=blog).*/, "")
+		}
+	</h3>
 	<div class="flex justify-between">
 		<div class="flex flex-wrap justify-evenly gap-4">
 			<A href="/">Home</A>
-			<A href="/profile">Profile</A>
+			{
+				Astro.url.pathname !== "/profile" ? (
+					<A href="/profile">Profile</A>
+				) : (
+					<span class="hidden" />
+				)
+			}
 			<!-- <A href="/blog">Blog</A> -->
-			<A href="/quick-view">Quick View</A>
-		</div>
-		<button class="rounded-full px-4" onclick="history.back()">
-			<span
-				class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
+			{
+				Astro.url.pathname !== "/quick-view" ? (
+					<A href="/quick-view">Quick View</A>
+				) : (
+					<span class="hidden" />
+				)
+			}
+			<A
+				href="https://flowcv.com/resume/mdrssqq018"
+				title="Resume"
+				target="_blank"
 			>
-				Back
-			</span>
-		</button>
+				Resume
+			</A>
+		</div>
+		<div class="flex flex-wrap justify-evenly gap-4">
+			<button class="rounded-full px-4" onclick="history.back()">
+				<span
+					class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
+				>
+					&larr;
+				</span>
+			</button>
+			<button class="rounded-full px-4" onclick="history.forward()">
+				<span
+					class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
+				>
+					&rarr;
+				</span>
+			</button>
+		</div>
 	</div>
 </header>
