@@ -11,9 +11,9 @@ const pathname = Astro.url.pathname;
 		{
 			pathname
 				.toString()
+				.replace(/(?<=blog).*/, "")
 				.replace("/", "")
 				.replace("-", " ")
-				.replace(/(?<=blog).*/, "")
 		}
 	</h3>
 	<div class="flex justify-between">
