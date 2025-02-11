@@ -1,6 +1,12 @@
 ---
 import A from "@/components/A.astro";
 import Layout from "@/layouts/Layout.astro";
+
+import { GithubProfile } from "@/actions/github-profile";
+import { LeetcodeProfile } from "@/actions/leetcode-profile";
+
+const github = await GithubProfile();
+const leetcode = await LeetcodeProfile();
 ---
 
 <Layout
@@ -9,18 +15,41 @@ import Layout from "@/layouts/Layout.astro";
 >
 	<h1>Contact</h1>
 	<p>
-		Get in touch with me through this form or by using the email
-		<A href="mailto:naparajith@duck.com"> naparajith@duck.com</A>
+		Get in touch with me by using the email
+		<A href="mailto:naparajith@duck.com"> naparajith@duck.com</A> or through one
+		of the following social media platforms
 	</p>
-	<p>
-		If you prefer to chat, get in touch <A
-			href="https://api.whatsapp.com/send?phone=919940169018"
-			target="_blank"
-			title="WhatsApp"
-		>
-			here.
-		</A>
-	</p>
+	<div
+		class="flex flex-wrap justify-evenly rounded-full border border-border ~mb-4/8 ~gap-2/4 ~p-2/4"
+	>
+		<span>
+			<A
+				href="https://www.linkedin.com/in/naparajith/"
+				title="LinkedIn - Naparajith T L"
+				target="_blank"
+			>
+				LinkedIn
+			</A>
+		</span>
+		<span>
+			<A
+				href={"https://bsky.app/profile/naparajith.in"}
+				title={`Naparajith | DrInfinite (@naparajith.in)`}
+				target="_blank"
+			>
+				BlueSky
+			</A>
+		</span>
+		<span>
+			<A
+				href={github.html_url}
+				title={`GitHub - ${github.login}`}
+				target="_blank"
+			>
+				GitHub
+			</A>
+		</span>
+	</div>
 
 	<details>
 		<summary>Why is there no Contact Form?</summary>
