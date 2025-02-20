@@ -6,12 +6,11 @@ import Layout from "../layouts/Layout.astro";
 
 const github = await GithubProfile();
 const learning = [
-	"How to effectively secure a router?",
+	"How to read large codebases without getting lost?",
 	"How do memory-corruption vulnerabilities work?",
 	"Building a programming language from scratch using LLVM",
 	"How to prevent DDoS attacks on various types of systems?",
 	"How the hell does a Syscall work?",
-	"Understanding the pitfalls of cross-platform application development.",
 ];
 ---
 
@@ -28,9 +27,9 @@ const learning = [
 				<Image
 					alt={"DrInfinite"}
 					class="mx-auto scale-90 rounded-full"
-					inferSize
-					width={520}
-					height={520}
+					width={540}
+					height={540}
+					decoding={"async"}
 					loading={"eager"}
 					src={github.avatar_url ?? "/favicon.svg"}
 				/>
@@ -54,7 +53,7 @@ const learning = [
 		</A>
 		<A href="/contact" title="Contact">Contact</A>
 		<A href="/blog" title="Blog">Blog</A>
-		<A href="/quotes" title="Quotes">Quotes</A>
+		<A href="/quotes-i-like" title="Quotes">Quotes</A>
 	</div>
 	<main>
 		<p>
@@ -98,7 +97,7 @@ const learning = [
 				{learning.map((concept) => <li>{concept}</li>)}
 			</ul>
 			<p>
-				If you would like to help me in any of these ways, please write to <A
+				If you would like to help me out in learning any of these concepts, please write to <A
 					href="mailto:naparajith@duck.com"
 					title="E-Mail Address"
 					target="_blank"
