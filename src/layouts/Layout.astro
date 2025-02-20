@@ -18,8 +18,14 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
 		<title>{title} | Naparajith</title>
+		<meta name="description" content={description} />
+		<meta property="og:site_name" content="Naparajith" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:locale" content="en_IN" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
 	</head>
 	<body>
 		{Astro.url.pathname !== "/" ? <Header /> : <div class="~mb-10/20" />}
