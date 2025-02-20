@@ -46,6 +46,7 @@ export default defineConfig({
 		"/links": "/quick-view",
 		"/bio": "/profile",
 		"/indian-legends": "/legends",
+		"/quotes": "/quotes-i-like",
 	},
 	experimental: {
 		clientPrerender: true,
