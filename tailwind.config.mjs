@@ -1,4 +1,5 @@
 import fluid, { extract, fontSize, screens } from "fluid-tailwind";
+import plugin from "tailwindcss/plugin";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -53,5 +54,13 @@ export default {
 			},
 		},
 	},
-	plugins: [require("@tailwindcss/typography"), fluid],
+	plugins: [
+		require("@tailwindcss/typography"),
+		fluid,
+		plugin(function ({ addBase }) {
+			addBase({
+				html: { fontSize: "15px" },
+			});
+		}),
+	],
 };
