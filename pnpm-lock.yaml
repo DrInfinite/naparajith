@@ -47,9 +47,6 @@ importers:
       "@commitlint/config-conventional":
         specifier: ^19.5.0
         version: 19.6.0
-      "@tailwindcss/forms":
-        specifier: ^0.5.9
-        version: 0.5.9(tailwindcss@3.4.15)
       "@tailwindcss/typography":
         specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.15)
@@ -1288,14 +1285,6 @@ packages:
       {
         integrity: sha512-fTIQwLF+Qhuws31iw7Ncl1R3HUDtGwIipiJ9iU+UsDUwMhegFcQKQHd51nZjb7CArq0MvON8rbgCGQYWHUKAdg==,
       }
-
-  "@tailwindcss/forms@0.5.9":
-    resolution:
-      {
-        integrity: sha512-tM4XVr2+UVTxXJzey9Twx48c1gcxFStqn1pQz0tRsX8o3DvxhN5oY5pvyAbUx7VTaZxpej4Zzvc6h+1RJBzpIg==,
-      }
-    peerDependencies:
-      tailwindcss: ">=3.0.0 || >= 3.0.0-alpha.1 || >= 4.0.0-alpha.20"
 
   "@tailwindcss/typography@0.5.15":
     resolution:
@@ -3177,13 +3166,6 @@ packages:
         integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==,
       }
     engines: { node: ">=10.0.0" }
-    hasBin: true
-
-  mini-svg-data-uri@1.4.4:
-    resolution:
-      {
-        integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==,
-      }
     hasBin: true
 
   minimatch@3.1.2:
@@ -5594,11 +5576,6 @@ snapshots:
 
   "@shikijs/vscode-textmate@10.0.1": {}
 
-  "@tailwindcss/forms@0.5.9(tailwindcss@3.4.15)":
-    dependencies:
-      mini-svg-data-uri: 1.4.4
-      tailwindcss: 3.4.15
-
   "@tailwindcss/typography@0.5.15(tailwindcss@3.4.15)":
     dependencies:
       lodash.castarray: 4.4.0
@@ -6960,8 +6937,6 @@ snapshots:
       picomatch: 2.3.1
 
   mime@3.0.0: {}
-
-  mini-svg-data-uri@1.4.4: {}
 
   minimatch@3.1.2:
     dependencies:
