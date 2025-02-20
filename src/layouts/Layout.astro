@@ -20,10 +20,13 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Naparajith</title>
 		<meta name="description" content={description} />
-		<meta property="og:site_name" content="Naparajith" />
-		<meta property="og:title" content=`${title} | Naparajith` />
+
 		<meta property="og:description" content={description} />
 		<meta property="og:locale" content="en_IN" />
+		<meta property="og:site_name" content="Naparajith" />
+		<meta property="og:title" content=`${title} | Naparajith` />
+		<meta property="og:url" content={Astro.url} />
+
 		<meta property="twitter:title" content=`${title} | Naparajith` />
 		<meta property="twitter:description" content={description} />
 	</head>
