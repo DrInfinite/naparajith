@@ -36,8 +36,8 @@ There are several chunks of JavaScript that are executed to maintain a smooth us
 
 While the site may function as intended with JS blocked, some aspects may not be in the way the user expects. Some elements may break when JS is disabled.
 
-### JavaScript for ViewTransitions
+### Disabling JavaScript
 
-There is about 12.13 kB (gzipped: 4.17 kB) worth of JS that is crucial towards enabling ClientRouter functions in your browser. While it is non-essential in FireFox based browsers and Safari, which lack support for the feature, it is necessary to ensure a smooth experience on Chromium-based browsers. Disabling JS doesn't affect any of the site's core functionality, but does remove the smooth page transitions that are a staple of Single Page Applications.
+Disabling JS doesn't affect any of the site's core functionality, but does remove the smooth page transitions that are a staple of Single Page Applications.
 
 If you are not comfortable with script execution, don't like unauthorized access to local storage or just simply don't like non-free JavaScript, you can proceed by disabling JS for this site in particular or by installing the <a href="https://addons.mozilla.org/en-US/firefox/addon/librejs/" target="_blank">LibreJS</a> extension (only works on Mozilla-based browsers). Learn more about it <a href="https://www.gnu.org/software/librejs/" target="_blank">here</a>.
