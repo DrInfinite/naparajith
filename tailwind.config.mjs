@@ -53,8 +53,5 @@ export default {
 			},
 		},
 	},
-	plugins: [
-		require("@tailwindcss/typography"),
-		fluid,
-	],
+	plugins: [require("@tailwindcss/typography"), fluid],
 };
