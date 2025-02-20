@@ -22,7 +22,7 @@ export default defineConfig({
 			{ protocol: "https", hostname: "avatars.githubusercontent.com" },
 			{ protocol: "https", hostname: "upload.wikimedia.org" },
 			{ protocol: "https", hostname: "external-content.duckduckgo.com" },
-			{ protocol: "https", hostname: "brainmade.org/white-logo.png" },
+			{ protocol: "https", hostname: "brainmade.org" },
 		],
 		service: {
 			entrypoint: "astro/assets/services/sharp",
@@ -46,6 +46,7 @@ export default defineConfig({
 		"/links": "/quick-view",
 		"/bio": "/profile",
 		"/indian-legends": "/legends",
+		"/quotes": "/quotes-i-like",
 	},
 	experimental: {
 		clientPrerender: true,

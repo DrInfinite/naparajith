@@ -1,6 +1,5 @@
 ---
 import "@/styles/globals.css";
-import { ClientRouter } from "astro:transitions";
 
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
@@ -19,10 +18,17 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
 		<title>{title} | Naparajith</title>
+		<meta name="description" content={description} />
 
-		<ClientRouter fallback="animate" />
+		<meta property="og:description" content={description} />
+		<meta property="og:locale" content="en_IN" />
+		<meta property="og:site_name" content="Naparajith" />
+		<meta property="og:title" content=`${title} | Naparajith` />
+		<meta property="og:url" content={Astro.url} />
+
+		<meta property="twitter:title" content=`${title} | Naparajith` />
+		<meta property="twitter:description" content={description} />
 	</head>
 	<body>
 		{Astro.url.pathname !== "/" ? <Header /> : <div class="~mb-10/20" />}
