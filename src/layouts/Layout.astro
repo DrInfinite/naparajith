@@ -21,10 +21,10 @@ const { title, description } = Astro.props;
 		<title>{title} | Naparajith</title>
 		<meta name="description" content={description} />
 		<meta property="og:site_name" content="Naparajith" />
-		<meta property="og:title" content={title} />
+		<meta property="og:title" content=`${title} | Naparajith` />
 		<meta property="og:description" content={description} />
 		<meta property="og:locale" content="en_IN" />
-		<meta property="twitter:title" content={title} />
+		<meta property="twitter:title" content=`${title} | Naparajith` />
 		<meta property="twitter:description" content={description} />
 	</head>
 	<body>
