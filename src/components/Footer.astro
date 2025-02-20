@@ -9,12 +9,13 @@ const policy = await getCollection("policy");
 
 <footer
 	class="mt-10 flex flex-col-reverse items-center justify-evenly border-t border-border pt-4 md:flex-row"
+	transition:persist
 >
 	<a
 		href="https://brainmade.org/"
 		title="The Brainmade Mark"
 		target="_blank"
-		class="-my-6"
+		class="-m-6"
 	>
 		<Image
 			src="https://brainmade.org/white-logo.png"
@@ -27,7 +28,7 @@ const policy = await getCollection("policy");
 		/>
 	</a>
 	<p>
-		Copyright &copy; {date}, Naparajith.
+		&copy; {date}, Naparajith.
 	</p>
 	<span class="flex flex-row justify-between ~gap-2/4">
 		{
