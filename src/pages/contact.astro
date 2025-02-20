@@ -3,10 +3,8 @@ import A from "@/components/A.astro";
 import Layout from "@/layouts/Layout.astro";
 
 import { GithubProfile } from "@/actions/github-profile";
-import { LeetcodeProfile } from "@/actions/leetcode-profile";
 
 const github = await GithubProfile();
-const leetcode = await LeetcodeProfile();
 ---
 
 <Layout
