@@ -28,11 +28,6 @@
 		--input: 240 5.9% 90%;
 		--ring: 240 5.9% 10%;
 		--radius: 0.5rem;
-		--chart-1: 12 76% 61%;
-		--chart-2: 173 58% 39%;
-		--chart-3: 197 37% 24%;
-		--chart-4: 43 74% 66%;
-		--chart-5: 27 87% 67%;
 	}
 
 	.dark {
@@ -55,11 +50,6 @@
 		--border: 240 3.7% 15.9%;
 		--input: 240 3.7% 15.9%;
 		--ring: 240 4.9% 83.9%;
-		--chart-1: 220 70% 50%;
-		--chart-2: 160 60% 45%;
-		--chart-3: 30 80% 55%;
-		--chart-4: 280 65% 60%;
-		--chart-5: 340 75% 55%;
 	}
 }
 
@@ -67,15 +57,19 @@
 	* {
 		@apply dark;
 	}
+
 	body {
 		@apply prose prose-sm mx-auto scroll-smooth bg-background text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold;
 	}
+
 	button {
 		@apply border border-accent bg-secondary px-2 font-semibold text-primary-foreground hover:bg-secondary/90;
 	}
+
 	p {
 		@apply text-pretty text-justify;
 	}
+
 	a,
 	h1,
 	h2,
@@ -87,19 +81,23 @@
 	strong {
 		@apply text-foreground;
 	}
+
 	details {
 		@apply border border-border ~px-4/8;
 	}
+
 	summary {
 		@apply font-semibold;
 	}
+
 	blockquote {
 		@apply font-serif font-bold text-primary ~text-sm/3xl;
 	}
+
 	details[open] summary {
 		@apply border border-l-0 border-r-0 border-t-0 border-border ~pt-4/8;
 	}
-	code,
+
 	th {
 		@apply text-primary;
 	}
