@@ -8,7 +8,7 @@ const policy = await getCollection("policy");
 ---
 
 <footer
-	class="mt-10 flex flex-col-reverse items-center justify-between border-t border-border pt-4 md:flex-row"
+	class="mt-10 flex flex-col-reverse items-center justify-evenly border-t border-border pt-4 md:flex-row"
 	transition:persist
 >
 	<a
@@ -30,7 +30,7 @@ const policy = await getCollection("policy");
 	<p>
 		&copy; {date} Naparajith.
 	</p>
-	<span class="flex flex-row justify-between ~gap-2/4">
+	<span class="flex flex-row md:flex-col justify-between scale-90 ~gap-2/4">
 		{
 			policy.map((policy) => (
 				<A
