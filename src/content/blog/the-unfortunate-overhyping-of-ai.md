@@ -1,0 +1,50 @@
+---
+title: The Unfortunate over-hyping of Artificial Intelligence
+description: AI has revolutionized the world in profound ways. But it's being portrayed unfairly and in the wrong light.
+created: 02-26-2025
+updated: 02-26-2025
+image: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.udacity.com%2Fblog%2Fwp-content%2Fuploads%2F2021%2F03%2FAdvanced-AI-Courses_Blog.jpeg&f=1&nofb=1&ipt=16dba86d008dd2a766ba0ff34bc6a64391a702d50b43440284cffd91d69827df&ipo=images
+image_source: udacity.com
+author: naparajith
+draft: false
+---
+
+Over the past few years, AI has made tremendous progress in innovation and growth, with the industry adopting it at an unprecedented rate. The release of ChatGPT 3.5 in 2023 marked a significant shift in how AI is perceived and used. The world has not been the same since.
+
+## The AI Boom
+
+The rapid growth of AI has led to a race to build newer, better AI models that can process larger inputs, provide results faster, and even reason and think on their own. These models are capable of providing solutions with a level of accuracy and depth never thought possible before.
+
+AI has also changed the way we learn and think. Ideation and creation have fundamentally changed since the commercial availability of capable LLMs and adjacent tooling. AI agents are a fundamentally new way of automating redundant interactions. And image generators have made it easier than before to produce high-quality artwork in any style we may choose, with minimal effort.
+
+In short, AI has made the average computer engineer's life much easier.
+
+## The AI Doomsday Predictions
+
+However, this growth has also led to a host of doomsday predictions. Many people believe that AI will take over the world, replace human jobs, and even break through our safety nets and defense systems. These predictions are not only alarming but also unrealistic.
+
+There have been curious cases of AI "hallucination" or AI "bypassing training safeguards", like when Microsoft CoPilot asked a journalist to leave their wife or Google Gemini asked people to consume rocks as food. Or even the <a href="https://www.businessinsider.com/interview-with-sophia-ai-robot-hanson-said-it-would-destroy-humans-2017-11" target="_blank">curious case</a> of Sophia, who once said some "interesting" things.
+
+But it is very hard to say what the future holds when we are still in the early stages of understanding and developing AI. We aren't close to getting the answers to our questions without hallucinations, let alone an AGI that wants to do "questionable" things to humans.
+
+Researchers have been taking the appropriate precautions to ensure that we cut out the issues at the source and early on, before it becomes too serious and too big to be dealt with effectively. For a sample, you might want to read OpenAI's <a href="https://openai.com/index/operator-system-card/" target="_blank">Operator System Cards</a>, <a href="https://openai.com/index/deep-research-system-card/" target="_blank">Deep Research System Cards</a> and how they take AI safety very seriously.
+
+## Setting the stage
+
+I would like to set up a scenario that effectively showcases our misplaced expectations on AI. Imagine a company X, that wants to start using AI on a large scale to cut down on employee costs. They decide that paying for a Devin subscription will help boost the productivity of all of their employees, and also eliminate those pesky junior engineers, who take a lot of time and resources to train, with no guarantee that they will stay with the company for a long time.
+
+Let's assume that the average salary for a junior software engineer in India is about ₹7,29,264 per year, which amounts to about ₹60,772 per month. Let's make a bold assumption that Devin costs $500 per month for each user (it may be cheaper in corporate plans, but let's ignore it for simplicity sake). This translates to roughly ₹43,558 per month. Already cheaper than that junior.
+
+But there's more, because with humans comes human resources. The cost of maintaining a junior engineer also includes setting up a workspace, providing the necessary hardware, management layers, healthcare etc. This is purely overhead for the corporation, which adds to the cost on top of the salary being paid. So Devin is so far looking to be an amazing option.
+
+Here is where almost everyone makes a mistake. The company assumes that Devin, who is cheaper, will increase productivity by 100% (which is not true). There is a sharp contrast to what Devin is and what Devin can actually do. And once it is deployed into internal systems after removing junior engineers, Company X finally realizes that they just made a huge mistake. Because not only is Devin not as efficient as they assumed, but it is also stagnant in terms of adapting to new situations, both of which could be done easily by a junior engineer (given enough time and guidance).
+
+## The Unspoken Truth of AI
+
+And this is the unspoken truth in this entire conversation. A truth that changes the way we view AI. The almost unrealistic expectations that we have placed on AI have turned what should have been a tool to enhance our productivity into something it was never meant to be: an alternate or substitute for human thought and effort.
+
+Students use AI to fill out their homework, programmers think they can build an entire application by prompting, anyone who can generate an AI image is considered an artist, and the worst offenders, those who want to replace human effort with AI in places they shouldn't be. It has become a pandemic, a genocide of creative thought amongst beginners in the field, with no possibility of developing an immunity to it.
+
+The reality is that you will not lose your job because of AI; human greed to cut costs, maximize profits, and eliminate bottlenecks caused by the very essence of human nature will ensure that you lose your job. Today, it may be due to AI, but tomorrow, it might be due to something else.
+
+This is a silent pandemic that has risen with the dawn of AI. With the release of better and more capable models, it is not only spreading to more humans but is becoming more severe in humans who are already dependent on AI for more than they should be. It is time for us to take a step back and reevaluate our relationship with AI.

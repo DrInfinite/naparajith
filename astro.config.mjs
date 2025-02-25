@@ -11,12 +11,7 @@ import ReadingTime from "./reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-	adapter: vercel({
-		isr: {
-			expiration: 60 * 60,
-		},
-		devImageService: "sharp",
-	}),
+	adapter: vercel(),
 	image: {
 		remotePatterns: [
 			{ protocol: "https", hostname: "avatars.githubusercontent.com" },
@@ -47,6 +42,7 @@ export default defineConfig({
 		"/bio": "/profile",
 		"/indian-legends": "/legends",
 		"/quotes": "/quotes-i-like",
+		"/contact": "/quick-view",
 	},
 	experimental: {
 		clientPrerender: true,

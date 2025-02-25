@@ -1,17 +1,32 @@
 ---
+export const prerender = false;
+
 import { GithubProfile } from "@/actions/github-profile";
 import A from "@/components/A.astro";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import { getCollection, getEntry } from "astro:content";
 
 const github = await GithubProfile();
 const learning = [
 	"How to read large codebases without getting lost?",
 	"How do memory-corruption vulnerabilities work?",
+	"Ethical exploitation of web applications",
 	"Building a programming language from scratch using LLVM",
-	"How to prevent DDoS attacks on various types of systems?",
-	"How the hell does a Syscall work?",
+	"An in-depth explanation of how the hell a Syscall works",
+	"An in-depth explanation of how to build Firefox extensions.",
+	"Reading a codebase without getting lost or stuck.",
 ];
+
+const quotes = await getCollection("quotes");
+quotes.sort((a, b) => a.data.author.localeCompare(b.data.author));
+const quote = quotes[Math.floor(Math.random() * quotes.length)];
+
+let posts = await getCollection("blog");
+posts = posts.filter((acc) => acc.data.draft !== true);
+const post = posts[Math.floor(Math.random() * posts.length)];
+
+const author = await getEntry(post.data.author);
 ---
 
 <Layout
@@ -44,14 +59,13 @@ const learning = [
 		<p><strong>{github.bio}</strong></p>
 	</article>
 	<div
-		class="flex flex-wrap justify-evenly rounded-full border border-border ~gap-2/4 ~p-2/4"
+		class="flex flex-wrap justify-evenly rounded-lg border border-border ~gap-2/4 ~p-2/4"
 	>
 		<A href="/profile" title="Bio">Profile</A>
 		<A href="/quick-view" title="Quick View"> Quick View </A>
 		<A href={"https://flowcv.com/resume/mdrssqq018"} target={"_blank"}>
 			Resume
 		</A>
-		<A href="/contact" title="Contact">Contact</A>
 		<A href="/blog" title="Blog">Blog</A>
 		<A href="/quotes-i-like" title="Quotes">Quotes</A>
 	</div>
@@ -64,6 +78,46 @@ const learning = [
 			hosted as a repository on GitHub. The site is deployed, hosted and
 			distributed using Vercel.
 		</p>
+		<hr />
+		<h3>A random quote that I like</h3>
+		<figure class="place-content-center rounded-lg border border-border p-8">
+			<blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
+			<figcaption>
+				<cite>
+					-{" "}
+					<a
+						href={quote.data.cite}
+						title={`${quote.data.author} - ${quote.data.cite}`}
+						target="_blank"
+						class="text-inherit no-underline"
+					>
+						{quote.data.author}
+					</a>
+				</cite>
+			</figcaption>
+			<div class="float-end">
+				<A href="/quotes-i-like" title="Quotes">more like this</A>
+			</div>
+		</figure>
+
+		<h3>A random blog post</h3>
+		<a
+			href={`/blog/${post.id}`}
+			class="flex w-full flex-col justify-evenly rounded-lg border border-border decoration-transparent hover:bg-foreground/10"
+		>
+			<article class="flex flex-col ~gap-2/4 ~p-2/4">
+				<h4 class="-my-px" transition:name="post-title">
+					{post.data.title}
+				</h4>
+				<small class="-my-px line-clamp-2" transition:name="post-description">
+					{post.data.description}
+				</small>
+			</article>
+			<article class="flex justify-between text-white/60 ~p-2/4">
+				<small>{post.data.created.toDateString()}</small>
+				<small>{author.data.name}</small>
+			</article>
+		</a>
 		<hr />
 		<div>
 			<p>
@@ -81,11 +135,7 @@ const learning = [
 					the passage of time.
 				</blockquote>
 				<figcaption>
-					<cite>
-						- <strong class="text-inherit">
-							Unknown Sanskrit Shloka
-						</strong></cite
-					>
+					<cite> - <strong class="text-inherit"> Unknown </strong></cite>
 				</figcaption>
 			</figure>
 			<p>

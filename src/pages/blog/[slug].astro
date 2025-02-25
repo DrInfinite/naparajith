@@ -23,6 +23,38 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 	title={`${post.data.title}`}
 	description=`Blog Post: ${post.data.title} - ${[post.data.description]}`
 >
+	<h1 class="text-center" transition:name="post-title">
+		{post.data.title}
+	</h1>
+	<div class="flex flex-grow flex-col justify-evenly ~gap-4/8">
+		<h4 transition:name="post-description">{post.data.description}</h4>
+		<a
+			href={author.data.social}
+			target="_blank"
+			title={author.data.name}
+			class="flex flex-row items-center justify-center rounded-lg border border-border no-underline ~-my-2/4 ~gap-2/4 hover:bg-foreground/10"
+		>
+			<Image
+				src={author.data.image}
+				alt={author.data.name}
+				inferSize
+				loading={"lazy"}
+				decoding={"async"}
+				width={48}
+				height={48}
+				class="rounded-full ~-my-2/4 ~size-6/12"
+			/>
+			<p>{author.data.name}</p>
+			<small class="text-white/60">{author.data.occupation}</small>
+		</a>
+		<div
+			class="flex flex-row flex-wrap justify-between rounded-lg border border-border ~-mb-2/4 ~px-4/8 ~py-2/4"
+		>
+			<strong>{remarkPluginFrontmatter.minutesRead}</strong>
+			<strong>{post.data.created.toDateString().slice(4)}</strong>
+			<strong>{remarkPluginFrontmatter.words} words</strong>
+		</div>
+	</div>
 	<figure>
 		<Image
 			src={post.data.image}
@@ -31,7 +63,9 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 			width={1920}
 			height={1080}
 			loading="eager"
+			decoding={"async"}
 			class="aspect-auto w-full"
+			transition:name="image"
 		/>
 		<figcaption class="text-center">
 			This image comes from <A
@@ -43,32 +77,5 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 			</A>
 		</figcaption>
 	</figure>
-	<h1 class="text-center">
-		{post.data.title}
-	</h1>
-	<a
-		href={author.data.social}
-		target="_blank"
-		title={author.data.name}
-		class="flex flex-row items-center justify-center no-underline ~-my-2/4 ~gap-2/4"
-	>
-		<Image
-			src={author.data.image}
-			alt={author.data.name}
-			inferSize
-			loading={"lazy"}
-			width={48}
-			height={48}
-			class="rounded-full ~-my-2/4 ~size-6/12"
-		/>
-		<p>{author.data.name}</p>
-		<small class="text-white/60">{author.data.occupation}</small>
-	</a>
-	<div class="flex flex-row flex-wrap justify-between ~-mb-2/4">
-		<p>Created: <strong>{post.data.created.toDateString()}</strong></p>
-		<p>
-			Reading Time: <strong>{remarkPluginFrontmatter.minutesRead}</strong>
-		</p>
-	</div>
 	<Content />
 </Layout>
