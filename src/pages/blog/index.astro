@@ -12,7 +12,7 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 	description="The Official Blog for Naparajith, a Software Engineer from India"
 >
 	<div
-		class="flex h-[60vh] flex-row flex-wrap place-content-center justify-evenly ~gap-2/4"
+		class="flex min-h-[60vh] flex-row flex-wrap place-content-center justify-evenly ~gap-2/4"
 	>
 		{
 			posts.map(async (post) => (
@@ -27,8 +27,10 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 							inferSize
 							width={1920}
 							height={1080}
+							decoding={"async"}
 							loading={"eager"}
-							class="-my-px ~rounded-xl"
+							class="-my-px aspect-auto w-full ~rounded-xl"
+							transition:name="image"
 						/>
 					</div>
 					<article class="flex justify-between text-white/60 ~p-2/4">
@@ -36,12 +38,16 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 						<small>{(await getEntry(post.data.author)).data.name}</small>
 					</article>
 					<article class="flex flex-col ~gap-2/4 ~p-2/4">
-						<h3 class="-my-px">{post.data.title}</h3>
-						<small class="-my-px truncate">{post.data.description}</small>
+						<h3 class="-my-px" transition:name="post-title">
+							{post.data.title}
+						</h3>
+						<small class="-my-px truncate" transition:name="post-description">
+							{post.data.description}
+						</small>
 					</article>
 				</a>
 			))
 		}
-		<h1>Coming Soon!</h1>
+		<!-- <h1>Coming Soon!</h1> -->
 	</div>
 </Layout>

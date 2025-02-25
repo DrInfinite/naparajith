@@ -23,29 +23,10 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 	title={`${post.data.title}`}
 	description=`Blog Post: ${post.data.title} - ${[post.data.description]}`
 >
-	<figure>
-		<Image
-			src={post.data.image}
-			alt={post.data.title}
-			inferSize
-			width={1920}
-			height={1080}
-			loading="eager"
-			class="aspect-auto w-full"
-		/>
-		<figcaption class="text-center">
-			This image comes from <A
-				href={post.data.image}
-				title={post.data.title}
-				target="_blank"
-			>
-				{post.data.image_source}
-			</A>
-		</figcaption>
-	</figure>
-	<h1 class="text-center">
+	<h1 class="text-center" transition:name="post-title">
 		{post.data.title}
 	</h1>
+	<h4 transition:name="post-description">{post.data.description}</h4>
 	<a
 		href={author.data.social}
 		target="_blank"
@@ -57,6 +38,7 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 			alt={author.data.name}
 			inferSize
 			loading={"lazy"}
+			decoding={"async"}
 			width={48}
 			height={48}
 			class="rounded-full ~-my-2/4 ~size-6/12"
@@ -65,10 +47,34 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 		<small class="text-white/60">{author.data.occupation}</small>
 	</a>
 	<div class="flex flex-row flex-wrap justify-between ~-mb-2/4">
-		<p>Created: <strong>{post.data.created.toDateString()}</strong></p>
+		<p>
+			Created: <strong>{post.data.created.toDateString()}</strong>
+		</p>
 		<p>
 			Reading Time: <strong>{remarkPluginFrontmatter.minutesRead}</strong>
 		</p>
 	</div>
+	<figure>
+		<Image
+			src={post.data.image}
+			alt={post.data.title}
+			inferSize
+			width={1920}
+			height={1080}
+			loading="eager"
+			decoding={"async"}
+			class="aspect-auto w-full"
+			transition:name="image"
+		/>
+		<figcaption class="text-center">
+			This image comes from <A
+				href={post.data.image}
+				title={post.data.title}
+				target="_blank"
+			>
+				{post.data.image_source}
+			</A>
+		</figcaption>
+	</figure>
 	<Content />
 </Layout>
