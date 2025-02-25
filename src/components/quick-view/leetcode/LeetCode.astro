@@ -1,0 +1,18 @@
+---
+import { LeetcodeProfile } from "@/actions/leetcode-profile";
+
+export const leetcode = await LeetcodeProfile();
+---
+
+<h3>LeetCode Stats</h3>
+<div
+	class="flex flex-wrap justify-evenly rounded-full border border-border ~gap-2/4 ~p-2/4"
+>
+	<span>Rank: <strong>{leetcode.profile?.ranking}</strong></span>
+	<span>
+		Solved: <strong>
+			{leetcode.completedCount.total} ({leetcode.completedPercentage.total})
+		</strong>
+	</span>
+	<span>Rating: <strong>{leetcode.profile?.starRating}</strong></span>
+</div>

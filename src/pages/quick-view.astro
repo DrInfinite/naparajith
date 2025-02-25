@@ -1,13 +1,14 @@
 ---
 export const prerender = false;
 
-import { GithubProfile } from "@/actions/github-profile";
-import { LeetcodeProfile } from "@/actions/leetcode-profile";
 import A from "@/components/A.astro";
+import GitHub, { github } from "@/components/quick-view/github/GitHub.astro";
+import GitHubLoading from "@/components/quick-view/github/GitHubLoading.astro";
+import LeetCode, {
+	leetcode,
+} from "@/components/quick-view/leetcode/LeetCode.astro";
+import LeetCodeLoading from "@/components/quick-view/leetcode/LeetCodeLoading.astro";
 import Layout from "@/layouts/Layout.astro";
-
-const github = await GithubProfile();
-const leetcode = await LeetcodeProfile();
 ---
 
 <Layout
@@ -68,7 +69,7 @@ const leetcode = await LeetcodeProfile();
 		</span>
 	</div>
 
-	<h3>GitHub Stats</h3>
+	<!-- <h3>GitHub Stats</h3>
 	<div>
 		<div
 			class="flex flex-wrap justify-evenly rounded-full border border-border ~gap-2/4 ~p-2/4"
@@ -77,9 +78,9 @@ const leetcode = await LeetcodeProfile();
 			<span>Followers: <strong>{github.followers}</strong></span>
 			<span>Following: <strong>{github.following}</strong></span>
 		</div>
-	</div>
+	</div> -->
 
-	<h3>LeetCode Stats</h3>
+	<!-- <h3>LeetCode Stats</h3>
 	<div
 		class="flex flex-wrap justify-evenly rounded-full border border-border ~gap-2/4 ~p-2/4"
 	>
@@ -90,7 +91,15 @@ const leetcode = await LeetcodeProfile();
 			</strong>
 		</span>
 		<span>Rating: <strong>{leetcode.profile?.starRating}</strong></span>
-	</div>
+	</div> -->
+
+	<GitHub server:defer>
+		<GitHubLoading slot="fallback" />
+	</GitHub>
+
+	<LeetCode server:defer>
+		<LeetCodeLoading slot="fallback" />
+	</LeetCode>
 
 	<h2>Contact</h2>
 	<p>
