@@ -83,7 +83,7 @@
 	}
 
 	details {
-		@apply border border-border ~px-4/8;
+		@apply border border-border ~p-4/8;
 	}
 
 	summary {
@@ -99,7 +99,7 @@
 	}
 
 	details[open] summary {
-		@apply border border-l-0 border-r-0 border-t-0 border-border ~pt-4/8;
+		@apply border border-l-0 border-r-0 border-t-0 border-border pb-0;
 	}
 
 	th {
