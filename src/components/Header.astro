@@ -20,7 +20,7 @@ const pathname = Astro.url.pathname;
 
 		<span>
 			{
-				pathname.match(/\/blog\/.*/) && (
+				pathname.match(/\/blog\/[^/]+/) && (
 					<button class="rounded-full px-4" onclick="history.back()">
 						<span class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent">
 							&larr; Back
