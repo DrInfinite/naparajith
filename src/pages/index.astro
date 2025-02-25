@@ -79,49 +79,6 @@ const author = await getEntry(post.data.author);
 			distributed using Vercel.
 		</p>
 		<hr />
-		<div>
-			<p>
-				When I was a kid, I was told a really inspiring quote about learning,
-				which goes something like this:
-			</p>
-			<figure>
-				<blockquote
-					cite={process.env.NODE_ENV === "development"
-						? "http://localhost:4321/"
-						: "https://naparajith.in/"}
-				>
-					From the teacher is learned a quarter, a quarter from the student's
-					own intelligence, a quarter from fellow students, and a quarter with
-					the passage of time.
-				</blockquote>
-				<figcaption>
-					<cite>
-						- <strong class="text-inherit">
-							Unknown Sanskrit Shloka
-						</strong></cite
-					>
-				</figcaption>
-			</figure>
-			<p>
-				I intened to make learning my long-term commitment, and that takes a lot
-				of support, effort and cooperation. Here are a few things I'm interested
-				in getting help on (not an exhaustive list):
-			</p>
-			<ul>
-				{learning.map((concept) => <li>{concept}</li>)}
-			</ul>
-			<p>
-				If you would like to help me out in learning any of these concepts,
-				please write to <A
-					href="mailto:naparajith@duck.com"
-					title="E-Mail Address"
-					target="_blank"
-				>
-					naparajith@duck.com.
-				</A>
-			</p>
-		</div>
-
 		<h3>A random quote that I like</h3>
 		<figure class="place-content-center rounded-lg border border-border p-8">
 			<blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
@@ -146,7 +103,7 @@ const author = await getEntry(post.data.author);
 		<h3>A random blog post</h3>
 		<a
 			href={`/blog/${post.id}`}
-			class="flex w-full flex-col justify-evenly rounded-lg border border-border decoration-transparent"
+			class="flex w-full flex-col justify-evenly rounded-lg border border-border decoration-transparent hover:bg-foreground/10"
 		>
 			<article class="flex flex-col ~gap-2/4 ~p-2/4">
 				<h4 class="-my-px" transition:name="post-title">
@@ -161,5 +118,44 @@ const author = await getEntry(post.data.author);
 				<small>{author.data.name}</small>
 			</article>
 		</a>
+		<hr />
+		<div>
+			<p>
+				When I was a kid, I was told a really inspiring quote about learning,
+				which goes something like this:
+			</p>
+			<figure>
+				<blockquote
+					cite={process.env.NODE_ENV === "development"
+						? "http://localhost:4321/"
+						: "https://naparajith.in/"}
+				>
+					From the teacher is learned a quarter, a quarter from the student's
+					own intelligence, a quarter from fellow students, and a quarter with
+					the passage of time.
+				</blockquote>
+				<figcaption>
+					<cite> - <strong class="text-inherit"> Unknown </strong></cite>
+				</figcaption>
+			</figure>
+			<p>
+				I intened to make learning my long-term commitment, and that takes a lot
+				of support, effort and cooperation. Here are a few things I'm interested
+				in getting help on (not an exhaustive list):
+			</p>
+			<ul>
+				{learning.map((concept) => <li>{concept}</li>)}
+			</ul>
+			<p>
+				If you would like to help me out in learning any of these concepts,
+				please write to <A
+					href="mailto:naparajith@duck.com"
+					title="E-Mail Address"
+					target="_blank"
+				>
+					naparajith@duck.com.
+				</A>
+			</p>
+		</div>
 	</main>
 </Layout>
