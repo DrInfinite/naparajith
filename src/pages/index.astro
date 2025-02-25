@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import { GithubProfile } from "@/actions/github-profile";
 import A from "@/components/A.astro";
 import { Image } from "astro:assets";
@@ -64,7 +66,6 @@ const author = await getEntry(post.data.author);
 		<A href={"https://flowcv.com/resume/mdrssqq018"} target={"_blank"}>
 			Resume
 		</A>
-		<A href="/contact" title="Contact">Contact</A>
 		<A href="/blog" title="Blog">Blog</A>
 		<A href="/quotes-i-like" title="Quotes">Quotes</A>
 	</div>
