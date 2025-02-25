@@ -11,7 +11,9 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 	title="Blog"
 	description="The Official Blog for Naparajith, a Software Engineer from India"
 >
-	<div class="flex flex-row flex-wrap justify-evenly ~gap-2/4">
+	<div
+		class="flex h-[60vh] flex-row flex-wrap place-content-center justify-evenly ~gap-2/4"
+	>
 		{
 			posts.map(async (post) => (
 				<a
