@@ -19,15 +19,6 @@ import Layout from "@/layouts/Layout.astro";
 	>
 		<span>
 			<A
-				href="https://www.linkedin.com/in/naparajith/"
-				title="LinkedIn - Naparajith T L"
-				target="_blank"
-			>
-				LinkedIn
-			</A>
-		</span>
-		<span>
-			<A
 				href={"https://github.com/DrInfinite"}
 				title={`GitHub - DrInfinite`}
 				target="_blank"
@@ -45,7 +36,13 @@ import Layout from "@/layouts/Layout.astro";
 			</A>
 		</span>
 		<span>
-			<A href="/" title="Portfolio - Home"> Portfolio </A>
+			<A
+				href="https://www.linkedin.com/in/naparajith/"
+				title="LinkedIn - Naparajith T L"
+				target="_blank"
+			>
+				LinkedIn
+			</A>
 		</span>
 		<span>
 			<A
@@ -55,6 +52,12 @@ import Layout from "@/layouts/Layout.astro";
 			>
 				BlueSky
 			</A>
+		</span>
+		<span>
+			<A href="/" title="Portfolio - Home"> Portfolio </A>
+		</span>
+		<span>
+			<A href="/blog" title="Portfolio - Blog"> Blog </A>
 		</span>
 	</div>
 
@@ -69,6 +72,22 @@ import Layout from "@/layouts/Layout.astro";
 	<h2>Contact</h2>
 	<p>
 		Get in touch with me through this form or by using the email
-		<A href="mailto:naparajith@duck.com"> naparajith@duck.com</A>
+		<A href="mailto:naparajith@duck.com"> naparajith@duck.com</A> or one of the social
+		platforms mentioned above.
 	</p>
+
+	<details>
+		<summary>Why is there no Contact Form?</summary>
+		<p>
+			A contact form requires a good amount of client-side JS. I currently have
+			no idea on how to make this client-side code as transparent and as open as
+			possible to the end user. I also don't have an idea as to how to pull this
+			off without any JS (if that's even possible). Therefore, for the moment,
+			so such form exists.
+		</p>
+		<p>
+			A contact form may exist in the future, but not now. And no guarantee is
+			made on a timeline of when it will.
+		</p>
+	</details>
 </Layout>
