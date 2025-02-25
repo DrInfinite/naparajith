@@ -1,13 +1,12 @@
 ---
 export const prerender = false;
 
-import { GithubProfile } from "@/actions/github-profile";
-import { LeetcodeProfile } from "@/actions/leetcode-profile";
 import A from "@/components/A.astro";
+import GitHub from "@/components/quick-view/github/GitHub.astro";
+import GitHubLoading from "@/components/quick-view/github/GitHubLoading.astro";
+import LeetCode from "@/components/quick-view/leetcode/LeetCode.astro";
+import LeetCodeLoading from "@/components/quick-view/leetcode/LeetCodeLoading.astro";
 import Layout from "@/layouts/Layout.astro";
-
-const github = await GithubProfile();
-const leetcode = await LeetcodeProfile();
 ---
 
 <Layout
@@ -20,15 +19,6 @@ const leetcode = await LeetcodeProfile();
 	>
 		<span>
 			<A
-				href="https://flowcv.com/resume/mdrssqq018"
-				title="Resume"
-				target="_blank"
-			>
-				Resume
-			</A>
-		</span>
-		<span>
-			<A
 				href="https://www.linkedin.com/in/naparajith/"
 				title="LinkedIn - Naparajith T L"
 				target="_blank"
@@ -38,8 +28,8 @@ const leetcode = await LeetcodeProfile();
 		</span>
 		<span>
 			<A
-				href={github.html_url}
-				title={`GitHub - ${github.login}`}
+				href={"https://github.com/DrInfinite"}
+				title={`GitHub - DrInfinite`}
 				target="_blank"
 			>
 				GitHub
@@ -48,7 +38,7 @@ const leetcode = await LeetcodeProfile();
 		<span>
 			<A
 				href={"https://leetcode.com/u/DrInfinite/"}
-				title={`LeetCode - ${leetcode.profile?.realName}`}
+				title={`LeetCode - Naparajith T L`}
 				target="_blank"
 			>
 				LeetCode
@@ -68,29 +58,13 @@ const leetcode = await LeetcodeProfile();
 		</span>
 	</div>
 
-	<h3>GitHub Stats</h3>
-	<div>
-		<div
-			class="flex flex-wrap justify-evenly rounded-full border border-border ~gap-2/4 ~p-2/4"
-		>
-			<span>Repositories: <strong>{github.public_repos}</strong></span>
-			<span>Followers: <strong>{github.followers}</strong></span>
-			<span>Following: <strong>{github.following}</strong></span>
-		</div>
-	</div>
+	<GitHub server:defer>
+		<GitHubLoading slot="fallback" />
+	</GitHub>
 
-	<h3>LeetCode Stats</h3>
-	<div
-		class="flex flex-wrap justify-evenly rounded-full border border-border ~gap-2/4 ~p-2/4"
-	>
-		<span>Rank: <strong>{leetcode.profile?.ranking}</strong></span>
-		<span>
-			Solved: <strong>
-				{leetcode.completedCount.total} ({leetcode.completedPercentage.total})
-			</strong>
-		</span>
-		<span>Rating: <strong>{leetcode.profile?.starRating}</strong></span>
-	</div>
+	<LeetCode server:defer>
+		<LeetCodeLoading slot="fallback" />
+	</LeetCode>
 
 	<h2>Contact</h2>
 	<p>

@@ -41,7 +41,7 @@ export default defineConfig({
 		syntaxHighlight: "shiki",
 		shikiConfig: { theme: "catppuccin-mocha", langAlias: { cc: "cpp" } },
 	},
-	prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
+	prefetch: { prefetchAll: true, defaultStrategy: "load" },
 	redirects: {
 		"/links": "/quick-view",
 		"/bio": "/profile",
