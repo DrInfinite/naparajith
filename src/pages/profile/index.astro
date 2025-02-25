@@ -16,7 +16,7 @@ const translations = [
 	{ lang: "Tamil", name: "நபராஜித்" },
 	{ lang: "Telugu", name: "నాపరాజిత్" },
 	{ lang: "Tulu", name: "ನಪರಾಜಿತ್" },
-];
+].toSorted((a, b) => a.lang.localeCompare(b.lang));
 ---
 
 <Layout
