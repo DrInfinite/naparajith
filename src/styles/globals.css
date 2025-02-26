@@ -95,7 +95,7 @@
 	}
 
 	cite {
-		@apply font-sans;
+		@apply bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text font-sans text-transparent;
 	}
 
 	details[open] summary {
