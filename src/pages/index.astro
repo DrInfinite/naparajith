@@ -51,11 +51,10 @@ const author = await getEntry(post.data.author);
 			</span>
 
 			<figcaption
-				class="bg-background bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-center text-transparent ~p-2/4"
+				class="bg-background text-center font-semibold text-foreground ~p-2/4"
 			>
-				This image comes from my <A href={github.html_url} target="_blank">
-					GitHub Profile
-				</A>
+				<span class="italic">This image comes from my</span>
+				<A href={github.html_url} target="_blank"> GitHub Profile </A>
 			</figcaption>
 		</figure>
 		<p><strong>{github.bio}</strong></p>
@@ -115,7 +114,9 @@ const author = await getEntry(post.data.author);
 					{post.data.description}
 				</small>
 			</article>
-			<article class="flex justify-between text-white/60 ~p-2/4">
+			<article
+				class="flex justify-between bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent ~p-2/4"
+			>
 				<small>{post.data.created.toDateString()}</small>
 				<small>{author.data.name}</small>
 			</article>

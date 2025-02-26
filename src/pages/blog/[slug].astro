@@ -45,7 +45,10 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 				class="rounded-full ~-my-2/4 ~size-6/12"
 			/>
 			<p>{author.data.name}</p>
-			<small class="text-white/60">{author.data.occupation}</small>
+			<small
+				class="bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
+				>{author.data.occupation}</small
+			>
 		</a>
 		<div
 			class="flex flex-row flex-wrap justify-between rounded-lg border border-border ~-mb-2/4 ~px-4/8 ~py-2/4"
