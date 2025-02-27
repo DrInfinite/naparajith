@@ -65,6 +65,8 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 			src={post.data.image}
 			alt={post.data.title}
 			inferSize
+			width="1920"
+			height="1080"
 			formats={["webp", "avif"]}
 			loading={"eager"}
 			decoding={"async"}
