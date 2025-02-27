@@ -22,6 +22,7 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 <Layout
 	title={`${post.data.title}`}
 	description=`Blog Post: ${post.data.title} - ${[post.data.description]}`
+	ogImage={post.data.image}
 >
 	<h1 class="text-center" transition:name="post-title">
 		{post.data.title}
