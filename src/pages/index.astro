@@ -81,7 +81,9 @@ const author = await getEntry(post.data.author);
 		</p>
 		<hr />
 		<h3>A random quote that I like</h3>
-		<figure class="place-content-center rounded-lg border border-border p-8">
+		<figure
+			class="place-content-center rounded-lg border border-border ~gap-2/4 ~p-2/4"
+		>
 			<blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
 			<figcaption>
 				<cite>

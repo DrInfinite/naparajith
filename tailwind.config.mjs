@@ -57,10 +57,10 @@ export default {
 	plugins: [
 		require("@tailwindcss/typography"),
 		fluid,
-		plugin(function ({ addBase }) {
-			addBase({
-				html: { fontSize: "15px" },
-			});
-		}),
+		// plugin(function ({ addBase }) {
+		// 	addBase({
+		// 		html: { fontSize: "15px" },
+		// 	});
+		// }),
 	],
 };

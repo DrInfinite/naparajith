@@ -2,7 +2,7 @@
 import A from "@/components/A.astro";
 import Layout from "@/layouts/Layout.astro";
 import type { GetStaticPaths } from "astro";
-import { Image } from "astro:assets";
+import { Image, Picture } from "astro:assets";
 import { getCollection, getEntry, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
@@ -59,13 +59,12 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 		</div>
 	</div>
 	<figure>
-		<Image
+		<Picture
 			src={post.data.image}
 			alt={post.data.title}
 			inferSize
-			width={1920}
-			height={1080}
-			loading="eager"
+			formats={["webp", "avif"]}
+			loading={"eager"}
 			decoding={"async"}
 			class="aspect-auto w-full"
 			transition:name="image"

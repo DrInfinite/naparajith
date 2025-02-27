@@ -59,7 +59,7 @@
 	}
 
 	body {
-		@apply prose prose-sm mx-auto scroll-smooth bg-background font-mono text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold;
+		@apply prose prose-sm mx-auto scroll-smooth bg-background font-serif text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold;
 	}
 
 	button {
@@ -95,7 +95,7 @@
 	}
 
 	cite {
-		@apply bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text font-sans text-transparent;
+		@apply bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent;
 	}
 
 	details[open] summary {
