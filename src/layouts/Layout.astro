@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
+import Image from "astro:assets";
 
 interface Props {
 	title: string;
@@ -10,7 +11,8 @@ interface Props {
 	ogImage?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, ogImage } = Astro.props;
+const defaultOgImage = "../images/arch-rainbow-1920x1080.png";
 ---
 
 <html lang="en">
@@ -27,7 +29,7 @@ const { title, description } = Astro.props;
 		<meta property="og:site_name" content="Naparajith" />
 		<meta property="og:title" content=`${title} | Naparajith` />
 		<meta property="og:url" content={Astro.url} />
-		<meta property="og:image" content={Astro.props.ogImage} />
+		<meta property="og:image" content={ogImage || defaultOgImage} />
 
 		<meta property="twitter:title" content=`${title} | Naparajith` />
 		<meta property="twitter:description" content={description} />
