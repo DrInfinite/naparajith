@@ -60,7 +60,7 @@ const author = await getEntry(post.data.author);
 		<p><strong>{github.bio}</strong></p>
 	</article>
 	<div
-		class="flex flex-wrap justify-evenly rounded-lg border border-border ~gap-2/4 ~p-2/4"
+		class="flex flex-wrap justify-evenly rounded-xl border border-border ~gap-2/4 ~p-2/4"
 	>
 		<A href="/profile" title="Bio">Profile</A>
 		<A href="/quick-view" title="Quick View"> Quick View </A>
@@ -79,10 +79,10 @@ const author = await getEntry(post.data.author);
 			hosted as a repository on GitHub. The site is deployed, hosted and
 			distributed using Vercel.
 		</p>
-		<hr />
+		<hr class="my-4 border-t-2 border-t-border" />
 		<h3>A random quote that I like</h3>
 		<figure
-			class="place-content-center rounded-lg border border-border ~gap-2/4 ~p-2/4"
+			class="place-content-center rounded-xl border border-border ~gap-2/4 ~p-2/4"
 		>
 			<blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
 			<figcaption>
@@ -102,11 +102,10 @@ const author = await getEntry(post.data.author);
 				<A href="/quotes-i-like" title="Quotes">more like this</A>
 			</div>
 		</figure>
-
 		<h3>A random blog post</h3>
 		<a
 			href={`/blog/${post.id}`}
-			class="flex w-full flex-col justify-evenly rounded-lg border border-border decoration-transparent hover:bg-foreground/10"
+			class="flex w-full flex-col justify-evenly rounded-xl border border-border decoration-transparent hover:bg-foreground/10"
 		>
 			<article class="flex flex-col ~gap-2/4 ~p-2/4">
 				<h4 class="-my-px" transition:name="post-title">
@@ -123,7 +122,7 @@ const author = await getEntry(post.data.author);
 				<small>{author.data.name}</small>
 			</article>
 		</a>
-		<hr />
+		<hr class="my-4 border-t-2 border-t-border" />
 		<div>
 			<p>
 				When I was a kid, I was told a really inspiring quote about learning,

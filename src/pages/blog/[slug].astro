@@ -32,7 +32,7 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 			href={author.data.social}
 			target="_blank"
 			title={author.data.name}
-			class="flex flex-row items-center justify-center rounded-lg border border-border no-underline ~-my-2/4 ~gap-2/4 hover:bg-foreground/10"
+			class="flex flex-row items-center justify-center rounded-xl border border-border no-underline ~-my-2/4 ~gap-2/4 hover:bg-foreground/10"
 		>
 			<Image
 				src={author.data.image}
@@ -51,7 +51,7 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 			>
 		</a>
 		<div
-			class="flex flex-row flex-wrap justify-between rounded-lg border border-border ~-mb-2/4 ~px-4/8 ~py-2/4"
+			class="flex flex-row flex-wrap justify-between rounded-xl border border-border ~-mb-2/4 ~px-4/8 ~py-2/4"
 		>
 			<strong>{remarkPluginFrontmatter.minutesRead}</strong>
 			<strong>{post.data.created.toDateString().slice(4)}</strong>
@@ -66,7 +66,7 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 			formats={["webp", "avif"]}
 			loading={"eager"}
 			decoding={"async"}
-			class="aspect-auto w-full"
+			class="aspect-auto w-full border border-border ~rounded-none/xl"
 			transition:name="image"
 		/>
 		<figcaption class="text-center">

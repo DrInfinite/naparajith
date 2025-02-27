@@ -18,7 +18,7 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 			posts.map(async (post) => (
 				<a
 					href={`/blog/${post.id}`}
-					class="flex w-full flex-col justify-evenly rounded-lg border border-border decoration-transparent hover:bg-foreground/10"
+					class="flex w-full flex-col justify-evenly rounded-xl border border-border decoration-transparent hover:bg-foreground/10"
 				>
 					<div class="p-2 ~rounded-xl">
 						<Image
@@ -29,7 +29,7 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 							height={1080}
 							decoding={"async"}
 							loading={"eager"}
-							class="-my-px aspect-auto w-full ~rounded-xl"
+							class="-my-px aspect-auto w-full border border-border ~rounded-none/xl"
 							transition:name="image"
 						/>
 					</div>
