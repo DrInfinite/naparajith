@@ -19,15 +19,6 @@ const pathname = Astro.url.pathname;
 		</div>
 
 		<span>
-			{
-				pathname.match(/\/blog\/[^/]+/) && (
-					<button class="rounded-full px-4" onclick="history.back()">
-						<span class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent">
-							&larr; Back
-						</span>
-					</button>
-				)
-			}
 			<button
 				class="rounded-full px-4"
 				onclick="window.open('https:\/\/flowcv.com/resume/mdrssqq018')"
