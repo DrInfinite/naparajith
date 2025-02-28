@@ -41,7 +41,7 @@ const author = await getEntry(post.data.author);
 			<span class="-my-px ~size-48/96">
 				<Image
 					alt={"DrInfinite"}
-					class="mx-auto scale-90 rounded-full"
+					class="mx-auto scale-90 ~rounded-none/2xl"
 					width={540}
 					height={540}
 					decoding={"async"}
@@ -60,7 +60,7 @@ const author = await getEntry(post.data.author);
 		<p><strong>{github.bio}</strong></p>
 	</article>
 	<div
-		class="flex flex-wrap justify-evenly rounded-xl border border-border ~gap-2/4 ~p-2/4"
+		class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
 	>
 		<A href="/profile" title="Bio">Profile</A>
 		<A href="/quick-view" title="Quick View"> Quick View </A>
@@ -82,7 +82,7 @@ const author = await getEntry(post.data.author);
 		<hr class="my-4 border-t-2 border-t-border" />
 		<h3>A random quote that I like</h3>
 		<figure
-			class="place-content-center rounded-xl border border-border ~gap-2/4 ~p-2/4"
+			class="place-content-center border border-border p-4 ~gap-2/4 ~rounded-none/xl"
 		>
 			<blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
 			<figcaption>
@@ -105,7 +105,7 @@ const author = await getEntry(post.data.author);
 		<h3>A random blog post</h3>
 		<a
 			href={`/blog/${post.id}`}
-			class="flex w-full flex-col justify-evenly rounded-xl border border-border decoration-transparent hover:bg-foreground/10"
+			class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~rounded-none/xl hover:bg-foreground/10"
 		>
 			<article class="flex flex-col ~gap-2/4 ~p-2/4">
 				<h4 class="-my-px" transition:name="post-title">
