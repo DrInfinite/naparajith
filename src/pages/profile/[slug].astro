@@ -16,8 +16,10 @@ const { Content } = await render(about);
 ---
 
 <Layout title={about.data.title} description={about.data.title}>
-	<h1>
-		{about.data.title}
-	</h1>
-	<Content />
+	<main class="min-h-[60vh]">
+		<h1>
+			{about.data.title}
+		</h1>
+		<Content />
+	</main>
 </Layout>
