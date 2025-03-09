@@ -1,15 +1,37 @@
+/**
+ * This website is only meant to showcase the work and and skills of the author,
+ * on a professional level. It also has a blog, containing the author's observations
+ * and opinions on various topics. The views expressed are the author's own.
+ * Copyright (C) 2024  T L Naparajith
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License Version 3 as published
+ * by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
+ *
+ * Contact me through electronic mail: <naparajith@duck.com>
+ */
+
 import { defineCollection, reference, z } from "astro:content";
 
 const blog = defineCollection({
-	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		created: z.coerce.date(),
-		image: z.string(),
-		image_source: z.string(),
-		author: reference("authors"),
-		draft: z.boolean(),
-	}),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.string(),
+			created: z.coerce.date(),
+			image: image(),
+			image_source: z.string(),
+			author: reference("authors"),
+			draft: z.boolean(),
+		}),
 });
 
 const policy = defineCollection({
@@ -42,24 +64,9 @@ const authors = defineCollection({
 
 const profile = defineCollection({ schema: z.object({ title: z.string() }) });
 
-const legends = defineCollection({
-	schema: z.object({
-		name: z.string(),
-		full_name: z.string(),
-		popular_name: z.string(),
-		born: z.union([z.coerce.date(), z.string()]),
-		died: z.union([z.coerce.date(), z.string()]),
-		description: z.string(),
-		opinion: z.string(),
-		image: z.string(),
-		image_source: z.string(),
-	}),
-});
-
 export const collections = {
 	authors: authors,
 	blog: blog,
-	"indian-legends": legends,
 	policy: policy,
 	profile: profile,
 	quotes: quotes,

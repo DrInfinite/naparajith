@@ -1,47 +1,60 @@
 ---
-import A from "@/components/A.astro";
-import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+/**
+ * This website is only meant to showcase the work and and skills of the author,
+ * on a professional level. It also has a blog, containing the author's observations
+ * and opinions on various topics. The views expressed are the author's own.
+ * Copyright (C) 2024  T L Naparajith
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License Version 3 as published
+ * by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
+ *
+ * Contact me through electronic mail: <naparajith@duck.com>
+ */
 
-const date = new Date().getFullYear();
-const policy = await getCollection("policy");
+import A from "@/components/A.astro";
 ---
 
 <footer
-	class="mt-10 flex flex-col-reverse items-center justify-evenly border-t border-border pt-4 md:flex-row"
+	class="flex flex-col-reverse items-center justify-evenly border-t border-border pt-4 ~my-6/12 md:flex-row"
 	transition:persist
 >
-	<a
-		href="https://brainmade.org/"
-		title="The Brainmade Mark"
-		target="_blank"
-		class="-m-6"
-	>
-		<Image
-			src="https://brainmade.org/white-logo.png"
-			alt={"This site was built without using AI"}
-			class="xs:scale-50 sm:scale-[60%] md:scale-[70%] lg:scale-[80%] xl:scale-90 2xl:scale-100"
-			width={160}
-			height={50}
-			inferSize
-			decoding={"async"}
-			loading={"eager"}
-		/>
-	</a>
-	<p>
-		&copy; {date} Naparajith.
+	<p class="text-pretty text-start">
+		<A
+			property="dct:title"
+			rel="cc:attributionURL"
+			href="https://www.naparajith.in/"
+		>
+			This site & its non-image content
+		</A> are licensed under <A
+			href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+			target="_blank"
+			rel="license noopener noreferrer"
+			style="display:inline-block;"
+		>
+			CC BY-NC-SA 4.0.
+		</A>
+		<span property="dct:title">All photos of me</span> are licensed under <A
+			href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1"
+			target="_blank"
+			rel="license noopener noreferrer"
+			style="dsplay:inline-block;"
+			>CC BY-NC-ND 4.0.
+		</A> &copy; 2024 by <A
+			rel="cc:attributionURL dct:creator"
+			property="cc:attributionName"
+			href="https://www.linkedin.com/in/naparajith/"
+			target="_blank"
+		>
+			Naparajith T L
+		</A>
 	</p>
-	<span class="flex flex-row justify-between ~gap-2/4 md:flex-col">
-		{
-			policy.map((policy) => (
-				<A
-					href={`/policy/${policy.id}`}
-					title={policy.data.title}
-					data-astro-prefetch="load"
-				>
-					{policy.data.title}
-				</A>
-			))
-		}
-	</span>
 </footer>
