@@ -98,7 +98,7 @@ const postImage = await getImage({ src: post.data.image, format: "webp" });
 			transition:name="image"
 		/>
 		<figcaption class="bg-background text-center text-foreground">
-			<span class="font-semibold italic">This image comes from </span><A
+			<span class="font-semibold italic">Image Source: </span><A
 				href={postImage.src}
 				title={post.data.title}
 				target="_blank"
