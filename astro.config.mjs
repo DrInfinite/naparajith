@@ -55,7 +55,7 @@ export default defineConfig({
 	markdown: {
 		remarkPlugins: [ReadingTime],
 		syntaxHighlight: "shiki",
-		shikiConfig: { theme: "catppuccin-mocha", langAlias: { cc: "cpp" } },
+		shikiConfig: { theme: "rose-pine", langAlias: { cc: "cpp" } },
 	},
 	prefetch: { prefetchAll: true, defaultStrategy: "load" },
 	redirects: {

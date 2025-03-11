@@ -19,6 +19,7 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
+import plugin from "tailwindcss/plugin";
 import fluid, { extract, fontSize, screens } from "fluid-tailwind";
 
 /** @type {import('tailwindcss').Config} */
@@ -73,10 +74,10 @@ export default {
 	plugins: [
 		require("@tailwindcss/typography"),
 		fluid,
-		// plugin(function ({ addBase }) {
-		// 	addBase({
-		// 		html: { fontSize: "15px" },
-		// 	});
-		// }),
+		plugin(function ({ addBase }) {
+			addBase({
+				html: { fontSize: "16px" },
+			});
+		}),
 	],
 };

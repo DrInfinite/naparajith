@@ -101,15 +101,18 @@ import Layout from "@/layouts/Layout.astro";
 		<details>
 			<summary>Why is there no Contact Form?</summary>
 			<p>
-				A contact form requires a good amount of client-side JS. I currently
-				have no idea on how to make this client-side code as transparent and as
-				open as possible to the end user. I also don't have an idea as to how to
-				pull this off without any JS (if that's even possible). Therefore, for
-				the moment, so such form exists.
+				A contact form requires the downloading and execution of client-side
+				JavaScript. While this can be implemented easily, the JS code will
+				become obfuscated on build.
+			</p>
+			<p>
+				This goes against my current vision to build a website that has little
+				to zero non-free and obfuscated JavaScript. Therefore, for the moment,
+				so such form exists.
 			</p>
 			<p>
 				A contact form may exist in the future, but not now. And no guarantee is
-				made on a timeline of when it will.
+				made on a timeline of its implementation.
 			</p>
 		</details>
 	</main>

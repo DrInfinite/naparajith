@@ -26,18 +26,16 @@ import { getCollection } from "astro:content";
 
 const profile = await getCollection("profile");
 const translations = [
-	{ lang: "Assamese", name: "নপৰজিত" },
+	{ lang: "Sanskrit (Hindi/Marathi)", name: "नपराजित" },
 	{ lang: "Bengali", name: "নপরাজিৎ" },
+	{ lang: "Telugu", name: "నాపరాజిత్" },
+	{ lang: "Tamil", name: "நபராஜித்" },
 	{ lang: "Gujarati", name: "નાપરાજિત" },
 	{ lang: "Kannada", name: "ನಪರಾಜಿತ್" },
-	{ lang: "Malayalam", name: "നപരാജിത്ത്" },
 	{ lang: "Odia", name: "ନାପାରାଜିଥ୍" },
+	{ lang: "Malayalam", name: "നപരാജിത്ത്" },
 	{ lang: "Punjabi", name: "ਨਪਰਾਜਿਤ" },
-	{ lang: "Sanskrit (and its derivatives)", name: "नपराजित" },
-	{ lang: "Tamil", name: "நபராஜித்" },
-	{ lang: "Telugu", name: "నాపరాజిత్" },
-	{ lang: "Tulu", name: "ನಪರಾಜಿತ್" },
-].toSorted((a, b) => a.lang.localeCompare(b.lang));
+];
 ---
 
 <Layout

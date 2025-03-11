@@ -24,10 +24,18 @@ import A from "@/components/A.astro";
 ---
 
 <footer
-	class="flex flex-col-reverse items-center justify-evenly border-t border-border pt-4 ~my-6/12 md:flex-row"
+	class="flex flex-col-reverse items-center justify-evenly border-t border-border py-4 ~my-4/8 md:flex-row"
 	transition:persist
 >
 	<p class="text-pretty text-start">
+		&copy; 2024 by <A
+			rel="cc:attributionURL dct:creator"
+			property="cc:attributionName"
+			href="https://www.linkedin.com/in/naparajith/"
+			target="_blank"
+		>
+			Naparajith T L
+		</A>.
 		<A
 			property="dct:title"
 			rel="cc:attributionURL"
@@ -47,14 +55,8 @@ import A from "@/components/A.astro";
 			target="_blank"
 			rel="license noopener noreferrer"
 			style="dsplay:inline-block;"
-			>CC BY-NC-ND 4.0.
-		</A> &copy; 2024 by <A
-			rel="cc:attributionURL dct:creator"
-			property="cc:attributionName"
-			href="https://www.linkedin.com/in/naparajith/"
-			target="_blank"
 		>
-			Naparajith T L
+			CC BY-NC-ND 4.0.
 		</A>
 	</p>
 </footer>

@@ -23,6 +23,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "Monaspace Xenon";
+	src: url("/fonts/MonaspaceXenonVarVF[wght,wdth,slnt].woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* @font-face { */
+/* 	font-family: "Monaspace Neon"; */
+/* 	src: url("/fonts/MonaspaceNeonVarVF[wght,wdth,slnt].woff2") format("woff2"); */
+/* 	font-weight: normal; */
+/* 	font-style: normal; */
+/* 	font-display: swap; */
+/* } */
+
 @view-transition {
 	navigation: auto;
 }
@@ -74,11 +90,11 @@
 
 @layer base {
 	* {
-		@apply dark;
+		font-family: "Monaspace Xenon";
 	}
 
 	body {
-		@apply prose prose-sm mx-auto scroll-smooth bg-background font-serif text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold;
+		@apply prose prose-sm mx-auto scroll-smooth bg-background font-mono text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl;
 	}
 
 	button {
@@ -110,7 +126,7 @@
 	}
 
 	blockquote {
-		@apply font-serif font-bold text-primary ~text-sm/3xl;
+		@apply font-serif font-bold text-primary;
 	}
 
 	cite {
