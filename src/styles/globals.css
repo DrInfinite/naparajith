@@ -19,10 +19,6 @@
 * Contact me through electronic mail: <naparajith@duck.com>
 */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face {
 	font-family: "Monaspace Xenon";
 	src: url("/fonts/MonaspaceXenonVarVF[wght,wdth,slnt].woff") format("woff");
@@ -30,6 +26,10 @@
 	font-style: normal;
 	font-display: swap;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* @font-face { */
 /* 	font-family: "Monaspace Neon"; */
