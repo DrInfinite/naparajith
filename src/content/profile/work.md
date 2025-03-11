@@ -23,7 +23,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 Contact me through electronic mail: <naparajith@duck.com>
 -->
 
-I am a Software Quality Engineer from India, passionate about solving coding challenges and leveraging technology. My career spans software development, engineering, quality assurance, test automation, and UX strategy.
+I am a Software Quality Engineer from India, who is passionate
+about solving coding challenges, simple and complex everyday problems and
+leveraging technology to better the lives of the people around me. My
+career spans software development, engineering, quality assurance, test
+automation, and internal tool development.
 
 1. Working with Software Businesses:
 
