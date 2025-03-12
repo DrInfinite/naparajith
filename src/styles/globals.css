@@ -19,25 +19,9 @@
 * Contact me through electronic mail: <naparajith@duck.com>
 */
 
-@font-face {
-	font-family: "Monaspace Xenon";
-	src: url("/fonts/MonaspaceXenonVarVF[wght,wdth,slnt].woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* @font-face { */
-/* 	font-family: "Monaspace Neon"; */
-/* 	src: url("/fonts/MonaspaceNeonVarVF[wght,wdth,slnt].woff2") format("woff2"); */
-/* 	font-weight: normal; */
-/* 	font-style: normal; */
-/* 	font-display: swap; */
-/* } */
 
 @view-transition {
 	navigation: auto;
@@ -89,12 +73,8 @@
 }
 
 @layer base {
-	* {
-		font-family: "Monaspace Xenon", monospace;
-	}
-
 	body {
-		@apply prose prose-sm mx-auto scroll-smooth bg-background text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl;
+		@apply prose prose-sm mx-auto scroll-smooth bg-background font-sans text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl;
 	}
 
 	button {
