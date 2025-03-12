@@ -22,13 +22,11 @@
 
 export const prerender = false;
 
-import { GithubProfile } from "@/actions/github-profile";
 import A from "@/components/A.astro";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import { getCollection, getEntry } from "astro:content";
 
-const github = await GithubProfile();
 const learning = [
 	"How to read large codebases without getting lost?",
 	"How do memory-corruption vulnerabilities work?",
@@ -75,10 +73,18 @@ const author = await getEntry(post.data.author);
 				class="bg-background text-center font-semibold text-foreground ~p-2/4"
 			>
 				<span class="italic">This image comes from my</span>
-				<A href={github.html_url} target="_blank"> GitHub Profile </A>
+				<A href="https://github.com/DrInfinite" target="_blank">
+					GitHub Profile
+				</A>
 			</figcaption>
 		</figure>
-		<p><strong>{github.bio}</strong></p>
+		<p>
+			<strong>
+				As a software engineer committed to solving simple and complex everyday
+				problems, I am dedicated to deepening my expertise in every technology
+				that drives software excellence.
+			</strong>
+		</p>
 	</article>
 	<div
 		class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
