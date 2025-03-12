@@ -72,7 +72,7 @@ const translations = [
 			{
 				profile.reverse().map((about) => (
 					<li>
-						<A href={`/profile/${about.id}`}>{about.data.title}</A>
+						<A href={`/profile/${about.slug}`}>{about.data.title}</A>
 					</li>
 				))
 			}
