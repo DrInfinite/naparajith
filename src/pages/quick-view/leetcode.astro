@@ -21,13 +21,88 @@
  */
 
 import Layout from "@/layouts/Layout.astro";
+import { LeetcodeProfile } from "@/actions/leetcode-profile";
+import { Picture } from "astro:assets";
 
-import LeetCode from "@/components/quick-view/leetcode/LeetCode.astro";
+const leetcode = await LeetcodeProfile();
 ---
 
 <Layout
 	title="Leetcode"
 	description="A quick overview of my leetcode stats, directly from the source"
 >
-	<LeetCode />
+	<figure
+		class="flex flex-col content-around items-center justify-around align-middle ~gap-6/12 md:flex-row"
+	>
+		<Picture
+			alt={leetcode.matchedUser.profile.realName}
+			class="mx-auto ~-mb-6/12 ~size-24/48 ~rounded-none/2xl md:-mb-0"
+			inferSize
+			decoding={"sync"}
+			loading={"eager"}
+			src={leetcode.matchedUser.profile.userAvatar}
+		/>
+		<div class="text-center md:text-start">
+			<h2>{leetcode.matchedUser.username}</h2>
+			<h3>{leetcode.matchedUser.profile.realName}</h3>
+			<button
+				class="rounded-full px-4"
+				onclick="window.open('https://leetcode.com/u/DrInfinite/')"
+				title="Resume"
+			>
+				<span
+					class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
+				>
+					Resume
+				</span>
+			</button>
+		</div>
+	</figure>
+	<div class="flex justify-evenly pb-12">
+		{
+			leetcode.matchedUser.badges.slice(0, 5).map((badge) => (
+				<span class="~size-12/24">
+					<Picture
+						src={badge.icon}
+						alt={badge.displayName}
+						inferSize
+						decoding={"async"}
+						loading={"lazy"}
+					/>
+				</span>
+			))
+		}
+	</div>
+	<div>
+		<h2>Recent Submissions</h2>
+		{
+			leetcode.recentSubmissionList
+				?.filter((recent) => recent.statusDisplay === "Accepted")
+				.slice(0, 5)
+				.map((sub) => (
+					<a
+						href={`https://leetcode.com/problems/${sub.titleSlug}/description/`}
+						class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~mb-4/8 ~rounded-none/xl hover:bg-foreground/10"
+						target="_blank"
+					>
+						<article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
+							<h4 class="-my-px truncate" transition:name="post-title">
+								{sub.title}
+							</h4>
+							<small class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent">
+								{sub.lang}
+							</small>
+						</article>
+						<article class="flex justify-between ~p-2/4">
+							<small>
+								{new Date(parseInt(sub.timestamp) * 1000).toLocaleString()}
+							</small>
+							<small class="underline decoration-double underline-offset-2">
+								{sub.statusDisplay}
+							</small>
+						</article>
+					</a>
+				))
+		}
+	</div>
 </Layout>
