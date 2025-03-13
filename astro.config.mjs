@@ -39,10 +39,9 @@ export default defineConfig({
 			{ protocol: "https", hostname: "upload.wikimedia.org" },
 			{ protocol: "https", hostname: "external-content.duckduckgo.com" },
 			{ protocol: "https", hostname: "brainmade.org" },
-			{ protocol: "https", hostname: "assets.leetcode.com/users/avatars/" },
 			{
 				protocol: "https",
-				hostname: "assets.leetcode.com/static_assets/marketing",
+				hostname: "assets.leetcode.com",
 			},
 		],
 		service: {
