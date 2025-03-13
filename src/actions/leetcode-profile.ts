@@ -23,12 +23,14 @@ import { LeetCode } from "leetcode-query";
 
 export async function LeetcodeProfile() {
 	const leetcode = new LeetCode();
-	const user = await leetcode.user("DrInfinite");
-	const profile = user.matchedUser?.profile;
+	const result = await leetcode.user("DrInfinite");
+
+	const matchedUser = result.matchedUser!;
+	const recentSubmissionList = result.recentSubmissionList;
+	const allQuestionsCount = result.allQuestionsCount;
 
 	// const totalSubmissionNum = user.matchedUser?.submitStats.totalSubmissionNum;
-	const acSubmissionNum = user.matchedUser?.submitStats.acSubmissionNum;
-	const allQuestionsCount = user.allQuestionsCount;
+	const acSubmissionNum = matchedUser.submitStats.acSubmissionNum;
 
 	// const problemCount = {};
 	const solvedCount = {
@@ -80,5 +82,11 @@ export async function LeetcodeProfile() {
 			).toFixed(2) + "%",
 	} as const;
 
-	return { profile, completedCount, completedPercentage, solvedCount };
+	return {
+		completedCount,
+		completedPercentage,
+		solvedCount,
+		matchedUser,
+		recentSubmissionList,
+	};
 }
