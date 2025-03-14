@@ -27,7 +27,7 @@ import { getCollection, render } from "astro:content";
 export const getStaticPaths = (async () => {
 	const policies = await getCollection("policy");
 	return policies.map((policy) => ({
-		params: { slug: policy.slug },
+		params: { slug: policy.id },
 		props: { policy },
 	}));
 }) satisfies GetStaticPaths;
