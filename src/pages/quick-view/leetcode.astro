@@ -20,6 +20,8 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
+export const prerender = false;
+
 import Layout from "@/layouts/Layout.astro";
 import { LeetcodeProfile } from "@/actions/leetcode-profile";
 import { Picture } from "astro:assets";
@@ -53,7 +55,7 @@ const leetcode = await LeetcodeProfile();
 				<span
 					class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
 				>
-					Resume
+					View Profile
 				</span>
 			</button>
 		</div>
@@ -65,7 +67,8 @@ const leetcode = await LeetcodeProfile();
 					<Picture
 						src={badge.icon}
 						alt={badge.displayName}
-						inferSize
+						width={96}
+						height={96}
 						decoding={"async"}
 						loading={"lazy"}
 					/>
@@ -74,35 +77,74 @@ const leetcode = await LeetcodeProfile();
 		}
 	</div>
 	<div>
+		<h2>Solved Problems</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Difficulty</th>
+					<th>Solved</th>
+					<th>Percentage</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Easy</td>
+					<td>
+						{leetcode.completedCount.easy}
+					</td>
+					<td>{leetcode.completedPercentage.easy}</td>
+				</tr>
+				<tr>
+					<td>Medium</td>
+					<td>
+						{leetcode.completedCount.medium}
+					</td>
+					<td>{leetcode.completedPercentage.medium}</td>
+				</tr>
+				<tr>
+					<td>Hard</td>
+					<td>
+						{leetcode.completedCount.hard}
+					</td>
+					<td>{leetcode.completedPercentage.hard}</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>Total</td>
+					<td>
+						{leetcode.completedCount.total}
+					</td>
+					<td>{leetcode.completedPercentage.total}</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<div>
 		<h2>Recent Submissions</h2>
 		{
-			leetcode.recentSubmissionList
-				?.filter((recent) => recent.statusDisplay === "Accepted")
-				.slice(0, 5)
-				.map((sub) => (
-					<a
-						href={`https://leetcode.com/problems/${sub.titleSlug}/description/`}
-						class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~mb-4/8 ~rounded-none/xl hover:bg-foreground/10"
-						target="_blank"
-					>
-						<article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
-							<h4 class="-my-px truncate" transition:name="post-title">
-								{sub.title}
-							</h4>
-							<small class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent">
-								{sub.lang}
-							</small>
-						</article>
-						<article class="flex justify-between ~p-2/4">
-							<small>
-								{new Date(parseInt(sub.timestamp) * 1000).toLocaleString()}
-							</small>
-							<small class="underline decoration-double underline-offset-2">
-								{sub.statusDisplay}
-							</small>
-						</article>
-					</a>
-				))
+			leetcode.recentSubmissionList?.slice(0, 5).map((sub) => (
+				<a
+					href={`https://leetcode.com/problems/${sub.titleSlug}/description/`}
+					class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~mb-4/8 ~rounded-none/xl hover:bg-foreground/10"
+					target="_blank"
+				>
+					<article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
+						<h4 class="-my-px truncate" transition:name="post-title">
+							{sub.title}
+						</h4>
+						<small class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent">
+							{sub.lang}
+						</small>
+					</article>
+					<article class="flex justify-between ~p-2/4">
+						<small class="italic">
+							{new Date(parseInt(sub.timestamp) * 1000).toLocaleString()}
+						</small>
+						<small>{sub.statusDisplay}</small>
+					</article>
+				</a>
+			))
 		}
 	</div>
 </Layout>

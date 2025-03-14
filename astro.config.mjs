@@ -39,10 +39,7 @@ export default defineConfig({
 			{ protocol: "https", hostname: "upload.wikimedia.org" },
 			{ protocol: "https", hostname: "external-content.duckduckgo.com" },
 			{ protocol: "https", hostname: "brainmade.org" },
-			{
-				protocol: "https",
-				hostname: "assets.leetcode.com",
-			},
+			{ protocol: "https", hostname: "assets.leetcode.com" },
 		],
 		service: {
 			entrypoint: "astro/assets/services/sharp",
@@ -61,7 +58,7 @@ export default defineConfig({
 		syntaxHighlight: "shiki",
 		shikiConfig: { theme: "rose-pine", langAlias: { cc: "cpp" } },
 	},
-	prefetch: { prefetchAll: true, defaultStrategy: "load" },
+	prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
 	redirects: {
 		"/links": "/quick-view",
 		"/bio": "/profile",
