@@ -25,6 +25,9 @@ export const prerender = false;
 import Layout from "@/layouts/Layout.astro";
 import { LeetcodeProfile } from "@/actions/leetcode-profile";
 import { Picture } from "astro:assets";
+import LeetCode from "@/components/quick-view/leetcode/LeetCode.astro";
+import LeetCodeLoading from "@/components/quick-view/leetcode/LeetCodeLoading.astro";
+import A from "@/components/A.astro";
 
 const leetcode = await LeetcodeProfile();
 ---
@@ -33,33 +36,14 @@ const leetcode = await LeetcodeProfile();
 	title="Leetcode"
 	description="A quick overview of my leetcode stats, directly from the source"
 >
-	<figure
-		class="flex flex-col content-around items-center justify-around align-middle ~gap-6/12 md:flex-row"
+	<A
+		href={"https://leetcode.com/u/DrInfinite/"}
+		title="LeetCode Profile"
+		target={"_blank"}
+		css={"~text-xl/5xl"}
 	>
-		<Picture
-			alt={leetcode.matchedUser.profile.realName}
-			class="mx-auto ~-mb-6/12 ~size-24/48 ~rounded-none/2xl md:-mb-0"
-			inferSize
-			decoding={"sync"}
-			loading={"eager"}
-			src={leetcode.matchedUser.profile.userAvatar}
-		/>
-		<div class="text-center md:text-start">
-			<h2>{leetcode.matchedUser.username}</h2>
-			<h3>{leetcode.matchedUser.profile.realName}</h3>
-			<button
-				class="rounded-full px-4"
-				onclick="window.open('https://leetcode.com/u/DrInfinite/')"
-				title="Resume"
-			>
-				<span
-					class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
-				>
-					View Profile
-				</span>
-			</button>
-		</div>
-	</figure>
+		{leetcode.matchedUser.username}
+	</A>
 	<div class="flex justify-evenly pb-12">
 		{
 			leetcode.matchedUser.badges.slice(0, 5).map((badge) => (
@@ -76,75 +60,75 @@ const leetcode = await LeetcodeProfile();
 			))
 		}
 	</div>
-	<div>
-		<h2>Solved Problems</h2>
-		<table>
-			<thead>
-				<tr>
-					<th>Difficulty</th>
-					<th>Solved</th>
-					<th>Percentage</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Easy</td>
-					<td>
-						{leetcode.completedCount.easy}
-					</td>
-					<td>{leetcode.completedPercentage.easy}</td>
-				</tr>
-				<tr>
-					<td>Medium</td>
-					<td>
-						{leetcode.completedCount.medium}
-					</td>
-					<td>{leetcode.completedPercentage.medium}</td>
-				</tr>
-				<tr>
-					<td>Hard</td>
-					<td>
-						{leetcode.completedCount.hard}
-					</td>
-					<td>{leetcode.completedPercentage.hard}</td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td>Total</td>
-					<td>
-						{leetcode.completedCount.total}
-					</td>
-					<td>{leetcode.completedPercentage.total}</td>
-				</tr>
-			</tfoot>
-		</table>
-	</div>
-	<div>
-		<h2>Recent Submissions</h2>
-		{
-			leetcode.recentSubmissionList?.slice(0, 5).map((sub) => (
-				<a
-					href={`https://leetcode.com/problems/${sub.titleSlug}/description/`}
-					class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~mb-4/8 ~rounded-none/xl hover:bg-foreground/10"
-					target="_blank"
-				>
-					<article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
-						<h4 class="-my-px truncate" transition:name="post-title">
-							{sub.title}
-						</h4>
-						<small class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent">
-							{sub.lang}
-						</small>
-					</article>
-					<article class="flex justify-between ~p-2/4">
-						<small class="italic">
-							{new Date(parseInt(sub.timestamp) * 1000).toLocaleString()}
-						</small>
-						<small>{sub.statusDisplay}</small>
-					</article>
-				</a>
-			))
-		}
-	</div>
+	<h2>Overview</h2>
+	<LeetCode server:defer>
+		<LeetCodeLoading slot={"fallback"} />
+	</LeetCode>
+	<h2>Solved Problems</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Difficulty</th>
+				<th>Solved</th>
+				<th>Percentage</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Easy</td>
+				<td>
+					{leetcode.completedCount.easy}
+				</td>
+				<td>{leetcode.completedPercentage.easy}</td>
+			</tr>
+			<tr>
+				<td>Medium</td>
+				<td>
+					{leetcode.completedCount.medium}
+				</td>
+				<td>{leetcode.completedPercentage.medium}</td>
+			</tr>
+			<tr>
+				<td>Hard</td>
+				<td>
+					{leetcode.completedCount.hard}
+				</td>
+				<td>{leetcode.completedPercentage.hard}</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>Total</td>
+				<td>
+					{leetcode.completedCount.total}
+				</td>
+				<td>{leetcode.completedPercentage.total}</td>
+			</tr>
+		</tfoot>
+	</table>
+	<h2>Recent Submissions</h2>
+	{
+		leetcode.recentSubmissionList?.slice(0, 5).map((sub) => (
+			<a
+				href={`https://leetcode.com/problems/${sub.titleSlug}/description/`}
+				class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~mb-4/8 ~rounded-none/xl hover:bg-foreground/10"
+				target="_blank"
+			>
+				<article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
+					<h4 class="-my-px truncate" transition:name="post-title">
+						{sub.title}
+					</h4>
+					<small class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent">
+						{sub.lang}
+					</small>
+				</article>
+				<article class="flex justify-between ~p-2/4">
+					<small class="italic">
+						{new Date(parseInt(sub.timestamp) * 1000).toLocaleString()}
+					</small>
+					<small>{sub.statusDisplay}</small>
+				</article>
+			</a>
+		))
+	}
 </Layout>
