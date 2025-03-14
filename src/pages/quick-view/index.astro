@@ -23,11 +23,13 @@
 export const prerender = false;
 
 import A from "@/components/A.astro";
-import GitHub from "@/components/quick-view/github/GitHub.astro";
-import GitHubLoading from "@/components/quick-view/github/GitHubLoading.astro";
-import LeetCode from "@/components/quick-view/leetcode/LeetCode.astro";
-import LeetCodeLoading from "@/components/quick-view/leetcode/LeetCodeLoading.astro";
 import Layout from "@/layouts/Layout.astro";
+import ACard from "@/components/ACard.astro";
+import { getCollection } from "astro:content";
+import { LeetcodeProfile } from "@/actions/leetcode-profile";
+
+const blog = await getCollection("blog");
+const leetcode = await LeetcodeProfile();
 ---
 
 <Layout
@@ -35,55 +37,93 @@ import Layout from "@/layouts/Layout.astro";
 	description="A collection of Quick Links for my personal website"
 >
 	<main class="min-h-[60vh]">
-		<h3>Links</h3>
-		<div
-			class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
-		>
-			<span>
-				<A
+		<h2>Links</h2>
+		<!-- <div -->
+		<!-- 	class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4" -->
+		<!-- > -->
+		<!-- 	<span> -->
+		<!-- 		<A -->
+		<!-- 			href={"https://github.com/DrInfinite"} -->
+		<!-- 			title={`GitHub - DrInfinite`} -->
+		<!-- 			target="_blank" -->
+		<!-- 		> -->
+		<!-- 			GitHub -->
+		<!-- 		</A> -->
+		<!-- 	</span> -->
+		<!-- 	<span> -->
+		<!-- 		<A -->
+		<!-- 			href="https://www.linkedin.com/in/naparajith/" -->
+		<!-- 			title="LinkedIn - Naparajith T L" -->
+		<!-- 			target="_blank" -->
+		<!-- 		> -->
+		<!-- 			LinkedIn -->
+		<!-- 		</A> -->
+		<!-- 	</span> -->
+		<!-- 	<span> -->
+		<!-- 		<A -->
+		<!-- 			href={"https://bsky.app/profile/naparajith.in"} -->
+		<!-- 			title={`Naparajith | DrInfinite (@naparajith.in)`} -->
+		<!-- 			target="_blank" -->
+		<!-- 		> -->
+		<!-- 			BlueSky -->
+		<!-- 		</A> -->
+		<!-- 	</span> -->
+		<!-- </div> -->
+
+		<div class="~space-y-4/8">
+			<div class="flex flex-wrap justify-between ~gap-2/4">
+				<ACard
 					href={"https://github.com/DrInfinite"}
 					title={`GitHub - DrInfinite`}
 					target="_blank"
 				>
 					GitHub
-				</A>
-			</span>
-			<span>
-				<A href="/quick-view/leetcode" title="LeetCode">LeetCode</A>
-			</span>
-			<span>
-				<A
+				</ACard>
+				<ACard
 					href="https://www.linkedin.com/in/naparajith/"
 					title="LinkedIn - Naparajith T L"
 					target="_blank"
 				>
 					LinkedIn
-				</A>
-			</span>
-			<span>
-				<A
+				</ACard>
+				<ACard
 					href={"https://bsky.app/profile/naparajith.in"}
 					title={`Naparajith | DrInfinite (@naparajith.in)`}
 					target="_blank"
 				>
 					BlueSky
-				</A>
-			</span>
-			<span>
-				<A href="/" title="Portfolio - Home"> Portfolio </A>
-			</span>
-			<span>
-				<A href="/blog" title="Portfolio - Blog"> Blog </A>
-			</span>
+				</ACard>
+				<ACard href="/" title="Portfolio">Portfolio</ACard>
+			</div>
+
+			<div class="flex justify-evenly ~gap-4/8">
+				<ACard href="/quick-view/leetcode" title="LeetCode">
+					<span class="flex flex-col">
+						LeetCode
+						<small class="font-normal">
+							Last Solved: {
+								new Date(
+									parseInt(leetcode.recentSubmissionList?.at(0)?.timestamp!) *
+										1000,
+								)
+									.toDateString()
+									.slice(4, 15)
+							}
+						</small>
+					</span>
+				</ACard>
+				<ACard href="/blog" title="Portfolio - Blog">
+					<span class="flex flex-col">
+						Blog
+						<small class="font-normal">
+							Last Posted: {
+								blog.at(0)?.data.created.toDateString().slice(4, 15)
+							}
+						</small>
+					</span>
+				</ACard>
+			</div>
 		</div>
-
-		<GitHub server:defer>
-			<GitHubLoading slot="fallback" />
-		</GitHub>
-
-		<LeetCode server:defer>
-			<LeetCodeLoading slot="fallback" />
-		</LeetCode>
 
 		<h2>Contact</h2>
 		<p>
