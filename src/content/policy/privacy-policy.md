@@ -2,7 +2,7 @@
 title: Privacy Policy
 description: The official Privacy Policy for Naparajith's Portfolio
 created: 11-15-2024
-updated: 02-10-2025
+updated: 03-12-2025
 ---
 
 <!--

@@ -19,9 +19,11 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
+import { glob } from "astro/loaders";
 import { defineCollection, reference, z } from "astro:content";
 
 const blog = defineCollection({
+	loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/blog" }),
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
@@ -35,6 +37,7 @@ const blog = defineCollection({
 });
 
 const policy = defineCollection({
+	loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/policy" }),
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
@@ -62,7 +65,10 @@ const authors = defineCollection({
 	}),
 });
 
-const profile = defineCollection({ schema: z.object({ title: z.string() }) });
+const profile = defineCollection({
+	loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/profile" }),
+	schema: z.object({ title: z.string() }),
+});
 
 export const collections = {
 	authors: authors,

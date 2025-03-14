@@ -1,0 +1,134 @@
+---
+/**
+ * This website is only meant to showcase the work and and skills of the author,
+ * on a professional level. It also has a blog, containing the author's observations
+ * and opinions on various topics. The views expressed are the author's own.
+ * Copyright (C) 2024  T L Naparajith
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License Version 3 as published
+ * by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
+ *
+ * Contact me through electronic mail: <naparajith@duck.com>
+ */
+
+export const prerender = false;
+
+import Layout from "@/layouts/Layout.astro";
+import { LeetcodeProfile } from "@/actions/leetcode-profile";
+import { Picture } from "astro:assets";
+import LeetCode from "@/components/quick-view/leetcode/LeetCode.astro";
+import LeetCodeLoading from "@/components/quick-view/leetcode/LeetCodeLoading.astro";
+import A from "@/components/A.astro";
+
+const leetcode = await LeetcodeProfile();
+---
+
+<Layout
+	title="Leetcode"
+	description="A quick overview of my leetcode stats, directly from the source"
+>
+	<A
+		href={"https://leetcode.com/u/DrInfinite/"}
+		title="LeetCode Profile"
+		target={"_blank"}
+		css={"~text-xl/5xl"}
+	>
+		{leetcode.matchedUser.username}
+	</A>
+	<div class="flex justify-evenly pb-12">
+		{
+			leetcode.matchedUser.badges.slice(0, 5).map((badge) => (
+				<span class="~size-12/24">
+					<Picture
+						src={badge.icon}
+						alt={badge.displayName}
+						width={96}
+						height={96}
+						decoding={"async"}
+						loading={"eager"}
+					/>
+				</span>
+			))
+		}
+	</div>
+	<h2>Overview</h2>
+	<LeetCode server:defer>
+		<LeetCodeLoading slot={"fallback"} />
+	</LeetCode>
+	<h2>Solved Problems</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Difficulty</th>
+				<th>Solved</th>
+				<th>Percentage</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Easy</td>
+				<td>
+					{leetcode.completedCount.easy}
+				</td>
+				<td>{leetcode.completedPercentage.easy}</td>
+			</tr>
+			<tr>
+				<td>Medium</td>
+				<td>
+					{leetcode.completedCount.medium}
+				</td>
+				<td>{leetcode.completedPercentage.medium}</td>
+			</tr>
+			<tr>
+				<td>Hard</td>
+				<td>
+					{leetcode.completedCount.hard}
+				</td>
+				<td>{leetcode.completedPercentage.hard}</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>Total</td>
+				<td>
+					{leetcode.completedCount.total}
+				</td>
+				<td>{leetcode.completedPercentage.total}</td>
+			</tr>
+		</tfoot>
+	</table>
+	<h2>Recent Submissions</h2>
+	{
+		leetcode.recentSubmissionList?.slice(0, 5).map((sub) => (
+			<a
+				href={`https://leetcode.com/problems/${sub.titleSlug}/description/`}
+				class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~mb-4/8 ~rounded-none/xl hover:bg-foreground/10"
+				target="_blank"
+			>
+				<article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
+					<h4 class="-my-px truncate" transition:name="post-title">
+						{sub.title}
+					</h4>
+					<small class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent">
+						{sub.lang}
+					</small>
+				</article>
+				<article class="flex justify-between ~p-2/4">
+					<small class="italic">
+						{new Date(parseInt(sub.timestamp) * 1000).toLocaleString()}
+					</small>
+					<small>{sub.statusDisplay}</small>
+				</article>
+			</a>
+		))
+	}
+</Layout>

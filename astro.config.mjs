@@ -32,13 +32,14 @@ import ReadingTime from "./reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-	adapter: vercel(),
+	adapter: vercel({ isr: true }),
 	image: {
 		remotePatterns: [
 			{ protocol: "https", hostname: "avatars.githubusercontent.com" },
 			{ protocol: "https", hostname: "upload.wikimedia.org" },
 			{ protocol: "https", hostname: "external-content.duckduckgo.com" },
 			{ protocol: "https", hostname: "brainmade.org" },
+			{ protocol: "https", hostname: "assets.leetcode.com" },
 		],
 		service: {
 			entrypoint: "astro/assets/services/sharp",
@@ -57,7 +58,7 @@ export default defineConfig({
 		syntaxHighlight: "shiki",
 		shikiConfig: { theme: "rose-pine", langAlias: { cc: "cpp" } },
 	},
-	prefetch: { prefetchAll: true, defaultStrategy: "load" },
+	prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
 	redirects: {
 		"/links": "/quick-view",
 		"/bio": "/profile",
@@ -69,7 +70,6 @@ export default defineConfig({
 		clientPrerender: true,
 		responsiveImages: true,
 	},
-	legacy: { collections: true },
 	site:
 		process.env.NODE_ENV === "development"
 			? "http://localhost:4321/"

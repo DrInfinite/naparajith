@@ -20,27 +20,16 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
-import Layout from "@/layouts/Layout.astro";
-import type { GetStaticPaths } from "astro";
-import { getCollection, render } from "astro:content";
+type Props = astroHTML.JSX.AnchorHTMLAttributes;
 
-export const getStaticPaths = (async () => {
-	const policies = await getCollection("policy");
-	return policies.map((policy) => ({
-		params: { slug: policy.id },
-		props: { policy },
-	}));
-}) satisfies GetStaticPaths;
-
-const { policy } = Astro.props;
-const { Content } = await render(policy);
+const { href, title, target } = Astro.props;
 ---
 
-<Layout title={policy.data.title} description={policy.data.description}>
-	<h1>{policy.data.title}</h1>
-	<div class="-mb-4 flex flex-row flex-wrap justify-between">
-		<p>Created: <strong>{policy.data.created.toDateString()}</strong></p>
-		<p>Updated: <strong>{policy.data.updated?.toDateString()}</strong></p>
-	</div>
-	<Content />
-</Layout>
+<a
+	class="place-self-center border border-border no-underline ~rounded-none/xl ~p-2/8 hover:bg-foreground/10"
+	href={href}
+	title={title}
+	target={target}
+>
+	<slot />
+</a>

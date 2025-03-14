@@ -60,7 +60,7 @@ const author = await getEntry(post.data.author);
 			<span class="-my-px ~size-48/96">
 				<Image
 					alt={"DrInfinite"}
-					class="mx-auto scale-90 ~rounded-none/2xl"
+					class="mx-auto scale-90 ~rounded-none/xl"
 					width={540}
 					height={540}
 					decoding={"async"}
@@ -133,7 +133,7 @@ const author = await getEntry(post.data.author);
 			</figure>
 			<h2>A random blog post</h2>
 			<a
-				href={`/blog/${post.slug}`}
+				href={`/blog/${post.id}`}
 				class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~rounded-none/xl hover:bg-foreground/10"
 			>
 				<article class="flex flex-col ~gap-2/4 ~p-2/4">

@@ -25,15 +25,18 @@ import { LeetcodeProfile } from "@/actions/leetcode-profile";
 export const leetcode = await LeetcodeProfile();
 ---
 
-<h3>LeetCode Stats</h3>
 <div
 	class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
 >
-	<span>Rank: <strong>{leetcode.profile?.ranking}</strong></span>
+	<span>Rank: <strong>{leetcode.matchedUser.profile?.ranking}</strong></span>
 	<span>
-		Solved: <strong>
-			{leetcode.completedCount.total} ({leetcode.completedPercentage.total})
+		Points: <strong>
+			{leetcode.matchedUser.contributions.points}
 		</strong>
 	</span>
-	<span>Rating: <strong>{leetcode.profile?.starRating}</strong></span>
+	<span>
+		Stars: <strong>
+			{"*".repeat(leetcode.matchedUser.profile?.starRating)}
+		</strong>
+	</span>
 </div>
