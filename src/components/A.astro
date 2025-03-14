@@ -21,17 +21,14 @@
  */
 
 type Props = {
-	class?: string | null | undefined;
-	href?: string | URL | null | undefined;
-	title?: string | null | undefined;
-	target?: astroHTML.JSX.HTMLAttributeAnchorTarget | null | undefined;
+	css?: string | null | undefined;
 } & astroHTML.JSX.AnchorHTMLAttributes;
 
-const { href, title, target } = Astro.props;
+const { href, title, target, css } = Astro.props;
 ---
 
 <a
-	class="group relative inline-flex w-fit flex-col no-underline decoration-0"
+	class={`group relative inline-flex w-fit flex-col no-underline decoration-0 ${css}`}
 	href={href}
 	title={title}
 	target={target}
