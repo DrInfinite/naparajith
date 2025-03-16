@@ -32,7 +32,7 @@ import ReadingTime from "./reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-	adapter: vercel({ isr: true }),
+	adapter: vercel({ isr: { expiration: 60 * 60 } }),
 	image: {
 		remotePatterns: [
 			{ protocol: "https", hostname: "avatars.githubusercontent.com" },
