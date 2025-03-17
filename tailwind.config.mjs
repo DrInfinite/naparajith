@@ -76,7 +76,7 @@ export default {
 		fluid,
 		plugin(function ({ addBase }) {
 			addBase({
-				html: { fontSize: "16px" },
+				html: { fontSize: "14px" },
 			});
 		}),
 	],
