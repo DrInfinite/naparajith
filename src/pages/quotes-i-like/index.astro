@@ -21,39 +21,37 @@
  */
 
 import A from "@/components/A.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const quotes = await getCollection("quotes");
+const authors = [...new Set(quotes.map((quote) => quote.data.author))];
 ---
 
-<header
-	class="my-10 border border-l-0 border-r-0 border-t-0 border-border pb-4"
+<Layout
+	title="Quotes I Like"
+	description="A collection of quotes from various authors"
 >
-	<h3 class="text-start">
-		<span class="animate-pulse">~</span>/{
-			Astro.url.pathname.startsWith("/blog") ||
-			Astro.url.pathname.startsWith("/quotes-i-like")
-				? Astro.url.pathname.toString().replace("/", "").replace(/\/.*/, "")
-				: Astro.url.pathname.toString().replace("/", "")
-		}
-		<!-- ~/{Astro.url.pathname.toString().replace("/", "").replace(/\/.*/, "")} -->
-	</h3>
-	<div class="flex justify-between" transition:persist>
-		<div class="flex flex-wrap justify-evenly ~gap-2/4">
-			<A href="/">Home</A>
-			<A href="/profile"> Profile </A>
-			<A href="/quick-view"> Quick View </A>
+	<main class="min-h-[60vh]">
+		<p>
+			A collection of quotes from various people that I resonate with and want
+			to share with a wider audience.
+		</p>
+		<p>
+			Check out all the quotes I like <A href="/quotes-i-like/all">here</A>.
+		</p>
+		<div>
+			<h2>Authors</h2>
+			<p>Check out quotes by individual authors:</p>
+			{
+				authors.sort().map((author, index) => (
+					<ul>
+						<li>
+							<A href={`/quotes-i-like/${author}`}>{author}</A>
+						</li>
+					</ul>
+				))
+			}
 		</div>
-
-		<span>
-			<button
-				class="rounded-full px-4"
-				onclick="window.open('https:\/\/flowcv.com/resume/mdrssqq018')"
-				title="Resume"
-			>
-				<span
-					class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
-				>
-					Resume
-				</span>
-			</button>
-		</span>
-	</div>
-</header>
+	</main>
+</Layout>
