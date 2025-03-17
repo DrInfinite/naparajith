@@ -106,3 +106,7 @@ by disabling JS for this site in particular or by installing the
 <a href="https://addons.mozilla.org/en-US/firefox/addon/librejs/" target="_blank">
 LibreJS</a> extension (only works on Mozilla-based browsers). Learn more about it
 <a href="https://www.gnu.org/software/librejs/" target="_blank">here</a>.
+
+## Artificial Intelligence Policy
+
+![Brainmade.org](https://brainmade.org/white-logo.svg)
