@@ -25,7 +25,7 @@ export const prerender = false;
 import A from "@/components/A.astro";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
 const learning = [
 	"How to read large codebases without getting lost?",
@@ -41,11 +41,11 @@ const quotes = await getCollection("quotes");
 quotes.sort((a, b) => a.data.author.localeCompare(b.data.author));
 const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
-let posts = await getCollection("blog");
-posts = posts.filter((acc) => acc.data.draft !== true);
-const post = posts[Math.floor(Math.random() * posts.length)];
+// let posts = await getCollection("blog");
+// posts = posts.filter((acc) => acc.data.draft !== true);
+// const post = posts[Math.floor(Math.random() * posts.length)];
 
-const author = await getEntry(post.data.author);
+// const author = await getEntry(post.data.author);
 ---
 
 <Layout
@@ -86,25 +86,51 @@ const author = await getEntry(post.data.author);
 			</strong>
 		</p>
 	</article>
+
 	<div
 		class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
 	>
 		<A href="/profile" title="Profile">Profile</A>
 		<A href="/quick-view" title="Quick View"> Quick View </A>
-		<A
-			href={"https://flowcv.com/resume/mdrssqq018"}
-			target={"_blank"}
-			title="Resume"
-		>
-			Resume
-		</A>
 		<A href="/blog" title="Blog">Blog</A>
 		<A href="/quotes-i-like" title="Quotes">Quotes</A>
-		<A href="/policy" title="Site Policies">Site Policies</A>
+		<A
+			href={"https://github.com/DrInfinite"}
+			title={`GitHub - DrInfinite`}
+			target="_blank"
+		>
+			GitHub
+		</A>
+		<A
+			href="https://www.linkedin.com/in/naparajith/"
+			title="LinkedIn - Naparajith T L"
+			target="_blank"
+		>
+			LinkedIn
+		</A>
+		<A
+			href={"https://bsky.app/profile/naparajith.in"}
+			title={`Naparajith | DrInfinite (@naparajith.in)`}
+			target="_blank"
+		>
+			BlueSky
+		</A>
 	</div>
 	<main>
 		<p>
-			To know more about site wide policies, please visit <A href={"/policy"}>
+			<A
+				href="https://flowcv.com/resume/mdrssqq018"
+				title="Resume"
+				target={"_blank"}
+			>
+				Download the latest copy of my Resume.
+			</A>
+		</p>
+		<p>
+			To know more about site wide policies, please visit <A
+				href={"/policy"}
+				title="Site Policies"
+			>
 				Policy
 			</A>.
 		</p>
@@ -132,26 +158,26 @@ const author = await getEntry(post.data.author);
 					<A href="/quotes-i-like" title="Quotes">more like this</A>
 				</div>
 			</figure>
-			<h2>A random blog post</h2>
-			<a
-				href={`/blog/${post.id}`}
-				class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~rounded-none/xl hover:bg-foreground/10"
-			>
-				<article class="flex flex-col ~gap-2/4 ~p-2/4">
-					<h4 class="-my-px" transition:name="post-title">
-						{post.data.title}
-					</h4>
-					<small class="-my-px line-clamp-2" transition:name="post-description">
-						{post.data.description}
-					</small>
-				</article>
-				<article
-					class="flex justify-between bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent ~p-2/4"
-				>
-					<small>{post.data.created.toDateString()}</small>
-					<small>{author.data.name}</small>
-				</article>
-			</a>
+			<!-- <h2>A random blog post</h2> -->
+			<!-- <a -->
+			<!-- 	href={`/blog/${post.id}`} -->
+			<!-- 	class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~rounded-none/xl hover:bg-foreground/10" -->
+			<!-- > -->
+			<!-- 	<article class="flex flex-col ~gap-2/4 ~p-2/4"> -->
+			<!-- 		<h4 class="-my-px" transition:name="post-title"> -->
+			<!-- 			{post.data.title} -->
+			<!-- 		</h4> -->
+			<!-- 		<small class="-my-px line-clamp-2" transition:name="post-description"> -->
+			<!-- 			{post.data.description} -->
+			<!-- 		</small> -->
+			<!-- 	</article> -->
+			<!-- 	<article -->
+			<!-- 		class="flex justify-between bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent ~p-2/4" -->
+			<!-- 	> -->
+			<!-- 		<small>{post.data.created.toDateString()}</small> -->
+			<!-- 		<small>{author.data.name}</small> -->
+			<!-- 	</article> -->
+			<!-- </a> -->
 			<hr class="my-4 border-t-2 border-t-border" />
 		</div>
 		<div>
