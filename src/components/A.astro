@@ -33,8 +33,10 @@ const { href, title, target, css } = Astro.props;
 	title={title}
 	target={target}
 >
-	<slot />
+	<span class="z-50">
+		<slot />
+	</span>
 	<span
-		class="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-[#d83333] to-[#f041ff] group-hover:h-[2px] md:h-[2px] md:group-hover:h-[4px]"
+		class="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-[#d83333] to-[#f041ff] group-hover:h-full md:h-[2px]"
 	></span>
 </a>
