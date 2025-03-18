@@ -76,12 +76,13 @@
 	* {
 		@apply transition transition-all;
 	}
+
 	body {
 		@apply prose prose-sm mx-auto scroll-smooth bg-background font-mono text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl;
 	}
 
 	button {
-		@apply border border-border bg-secondary px-2 font-semibold text-primary-foreground hover:bg-secondary/90;
+		@apply rounded-full border border-border bg-secondary px-2 px-4 font-semibold text-primary-foreground hover:bg-secondary/80;
 	}
 
 	p {
