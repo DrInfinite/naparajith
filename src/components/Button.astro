@@ -20,24 +20,17 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
-import Button from "@/components/Button.astro";
-import Layout from "@/layouts/Layout.astro";
+type Props = {
+	className?: string | null | undefined;
+} & astroHTML.JSX.ButtonHTMLAttributes;
+
+const { title, onclick, className, ...props } = Astro.props;
 ---
 
-<Layout
-	title="404"
-	description="the page that you are looking for doesn't exist"
->
-	<div class="flex h-[60vh] flex-col place-content-center gap-4">
-		<h3 class="text-center">
-			404 | The Page you are looking for has moved or doesn't exist ;(
-		</h3>
-		<p class="text-justify">
-			Try looking for another page or better, go back to start navigating again.
-			Sorry for any inconviences caused!
-		</p>
-		<Button className={"mx-auto place-self-center"} onclick="history.back()">
-			Go Back
-		</Button>
-	</div>
-</Layout>
+<button class={`group ${className}`} onclick={onclick} title={title} {...props}>
+	<span
+		class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent group-hover:from-[#f041ff] group-hover:to-[#d83333]"
+	>
+		<slot />
+	</span>
+</button>
