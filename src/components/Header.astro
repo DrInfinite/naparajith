@@ -28,12 +28,12 @@ import Button from "./Button.astro";
 	class="my-10 border border-l-0 border-r-0 border-t-0 border-border pb-4"
 >
 	<h3 class="text-start">
-		<span class="animate-pulse">~</span>/{
+		~/{
 			Astro.url.pathname.startsWith("/blog") ||
 			Astro.url.pathname.startsWith("/quotes-i-like")
 				? Astro.url.pathname.toString().replace("/", "").replace(/\/.*/, "")
 				: Astro.url.pathname.toString().replace("/", "")
-		}
+		}<span class="animate-pulse">&#x25AE</span>
 		<!-- ~/{Astro.url.pathname.toString().replace("/", "").replace(/\/.*/, "")} -->
 	</h3>
 	<div class="flex justify-between" transition:persist>
