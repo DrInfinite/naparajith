@@ -37,13 +37,11 @@ const authors = [...new Set(quotes.map((quote) => quote.data.author))];
 			A collection of quotes from various people that I resonate with and want
 			to share with a wider audience.
 		</p>
-		<p>
-			A list of all the quotes I like <A href="/quotes-i-like/all">here</A>.
-		</p>
+		<A href="/quotes-i-like/all">A list of all the quotes that I really like</A>
 		<div>
-			<p>Here are a list of quotes by individual authors:</p>
+			<p>Here is the list ordered by individual authors:</p>
 			{
-				authors.sort().map((author, index) => (
+				authors.sort().map((author, _) => (
 					<ul>
 						<li>
 							<A href={`/quotes-i-like/${author}`}>{author}</A>
