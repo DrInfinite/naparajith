@@ -40,15 +40,15 @@ const authors = [...new Set(quotes.map((quote) => quote.data.author))];
 		<A href="/quotes-i-like/all">A list of all the quotes that I really like</A>
 		<div>
 			<p>Here is the list ordered by individual authors:</p>
-			{
-				authors.sort().map((author, _) => (
-					<ul>
+			<ul>
+				{
+					authors.sort().map((author, _) => (
 						<li>
 							<A href={`/quotes-i-like/${author}`}>{author}</A>
 						</li>
-					</ul>
-				))
-			}
+					))
+				}
+			</ul>
 		</div>
 	</main>
 </Layout>
