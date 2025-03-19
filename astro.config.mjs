@@ -63,7 +63,7 @@ export default defineConfig({
 		"/links": "/quick-view",
 		"/bio": "/profile",
 		"/indian-legends": "/legends",
-		"/quotes": "/quotes-i-like",
+		"/quotes-i-like": "/quotes",
 		"/contact": "/quick-view",
 	},
 	experimental: {
