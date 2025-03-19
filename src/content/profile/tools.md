@@ -28,3 +28,25 @@ A collection of hardware and software tools that I use on a daily basis.
 | Manufacturer         | Acer                                            |
 | Product Name         | Swift SF314-510G                                |
 | System Version       | V1.12                                           |
+
+## Displays
+
+### Built-in
+
+| Property     | Details                    |
+| ------------ | -------------------------- |
+| Manufacturer | Chimei Innolux Corporation |
+| Model        | eDP-1-0x14D5               |
+| Size         | 14"                        |
+| Resolution   | 1920x1080                  |
+| Refresh Rate | 60Hz                       |
+
+### External
+
+| Property     | Details      |
+| ------------ | ------------ |
+| Manufacturer | Dell Inc.    |
+| Model        | DELL S2721HN |
+| Size         | 27"          |
+| Resolution   | 1920x1080    |
+| Refresh Rate | 75Hz         |
