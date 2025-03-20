@@ -25,8 +25,6 @@ export const prerender = false;
 import Layout from "@/layouts/Layout.astro";
 import { LeetcodeProfile } from "@/actions/leetcode-profile";
 import { Picture } from "astro:assets";
-import LeetCode from "@/components/quick-view/leetcode/LeetCode.astro";
-import LeetCodeLoading from "@/components/quick-view/leetcode/LeetCodeLoading.astro";
 import A from "@/components/A.astro";
 
 const leetcode = await LeetcodeProfile();
@@ -61,9 +59,21 @@ const leetcode = await LeetcodeProfile();
 		}
 	</div>
 	<h2>Overview</h2>
-	<LeetCode server:defer>
-		<LeetCodeLoading slot={"fallback"} />
-	</LeetCode>
+	<div
+		class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
+	>
+		<span>Rank: <strong>{leetcode.matchedUser.profile?.ranking}</strong></span>
+		<span>
+			Points: <strong>
+				{leetcode.matchedUser.contributions.points}
+			</strong>
+		</span>
+		<span>
+			Stars: <strong>
+				{"*".repeat(leetcode.matchedUser.profile?.starRating)}
+			</strong>
+		</span>
+	</div>
 	<h2>Solved Problems</h2>
 	<table>
 		<thead>
