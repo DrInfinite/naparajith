@@ -31,7 +31,11 @@ import Button from "./Button.astro";
 		~/{
 			Astro.url.pathname.startsWith("/blog") ||
 			Astro.url.pathname.startsWith("/quotes")
-				? Astro.url.pathname.toString().replace("/", "").replace(/\/.*/, "")
+				? Astro.url.pathname
+						.toString()
+						.replace("/", "")
+						.replace(/\/.*/, "")
+						.replace("/", "")
 				: Astro.url.pathname.toString().replace("/", "")
 		}<span class="animate-pulse">&#x25AE</span>
 		<!-- ~/{Astro.url.pathname.toString().replace("/", "").replace(/\/.*/, "")} -->
