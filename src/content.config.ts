@@ -46,6 +46,15 @@ const policy = defineCollection({
 	}),
 });
 
+const license = defineCollection({
+	loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/license" }),
+	schema: z.object({
+		title: z.string(),
+		license_name: z.string(),
+		description: z.string(),
+	}),
+});
+
 const quotes = defineCollection({
 	type: "data",
 	schema: z.object({
@@ -76,4 +85,5 @@ export const collections = {
 	policy: policy,
 	profile: profile,
 	quotes: quotes,
+	license: license,
 };
