@@ -23,40 +23,18 @@
 import A from "@/components/A.astro";
 ---
 
-<footer
-	class="flex flex-col-reverse items-center justify-evenly border-t border-border py-4 ~my-4/8 md:flex-row"
-	transition:persist
->
-	<p class="text-pretty text-start">
+<footer class="border-t border-border py-4 ~my-4/8" transition:persist>
+	<p class="text-pretty text-center ~space-x-2/4">
 		&copy; 2025 by <A
 			rel="cc:attributionURL dct:creator"
 			property="cc:attributionName"
 			href="https://www.linkedin.com/in/naparajith/"
 			target="_blank"
+			title={"Author"}
 		>
 			Naparajith T L
 		</A>.
-		<A
-			property="dct:title"
-			rel="cc:attributionURL"
-			href="https://www.naparajith.in/"
-		>
-			This site & its non-image content
-		</A> are licensed under <A
-			href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
-			target="_blank"
-			rel="license noopener noreferrer"
-			style="display:inline-block;"
-		>
-			CC BY-NC-SA 4.0.
-		</A>
-		<span property="dct:title">All images</span> are licensed under <A
-			href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1"
-			target="_blank"
-			rel="license noopener noreferrer"
-			style="dsplay:inline-block;"
-		>
-			CC BY-NC-ND 4.0.
-		</A>
+		<A href={"/policy"} title={"Site Policy"}>Policy</A>
+		<A href={"/license"} title={"License"}>License</A>
 	</p>
 </footer>
