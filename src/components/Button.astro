@@ -22,15 +22,20 @@
 
 type Props = {
 	className?: string | null | undefined;
-} & astroHTML.JSX.ButtonHTMLAttributes;
+} & astroHTML.JSX.AnchorHTMLAttributes;
 
-const { title, onclick, className, ...props } = Astro.props;
+const { title, className, target, ...props } = Astro.props;
 ---
 
-<button class={`group ${className}`} onclick={onclick} title={title} {...props}>
+<a
+	class={`group rounded-full border border-border bg-gradient-to-r from-secondary to-secondary no-underline ~px-2/4 ~py-1/2 hover:from-[#d83333] hover:to-[#f041ff] ${className}`}
+	target={target}
+	title={title}
+	{...props}
+>
 	<span
-		class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent group-hover:from-[#f041ff] group-hover:to-[#d83333]"
+		class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent group-hover:from-primary group-hover:to-primary"
 	>
 		<slot />
 	</span>
-</button>
+</a>
