@@ -1,0 +1,22 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import A from "@/components/A.astro";
+
+const license = await getCollection("license");
+---
+
+<Layout
+	title="License"
+	description="The official license page for Naparajith's Portfolio, containing a comprehensive list of open-source licenses for code, content and images"
+>
+	<ul>
+		{
+			license.map((policy) => (
+				<li>
+					<A href={`/license/${policy.id}`}>{policy.data.title}</A>
+				</li>
+			))
+		}
+	</ul>
+</Layout>
