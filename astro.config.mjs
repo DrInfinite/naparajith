@@ -30,6 +30,8 @@ import vercel from "@astrojs/vercel";
 
 import ReadingTime from "./reading-time.mjs";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
 	adapter: vercel(),
@@ -51,7 +53,7 @@ export default defineConfig({
 		experimentalObjectPosition: "center",
 		experimentalObjectFit: "cover",
 	},
-	integrations: [tailwind({ applyBaseStyles: false }), sitemap()],
+	integrations: [tailwind({ applyBaseStyles: false }), sitemap(), mdx()],
 	output: "static",
 	markdown: {
 		remarkPlugins: [ReadingTime],
