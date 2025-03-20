@@ -74,7 +74,7 @@
 
 @layer base {
 	* {
-		@apply transition transition-all;
+		@apply transition transition-all ease-linear;
 	}
 
 	body {
@@ -82,7 +82,7 @@
 	}
 
 	button {
-		@apply rounded-full border border-border bg-secondary px-2 px-4 font-semibold text-primary-foreground hover:bg-secondary/80;
+		@apply rounded-full border border-border bg-secondary font-semibold text-primary-foreground ~px-2/4 ~py-1/2 hover:bg-secondary/80;
 	}
 
 	p {
