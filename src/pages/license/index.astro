@@ -54,8 +54,10 @@ const license = await getCollection("license");
 			license.map((policy) => (
 				<li>
 					<p>
-						<A href={`/license/${policy.id}`}>{policy.data.title}</A> (
-						{policy.data.license_name})
+						<A href={`/license/${policy.id}`} title={policy.data.license_name}>
+							{policy.data.title}
+						</A>{" "}
+						<span>({policy.data.license_name})</span>
 					</p>
 				</li>
 			))
