@@ -31,13 +31,99 @@ const license = await getCollection("license");
 	title="License"
 	description="The official license page for Naparajith's Portfolio, containing a comprehensive list of open-source licenses for code, content and images"
 >
+	<p>
+		This page outlines the various licenses that govern the use of the content
+		and assets on this website. As this site built on open and transparent
+		principles, I believe it's important to clearly communicate the rights and
+		permissions associated with my intellectual property.
+	</p>
+	<p>
+		The image and content licenses are based on the Creative Commons framework,
+		which provides a standardized way for creators to grant public permissions
+		for the use of their work. The source code license is based on the GNU
+		Public License framework, which provides a standardized way for source code
+		distribution. Please review the details of each license to understand the
+		terms and conditions that apply to the corresponding content on my site.
+	</p>
+	<p>
+		Below you will find links to the specific licenses covering the site's
+		source code, images, and overall content.
+	</p>
 	<ul>
 		{
 			license.map((policy) => (
 				<li>
-					<A href={`/license/${policy.id}`}>{policy.data.title}</A>
+					<p>
+						<A href={`/license/${policy.id}`}>{policy.data.title}</A> (
+						{policy.data.license_name})
+					</p>
 				</li>
 			))
 		}
+	</ul>
+
+	<h2>Overview of Creative Commons</h2>
+
+	<p>
+		Creative Commons Corporation (“Creative Commons”) is not a law firm and does
+		not provide legal services or legal advice. Distribution of Creative Commons
+		public licenses does not create a lawyer-client or other relationship.
+		Creative Commons makes its licenses and related information available on an
+		“as-is” basis. Creative Commons gives no warranties regarding its licenses,
+		any material licensed under their terms and conditions, or any related
+		information. Creative Commons disclaims all liability for damages resulting
+		from their use to the fullest extent possible.
+	</p>
+
+	<h3>Using Creative Commons Public Licenses</h3>
+
+	<p>
+		Creative Commons public licenses provide a standard set of terms and
+		conditions that creators and other rights holders may use to share original
+		works of authorship and other material subject to copyright and certain
+		other rights specified in the public license below. The following
+		considerations are for informational purposes only, are not exhaustive, and
+		do not form part of our licenses.
+	</p>
+
+	<ul>
+		<li>
+			<strong>Considerations for licensors:</strong> Our public licenses are intended
+			for use by those authorized to give the public permission to use material in
+			ways otherwise restricted by copyright and certain other rights. Our licenses
+			are irrevocable. Licensors should read and understand the terms and conditions
+			of the license they choose before applying it. Licensors should also secure
+			all rights necessary before applying our licenses so that the public can reuse
+			the material as expected. Licensors should clearly mark any material not subject
+			to the license. This includes other CC-licensed material, or material used
+			under an exception or limitation to copyright. <A
+				href="http://wiki.creativecommons.org/Considerations_for_licensors_and_licensees#Considerations_for_licensors"
+				target="_blank"
+				title="More considerations for licensors"
+			>
+				More considerations for licensors.
+			</A>
+		</li>
+
+		<li>
+			<strong>Considerations for the public:</strong> By using one of our public
+			licenses, a licensor grants the public permission to use the licensed material
+			under specified terms and conditions. If the licensor’s permission is not necessary
+			for any reason–for example, because of any applicable exception or limitation
+			to copyright–then that use is not regulated by the license. Our licenses grant
+			only permissions under copyright and certain other rights that a licensor has
+			authority to grant. Use of the licensed material may still be restricted for
+			other reasons, including because others have copyright or other rights in the
+			material. A licensor may make special requests, such as asking that all changes
+			be marked or described. Although not required by our licenses, you are encouraged
+			to respect those requests where reasonable.
+			<A
+				href="http://wiki.creativecommons.org/Considerations_for_licensors_and_licensees#Considerations_for_licensees"
+				target="_blank"
+				title="More considerations for the public"
+			>
+				More considerations for the public.
+			</A>
+		</li>
 	</ul>
 </Layout>
