@@ -38,5 +38,7 @@ const { Content } = await render(license);
 
 <Layout title={license.data.title} description={license.data.description}>
 	<h1>{license.data.license_name}</h1>
-	<Content />
+	<article class="font-serif">
+		<Content />
+	</article>
 </Layout>
