@@ -110,7 +110,7 @@
 	}
 
 	blockquote {
-		@apply font-bold text-primary;
+		@apply font-serif font-bold text-primary;
 	}
 
 	cite {
