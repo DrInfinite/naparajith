@@ -20,3 +20,9 @@ Contact me through electronic mail: <naparajith@duck.com>
 -->
 
 .vercel
+
+<!-- Policy Page -->
+src/content/policy/js-policy.mdx
+
+<!-- Blog Page -->
+src/content/blog/the-unfortunate-overhyping-of-ai.mdx
