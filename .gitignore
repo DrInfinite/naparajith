@@ -45,5 +45,3 @@ pnpm-debug.log*
 
 # VScode setting folder
 .vscode/
-
-src/content/policy/
