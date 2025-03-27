@@ -25,3 +25,93 @@ Contact me through electronic mail: <naparajith@duck.com> */}
 
 Page under active development
 
+import A from "@/components/A.astro";
+
+## Purpose
+
+The purpose of this policy is to inform the user that only open source
+JavaScript (FOSS JavaScript) is used across my website and there are no
+restrictions on it. By leveraging freely available and unrestricted FOSS
+JavaScript, I can benefit from a wide range of functionality and capabilities to
+enhance the user experience of my website.
+
+This policy establishes my commitment to respecting the open source ethos and
+contributing back to the community where possible. It will provide me with a
+clear understanding of how to appropriately incorporate FOSS JavaScript into my
+project while maintaining the intended spirit of open source software.
+
+## Scope
+
+This policy applies to the use of free and unrestricted FOSS JavaScript across
+my entire website project. I am committed to exclusively using FOSS JavaScript
+components that have the most permissive licenses, such as MIT, Apache, or BSD,
+which allow for unrestricted use, modification, and distribution.
+
+The policy does not constrain the use of FOSS JavaScript for internal or
+external purposes. I am free to incorporate any FOSS JavaScript libraries,
+frameworks, or utilities that meet the criteria of being free and unrestricted,
+without the need for additional approval or compliance procedures.
+
+My goal is to leverage the vast ecosystem of open source JavaScript to create a
+robust and feature-rich website for my users, while respecting the open source
+principles of freedom and collaboration.
+
+## Terms and Abbreviations
+
+| Term                          | Abbreviation  |
+| ----------------------------- | ------------- |
+| JavaScript                    | **JS**        |
+| kB                            | **KiloBytes** |
+| Free and Open Source Software | **FOSS**      |
+
+## Policy
+
+There are several chunks of JavaScript that are executed to maintain a smooth
+user experience across the site. A few kB of JS is shipped and executed in the
+client for prefetching routes, handling dates, improving user navigation,
+switching between light and dark mode and fetching dynamic content.
+
+While the site may function as intended with JS blocked, some aspects may not be
+in the way the user expects. Some elements may break when JS is disabled.
+
+The following JS is executed on client-side to automatically set the theme based
+on the Browser/OS theme.
+
+```js
+<script is:inline>
+ const getThemePreference = () => {
+  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+   return localStorage.getItem('theme');
+  }
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+ };
+ const isDark = getThemePreference() === 'dark';
+ document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+ if (typeof localStorage !== 'undefined') {
+  const observer = new MutationObserver(() => {
+   const isDark = document.documentElement.classList.contains('dark');
+   localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+ }
+</script>
+```
+
+### Disabling JavaScript
+
+Disabling JS doesn't affect any of the site's core functionality, but the site
+is forced to be in light mode.
+
+If you are not comfortable with client-side script execution, don't like
+unauthorized access to local storage or just simply don't like non-free
+JavaScript, you can proceed by disabling JS for this site in particular or by
+installing the <A href="https://addons.mozilla.org/en-US/firefox/addon/librejs/" target="_blank">LibreJS extension
+</A> (only works on Firefox-based browsers). Learn more about it <A href="https://www.gnu.org/software/librejs/" target="_blank">here</A>.
+
+## Feedback and Future Revisions
+
+Suggestions for improvement of this policy along with the necessary site wide
+changes will be appreciated. Please send comments to
+[naparajith@duck.com](mailto:naparajith@duck.com). Feedback provided is
+confidential and will not be used for any other purpose.
