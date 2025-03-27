@@ -1,5 +1,5 @@
 ---
-title: Tools & Equipment
+title: Tools I Use
 ---
 
 <!--
@@ -24,6 +24,7 @@ Contact me through electronic mail: <naparajith@duck.com>
 -->
 
 A collection of hardware and software tools that I use on a daily basis.
+(_<u>under active development, will be updated periodically</u>_)
 
 ## Workstation
 

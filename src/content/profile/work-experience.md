@@ -23,57 +23,43 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 Contact me through electronic mail: <naparajith@duck.com>
 -->
 
-I am a Software Quality Engineer from India, who is passionate about solving
-coding challenges, simple and complex everyday problems and leveraging
-technology to better the lives of the people around me. My career spans software
-development, engineering, quality assurance, test automation, and internal tool
-development.
+## **AT&T Communication Services India**
 
-1. Working with Software Businesses:
+**Senior Associate, Quality Assurance** – June 2024 - Present
 
-   - Scaled businesses successfully, emphasizing customer-centric decisions.
-   - Excel in executing ambitious projects and relying on data for decisions.
+- Developed high-performance web applications using React and Java, improving
+  test result data management and reporting.
+- Automated 7 critical test suites, reducing manual effort hours by 31%.
 
-2. Working with Product Teams:
+**Staff Associate, Quality Assurance** – March 2024 - May 2024
 
-   - Align, contribute to, and grow product teams (10 to 100 people).
-   - Fluent in technical and executive languages, crafting narratives for
-     inspiration.
-   - Significantly contribute to project outcomes.
+- Improved data collection & manipulation rates by 50% and report accuracy by
+  17%.
+- Reduced data collection time by 20% through enhanced data pipelines.
 
-3. Continuous Improvement:
+**Staff Associate, Artificial Intelligence** – October 2023 - March 2024
 
-   - Dedicated to personal and professional growth.
-   - Constant learning, composure in adversity, and high-quality
-     decision-making.
+- Migrated codebases to align with modern standards, improving performance by
+  7%.
+- Enhanced code reliability by 17% through expanded unit and end-to-end testing.
 
-4. Networking and Collaboration:
+**Technical Intern** – May 2023 - September 2023
 
-   - Enjoy meeting fellow developers and discussing emerging technologies.
+- Engaged in 480+ hours of training, and worked with industry-standard
+  technologies.
+- Worked on integrating emerging technologies and security trends into existing
+  systems.
 
-### Professional Skills
+---
 
-I bring agile development, workplace proficiency, and a versatile skill set,
-excelling in marketplace platforms, end-to-end Quality Assurance, and
-cross-functional teamwork. Adept in contract negotiation, decision-making,
-management, leadership, and business development, I prioritize excellence in the
-dynamic software engineering field.
+## **DigiTranIT Pvt Ltd**
 
-### Technical Skills
+**Full Stack Development Intern** – January 2022 - April 2022
 
-I navigate various web technologies and diverse application development
-architectures as a versatile software engineer. I am proficient in SQL, NoSQL,
-and NewSQL databases, leveraging DevOps tools, building test automation
-frameworks, and excelling in shell scripting. My proficiency in Microsoft
-Office, UX/UI design, data analytics, and product analytics expertise solidify
-my role in the evolving software engineering landscape.
+- Designed and developed async web applications with a database access layer.
+- Troubleshot issues to optimize site performance, reducing downtime by 21.69%.
 
-### Domain Knowledge
+**User Experience Design Intern** – September 2021 - December 2021
 
-With expertise in technology stacks, data structures, algorithms, databases,
-networking, and quality assurance, I stay ahead in cloud computing, SDLC, and
-Agile methodologies. Prioritizing continuous learning, my commitment to
-excellence drives innovative solutions in this dynamic field.
-
-Connect for discussions on programming, emerging tech, or software product
-creation. Let's code and innovate together!
+- Improved accessibility for 55% of the client's core users through simplified
+  flows.
