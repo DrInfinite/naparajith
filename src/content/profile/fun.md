@@ -1,5 +1,5 @@
 ---
-title: Fun Profile
+title: Fun Bio
 ---
 
 <!--
