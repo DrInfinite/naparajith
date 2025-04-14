@@ -22,7 +22,7 @@
 
 type Props = astroHTML.JSX.AnchorHTMLAttributes;
 
-const { href, title, target } = Astro.props;
+const { href, title, target, ...props } = Astro.props;
 ---
 
 <a
@@ -30,6 +30,7 @@ const { href, title, target } = Astro.props;
 	href={href}
 	title={title}
 	target={target}
+	{...props}
 >
 	<slot />
 </a>
