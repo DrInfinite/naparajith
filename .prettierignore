@@ -27,5 +27,7 @@ src/content/policy/
 <!-- License Page -->
 src/content/license/
 
+src/content/profile/
+
 <!-- Blog Page -->
 src/content/blog/the-unfortunate-overhyping-of-ai.mdx
