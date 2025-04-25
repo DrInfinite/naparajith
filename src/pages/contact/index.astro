@@ -1,0 +1,57 @@
+---
+/**
+ * This website is only meant to showcase the work and and skills of the author,
+ * on a professional level. It also has a blog, containing the author's observations
+ * and opinions on various topics. The views expressed are the author's own.
+ * Copyright (C) 2024  T L Naparajith
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License Version 3 as published
+ * by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
+ *
+ * Contact me through electronic mail: <naparajith@duck.com>
+ */
+
+import A from "@/components/A.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+	title="Quick View"
+	description="A collection of Quick Links for my personal website"
+>
+	<main class="min-h-[60vh]">
+		<h2>Contact</h2>
+		<p>
+			Get in touch with me through this form or by using the email
+			<A href="mailto:naparajith@duck.com"> naparajith@duck.com</A> or one of the
+			social platforms mentioned above.
+		</p>
+
+		<details>
+			<summary>Why is there no Contact Form?</summary>
+			<p>
+				A contact form requires the downloading and execution of client-side
+				JavaScript. While this can be implemented easily, the JS code will
+				become obfuscated on build.
+			</p>
+			<p>
+				This goes against my current vision to build a website that has little
+				to zero non-free and obfuscated JavaScript. Therefore, for the moment,
+				so such form exists.
+			</p>
+			<p>
+				A contact form may exist in the future, but not now. And no guarantee is
+				made on a timeline of its implementation.
+			</p>
+		</details>
+	</main>
+</Layout>
