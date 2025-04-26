@@ -30,28 +30,85 @@ import Layout from "@/layouts/Layout.astro";
 >
 	<main class="min-h-[60vh]">
 		<h2>Contact</h2>
-		<p>
-			Get in touch with me through this form or by using the email
-			<A href="mailto:naparajith@duck.com"> naparajith@duck.com</A> or one of the
-			social platforms mentioned above.
-		</p>
+		<p>Get in touch with me through one of the methods mentioned below.</p>
 
-		<details>
-			<summary>Why is there no Contact Form?</summary>
-			<p>
-				A contact form requires the downloading and execution of client-side
-				JavaScript. While this can be implemented easily, the JS code will
-				become obfuscated on build.
-			</p>
-			<p>
-				This goes against my current vision to build a website that has little
-				to zero non-free and obfuscated JavaScript. Therefore, for the moment,
-				so such form exists.
-			</p>
-			<p>
-				A contact form may exist in the future, but not now. And no guarantee is
-				made on a timeline of its implementation.
-			</p>
-		</details>
+		<div
+			class="flex flex-wrap justify-evenly border border-border ~mb-2/4 ~gap-2/4 ~rounded-none/xl ~p-4/8"
+		>
+			<span
+				><A
+					href="mailto:naparajith@duck.com"
+					title={"Email - naparajith@duck.com"}
+				>
+					Email</A
+				>
+			</span>
+			<span>
+				<A
+					href="https://www.linkedin.com/in/naparajith/"
+					title="LinkedIn - Naparajith T L"
+					target="_blank"
+				>
+					LinkedIn
+				</A>
+			</span>
+			<span>
+				<A
+					href={"https://github.com/DrInfinite"}
+					title={`GitHub - DrInfinite`}
+					target="_blank"
+				>
+					GitHub
+				</A>
+			</span>
+			<span>
+				<A
+					href={"https://bsky.app/profile/naparajith.in"}
+					title={`Naparajith | DrInfinite (@naparajith.in)`}
+					target="_blank"
+				>
+					BlueSky
+				</A>
+			</span>
+		</div>
+
+		<div class="flex flex-col ~gap-2/4">
+			<details>
+				<summary>Open PGP Public Key</summary><p>
+					This is my official and only OpenPGP key associated with my email.
+				</p><A href="/open-pgp-public-key.txt" target={"_blank"}
+					>View Active OpenPGP Public Key.</A
+				>
+			</details>
+
+			<details>
+				<summary>Verifying my BlueSky Profile</summary><p>
+					I have only one BlueSky account, which has the At Proto URI <b>
+						at://did:plc:pe7w7pdxibmhd5fgkur5oms3
+					</b>. Any other profile using my name is not to be trusted.
+				</p><A
+					href="https://atproto-browser.vercel.app/at/did:plc:pe7w7pdxibmhd5fgkur5oms3"
+					target={"_blank"}>Verify my Profile in At Proto Explorer</A
+				>
+			</details>
+
+			<details>
+				<summary>Why is there no Contact Form?</summary>
+				<p>
+					A contact form requires the downloading and execution of client-side
+					JavaScript. While this can be implemented easily, the JS code will
+					become obfuscated on build.
+				</p>
+				<p>
+					This goes against my current vision to build a website that has little
+					to zero non-free and obfuscated JavaScript. Therefore, for the moment,
+					so such form exists.
+				</p>
+				<p>
+					A contact form may exist in the future, but not now. And no guarantee
+					is made on a timeline of its implementation.
+				</p>
+			</details>
+		</div>
 	</main>
 </Layout>
