@@ -37,8 +37,10 @@ const leetcode = await LeetcodeProfile();
 	description="A collection of Quick Links for my personal website"
 >
 	<main class="flex flex-col justify-around ~gap-8/16">
-		<article class="flex justify-evenly">
-			<span class="~size-24/48">
+		<article
+			class="flex flex-col items-center justify-evenly align-middle ~gap-8/4 md:flex-row"
+		>
+			<span class="~size-32/64">
 				<Image
 					alt={"DrInfinite"}
 					class="mx-auto ~rounded-none/xl"
@@ -54,6 +56,8 @@ const leetcode = await LeetcodeProfile();
 				<h3 class="text-center">SAFe 6.0 Certified SDET</h3>
 			</div>
 		</article>
+
+		<hr class="my-4 border-t-2 border-t-border" />
 
 		<div class="~space-y-4/8">
 			<div class="flex flex-wrap justify-evenly ~gap-2/4">
