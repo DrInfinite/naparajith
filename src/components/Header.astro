@@ -36,7 +36,12 @@ import Button from "./Button.astro";
 						.replace("/", "")
 						.replace(/\/.*/, "")
 						.replace("/", "")
-				: Astro.url.pathname.toString().replace("/", "")
+				: Astro.url.pathname.startsWith("/profile")
+					? Astro.url.pathname
+							.toString()
+							.replace("/", "")
+							.replace(/\/\d+-/, "/")
+					: Astro.url.pathname.toString().replace("/", "")
 		}<span class="animate-pulse">&#x25AE</span>
 		<!-- ~/{Astro.url.pathname.toString().replace("/", "").replace(/\/.*/, "")} -->
 	</h3>
