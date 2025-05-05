@@ -95,6 +95,7 @@ A collection of hardware and software tools that I use on a daily basis.
 | LazyGit    | Git Client           |
 | LazyDocker | Docker Client        |
 | zellij     | Terminal Multiplexer |
+| man        | Command Manual       |
 
 ### Shell Tools
 
@@ -102,8 +103,8 @@ A collection of hardware and software tools that I use on a daily basis.
 | -------- | ---------------------- |
 | eza      | ls alternative         |
 | fzf      | Terminal Fuzzy Finder  |
-| man      | Command Manual         |
 | ripgrep  | grep alternative       |
 | zoxide   | cd alternative         |
 | yay      | AUR Package Manager    |
 | git      | Version Control System |
+| fd       | find alternative       |
