@@ -30,14 +30,14 @@ A collection of hardware and software tools that I use on a daily basis.
 
 ### Operating System
 
-| Software               | Details                 |
-| ---------------------- | ----------------------- |
-| Operating System       | Arch Linux              |
-| KDE Plasma Version     | 6.3.3                   |
-| KDE Frameworks Version | 6.12.0                  |
-| Qt Version             | 6.8.2                   |
-| Kernel Version         | 6.13.7-arch1-1 (64-bit) |
-| Graphics Platform      | Wayland                 |
+| Software              | Details         |
+| --------------------- | --------------- |
+| Operating System      | Arch Linux      |
+| Desktop Environment   | KDE Plasma 6    |
+| UI Framework          | Kirigami        |
+| Development Framework | Qt Framework    |
+| Linux Kernel          | Stable (64-bit) |
+| Graphics Platform     | Wayland         |
 
 ### Hardware
 
@@ -72,3 +72,39 @@ A collection of hardware and software tools that I use on a daily basis.
 | Size         | 27"          |
 | Resolution   | 1920x1080    |
 | Refresh Rate | 75Hz         |
+
+## Software
+
+### GUIs
+
+| Software           | Category         |
+| ------------------ | ---------------- |
+| Dolphin            | File Manager     |
+| Floorp Browser     | Browser          |
+| Kdenlive           | Video Editor     |
+| PhotoGIMP          | Photo Editor     |
+| Obsidian           | Note Taking Tool |
+| Visual Studio Code | Code Editor      |
+| Thunderbird        | Email Client     |
+
+### TUIs
+
+| Software   | Category             |
+| ---------- | -------------------- |
+| Neovim     | Text Editor          |
+| LazyGit    | Git Client           |
+| LazyDocker | Docker Client        |
+| zellij     | Terminal Multiplexer |
+| man        | Command Manual       |
+
+### Shell Tools
+
+| Software | Purpose                |
+| -------- | ---------------------- |
+| eza      | ls alternative         |
+| fzf      | Terminal Fuzzy Finder  |
+| ripgrep  | grep alternative       |
+| zoxide   | cd alternative         |
+| yay      | AUR Package Manager    |
+| git      | Version Control System |
+| fd       | find alternative       |

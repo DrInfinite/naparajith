@@ -1,3 +1,7 @@
+---
+title: Education
+---
+
 <!--
 This website is only meant to showcase the work and and skills of the author,
 on a professional level. It also has a blog, containing the author's observations
@@ -19,13 +23,30 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 Contact me through electronic mail: <naparajith@duck.com>
 -->
 
-.vercel
+#### Chennai Institute of Technology (Anna University)
 
-<!-- Policy Page -->
-src/content/policy/
+### Bachelor's of Engineering, Computer Science and Engineering
 
-<!-- License Page -->
-src/content/license/
+- **Duration:** October 2020 - April 2024
+- **CGPA:** 8.96
+- **Grade:** First Class with Distinction
 
-<!-- Blog Page -->
-src/content/blog/the-unfortunate-overhyping-of-ai.mdx
+---
+
+#### Chettinad Vidyashram (CBSE)
+
+### All India Senior School Certificate Examination
+
+- **Duration:** April 2018 - March 2020
+- **Score:** 570/600
+- **Grade:** A1 (95%)
+
+---
+
+#### DAV School (CBSE)
+
+### All India Secondary School Examination
+
+- **Duration:** April 2016 - March 2018
+- **Score:** 455/500
+- **Grade:** A1 (91%)

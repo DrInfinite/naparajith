@@ -45,9 +45,10 @@ const translations = [
 	<article>
 		<h3>Who I am</h3>
 		<p>
-			I am Naparajith, a Software Quality Engineer from India. I am passionate
-			about solving coding challenges, simple and complex everyday problems and
-			leveraging technology to better the lives of the people around me.
+			I am Naparajith, a Software Development Engineer in Test from India. I am
+			passionate about solving coding challenges, simple and complex everyday
+			problems and leveraging technology to better the lives of the people
+			around me.
 		</p>
 		<p>
 			My career spans software development, engineering, quality assurance, test
@@ -58,55 +59,19 @@ const translations = [
 			skills, or the tools I use on a daily basis, you can pruse through the
 			pages below:
 		</p>
-		<ul>
-			{
-				profile.reverse().map((about) => (
-					<li>
-						<A href={`/profile/${about.id}`}>{about.data.title}</A>
-					</li>
-				))
-			}
-		</ul>
+
 		<div
 			class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
 		>
-			<span>
-				<A
-					href="https://www.linkedin.com/in/naparajith/"
-					title="LinkedIn - Naparajith T L"
-					target="_blank"
-				>
-					LinkedIn
-				</A>
-			</span>
-			<span>
-				<A
-					href={"https://github.com/DrInfinite"}
-					title={`GitHub - DrInfinite`}
-					target="_blank"
-				>
-					GitHub
-				</A>
-			</span>
-			<span>
-				<A href={"/quick-view/leetcode"} title={`LeetCode`} target="_blank">
-					LeetCode
-				</A>
-			</span>
-			<span>
-				<A
-					href={"https://bsky.app/profile/naparajith.in"}
-					title={`Naparajith | DrInfinite (@naparajith.in)`}
-					target="_blank"
-				>
-					BlueSky
-				</A>
-			</span>
-			<span><A href="/blog" title="Blog">Blog</A></span>
-			<span>
-				<A href="/quotes" title="Portfolio - Quotes">Quotes</A>
-			</span>
+			{
+				profile.map((about) => (
+					<span>
+						<A href={`/profile/${about.id}`}>{about.data.title}</A>
+					</span>
+				))
+			}
 		</div>
+
 		<h3>What I do</h3>
 		<ol>
 			<li>
@@ -203,5 +168,46 @@ const translations = [
 			Connect for discussions on programming, emerging tech, or software product
 			creation. Let's code and innovate together!
 		</p>
+
+		<div
+			class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
+		>
+			<span>
+				<A
+					href="https://www.linkedin.com/in/naparajith/"
+					title="LinkedIn - Naparajith T L"
+					target="_blank"
+				>
+					LinkedIn
+				</A>
+			</span>
+			<span>
+				<A
+					href={"https://github.com/DrInfinite"}
+					title={`GitHub - DrInfinite`}
+					target="_blank"
+				>
+					GitHub
+				</A>
+			</span>
+			<span>
+				<A href={"/quick-view/leetcode"} title={`LeetCode`} target="_blank">
+					LeetCode
+				</A>
+			</span>
+			<span>
+				<A
+					href={"https://bsky.app/profile/naparajith.in"}
+					title={`Naparajith | DrInfinite (@naparajith.in)`}
+					target="_blank"
+				>
+					BlueSky
+				</A>
+			</span>
+			<span><A href="/blog" title="Blog">Blog</A></span>
+			<span>
+				<A href="/quotes" title="Portfolio - Quotes">Quotes</A>
+			</span>
+		</div>
 	</article>
 </Layout>

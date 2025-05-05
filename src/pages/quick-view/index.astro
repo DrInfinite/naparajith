@@ -22,11 +22,11 @@
 
 export const prerender = false;
 
-import A from "@/components/A.astro";
 import Layout from "@/layouts/Layout.astro";
 import ACard from "@/components/ACard.astro";
 import { getCollection } from "astro:content";
 import { LeetcodeProfile } from "@/actions/leetcode-profile";
+import { Image } from "astro:assets";
 
 const blog = await getCollection("blog");
 const leetcode = await LeetcodeProfile();
@@ -36,42 +36,31 @@ const leetcode = await LeetcodeProfile();
 	title="Quick View"
 	description="A collection of Quick Links for my personal website"
 >
-	<main class="min-h-[60vh]">
-		<!-- <div -->
-		<!-- 	class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4" -->
-		<!-- > -->
-		<!-- 	<span> -->
-		<!-- 		<A -->
-		<!-- 			href={"https://github.com/DrInfinite"} -->
-		<!-- 			title={`GitHub - DrInfinite`} -->
-		<!-- 			target="_blank" -->
-		<!-- 		> -->
-		<!-- 			GitHub -->
-		<!-- 		</A> -->
-		<!-- 	</span> -->
-		<!-- 	<span> -->
-		<!-- 		<A -->
-		<!-- 			href="https://www.linkedin.com/in/naparajith/" -->
-		<!-- 			title="LinkedIn - Naparajith T L" -->
-		<!-- 			target="_blank" -->
-		<!-- 		> -->
-		<!-- 			LinkedIn -->
-		<!-- 		</A> -->
-		<!-- 	</span> -->
-		<!-- 	<span> -->
-		<!-- 		<A -->
-		<!-- 			href={"https://bsky.app/profile/naparajith.in"} -->
-		<!-- 			title={`Naparajith | DrInfinite (@naparajith.in)`} -->
-		<!-- 			target="_blank" -->
-		<!-- 		> -->
-		<!-- 			BlueSky -->
-		<!-- 		</A> -->
-		<!-- 	</span> -->
-		<!-- </div> -->
+	<main class="flex flex-col justify-around ~gap-8/16">
+		<article
+			class="flex flex-col items-center justify-evenly align-middle ~gap-8/4 md:flex-row"
+		>
+			<span class="~size-32/64">
+				<Image
+					alt={"DrInfinite"}
+					class="mx-auto ~rounded-none/xl"
+					width={540}
+					height={540}
+					decoding={"async"}
+					loading={"eager"}
+					src={"https://avatars.githubusercontent.com/u/74095696?v=4"}
+				/>
+			</span>
+			<div>
+				<h2 class="text-center">Naparajith (Naps) T L</h2>
+				<h3 class="text-center">SAFe 6.0 Certified SDET</h3>
+			</div>
+		</article>
 
-		<h2>Links</h2>
+		<hr class="my-4 border-t-2 border-t-border" />
+
 		<div class="~space-y-4/8">
-			<div class="flex flex-wrap justify-between ~gap-2/4">
+			<div class="flex flex-wrap justify-evenly ~gap-2/4">
 				<ACard
 					href={"https://github.com/DrInfinite"}
 					title={`GitHub - DrInfinite`}
@@ -94,6 +83,7 @@ const leetcode = await LeetcodeProfile();
 					BlueSky
 				</ACard>
 				<ACard href="/" title="Portfolio">Portfolio</ACard>
+				<ACard href={"/contact"} title={"Contact"}>Contact</ACard>
 			</div>
 
 			<div class="flex justify-evenly ~gap-4/8">
@@ -124,30 +114,5 @@ const leetcode = await LeetcodeProfile();
 				</ACard>
 			</div>
 		</div>
-
-		<h2>Contact</h2>
-		<p>
-			Get in touch with me through this form or by using the email
-			<A href="mailto:naparajith@duck.com"> naparajith@duck.com</A> or one of the
-			social platforms mentioned above.
-		</p>
-
-		<details>
-			<summary>Why is there no Contact Form?</summary>
-			<p>
-				A contact form requires the downloading and execution of client-side
-				JavaScript. While this can be implemented easily, the JS code will
-				become obfuscated on build.
-			</p>
-			<p>
-				This goes against my current vision to build a website that has little
-				to zero non-free and obfuscated JavaScript. Therefore, for the moment,
-				so such form exists.
-			</p>
-			<p>
-				A contact form may exist in the future, but not now. And no guarantee is
-				made on a timeline of its implementation.
-			</p>
-		</details>
 	</main>
 </Layout>
