@@ -27,9 +27,11 @@ import ACard from "@/components/ACard.astro";
 import { getCollection } from "astro:content";
 import { LeetcodeProfile } from "@/actions/leetcode-profile";
 import { Image } from "astro:assets";
+import { GithubProfile } from "@/actions/github-profile";
 
 const blog = await getCollection("blog");
 const leetcode = await LeetcodeProfile();
+const updated_at = new Date((await GithubProfile()).updated_at).toDateString();
 ---
 
 <Layout
@@ -57,17 +59,17 @@ const leetcode = await LeetcodeProfile();
 			</div>
 		</article>
 
-		<hr class="my-4 border-t-2 border-t-border" />
+		<hr class="border-t-2 border-t-border ~my-2/4" />
 
 		<div class="~space-y-4/8">
 			<div class="flex flex-wrap justify-evenly ~gap-2/4">
-				<ACard
-					href={"https://github.com/DrInfinite"}
-					title={`GitHub - DrInfinite`}
-					target="_blank"
-				>
-					GitHub
-				</ACard>
+				<!-- <ACard -->
+				<!-- 	href={"https://github.com/DrInfinite"} -->
+				<!-- 	title={`GitHub - DrInfinite`} -->
+				<!-- 	target="_blank" -->
+				<!-- > -->
+				<!-- 	GitHub -->
+				<!-- </ACard> -->
 				<ACard
 					href="https://www.linkedin.com/in/naparajith/"
 					title="LinkedIn - Naparajith T L"
@@ -84,14 +86,29 @@ const leetcode = await LeetcodeProfile();
 				</ACard>
 				<ACard href="/" title="Portfolio">Portfolio</ACard>
 				<ACard href={"/contact"} title={"Contact"}>Contact</ACard>
+				<ACard href={"/quotes"}>Quotes</ACard>
 			</div>
 
-			<div class="flex justify-evenly ~gap-4/8">
+			<div class="flex justify-evenly text-center ~gap-4/8 md:text-start">
+				<ACard href="/quick-view/github" title="GitHub">
+					<span class="flex flex-col">
+						GitHub
+						<hr class="border-t-2 border-t-border ~my-0/2" />
+						<small class="font-normal">
+							<u class="block md:hidden">Updated On</u>
+							<span class="hidden md:inline">Updated On:</span>
+							{updated_at !== "Invalid Date" ? updated_at.slice(4, 15) : "NA"}
+						</small>
+					</span>
+				</ACard>
 				<ACard href="/quick-view/leetcode" title="LeetCode">
 					<span class="flex flex-col">
 						LeetCode
+						<hr class="border-t-2 border-t-border ~my-0/2" />
 						<small class="font-normal">
-							Last Solved: {
+							<u class="block md:hidden">Last Solved</u>
+							<span class="hidden md:inline">Last Solved:</span>
+							{
 								new Date(
 									parseInt(leetcode.recentSubmissionList?.at(0)?.timestamp!) *
 										1000,
@@ -105,10 +122,11 @@ const leetcode = await LeetcodeProfile();
 				<ACard href="/blog" title="Portfolio - Blog">
 					<span class="flex flex-col">
 						Blog
+						<hr class="border-t-2 border-t-border ~my-0/2" />
 						<small class="font-normal">
-							Last Posted: {
-								blog.at(0)?.data.created.toDateString().slice(4, 15)
-							}
+							<u class="block md:hidden">Last Posted</u>
+							<span class="hidden md:inline">Last Posted:</span>
+							{blog.at(0)?.data.created.toDateString().slice(4, 15)}
 						</small>
 					</span>
 				</ACard>
