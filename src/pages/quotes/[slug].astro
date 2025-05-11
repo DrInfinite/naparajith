@@ -27,24 +27,26 @@ export const getStaticPaths = async () => {
 		</p>
 
 		{
-			authorQuotes.map((quote) => (
-				<figure>
-					<blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
-					<figcaption>
-						<cite>
-							-{" "}
-							<a
-								href={quote.data.cite}
-								title={`${quote.data.author} - ${quote.data.cite}`}
-								target="_blank"
-								class="text-inherit no-underline"
-							>
-								{quote.data.author}
-							</a>
-						</cite>
-					</figcaption>
-				</figure>
-			))
+			authorQuotes
+				.sort((a, b) => parseInt(a.id) - parseInt(b.id))
+				.map((quote) => (
+					<figure>
+						<blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
+						<figcaption>
+							<cite>
+								-{" "}
+								<a
+									href={quote.data.cite}
+									title={`${quote.data.author} - ${quote.data.cite}`}
+									target="_blank"
+									class="text-inherit no-underline"
+								>
+									{quote.data.author}
+								</a>
+							</cite>
+						</figcaption>
+					</figure>
+				))
 		}
 	</main>
 </Layout>
