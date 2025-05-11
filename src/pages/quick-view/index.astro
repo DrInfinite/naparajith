@@ -90,10 +90,13 @@ const updated_at = new Date((await GithubProfile()).updated_at).toDateString();
 			</div>
 
 			<div class="flex justify-evenly text-center ~gap-4/8 md:text-start">
-				<ACard href="/quick-view/github" title="GitHub">
+				<ACard href="/quick-view/github" title="GitHub" class="group">
 					<span class="flex flex-col">
 						GitHub
-						<hr class="border-t-2 border-t-border ~my-0/2" />
+						<div
+							class="h-[2px] bg-gradient-to-r from-[#d83333] to-[#f041ff] transition-all duration-300 ~my-0/2"
+						>
+						</div>
 						<small class="font-normal">
 							<u class="block md:hidden">Updated On</u>
 							<span class="hidden md:inline">Updated On:</span>
@@ -104,7 +107,10 @@ const updated_at = new Date((await GithubProfile()).updated_at).toDateString();
 				<ACard href="/quick-view/leetcode" title="LeetCode">
 					<span class="flex flex-col">
 						LeetCode
-						<hr class="border-t-2 border-t-border ~my-0/2" />
+						<div
+							class="h-[2px] bg-gradient-to-r from-[#d83333] to-[#f041ff] transition-all duration-300 ~my-0/2"
+						>
+						</div>
 						<small class="font-normal">
 							<u class="block md:hidden">Last Solved</u>
 							<span class="hidden md:inline">Last Solved:</span>
@@ -122,7 +128,10 @@ const updated_at = new Date((await GithubProfile()).updated_at).toDateString();
 				<ACard href="/blog" title="Portfolio - Blog">
 					<span class="flex flex-col">
 						Blog
-						<hr class="border-t-2 border-t-border ~my-0/2" />
+						<div
+							class="h-[2px] bg-gradient-to-r from-[#d83333] to-[#f041ff] transition-all duration-300 ~my-0/2"
+						>
+						</div>
 						<small class="font-normal">
 							<u class="block md:hidden">Last Posted</u>
 							<span class="hidden md:inline">Last Posted:</span>
