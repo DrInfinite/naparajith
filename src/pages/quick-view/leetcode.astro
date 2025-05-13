@@ -137,7 +137,14 @@ const leetcode = await LeetcodeProfile();
 				</article>
 				<article class="flex justify-between ~p-2/4">
 					<small class="italic">
-						{new Date(parseInt(sub.timestamp) * 1000).toLocaleString()}
+						{process.env.NODE_ENV === "development"
+							? new Date(parseInt(sub.timestamp) * 1000)
+									.toLocaleString()
+									.toUpperCase()
+							: new Date((parseInt(sub.timestamp) + 19800) * 1000)
+									.toLocaleString()
+									.toUpperCase()}{" "}
+						IST
 					</small>
 					<small>{sub.statusDisplay}</small>
 				</article>
