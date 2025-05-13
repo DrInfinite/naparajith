@@ -49,7 +49,7 @@ export default defineConfig({
 				limitInputPixels: true,
 			},
 		},
-		experimentalLayout: "responsive",
+		experimentalLayout: "constrained",
 		experimentalObjectPosition: "center",
 		experimentalObjectFit: "cover",
 	},
