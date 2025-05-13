@@ -20,7 +20,7 @@
  */
 
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -70,6 +70,23 @@ export default defineConfig({
 	experimental: {
 		clientPrerender: true,
 		responsiveImages: true,
+		fonts: [
+			{
+				provider: fontProviders.google(),
+				name: "Poppins",
+				cssVariable: "--font-sans",
+			},
+			{
+				provider: fontProviders.google(),
+				name: "Noto Serif Display",
+				cssVariable: "--font-quote",
+			},
+			{
+				provider: fontProviders.google(),
+				name: "Noto Serif",
+				cssVariable: "--font-serif",
+			},
+		],
 	},
 	site:
 		process.env.NODE_ENV === "development"

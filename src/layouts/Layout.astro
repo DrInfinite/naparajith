@@ -24,6 +24,7 @@ import "@/styles/globals.css";
 
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
+import { Font } from "astro:assets";
 
 interface Props {
 	title: string;
@@ -77,6 +78,10 @@ const defaultOgImage = "../images/arch-rainbow-1920x1080.png";
 
 		<meta property="twitter:title" content=`${title} | Naparajith` />
 		<meta property="twitter:description" content={description} />
+
+		<Font cssVariable="--font-sans" preload />
+		<Font cssVariable="--font-serif" preload />
+		<Font cssVariable="--font-quote" preload />
 	</head>
 	<body>
 		{Astro.url.pathname !== "/" ? <Header /> : <div class="~mb-10/20" />}
