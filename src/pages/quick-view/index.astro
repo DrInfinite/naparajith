@@ -27,11 +27,10 @@ import ACard from "@/components/ACard.astro";
 import { getCollection } from "astro:content";
 import { LeetcodeProfile } from "@/actions/leetcode-profile";
 import { Image } from "astro:assets";
-import { GithubProfile } from "@/actions/github-profile";
+import GitHubCard from "@/components/quick-view/GitHubCard.astro";
 
 const blog = await getCollection("blog");
 const leetcode = await LeetcodeProfile();
-const updated_at = new Date((await GithubProfile()).updated_at).toDateString();
 ---
 
 <Layout
@@ -90,20 +89,7 @@ const updated_at = new Date((await GithubProfile()).updated_at).toDateString();
 			</div>
 
 			<div class="flex justify-evenly text-center ~gap-4/8 md:text-start">
-				<ACard href="/quick-view/github" title="GitHub" class="group">
-					<span class="flex flex-col">
-						GitHub
-						<div
-							class="h-[2px] bg-gradient-to-r from-[#d83333] to-[#f041ff] transition-all duration-300 ~my-0/2"
-						>
-						</div>
-						<small class="font-normal">
-							<u class="block md:hidden">Updated On</u>
-							<u class="hidden md:inline">Updated On:</u>
-							{updated_at !== "Invalid Date" ? updated_at.slice(4, 15) : "NA"}
-						</small>
-					</span>
-				</ACard>
+				<GitHubCard />
 				<ACard href="/quick-view/leetcode" title="LeetCode">
 					<span class="flex flex-col">
 						LeetCode
