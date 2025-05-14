@@ -73,7 +73,7 @@ export default defineConfig({
 		fonts: [
 			{
 				provider: fontProviders.google(),
-				name: "Poppins",
+				name: "Noto Sans",
 				cssVariable: "--font-sans",
 			},
 			{
