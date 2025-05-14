@@ -100,14 +100,16 @@ const leetcode = await LeetcodeProfile();
 						<small class="font-normal">
 							<u class="block md:hidden">Last Solved</u>
 							<u class="hidden md:inline">Last Solved:</u>
-							{
-								new Date(
-									parseInt(leetcode.recentSubmissionList?.at(0)?.timestamp!) *
-										1000,
-								)
-									.toDateString()
-									.slice(4, 15)
-							}
+							<strong
+								>{
+									new Date(
+										parseInt(leetcode.recentSubmissionList?.at(0)?.timestamp!) *
+											1000,
+									)
+										.toDateString()
+										.slice(4, 10)
+								}</strong
+							>
 						</small>
 					</span>
 				</ACard>
@@ -121,7 +123,9 @@ const leetcode = await LeetcodeProfile();
 						<small class="font-normal">
 							<u class="block md:hidden">Last Posted</u>
 							<u class="hidden md:inline">Last Posted:</u>
-							{blog.at(0)?.data.created.toDateString().slice(4, 15)}
+							<strong
+								>{blog.at(0)?.data.created.toDateString().slice(4, 10)}</strong
+							>
 						</small>
 					</span>
 				</ACard>
