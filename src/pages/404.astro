@@ -30,7 +30,7 @@ import Layout from "@/layouts/Layout.astro";
 >
 	<div class="flex h-[60vh] flex-col place-content-center gap-4">
 		<h3 class="text-center">
-			404 | The Page you are looking for has moved or doesn't exist ;(
+			404 | the page you are looking for has moved or doesn't exist ;(
 		</h3>
 		<p class="text-justify">
 			Try looking for another page or, go home to start over. Sorry for any
@@ -39,5 +39,17 @@ import Layout from "@/layouts/Layout.astro";
 		<Button className={"mx-auto place-self-center"} href={"/"}>
 			Go Home
 		</Button>
+		<div class="text-center">
+			<h3>Here's a quote for your efforts ;)</h3>
+			<div
+				class="font-quote font-bold italic ~-my-4/8 [&>a]:font-sans [&>a]:not-italic [&>b]:invisible"
+			>
+				<script
+					is:inline
+					type="text/javascript"
+					src="//www.azquotes.com/widgets/link/qu_f.js"></script>
+			</div>
+		</div>
+		<noscript>Sorry guys, no JavaScript, no random quote ;(</noscript>
 	</div>
 </Layout>

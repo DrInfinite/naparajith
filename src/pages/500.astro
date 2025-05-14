@@ -27,7 +27,7 @@ import Layout from "@/layouts/Layout.astro";
 <Layout title="500" description="there was an unknown server-side error">
 	<div class="flex h-[60vh] flex-col place-content-center gap-4">
 		<h3 class="text-center">
-			500 | The Server randomly decided to stop working ;(
+			500 | the server randomly decided to stop working ;(
 		</h3>
 		<p class="text-justify">
 			Try reloading the page or, go home to start over. Sorry for any
@@ -36,5 +36,17 @@ import Layout from "@/layouts/Layout.astro";
 		<Button className={"mx-auto place-self-center"} href={"/"}>
 			Go Home
 		</Button>
+		<div class="text-center">
+			<h3>Here's a quote for your efforts ;)</h3>
+			<div
+				class="font-quote font-bold italic ~-my-4/8 [&>a]:font-sans [&>a]:not-italic [&>b]:invisible"
+			>
+				<script
+					is:inline
+					type="text/javascript"
+					src="//www.azquotes.com/widgets/link/qu_m.js"></script>
+			</div>
+		</div>
+		<noscript>Sorry guys, no JavaScript, no random quote ;(</noscript>
 	</div>
 </Layout>
