@@ -4,8 +4,8 @@
 	"version": "0.0.1",
 	"license": "AGPL-3.0-only",
 	"scripts": {
-		"dev": "astro dev --verbose",
-		"build": "astro check --verbose && astro build --verbose",
+		"dev": "astro dev",
+		"build": "astro check && astro build",
 		"preview": "astro preview",
 		"info": "astro info",
 		"astro": "astro",
