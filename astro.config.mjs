@@ -20,7 +20,7 @@
  */
 
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -49,7 +49,7 @@ export default defineConfig({
 				limitInputPixels: true,
 			},
 		},
-		experimentalLayout: "responsive",
+		experimentalLayout: "constrained",
 		experimentalObjectPosition: "center",
 		experimentalObjectFit: "cover",
 	},
@@ -58,7 +58,11 @@ export default defineConfig({
 	markdown: {
 		remarkPlugins: [ReadingTime],
 		syntaxHighlight: "shiki",
-		shikiConfig: { theme: "rose-pine", langAlias: { cc: "cpp" } },
+		shikiConfig: {
+			theme: "catppuccin-latte",
+			langAlias: { cc: "cpp" },
+			wrap: true,
+		},
 	},
 	prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
 	redirects: {
@@ -70,6 +74,23 @@ export default defineConfig({
 	experimental: {
 		clientPrerender: true,
 		responsiveImages: true,
+		fonts: [
+			{
+				provider: fontProviders.google(),
+				name: "Noto Sans",
+				cssVariable: "--font-sans",
+			},
+			{
+				provider: fontProviders.google(),
+				name: "Noto Serif Display",
+				cssVariable: "--font-quote",
+			},
+			{
+				provider: fontProviders.google(),
+				name: "Noto Serif",
+				cssVariable: "--font-serif",
+			},
+		],
 	},
 	site:
 		process.env.NODE_ENV === "development"

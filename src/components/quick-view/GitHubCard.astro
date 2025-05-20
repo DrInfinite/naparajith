@@ -19,39 +19,28 @@
  *
  * Contact me through electronic mail: <naparajith@duck.com>
  */
+
+import ACard from "@/components/ACard.astro";
+import { GithubProfile } from "@/actions/github-profile";
+
+const updated_at = new Date((await GithubProfile()).updated_at).toDateString();
 ---
 
-<h3>GitHub Stats</h3>
-<div>
-	<div
-		class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
-	>
-		<span
-			>Repositories: <strong class="animate-pulse">
-				<span
-					class="bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
-				>
-					##
-				</span>
-			</strong>
-			<span
-				>Followers: <strong class="animate-pulse">
-					<span
-						class="bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
-					>
-						##
-					</span>
-				</strong>
-			</span>
-			<span
-				>Following: <strong class="animate-pulse">
-					<span
-						class="bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent"
-					>
-						##
-					</span>
-				</strong>
-			</span>
-		</span>
-	</div>
-</div>
+<ACard href="/quick-view/github" title="GitHub" class="group" target={"_blank"}>
+	<span class="flex flex-col">
+		GitHub
+		<div
+			class="h-[2px] bg-gradient-to-r from-[#d83333] to-[#f041ff] transition-all duration-300 ~my-0/2"
+		>
+		</div>
+		<small class="font-normal">
+			<u class="block md:hidden">Updated On</u>
+			<u class="hidden md:inline">Updated On:</u>
+			<strong
+				>{
+					updated_at !== "Invalid Date" ? updated_at.slice(4, 10) : "NA"
+				}</strong
+			>
+		</small>
+	</span>
+</ACard>

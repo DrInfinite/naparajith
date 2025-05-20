@@ -78,7 +78,7 @@
 	}
 
 	body {
-		@apply prose prose-sm mx-auto scroll-smooth bg-background font-sans text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl;
+		@apply prose prose-sm mx-auto scroll-smooth bg-background text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl;
 	}
 
 	button {
@@ -110,7 +110,7 @@
 	}
 
 	blockquote {
-		@apply font-serif font-bold text-primary;
+		@apply font-quote font-bold text-primary;
 	}
 
 	cite {

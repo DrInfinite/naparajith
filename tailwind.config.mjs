@@ -31,6 +31,11 @@ export default {
 	theme: {
 		screens,
 		fontSize,
+		fontFamily: {
+			sans: ["var(--font-sans)"],
+			quote: ["var(--font-quote)"],
+			serif: ["var(--font-serif)"],
+		},
 		extend: {
 			screens: { xs: "20rem" },
 			colors: {

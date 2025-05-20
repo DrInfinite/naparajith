@@ -58,6 +58,7 @@ const leetcode = await LeetcodeProfile();
 			))
 		}
 	</div>
+
 	<h2>Overview</h2>
 	<div
 		class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
@@ -74,6 +75,7 @@ const leetcode = await LeetcodeProfile();
 			</strong>
 		</span>
 	</div>
+
 	<h2>Solved Problems</h2>
 	<table>
 		<thead>
@@ -116,6 +118,7 @@ const leetcode = await LeetcodeProfile();
 			</tr>
 		</tfoot>
 	</table>
+
 	<h2>Recent Submissions</h2>
 	{
 		leetcode.recentSubmissionList?.slice(0, 5).map((sub) => (
@@ -134,7 +137,14 @@ const leetcode = await LeetcodeProfile();
 				</article>
 				<article class="flex justify-between ~p-2/4">
 					<small class="italic">
-						{new Date(parseInt(sub.timestamp) * 1000).toLocaleString()}
+						{process.env.NODE_ENV === "development"
+							? new Date(parseInt(sub.timestamp) * 1000)
+									.toLocaleString()
+									.toUpperCase()
+							: new Date((parseInt(sub.timestamp) + 19800) * 1000)
+									.toLocaleString()
+									.toUpperCase()}{" "}
+						IST
 					</small>
 					<small>{sub.statusDisplay}</small>
 				</article>

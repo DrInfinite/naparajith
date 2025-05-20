@@ -25,11 +25,11 @@ export const prerender = false;
 import Layout from "@/layouts/Layout.astro";
 import ACard from "@/components/ACard.astro";
 import { getCollection } from "astro:content";
-import { LeetcodeProfile } from "@/actions/leetcode-profile";
 import { Image } from "astro:assets";
+import GitHubCard from "@/components/quick-view/GitHubCard.astro";
+import LeetcodeCard from "@/components/quick-view/LeetcodeCard.astro";
 
 const blog = await getCollection("blog");
-const leetcode = await LeetcodeProfile();
 ---
 
 <Layout
@@ -57,17 +57,10 @@ const leetcode = await LeetcodeProfile();
 			</div>
 		</article>
 
-		<hr class="my-4 border-t-2 border-t-border" />
+		<hr class="border-t-2 border-t-border ~my-2/4" />
 
 		<div class="~space-y-4/8">
 			<div class="flex flex-wrap justify-evenly ~gap-2/4">
-				<ACard
-					href={"https://github.com/DrInfinite"}
-					title={`GitHub - DrInfinite`}
-					target="_blank"
-				>
-					GitHub
-				</ACard>
 				<ACard
 					href="https://www.linkedin.com/in/naparajith/"
 					title="LinkedIn - Naparajith T L"
@@ -84,31 +77,25 @@ const leetcode = await LeetcodeProfile();
 				</ACard>
 				<ACard href="/" title="Portfolio">Portfolio</ACard>
 				<ACard href={"/contact"} title={"Contact"}>Contact</ACard>
+				<ACard href={"/quotes"}>Quotes</ACard>
 			</div>
 
-			<div class="flex justify-evenly ~gap-4/8">
-				<ACard href="/quick-view/leetcode" title="LeetCode">
-					<span class="flex flex-col">
-						LeetCode
-						<small class="font-normal">
-							Last Solved: {
-								new Date(
-									parseInt(leetcode.recentSubmissionList?.at(0)?.timestamp!) *
-										1000,
-								)
-									.toDateString()
-									.slice(4, 15)
-							}
-						</small>
-					</span>
-				</ACard>
+			<div class="flex justify-evenly text-center ~gap-4/8 md:text-start">
+				<GitHubCard />
+				<LeetcodeCard />
 				<ACard href="/blog" title="Portfolio - Blog">
 					<span class="flex flex-col">
 						Blog
+						<div
+							class="h-[2px] bg-gradient-to-r from-[#d83333] to-[#f041ff] transition-all duration-300 ~my-0/2"
+						>
+						</div>
 						<small class="font-normal">
-							Last Posted: {
-								blog.at(0)?.data.created.toDateString().slice(4, 15)
-							}
+							<u class="block md:hidden">Last Posted</u>
+							<u class="hidden md:inline">Last Posted:</u>
+							<strong
+								>{blog.at(0)?.data.created.toDateString().slice(4, 10)}</strong
+							>
 						</small>
 					</span>
 				</ACard>
