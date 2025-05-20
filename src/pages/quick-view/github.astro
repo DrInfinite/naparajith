@@ -1,0 +1,58 @@
+---
+/**
+ * This website is only meant to showcase the work and and skills of the author,
+ * on a professional level. It also has a blog, containing the author's observations
+ * and opinions on various topics. The views expressed are the author's own.
+ * Copyright (C) 2024  T L Naparajith
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License Version 3 as published
+ * by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
+ *
+ * Contact me through electronic mail: <naparajith@duck.com>
+ */
+
+import Layout from "@/layouts/Layout.astro";
+import { GithubRepositories } from "@/actions/github/repositories.ts";
+import A from "@/components/A.astro";
+const result = await GithubRepositories();
+<Layout
+	title="Leetcode"
+	description="A quick overview of my leetcode stats, directly from the source"
+>
+	<main>
+		<h2>Repositories</h2>
+		{
+			result.map((repo) => (
+				<a
+					href={repo.clone_url}
+					class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~mb-4/8 ~rounded-none/xl hover:bg-foreground/10"
+					target="_blank"
+				>
+					<article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
+						<h4 class="-my-px truncate" transition:name="post-title">
+							{repo.name}
+						</h4>
+						<small class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent">
+							{repo.language}
+						</small>
+					</article>
+					<article class="flex justify-between ~p-2/4">
+						<small class="italic">
+							{new Date(repo.updated_at).toDateString()}
+						</small>
+						<small>{repo.owner.login}</small>
+					</article>
+				</a>
+			))
+		}
+	</main>
+</Layout>

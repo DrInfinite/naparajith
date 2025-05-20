@@ -20,20 +20,13 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
-export const prerender = true;
-
 import ACard from "@/components/ACard.astro";
 import { GithubProfile } from "@/actions/github-profile";
 
 const updated_at = new Date((await GithubProfile()).updated_at).toDateString();
 ---
 
-<ACard
-	href="https://github.com/DrInfinite"
-	title="GitHub"
-	class="group"
-	target={"_blank"}
->
+<ACard href="/quick-view/github" title="GitHub" class="group" target={"_blank"}>
 	<span class="flex flex-col">
 		GitHub
 		<div
