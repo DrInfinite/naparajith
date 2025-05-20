@@ -25,12 +25,11 @@ export const prerender = false;
 import Layout from "@/layouts/Layout.astro";
 import ACard from "@/components/ACard.astro";
 import { getCollection } from "astro:content";
-import { LeetcodeProfile } from "@/actions/leetcode-profile";
 import { Image } from "astro:assets";
 import GitHubCard from "@/components/quick-view/GitHubCard.astro";
+import LeetcodeCard from "@/components/quick-view/LeetcodeCard.astro";
 
 const blog = await getCollection("blog");
-const leetcode = await LeetcodeProfile();
 ---
 
 <Layout
@@ -83,29 +82,7 @@ const leetcode = await LeetcodeProfile();
 
 			<div class="flex justify-evenly text-center ~gap-4/8 md:text-start">
 				<GitHubCard />
-				<ACard href="/quick-view/leetcode" title="LeetCode">
-					<span class="flex flex-col">
-						LeetCode
-						<div
-							class="h-[2px] bg-gradient-to-r from-[#d83333] to-[#f041ff] transition-all duration-300 ~my-0/2"
-						>
-						</div>
-						<small class="font-normal">
-							<u class="block md:hidden">Last Solved</u>
-							<u class="hidden md:inline">Last Solved:</u>
-							<strong
-								>{
-									new Date(
-										parseInt(leetcode.recentSubmissionList?.at(0)?.timestamp!) *
-											1000,
-									)
-										.toDateString()
-										.slice(4, 10)
-								}</strong
-							>
-						</small>
-					</span>
-				</ACard>
+				<LeetcodeCard />
 				<ACard href="/blog" title="Portfolio - Blog">
 					<span class="flex flex-col">
 						Blog
