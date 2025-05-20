@@ -24,6 +24,8 @@ import Layout from "@/layouts/Layout.astro";
 import { GithubRepositories } from "@/actions/github/repositories.ts";
 import A from "@/components/A.astro";
 const result = await GithubRepositories();
+---
+
 <Layout
 	title="Leetcode"
 	description="A quick overview of my leetcode stats, directly from the source"
