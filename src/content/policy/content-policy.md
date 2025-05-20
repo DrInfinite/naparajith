@@ -2,7 +2,7 @@
 title: Content Policy
 description: The official JavaScript Policy for Naparajith's Portfolio
 created: 03-18-2025
-updated: 03-18-2025
+updated: 05-20-2025
 ---
 
 <!--
