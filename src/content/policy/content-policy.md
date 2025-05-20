@@ -38,19 +38,11 @@ website.
 
 ## Scope
 
-This policy applies to the use of free and unrestricted FOSS JavaScript across
-my entire website project. I am committed to exclusively using FOSS JavaScript
-components that have the most permissive licenses, such as MIT, Apache, or BSD,
-which allow for unrestricted use, modification, and distribution.
-
-The policy does not constrain the use of FOSS JavaScript for internal or
-external purposes. I am free to incorporate any FOSS JavaScript libraries,
-frameworks, or utilities that meet the criteria of being free and unrestricted,
-without the need for additional approval or compliance procedures.
-
-My goal is to leverage the vast ecosystem of open source JavaScript to create a
-robust and feature-rich website for my users, while respecting the open source
-principles of freedom and collaboration.
+This policy applies to all pages and functionalities of the website that contain
+original or derived works of content such as profiles, blog posts, quotes by
+famous personalities and comments. It is my responsibility to ensure that all
+content is free of any form of plagiarism and cites the original works wherever
+necessary.
 
 ## Terms and Abbreviations
 
