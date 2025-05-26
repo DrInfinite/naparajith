@@ -74,7 +74,7 @@
 
 @layer base {
 	* {
-		@apply transition transition-all ease-linear;
+		@apply transition transition-all duration-100 ease-linear;
 	}
 
 	body {
