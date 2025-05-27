@@ -9,11 +9,36 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── public/
 │   └── favicon.svg
 ├── src/
+│   ├── components/
+│   │   ├── A.astro
+│   │   ├── ACard.astro
+│   │   └── Header.astro
 │   ├── layouts/
 │   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── quick-view/
+│   │   │   ├── index.astro
+│   │   │   └── github.astro
+│   │   └── quotes/
+│   │       └── [slug].astro
+│   ├── actions/
+│   │   ├── github/
+│   │   │   └── repositories.ts
+│   │   └── github-profile.ts
+│   ├── content/
+│   │   ├── blog/
+│   │   │   └── *.md
+│   │   ├── license/
+│   │   │   └── code.mdx
+│   │   ├── policy/
+│   │   │   └── *.md
+│   │   └── profile/
+│   │       └── *.md
+│   ├── content.config.ts
+│   └── tailwind.config.mjs
+├── package.json
+└── README.md
 ```
 
 ## 🧞 Commands

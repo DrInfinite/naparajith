@@ -34,38 +34,33 @@ const result = await GithubRepositories();
 	description="A quick overview of my leetcode stats, directly from the source"
 >
 	<main>
-		<A
-			href={github.html_url}
-			title="LeetCode Profile"
-			target={"_blank"}
-			css={"~text-xl/5xl"}
-		>
-			{github.login}
-		</A>
+		<span class="flex flex-row items-center justify-center ~gap-4/8">
+			<A
+				href={github.html_url}
+				title="LeetCode Profile"
+				target={"_blank"}
+				css={"~text-xl/5xl"}
+			>
+				{github.login}
+			</A>
+			<div
+				class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
+			>
+				<span>
+					Since <strong>
+						{new Date(github.created_at).toDateString().slice(4)}
+					</strong>
+				</span>
+			</div>
+		</span>
 		<p>{github.bio}</p>
 		<h2>Overview</h2>
-		<div class="~space-y-4/8">
-			<div
-				class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
-			>
-				<span>Repositories: <strong>{github.public_repos}</strong></span>
-				<span>Followers: <strong>{github.followers}</strong></span>
-				<span>Following: <strong>{github.following}</strong></span>
-			</div>
-			<div
-				class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
-			>
-				<span
-					>Created On: <strong
-						>{new Date(github.created_at).toDateString()}</strong
-					></span
-				>
-				<span
-					>Updated On: <strong
-						>{new Date(github.updated_at).toDateString()}</strong
-					></span
-				>
-			</div>
+		<div
+			class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
+		>
+			<span>Repositories: <strong>{github.public_repos}</strong></span>
+			<span>Followers: <strong>{github.followers}</strong></span>
+			<span>Following: <strong>{github.following}</strong></span>
 		</div>
 
 		<h2>Repositories</h2>
