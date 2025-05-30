@@ -56,7 +56,7 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 							transition:name="image"
 						/>
 					</div>
-					<article class="flex justify-between bg-gradient-to-br from-[#d83333] to-[#f041ff] bg-clip-text text-transparent ~p-2/4">
+					<article class="flex justify-between bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent ~p-2/4">
 						<small>{post.data.created.toDateString()}</small>
 						<small>{(await getEntry(post.data.author)).data.name}</small>
 					</article>

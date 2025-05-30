@@ -28,13 +28,13 @@ const { title, className, target, ...props } = Astro.props;
 ---
 
 <a
-	class={`group rounded-full border border-border bg-gradient-to-r from-secondary to-secondary no-underline ~px-2/4 ~py-1/2 hover:from-[#d83333] hover:to-[#f041ff] ${className}`}
+	class={`group rounded-full border border-border bg-gradient-to-r from-secondary to-secondary dark:from-gray-200 dark:to-gray-200 no-underline ~px-2/4 ~py-1/2 hover:from-[#1e57b7] hover:to-[#4762f4] ${className}`}
 	target={target}
 	title={title}
 	{...props}
 >
 	<span
-		class="bg-gradient-to-r from-[#d83333] to-[#f041ff] bg-clip-text text-transparent group-hover:from-primary group-hover:to-primary"
+		class="bg-gradient-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent group-hover:from-white group-hover:to-white"
 	>
 		<slot />
 	</span>

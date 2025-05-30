@@ -11,8 +11,8 @@
     <defs>
         <linearGradient id="a" x1="64.7" x2="77.4" y1="119.2" y2="77.4"
             gradientUnits="userSpaceOnUse">
-            <stop stop-color="#D83333" />
-            <stop offset="1" stop-color="#F041FF" />
+            <stop stop-color="#1e57b7" />
+            <stop offset="1" stop-color="#4762f4" />
         </linearGradient>
     </defs>
 
