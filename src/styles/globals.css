@@ -114,7 +114,7 @@
 	}
 
 	cite {
-		@apply bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent;
+		@apply bg-gradient-to-br from-[#8711c1] to-[#2472fc] bg-clip-text text-transparent dark:from-[#A71EEB] dark:to-[#4A8BFC];
 	}
 
 	details[open] summary {

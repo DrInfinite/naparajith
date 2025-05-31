@@ -1,0 +1,49 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+type TAnchorTargetProps = "_self" | "_blank" | "_parent" | "_top";
+
+type TProjectsProps = {
+	href: string;
+	target: TAnchorTargetProps;
+	title: string;
+	lang: string;
+	description: string;
+};
+
+const projects: TProjectsProps[] = [
+	{
+		href: "/projects/rent-or-buy",
+		target: "_self",
+		title: "Rent or Buy",
+		lang: "Astro (TS)",
+		description:
+			"A simple tool that helps you decide whether you need to rent or buy a house.",
+	},
+];
+---
+
+<Layout
+	title="Projects"
+	description="A collection of projects that I have worked on"
+>
+	{
+		projects.map((project) => (
+			<a
+				href={project.href}
+				class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~mb-4/8 ~rounded-none/xl hover:bg-foreground/10"
+				target={project.target}
+			>
+				<article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
+					<h4 class="-my-px truncate" transition:name="project-title">
+						{project.title}
+					</h4>
+					<small class="bg-gradient-to-r from-[#8711c1] to-[#2472fc] bg-clip-text text-transparent">
+						{project.lang}
+					</small>
+				</article>
+				<small class="flex justify-between ~p-2/4">{project.description}</small>
+			</a>
+		))
+	}
+</Layout>

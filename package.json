@@ -14,11 +14,11 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",
-		"@astrojs/mdx": "^4.2.6",
-		"@astrojs/sitemap": "^3.4.0",
+		"@astrojs/mdx": "^4.3.0",
+		"@astrojs/sitemap": "^3.4.1",
 		"@astrojs/tailwind": "^6.0.2",
-		"@astrojs/vercel": "8.1.4",
-		"astro": "5.7.12",
+		"@astrojs/vercel": "8.1.5",
+		"astro": "5.8.2",
 		"leetcode-query": "^2.0.0",
 		"mdast-util-to-string": "^4.0.0",
 		"reading-time": "^1.5.0",
@@ -36,5 +36,5 @@
 		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-tailwindcss": "^0.6.11"
 	},
-	"packageManager": "pnpm@10.10.0"
+	"packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912"
 }
