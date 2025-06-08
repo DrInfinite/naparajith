@@ -30,63 +30,63 @@ const result = await GithubRepositories();
 ---
 
 <Layout
-	title="Leetcode"
-	description="A quick overview of my leetcode stats, directly from the source"
+  title="Leetcode"
+  description="A quick overview of my leetcode stats, directly from the source"
 >
-	<main>
-		<span class="flex flex-row items-center justify-center ~gap-4/8">
-			<A
-				href={github.html_url}
-				title="LeetCode Profile"
-				target={"_blank"}
-				css={"~text-xl/5xl"}
-			>
-				{github.login}
-			</A>
-			<div
-				class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
-			>
-				<span>
-					Since <strong>
-						{new Date(github.created_at).toDateString().slice(4)}
-					</strong>
-				</span>
-			</div>
-		</span>
-		<p>{github.bio}</p>
-		<h2>Overview</h2>
-		<div
-			class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
-		>
-			<span>Repositories: <strong>{github.public_repos}</strong></span>
-			<span>Followers: <strong>{github.followers}</strong></span>
-			<span>Following: <strong>{github.following}</strong></span>
-		</div>
+  <main>
+    <span class="flex flex-row items-center justify-center ~gap-4/8">
+      <A
+        href={github.html_url}
+        title="LeetCode Profile"
+        target={"_blank"}
+        css={"~text-xl/5xl"}
+      >
+        {github.login}
+      </A>
+      <div
+        class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
+      >
+        <span>
+          Since <strong>
+            {new Date(github.created_at).toDateString().slice(4)}
+          </strong>
+        </span>
+      </div>
+    </span>
+    <p>{github.bio}</p>
+    <h2>Overview</h2>
+    <div
+      class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
+    >
+      <span>Repositories: <strong>{github.public_repos}</strong></span>
+      <span>Followers: <strong>{github.followers}</strong></span>
+      <span>Following: <strong>{github.following}</strong></span>
+    </div>
 
-		<h2>Repositories</h2>
-		{
-			result.map((repo) => (
-				<a
-					href={repo.clone_url}
-					class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~mb-4/8 ~rounded-none/xl hover:bg-foreground/10"
-					target="_blank"
-				>
-					<article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
-						<h4 class="-my-px truncate" transition:name="post-title">
-							{repo.name}
-						</h4>
-						<small class="bg-gradient-to-r from-[#8711c1] to-[#2472fc] bg-clip-text text-transparent">
-							{repo.language}
-						</small>
-					</article>
-					<article class="flex justify-between ~p-2/4">
-						<small class="italic">
-							{new Date(repo.updated_at).toDateString()}
-						</small>
-						<small>{repo.owner.login}</small>
-					</article>
-				</a>
-			))
-		}
-	</main>
+    <h2>Repositories</h2>
+    {
+      result.map((repo) => (
+        <a
+          href={repo.clone_url}
+          class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~mb-4/8 ~rounded-none/xl hover:bg-foreground/10"
+          target="_blank"
+        >
+          <article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
+            <h4 class="-my-px truncate" transition:name="post-title">
+              {repo.name}
+            </h4>
+            <small class="bg-gradient-to-r from-[#8711c1] to-[#2472fc] bg-clip-text text-transparent">
+              {repo.language}
+            </small>
+          </article>
+          <article class="flex justify-between ~p-2/4">
+            <small class="italic">
+              {new Date(repo.updated_at).toDateString()}
+            </small>
+            <small>{repo.owner.login}</small>
+          </article>
+        </a>
+      ))
+    }
+  </main>
 </Layout>

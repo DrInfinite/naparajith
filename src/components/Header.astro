@@ -25,41 +25,41 @@ import Button from "./Button.astro";
 ---
 
 <header
-	class="my-10 border border-l-0 border-r-0 border-t-0 border-border pb-4"
+  class="my-10 border border-l-0 border-r-0 border-t-0 border-border pb-4"
 >
-	<h3 class="text-start">
-		~/{
-			Astro.url.pathname.startsWith("/blog") ||
-			Astro.url.pathname.startsWith("/quotes")
-				? Astro.url.pathname
-						.toString()
-						.replace("/", "")
-						.replace(/\/.*/, "")
-						.replace("/", "")
-				: Astro.url.pathname.startsWith("/profile")
-					? Astro.url.pathname
-							.toString()
-							.replace("/", "")
-							.replace(/\/\d+-/, "/")
-					: Astro.url.pathname.toString().replace("/", "")
-		}<span class="animate-pulse">&#x25AE</span>
-		<!-- ~/{Astro.url.pathname.toString().replace("/", "").replace(/\/.*/, "")} -->
-	</h3>
-	<div class="flex justify-between" transition:persist>
-		<div class="flex flex-wrap justify-evenly ~gap-2/4">
-			<A href="/">Home</A>
-			<A href="/profile"> Profile </A>
-			<A href="/quick-view"> Quick View </A>
-		</div>
+  <h3 class="text-start">
+    ~/{
+      Astro.url.pathname.startsWith("/blog") ||
+      Astro.url.pathname.startsWith("/quotes")
+        ? Astro.url.pathname
+            .toString()
+            .replace("/", "")
+            .replace(/\/.*/, "")
+            .replace("/", "")
+        : Astro.url.pathname.startsWith("/profile")
+          ? Astro.url.pathname
+              .toString()
+              .replace("/", "")
+              .replace(/\/\d+-/, "/")
+          : Astro.url.pathname.toString().replace("/", "")
+    }<span class="animate-pulse">&#x25AE</span>
+    <!-- ~/{Astro.url.pathname.toString().replace("/", "").replace(/\/.*/, "")} -->
+  </h3>
+  <div class="flex justify-between" transition:persist>
+    <div class="flex flex-wrap justify-evenly ~gap-2/4">
+      <A href="/">Home</A>
+      <A href="/profile"> Profile </A>
+      <A href="/quick-view"> Quick View </A>
+    </div>
 
-		<span>
-			<Button
-				href="https://flowcv.com/resume/mdrssqq018"
-				title="Resume"
-				target="_blank"
-			>
-				Resume
-			</Button>
-		</span>
-	</div>
+    <span>
+      <Button
+        href="https://flowcv.com/resume/mdrssqq018"
+        title="Resume"
+        target="_blank"
+      >
+        Resume
+      </Button>
+    </span>
+  </div>
 </header>
