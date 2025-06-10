@@ -23,7 +23,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 Contact me through electronic mail: <naparajith@duck.com>
 -->
 
-## **AT&T Communication Services India**
+<h2 class="bg-gradient-to-r from-[#8711c1] to-[#2472fc] bg-clip-text text-transparent">AT&T Communication Services India</h2>
 
 **Senior Associate, Quality Assurance** – June 2024 - Present
 
@@ -52,7 +52,7 @@ Contact me through electronic mail: <naparajith@duck.com>
 
 ---
 
-## **DigiTranIT Pvt Ltd**
+<h2 class="bg-gradient-to-r from-[#8711c1] to-[#2472fc] bg-clip-text text-transparent">DigiTranIT Pvt Ltd</h2>
 
 **Full Stack Development Intern** – January 2022 - April 2022
 

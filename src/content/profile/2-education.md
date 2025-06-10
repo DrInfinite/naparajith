@@ -25,7 +25,7 @@ Contact me through electronic mail: <naparajith@duck.com>
 
 #### Chennai Institute of Technology (Anna University)
 
-### Bachelor's of Engineering, Computer Science and Engineering
+<h3 class="bg-gradient-to-r from-[#8711c1] to-[#2472fc] bg-clip-text text-transparent">Bachelor's of Engineering, Computer Science and Engineering</h3>
 
 - **Duration:** October 2020 - April 2024
 - **CGPA:** 8.96
@@ -35,7 +35,7 @@ Contact me through electronic mail: <naparajith@duck.com>
 
 #### Chettinad Vidyashram (CBSE)
 
-### All India Senior School Certificate Examination
+<h3 class="bg-gradient-to-r from-[#8711c1] to-[#2472fc] bg-clip-text text-transparent">All India Senior School Certificate Examination</h3>
 
 - **Duration:** April 2018 - March 2020
 - **Score:** 570/600
@@ -45,7 +45,7 @@ Contact me through electronic mail: <naparajith@duck.com>
 
 #### DAV School (CBSE)
 
-### All India Secondary School Examination
+<h3 class="bg-gradient-to-r from-[#8711c1] to-[#2472fc] bg-clip-text text-transparent">All India Secondary School Examination</h3>
 
 - **Duration:** April 2016 - March 2018
 - **Score:** 455/500
