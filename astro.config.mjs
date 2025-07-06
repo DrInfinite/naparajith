@@ -43,15 +43,16 @@ export default defineConfig({
 			{ protocol: "https", hostname: "brainmade.org" },
 			{ protocol: "https", hostname: "assets.leetcode.com" },
 		],
+		responsiveStyles: true,
 		service: {
 			entrypoint: "astro/assets/services/sharp",
 			config: {
 				limitInputPixels: true,
 			},
 		},
-		experimentalLayout: "constrained",
-		experimentalObjectPosition: "center",
-		experimentalObjectFit: "cover",
+		layout: "constrained",
+		objectPosition: "center",
+		objectFit: "cover",
 	},
 	integrations: [tailwind({ applyBaseStyles: false }), sitemap(), mdx()],
 	output: "static",
@@ -73,7 +74,6 @@ export default defineConfig({
 	},
 	experimental: {
 		clientPrerender: true,
-		responsiveImages: true,
 		fonts: [
 			{
 				provider: fontProviders.google(),

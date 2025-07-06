@@ -62,8 +62,7 @@ const postImage = await getImage({ src: post.data.image, format: "webp" });
 				src={author.data.image}
 				alt={author.data.name}
 				inferSize
-				loading={"lazy"}
-				decoding={"async"}
+				priority
 				width={48}
 				height={48}
 				class="hidden rounded-full ~-my-2/4 ~size-6/12 md:inline"
@@ -91,9 +90,8 @@ const postImage = await getImage({ src: post.data.image, format: "webp" });
 			width="1920"
 			height="1080"
 			formats={["webp", "avif"]}
-			loading={"eager"}
-			decoding={"async"}
-			class="aspect-auto w-full border border-border ~rounded-none/xl"
+			priority
+			class="aspect-video border border-border ~rounded-none/xl"
 			transition:name="image"
 		/>
 		<figcaption class="bg-background text-center text-foreground">
