@@ -25,44 +25,115 @@ Contact me through electronic mail: <naparajith@duck.com>
 
 ## Professional Skills
 
-- **Agile Development** – Expertise in iterative and adaptive software
-  development.
-- **Workplace Proficiency** – Strong collaboration and communication skills.
-- **Marketplace Platforms** – Experience in building and maintaining marketplace
-  applications.
-- **End-to-End Quality Assurance** – Ensuring software quality across the
-  development lifecycle.
-- **Cross-Functional Teamwork** – Effective collaboration across diverse teams.
-- **Contract Negotiation** – Skilled in drafting and managing software
-  contracts.
-- **Decision-Making** – Strategic problem-solving and risk assessment.
-- **Management & Leadership** – Leading teams and driving project success.
-- **Business Development** – Identifying opportunities and fostering growth.
+- **Agile Development**  
+  Proficient in adaptive, iterative development practices ensuring rapid
+  delivery of high-quality software.
+
+- **Workplace Proficiency**  
+  Strong interpersonal, collaboration, and communication skills in diverse team
+  environments.
+
+- **Marketplace Platforms**  
+  Hands-on experience building and maintaining scalable, user-centric
+  marketplace applications.
+
+- **End-to-End Quality Assurance**  
+  Skilled in executing QA strategies across the entire development lifecycle for
+  robust product outcomes.
+
+- **Cross-Functional Teamwork**  
+  Proven ability to collaborate effectively with engineering, product, design,
+  and operations teams.
+
+- **Contract Negotiation**  
+  Experienced in drafting, reviewing, and managing software contracts and vendor
+  agreements.
+
+- **Decision-Making**  
+  Strategic thinker with strong problem-solving abilities and risk assessment
+  expertise.
+
+- **Management & Leadership**  
+  Demonstrated leadership in guiding teams, managing timelines, and driving
+  project delivery.
+
+- **Business Development**  
+  Adept at identifying new opportunities, expanding offerings, and fostering
+  sustainable growth.
+
+---
 
 ## Technical Skills
 
-- **Web Technologies** – Proficient in modern web development frameworks.
-- **Application Development Architectures** – Experience with various software
+- **Web Technologies**  
+  Proficient in React, HTML, CSS, JavaScript, and backend frameworks like
+  Node.js and Spring.
+
+- **Application Development Architectures**  
+  Experience working with monolithic, microservices, and serverless
   architectures.
-- **SQL, NoSQL, and NewSQL** – Database management and optimization.
-- **DevOps Tools** – Implementing CI/CD pipelines and cloud automation.
-- **Test Automation Frameworks** – Building robust automated testing solutions.
-- **Shell Scripting** – Automating tasks and improving efficiency.
-- **Microsoft Office** – Proficient in Excel, Word, and PowerPoint.
-- **UX/UI Design** – Designing intuitive user experiences.
-- **Data Analytics** – Analyzing and interpreting data for insights.
-- **Product Analytics** – Measuring product performance and user engagement.
+
+- **SQL, NoSQL, and NewSQL**  
+  Skilled in data modeling, query optimization, and managing relational and
+  non-relational databases.
+
+- **DevOps Tools**  
+  Expertise in CI/CD, version control (Git), Docker, Jenkins, and cloud-based
+  automation.
+
+- **Test Automation Frameworks**  
+  Building and maintaining test suites using Selenium, JUnit, Cypress, and other
+  tools.
+
+- **Shell Scripting**  
+  Automating repetitive tasks and system configurations using Bash and Zsh.
+
+- **Microsoft Office Suite**  
+  Advanced proficiency in Excel (including macros), Word, and PowerPoint for
+  documentation and reporting.
+
+- **UX/UI Design**  
+  Experience in creating intuitive interfaces using Figma, Adobe XD, and
+  accessibility-first design.
+
+- **Data Analytics**  
+  Proficient in Power BI, Excel analytics, and Python-based data exploration and
+  visualization.
+
+- **Product Analytics**  
+  Measuring product usage, defining KPIs, and interpreting engagement metrics to
+  drive decisions.
+
+---
 
 ## Domain Knowledge
 
-- **Technology Stacks** – Expertise in various programming ecosystems.
-- **Data Structures & Algorithms** – Strong problem-solving foundation.
-- **Databases & Networking** – Understanding of database management and network
-  protocols.
-- **Quality Assurance** – Ensuring software reliability and performance.
-- **Cloud Computing** – Experience with AWS, Azure, and Google Cloud.
-- **Software Development Life Cycle (SDLC)** – Knowledge of end-to-end
-  development processes.
-- **Agile Methodologies** – Experience in Scrum, Kanban, and Lean practices.
-- **Continuous Learning** – Staying updated with industry trends and
-  innovations.
+- **Technology Stacks**  
+  In-depth understanding of modern programming ecosystems and best development
+  practices.
+
+- **Data Structures & Algorithms**  
+  Solid problem-solving foundation with competitive programming experience.
+
+- **Databases & Networking**  
+  Knowledge of database internals, indexing strategies, and core networking
+  protocols (TCP/IP, HTTP).
+
+- **Quality Assurance**  
+  Expertise in manual and automated testing strategies to ensure product
+  stability and performance.
+
+- **Cloud Computing**  
+  Experience deploying and managing applications on AWS, Azure, and Google Cloud
+  platforms.
+
+- **Software Development Life Cycle (SDLC)**  
+  Familiar with all SDLC phases from requirements to deployment and maintenance.
+
+- **Agile Methodologies**  
+  Practical experience with Scrum, Kanban, and Lean workflows to ensure
+  efficient delivery.
+
+- **Continuous Learning**  
+  Commitment to upskilling and staying current with evolving technologies and
+  industry trends.
