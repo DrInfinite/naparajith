@@ -25,51 +25,85 @@ Contact me through electronic mail: <naparajith@duck.com>
 
 ## **AT&T Communication Services India**
 
-**Senior Associate, Quality Engineering** – May 2025 - Present
+### **Senior Associate, Quality Engineering**
 
-- Developed high-performance web applications using React and Java, improving
-  test result data management and reporting.
-- Developed PowerBI dashboards that improve defect data management and
-  visibility.
-- Automated 7 critical test suites, reducing manual effort hours by 31%.
-- Worked in Triage of several critical defects, reducing total downtime by 1 hr
-  per day.
+📅 _May 2025 – Present_
 
-**Senior Associate, Quality Assurance** – June 2024 - April 2025
+- Spearheaded the development of high-performance web applications using React
+  and Java, streamlining test result management and reporting workflows.
+- Engineered advanced Power BI dashboards, elevating visibility and traceability
+  of defect metrics across teams.
+- Automated 7 mission-critical test suites, reducing manual validation effort by
+  over 31%.
+- Led triage of critical defects, achieving an average daily downtime reduction
+  of 1 hour.
 
-- Developed high-performance web applications using React and Java, improving
-  test result data management and reporting.
-- Automated critical test suites, reducing manual effort hours by 31%.
+### **Senior Associate, Quality Assurance**
 
-**Staff Associate, Quality Assurance** – March 2024 - May 2024
+📅 _June 2024 – April 2025_
 
-- Improved data collection & manipulation rates by 50% and report accuracy by
-  17%.
-- Reduced data collection time by 20% through enhanced data pipelines.
+- Designed scalable QA automation frameworks using Java and Selenium,
+  significantly enhancing test coverage and reliability.
+- Automated critical test pipelines, cutting manual execution time by 31% across
+  multiple modules.
+- Maintained cross-functional coordination to align test strategy with evolving
+  product requirements.
 
-**Staff Associate, Artificial Intelligence** – October 2023 - March 2024
+### **Staff Associate, Quality Assurance**
 
-- Migrated codebases to align with modern standards, improving performance by
-  7%.
-- Enhanced code reliability by 17% through expanded unit and end-to-end testing.
+📅 _March 2024 – May 2024_
 
-**Technical Intern** – May 2023 - September 2023
+- Enhanced reporting precision by 17% through optimized data ingestion and
+  transformation pipelines.
+- Increased data handling throughput by 50%, contributing to faster
+  decision-making cycles.
+- Introduced efficient aggregation techniques, reducing data collection latency
+  by 20%.
 
-- Engaged in 480+ hours of training, and worked with industry-standard
-  technologies.
-- Worked on integrating emerging technologies and security trends into existing
-  systems.
+### **Staff Associate, Artificial Intelligence**
+
+📅 _October 2023 – March 2024_
+
+- Refactored legacy AI modules to modern standards, improving execution
+  performance by 7%.
+- Strengthened code robustness with an expanded suite of unit and end-to-end
+  tests, increasing reliability by 17%.
+- Supported experimental research initiatives to evaluate ML-driven quality
+  assurance approaches.
+
+### **Staff Associate, Technical Intern**
+
+📅 _May 2023 – September 2023_
+
+- Completed over 480 hours of industry-focused training, gaining proficiency in
+  enterprise development practices and tools.
+- Contributed to security audits and system enhancements by integrating
+  state-of-the-art technology standards.
+- Assisted in adapting cloud-native solutions for scalable quality assurance
+  workflows.
 
 ---
 
 ## **DigiTranIT Pvt Ltd**
 
-**Full Stack Development Intern** – January 2022 - April 2022
+### **Full Stack Development Intern**
 
-- Designed and developed async web applications with a database access layer.
-- Troubleshot issues to optimize site performance, reducing downtime by 21.69%.
+📅 _January 2022 – April 2022_
 
-**User Experience Design Intern** – September 2021 - December 2021
+- Designed and implemented asynchronous full-stack web solutions with integrated
+  database layers.
+- Diagnosed and resolved performance bottlenecks, reducing average application
+  downtime by 21.7%.
+- Collaborated with senior developers to deploy scalable APIs and enhance
+  product responsiveness.
 
-- Improved accessibility for 55% of the client's core users through simplified
-  flows.
+### **User Experience Design Intern**
+
+📅 _September 2021 – December 2021_
+
+- Conducted user research and usability audits to refine user journeys and
+  interface design.
+- Improved accessibility and intuitiveness for over 55% of key users by
+  streamlining navigation flows.
+- Delivered wireframes and prototypes that informed the successful rollout of a
+  major UX redesign.
