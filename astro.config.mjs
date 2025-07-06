@@ -60,7 +60,7 @@ export default defineConfig({
 		remarkPlugins: [ReadingTime],
 		syntaxHighlight: "shiki",
 		shikiConfig: {
-			theme: "catppuccin-latte",
+			theme: "catppuccin-mocha",
 			langAlias: { cc: "cpp" },
 			wrap: true,
 		},
