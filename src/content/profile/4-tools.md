@@ -23,90 +23,94 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 Contact me through electronic mail: <naparajith@duck.com>
 -->
 
-A collection of hardware and software tools that I use on a daily basis.
-(_<u>under active development, will be updated periodically</u>_)
+A curated collection of hardware and software tools that power my daily
+workflow. _**This list is under active development and updated periodically.**_
 
-## Workstation
+---
 
-### Operating System
+## Workstation Setup
 
-| Software              | Details         |
-| --------------------- | --------------- |
-| Operating System      | Arch Linux      |
-| Desktop Environment   | hyprland        |
-| UI Framework          | N/A             |
-| Development Framework | libgtk          |
-| Linux Kernel          | Stable (64-bit) |
-| Graphics Platform     | Wayland         |
-| Shell                 | zsh             |
+### System Information
 
-### Hardware
+| Component        | Specification                                                          |
+| ---------------- | ---------------------------------------------------------------------- |
+| **OS**           | [Arch Linux](https://archlinux.org) (64-bit)                           |
+| **Linux Kernel** | Stable Release                                                         |
+| **Desktop**      | [Hyprland](https://github.com/hyprwm/Hyprland) (Wayland-based)         |
+| **Shell**        | [Zsh](https://www.zsh.org) with [Starship](https://starship.rs) prompt |
+| **UI Framework** | [GTK](https://www.gtk.org)                                             |
 
-| Hardware             | Details                                         |
-| -------------------- | ----------------------------------------------- |
-| Processors           | 8 × 11th Gen Intel® Core™ i7-1165G7 @ 2.80GHz |
-| Memory               | 15.4 GiB of RAM                                 |
-| Graphics Processor 1 | Intel® Iris® Xe MAX Graphics (discrete)       |
-| Graphics Processor 2 | Intel® Iris® Xe Graphics (integrated)         |
-| Manufacturer         | Acer                                            |
-| Product Name         | Swift SF314-510G                                |
-| System Version       | V1.12                                           |
+### Hardware Specifications
 
-## Displays
+| Component          | Specification                          |
+| ------------------ | -------------------------------------- |
+| **CPU**            | 8 × Intel® Core™ i7-1165G7 @ 2.80GHz |
+| **RAM**            | 15.4 GiB DDR4                          |
+| **Discrete GPU**   | Intel® Iris® Xe MAX Graphics         |
+| **Integrated GPU** | Intel® Iris® Xe Graphics             |
+| **Manufacturer**   | Acer                                   |
+| **Model**          | Swift SF314-510G                       |
+| **System Version** | V1.12                                  |
 
-### Built-in
+---
 
-| Property     | Details                    |
-| ------------ | -------------------------- |
-| Manufacturer | Chimei Innolux Corporation |
-| Model        | eDP-1-0x14D5               |
-| Size         | 14"                        |
-| Resolution   | 1920x1080                  |
-| Refresh Rate | 60Hz                       |
+## Display Configuration
 
-### External
+### Built-in Display
 
-| Property     | Details      |
-| ------------ | ------------ |
-| Manufacturer | Dell Inc.    |
-| Model        | DELL S2721HN |
-| Size         | 27"          |
-| Resolution   | 1920x1080    |
-| Refresh Rate | 75Hz         |
+| Property         | Details                    |
+| ---------------- | -------------------------- |
+| **Manufacturer** | Chimei Innolux Corporation |
+| **Model**        | eDP-1-0x14D5               |
+| **Size**         | 14″                        |
+| **Resolution**   | 1920×1080                  |
+| **Refresh Rate** | 60Hz                       |
 
-## Software
+### External Monitor
 
-### GUIs
+| Property         | Details      |
+| ---------------- | ------------ |
+| **Manufacturer** | Dell Inc.    |
+| **Model**        | DELL S2721HN |
+| **Size**         | 27″          |
+| **Resolution**   | 1920×1080    |
+| **Refresh Rate** | 75Hz         |
 
-| Software           | Category         |
-| ------------------ | ---------------- |
-| Nautilus           | File Manager     |
-| Firefox            | Browser          |
-| Kdenlive           | Video Editor     |
-| PhotoGIMP          | Photo Editor     |
-| Emacs              | Note Taking Tool |
-| Visual Studio Code | Code Editor      |
-| Thunderbird        | Email Client     |
+---
 
-### TUIs
+## Software Stack
 
-| Software    | Category             |
-| ----------- | -------------------- |
-| Neovim      | Text Editor          |
-| LazyGit     | Git Client           |
-| LazyDocker  | Docker Client        |
-| zellij      | Terminal Multiplexer |
-| wikiman     | Command Manual       |
-| starship.rs | Terminal Prompt      |
+### Graphical Applications (GUI)
 
-### Shell Tools
+| Application                                         | Purpose           |
+| --------------------------------------------------- | ----------------- |
+| [Emacs](https://www.gnu.org/software/emacs/)        | Note Taking & IDE |
+| [Firefox](https://www.mozilla.org/firefox)          | Web Browser       |
+| [Kdenlive](https://kdenlive.org)                    | Video Editing     |
+| [Nautilus](https://wiki.gnome.org/Apps/Nautilus)    | File Manager      |
+| [PhotoGIMP](https://github.com/Diolinux/PhotoGIMP)  | Image Editing     |
+| [Thunderbird](https://www.thunderbird.net)          | Email Client      |
+| [Visual Studio Code](https://code.visualstudio.com) | Code Editor       |
 
-| Software | Purpose                |
-| -------- | ---------------------- |
-| eza      | ls alternative         |
-| fzf      | Terminal Fuzzy Finder  |
-| ripgrep  | grep alternative       |
-| zoxide   | cd alternative         |
-| yay      | AUR Package Manager    |
-| git      | Version Control System |
-| fd       | find alternative       |
+### Terminal Applications (TUI)
+
+| Application                                               | Purpose                       |
+| --------------------------------------------------------- | ----------------------------- |
+| [LazyDocker](https://github.com/jesseduffield/lazydocker) | Docker Management             |
+| [LazyGit](https://github.com/jesseduffield/lazygit)       | Git Interface                 |
+| [Neovim](https://neovim.io)                               | Advanced Text Editing         |
+| [Starship](https://starship.rs)                           | Terminal Prompt Customization |
+| [wikiman](https://github.com/mickael-menu/wikiman)        | Offline Manual Lookup         |
+| [zellij](https://zellij.dev)                              | Terminal Multiplexer          |
+
+### Shell Tools and Utilities
+
+| Tool                                             | Functionality                              |
+| ------------------------------------------------ | ------------------------------------------ |
+| [eza](https://github.com/eza-community/eza)      | `ls` replacement with icons and colors     |
+| [fd](https://github.com/sharkdp/fd)              | Efficient file search (`find` alternative) |
+| [fzf](https://github.com/junegunn/fzf)           | Fuzzy Finder                               |
+| [git](https://git-scm.com)                       | Version Control                            |
+| [ripgrep](https://github.com/BurntSushi/ripgrep) | Fast recursive search (`grep` alternative) |
+| [yay](https://github.com/Jguer/yay)              | AUR Package Management                     |
+| [zoxide](https://github.com/ajeetdsouza/zoxide)  | Smarter `cd` command                       |
