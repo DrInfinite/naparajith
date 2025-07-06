@@ -23,30 +23,46 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 Contact me through electronic mail: <naparajith@duck.com>
 -->
 
-#### Chennai Institute of Technology (Anna University)
+---
 
-### Bachelor's of Engineering, Computer Science and Engineering
+## **Chennai Institute of Technology**
 
-- **Duration:** October 2020 - April 2024
-- **CGPA:** 8.96
-- **Grade:** First Class with Distinction
+_Affiliated to Anna University_
+
+### Bachelor of Engineering: Computer Science and Engineering
+
+📅 _October 2020 – April 2024_
+
+- Graduated with a **CGPA of 8.96**, awarded **First Class with Distinction**.
+- Core focus areas included Data Structures, Machine Learning, and Software
+  Engineering.
+- Participated in multiple innovation challenges and academic projects aligned
+  with industry practices.
 
 ---
 
-#### Chettinad Vidyashram (CBSE)
+## **Chettinad Vidyashram**
 
-### All India Senior School Certificate Examination
+_Affiliated to CBSE, New Delhi_
 
-- **Duration:** April 2018 - March 2020
-- **Score:** 570/600
-- **Grade:** A1 (95%)
+### All India Senior School Certificate Examination (Class XII)
+
+📅 _April 2018 – March 2020_
+
+- Achieved an outstanding score of **570/600 (95%)**, Grade: **A1**.
+- Excelled in Computer Science, Mathematics, and Physics.
+- Represented school in regional tech symposiums and coding competitions.
 
 ---
 
-#### DAV School (CBSE)
+## **DAV School**
 
-### All India Secondary School Examination
+_Affiliated to CBSE, New Delhi_
 
-- **Duration:** April 2016 - March 2018
-- **Score:** 455/500
-- **Grade:** A1 (91%)
+### All India Secondary School Examination (Class X)
+
+📅 _April 2016 – March 2018_
+
+- Secured **455/500 (91%)**, Grade: **A1**.
+- Strong academic foundation in core science and mathematics subjects.
+- Awarded for consistent academic performance and school-level competitions.
