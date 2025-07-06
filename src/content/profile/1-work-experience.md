@@ -25,11 +25,21 @@ Contact me through electronic mail: <naparajith@duck.com>
 
 ## **AT&T Communication Services India**
 
-**Senior Associate, Quality Assurance** – June 2024 - Present
+**Senior Associate, Quality Engineering** – May 2025 - Present
 
 - Developed high-performance web applications using React and Java, improving
   test result data management and reporting.
+- Developed PowerBI dashboards that improve defect data management and
+  visibility.
 - Automated 7 critical test suites, reducing manual effort hours by 31%.
+- Worked in Triage of several critical defects, reducing total downtime by 1 hr
+  per day.
+
+**Senior Associate, Quality Assurance** – June 2024 - April 2025
+
+- Developed high-performance web applications using React and Java, improving
+  test result data management and reporting.
+- Automated critical test suites, reducing manual effort hours by 31%.
 
 **Staff Associate, Quality Assurance** – March 2024 - May 2024
 

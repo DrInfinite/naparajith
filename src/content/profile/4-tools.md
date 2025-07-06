@@ -33,11 +33,12 @@ A collection of hardware and software tools that I use on a daily basis.
 | Software              | Details         |
 | --------------------- | --------------- |
 | Operating System      | Arch Linux      |
-| Desktop Environment   | KDE Plasma 6    |
-| UI Framework          | Kirigami        |
-| Development Framework | Qt Framework    |
+| Desktop Environment   | hyprland        |
+| UI Framework          | N/A             |
+| Development Framework | libgtk          |
 | Linux Kernel          | Stable (64-bit) |
 | Graphics Platform     | Wayland         |
+| Shell                 | zsh             |
 
 ### Hardware
 
@@ -79,23 +80,24 @@ A collection of hardware and software tools that I use on a daily basis.
 
 | Software           | Category         |
 | ------------------ | ---------------- |
-| Dolphin            | File Manager     |
-| Floorp Browser     | Browser          |
+| Nautilus           | File Manager     |
+| Firefox            | Browser          |
 | Kdenlive           | Video Editor     |
 | PhotoGIMP          | Photo Editor     |
-| Obsidian           | Note Taking Tool |
+| Emacs              | Note Taking Tool |
 | Visual Studio Code | Code Editor      |
 | Thunderbird        | Email Client     |
 
 ### TUIs
 
-| Software   | Category             |
-| ---------- | -------------------- |
-| Neovim     | Text Editor          |
-| LazyGit    | Git Client           |
-| LazyDocker | Docker Client        |
-| zellij     | Terminal Multiplexer |
-| man        | Command Manual       |
+| Software    | Category             |
+| ----------- | -------------------- |
+| Neovim      | Text Editor          |
+| LazyGit     | Git Client           |
+| LazyDocker  | Docker Client        |
+| zellij      | Terminal Multiplexer |
+| wikiman     | Command Manual       |
+| starship.rs | Terminal Prompt      |
 
 ### Shell Tools
 
