@@ -39,9 +39,9 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 			posts.map(async (post) => (
 				<a
 					href={`/blog/${post.id}`}
-					class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~rounded-none/xl hover:bg-foreground/10"
+					class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent hover:bg-foreground/10"
 				>
-					<div class="p-2 ~rounded-none/xl">
+					<div class="rounded-none p-2">
 						<Image
 							src={
 								(await getImage({ src: post.data.image, format: "webp" })).src
@@ -51,7 +51,7 @@ posts = posts.filter((acc) => acc.data.draft !== true);
 							width={1920}
 							height={1080}
 							priority
-							class="-my-px aspect-video border border-border ~rounded-none/xl"
+							class="-my-px aspect-video rounded-none border border-border"
 							transition:name="image"
 						/>
 					</div>

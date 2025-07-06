@@ -60,7 +60,7 @@ const leetcode = await LeetcodeProfile();
 
 	<h2>Overview</h2>
 	<div
-		class="flex flex-wrap justify-evenly border border-border ~gap-2/4 ~rounded-none/xl ~p-2/4"
+		class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
 	>
 		<span>Rank: <strong>{leetcode.matchedUser.profile?.ranking}</strong></span>
 		<span>
@@ -123,7 +123,7 @@ const leetcode = await LeetcodeProfile();
 		leetcode.recentSubmissionList?.slice(0, 5).map((sub) => (
 			<a
 				href={`https://leetcode.com/problems/${sub.titleSlug}/description/`}
-				class="flex w-full flex-col justify-evenly border border-border decoration-transparent ~mb-4/8 ~rounded-none/xl hover:bg-foreground/10"
+				class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent ~mb-4/8 hover:bg-foreground/10"
 				target="_blank"
 			>
 				<article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
