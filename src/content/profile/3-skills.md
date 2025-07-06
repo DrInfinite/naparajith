@@ -2,6 +2,15 @@
 title: Skills
 ---
 
+<!--toc:start-->
+
+- [Professional Skills](#professional-skills)
+- [Technical Skills](#technical-skills)
+- [Domain Knowledge](#domain-knowledge)
+<!--toc:end-->
+
+---
+
 <!--
 This website is only meant to showcase the work and and skills of the author,
 on a professional level. It also has a blog, containing the author's observations

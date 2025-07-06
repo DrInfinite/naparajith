@@ -23,6 +23,21 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 Contact me through electronic mail: <naparajith@duck.com>
 -->
 
+<!--toc:start-->
+
+- [**AT&T Communication Services India**](#att-communication-services-india)
+  - [**Senior Associate, Quality Engineering**](#senior-associate-quality-engineering)
+  - [**Senior Associate, Quality Assurance**](#senior-associate-quality-assurance)
+  - [**Staff Associate, Quality Assurance**](#staff-associate-quality-assurance)
+  - [**Staff Associate, Artificial Intelligence**](#staff-associate-artificial-intelligence)
+  - [**Staff Associate, Technical Intern**](#staff-associate-technical-intern)
+- [**DigiTranIT Pvt Ltd**](#digitranit-pvt-ltd)
+  - [**Full Stack Development Intern**](#full-stack-development-intern)
+  - [**User Experience Design Intern**](#user-experience-design-intern)
+  <!--toc:end-->
+
+---
+
 ## **AT&T Communication Services India**
 
 ### **Senior Associate, Quality Engineering**
