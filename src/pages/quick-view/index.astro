@@ -58,8 +58,10 @@ const blog = await getCollection("blog");
 
 		<hr class="border-t-2 border-t-border ~my-2/4" />
 
-		<div class="~space-y-4/8">
-			<div class="flex flex-wrap justify-evenly ~gap-2/4">
+		<div class="mt-0 flex flex-col-reverse ~gap-4/8 md:flex-col">
+			<div
+				class="mx-auto grid w-full max-w-6xl grid-cols-2 gap-4 p-4 sm:grid-cols-3 md:grid-cols-4"
+			>
 				<ACard
 					href="https://www.linkedin.com/in/naparajith/"
 					title="LinkedIn - Naparajith T L"
@@ -79,7 +81,9 @@ const blog = await getCollection("blog");
 				<ACard href={"/quotes"}>Quotes</ACard>
 			</div>
 
-			<div class="flex justify-evenly text-center ~gap-4/8 md:text-start">
+			<div
+				class="mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 p-4 text-left sm:grid-cols-2 md:grid-cols-3"
+			>
 				<GitHubCard />
 				<LeetcodeCard />
 				<ACard href="/blog" title="Portfolio - Blog">
