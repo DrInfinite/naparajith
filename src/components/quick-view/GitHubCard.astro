@@ -34,8 +34,7 @@ const updated_at = new Date((await GithubProfile()).updated_at).toDateString();
 		>
 		</div>
 		<small class="font-normal">
-			<u class="block md:hidden">Updated On</u>
-			<u class="hidden md:inline">Updated On:</u>
+			<u>Updated On:</u>{" "}
 			<strong
 				>{
 					updated_at !== "Invalid Date" ? updated_at.slice(4, 10) : "NA"

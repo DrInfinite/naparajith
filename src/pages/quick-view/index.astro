@@ -94,8 +94,7 @@ const blog = await getCollection("blog");
 						>
 						</div>
 						<small class="font-normal">
-							<u class="block md:hidden">Last Posted</u>
-							<u class="hidden md:inline">Last Posted:</u>
+							<u>Last Posted:</u>{" "}
 							<strong
 								>{blog.at(0)?.data.created.toDateString().slice(4, 10)}</strong
 							>
