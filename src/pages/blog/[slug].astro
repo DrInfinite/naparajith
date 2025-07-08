@@ -45,7 +45,7 @@ const postImage = await getImage({ src: post.data.image, format: "webp" });
 	description=`Blog Post: ${post.data.title} - ${[post.data.description]}`
 	ogImage={postImage.src}
 >
-	<h1 class="text-center" transition:name="post-title">
+	<h1 class="text-center font-quote" transition:name="post-title">
 		{post.data.title}
 	</h1>
 	<div class="flex flex-grow flex-col justify-evenly ~gap-4/8">
@@ -104,7 +104,7 @@ const postImage = await getImage({ src: post.data.image, format: "webp" });
 			</A>
 		</figcaption>
 	</figure>
-	<article class="font-serif">
+	<article>
 		<Content />
 	</article>
 </Layout>
