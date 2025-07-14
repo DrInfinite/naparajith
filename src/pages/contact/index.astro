@@ -22,6 +22,31 @@
 
 import A from "@/components/A.astro";
 import Layout from "@/layouts/Layout.astro";
+
+const links = [
+	{
+		href: "mailto:naparajith@duck.com",
+		title: "Email - naparajith@duck.com",
+		innerHTML: "Email",
+	},
+	{
+		href: "https://www.linkedin.com/in/naparajith/",
+		title: "LinkedIn - Naparajith T L",
+		innerHTML: "LinkedIn",
+		target: "_blank",
+	},
+	{
+		href: "/quick-view/github",
+		title: "GitHub - DrInfinite",
+		innerHTML: "GitHub",
+	},
+	{
+		href: "https://bsky.app/profile/naparajith.in",
+		title: "Naparajith | DrInfinite (@naparajith.in)",
+		innerHTML: "BlueSky",
+		target: "_blank",
+	},
+];
 ---
 
 <Layout
@@ -36,35 +61,13 @@ import Layout from "@/layouts/Layout.astro";
 			<div
 				class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
 			>
-				<span
-					><A
-						href="mailto:naparajith@duck.com"
-						title="Email - naparajith@duck.com"
-					>
-						Email</A
-					>
-				</span>
-				<span>
-					<A
-						href="https://www.linkedin.com/in/naparajith/"
-						title="LinkedIn - Naparajith T L"
-						target="_blank"
-					>
-						LinkedIn
-					</A>
-				</span>
-				<span>
-					<A href="/quick-view/github" title="GitHub - DrInfinite"> GitHub </A>
-				</span>
-				<span>
-					<A
-						href="https://bsky.app/profile/naparajith.in"
-						title="Naparajith | DrInfinite (@naparajith.in)"
-						target="_blank"
-					>
-						BlueSky
-					</A>
-				</span>
+				{
+					links.map((link) => (
+						<A href={link.href} title={link.title} target={link.target}>
+							{link.innerHTML}
+						</A>
+					))
+				}
 			</div>
 
 			<details>

@@ -45,6 +45,39 @@ const quote = quotes[Math.floor(Math.random() * quotes.length)];
 // const post = posts[Math.floor(Math.random() * posts.length)];
 
 // const author = await getEntry(post.data.author);
+
+const links = [
+	{ href: "/profile", title: "Profile", innerHTML: "Profile" },
+	{ href: "/quick-view", title: "Quick View", innerHTML: "Quick View" },
+	{ href: "/contact", title: "Contact", innerHTML: "Contact" },
+	{ href: "/blog", title: "Blog", innerHTML: "Blog" },
+	{ href: "/quotes", title: "Quotes", innerHTML: "Quotes" },
+	{ href: "/design", title: "Design", innerHTML: "Design" },
+	{ href: "/projects", title: "Projects", innerHTML: "Projects" },
+	{ href: "/tools", title: "Tools", innerHTML: "Tools" },
+	{
+		href: "/quick-view/github",
+		title: "GitHub - DrInfinite",
+		innerHTML: "GitHub",
+	},
+	{
+		href: "https://www.linkedin.com/in/naparajith/",
+		title: "LinkedIn - Naparajith T L",
+		innerHTML: "LinkedIn",
+		target: "_blank",
+	},
+	{
+		href: "/quick-view/leetcode",
+		title: "Leetcode - DrInfinite",
+		innerHTML: "Leetcode",
+	},
+	{
+		href: "https://bsky.app/profile/naparajith.in",
+		title: "Naparajith | DrInfinite (@naparajith.in)",
+		innerHTML: "BlueSky",
+		target: "_blank",
+	},
+];
 ---
 
 <Layout
@@ -87,29 +120,13 @@ const quote = quotes[Math.floor(Math.random() * quotes.length)];
 	<div
 		class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
 	>
-		<A href="/profile" title="Profile">Profile</A>
-		<A href="/quick-view" title="Quick View"> Quick View </A>
-		<A href="/contact" title="Contact"> Contact </A>
-		<A href="/blog" title="Blog">Blog</A>
-		<A href="/quotes" title="Quotes">Quotes</A>
-		<A href="/design" title="Design">Design</A>
-		<A href="/projects" title="Projects">Projects</A>
-		<A href="/tools" title="Tools">Tools</A>
-		<A href="/quick-view/github" title="GitHub - DrInfinite"> GitHub </A>
-		<A
-			href="https://www.linkedin.com/in/naparajith/"
-			title="LinkedIn - Naparajith T L"
-			target="_blank"
-		>
-			LinkedIn
-		</A>
-		<A
-			href="https://bsky.app/profile/naparajith.in"
-			title="Naparajith | DrInfinite (@naparajith.in)"
-			target="_blank"
-		>
-			BlueSky
-		</A>
+		{
+			links.map((link) => (
+				<A href={link.href} title={link.title} target={link.target}>
+					{link.innerHTML}
+				</A>
+			))
+		}
 	</div>
 	<main>
 		<p class="text-center">
