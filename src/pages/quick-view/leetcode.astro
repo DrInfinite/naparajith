@@ -26,32 +26,49 @@ import Layout from "@/layouts/Layout.astro";
 import { LeetcodeProfile } from "@/actions/leetcode-profile";
 import { Picture } from "astro:assets";
 import A from "@/components/A.astro";
+import { Image } from "astro:assets";
 
 const leetcode = await LeetcodeProfile();
+
+const badges = leetcode.matchedUser.badges.slice(0, 8);
 ---
 
 <Layout
 	title="Leetcode"
 	description="A quick overview of my Leetcode stats, directly from the source"
 >
-	<A
-		href={"https://leetcode.com/u/DrInfinite/"}
-		title="LeetCode Profile"
-		target={"_blank"}
-		css={"~text-xl/5xl"}
-	>
-		{leetcode.matchedUser.username}
-	</A>
-	<div class="flex justify-evenly pb-12">
+	<div class="flex items-center justify-center ~gap-4/8">
+		<span>
+			<A
+				href={"https://leetcode.com/u/DrInfinite/"}
+				title="LeetCode Profile"
+				target={"_blank"}
+				css={"~text-xl/5xl"}
+			>
+				{leetcode.matchedUser.username}
+			</A>
+		</span>
+
+		<span class="~size-8/16">
+			<Image
+				src={badges[0].icon}
+				alt={badges[0].displayName}
+				style="margin-bottom: 0px;margin-top: 0px;"
+				width={96}
+				height={96}
+				priority
+			/>
+		</span>
+	</div>
+	<div class="flex justify-evenly pb-8">
 		{
-			leetcode.matchedUser.badges.slice(0, 5).map((badge) => (
-				<span class="~size-12/24">
-					<Picture
+			badges.slice(1, 8).map((badge) => (
+				<span class="~size-8/16">
+					<Image
 						src={badge.icon}
 						alt={badge.displayName}
 						width={96}
 						height={96}
-						priority
 					/>
 				</span>
 			))
