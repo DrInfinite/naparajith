@@ -40,6 +40,10 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 const postImage = await getImage({ src: post.data.image, format: "webp" });
 ---
 
+<head>
+	<meta name="fediverse:creator" content="@naparajith@mastodon.social" />
+</head>
+
 <Layout
 	title={`${post.data.title}`}
 	description=`Blog Post: ${post.data.title} - ${[post.data.description]}`
