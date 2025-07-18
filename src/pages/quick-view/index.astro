@@ -74,6 +74,12 @@ const cards = [
 		title: "Quotes",
 		innerHTML: "Quotes",
 	},
+	{
+		href: "https://mastodon.social/@naparajith",
+		title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
+		innerHTML: "Mastodon",
+		target: "_blank",
+	},
 ];
 ---
 
@@ -104,9 +110,7 @@ const cards = [
 		<hr class="border-t-2 border-t-border ~my-2/4" />
 
 		<div class="mt-0 flex flex-col-reverse ~gap-4/8 md:flex-col">
-			<div
-				class="mx-auto grid w-full max-w-6xl grid-cols-2 gap-4 p-4 sm:grid-cols-3 md:grid-cols-4"
-			>
+			<div class="mx-auto grid w-full max-w-6xl grid-cols-3 gap-4 p-4">
 				{
 					cards.map((card) => (
 						<ACard href={card.href} title={card.title} target={card.target}>
