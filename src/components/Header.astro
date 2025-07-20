@@ -21,45 +21,66 @@
  */
 
 import A from "@/components/A.astro";
-import Button from "./Button.astro";
+import Button from "@/components/Button.astro";
 ---
 
 <header
-	class="my-10 border border-l-0 border-r-0 border-t-0 border-border pb-4"
+	class="my-10 flex flex-row items-center justify-between border-b border-border pb-4"
+	transition:persist
 >
-	<h3 class="text-start font-sans">
-		~/{
-			Astro.url.pathname.startsWith("/blog") ||
-			Astro.url.pathname.startsWith("/quotes")
-				? Astro.url.pathname
-						.toString()
-						.replace("/", "")
-						.replace(/\/.*/, "")
-						.replace("/", "")
-				: Astro.url.pathname.startsWith("/profile")
+	{
+		Astro.url.pathname === "/" ? (
+			<strong class="font-semibold">Naparajith (Naps) T L</strong>
+		) : (
+			<span class="font-semibold">
+				{Astro.url.pathname.startsWith("/blog") ||
+				Astro.url.pathname.startsWith("/quotes")
 					? Astro.url.pathname
 							.toString()
 							.replace("/", "")
-							.replace(/\/\d+-/, "/")
-					: Astro.url.pathname.toString().replace("/", "")
-		}<span class="animate-pulse">&#x25AE</span>
-		<!-- ~/{Astro.url.pathname.toString().replace("/", "").replace(/\/.*/, "")} -->
-	</h3>
-	<div class="flex justify-between" transition:persist>
-		<div class="flex flex-wrap justify-evenly ~gap-2/4">
-			<A href="/">Home</A>
-			<A href="/profile"> Profile </A>
-			<A href="/quick-view"> Quick View </A>
-		</div>
+							.replace(/\/.*/, "")
+							.replace("/", "")
+					: Astro.url.pathname.startsWith("/profile")
+						? Astro.url.pathname
+								.toString()
+								.replace("/", "")
+								.replace(/\/\d+-/, "/")
+						: Astro.url.pathname.toString().replace("/", "")}
+			</span>
+		)
+	}
 
-		<span>
+	{
+		Astro.url.pathname === "/" ? (
+			<strong>SDET II | Open-Source Contributor</strong>
+		) : Astro.url.pathname === "/quick-view" ? (
 			<Button
-				href="https://flowcv.com/resume/mdrssqq018"
 				title="Resume"
 				target="_blank"
+				href="https://flowcv.com/resume/mdrssqq018"
 			>
 				Resume
 			</Button>
-		</span>
-	</div>
+		) : (
+			<span class="flex flex-wrap items-center justify-evenly ~gap-2/4">
+				<A href="/" title="Home">
+					Home
+				</A>
+				<A href="/profile" title="Profile">
+					Profile
+				</A>
+				<A href="/quick-view" title="Quick View">
+					Quick View
+				</A>
+				<A
+					title="Resume"
+					target="_blank"
+					href="https://flowcv.com/resume/mdrssqq018"
+				>
+					Resume
+				</A>
+			</span>
+		)
+	}
+	<!-- </div> -->
 </header>

@@ -85,7 +85,7 @@ const defaultOgImage = "../images/arch-rainbow-1920x1080.png";
 		<Font cssVariable="--font-quote" preload />
 	</head>
 	<body>
-		{Astro.url.pathname !== "/" ? <Header /> : <div class="~mb-10/20" />}
+		<Header />
 		<slot />
 		<Footer />
 	</body>
