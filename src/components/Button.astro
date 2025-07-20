@@ -28,7 +28,7 @@ const { title, className, target, ...props } = Astro.props;
 ---
 
 <a
-	class={`group rounded-none border border-border bg-gradient-to-r from-secondary to-secondary dark:from-gray-200 dark:to-gray-200 no-underline ~px-2/4 ~py-1/2 hover:from-[#1e57b7] hover:to-[#4762f4] ${className}`}
+	class={`group rounded-none border border-border bg-gradient-to-r from-secondary to-secondary dark:from-gray-200 dark:to-gray-200 no-underline px-2 py-0 hover:from-[#1e57b7] hover:to-[#4762f4] ${className}`}
 	target={target}
 	title={title}
 	{...props}

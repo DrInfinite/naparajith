@@ -82,7 +82,7 @@
 	}
 
 	button {
-		@apply rounded-none border border-border bg-secondary font-semibold text-primary-foreground ~px-2/4 ~py-1/2 hover:bg-secondary/80;
+		@apply rounded-none border border-border bg-secondary px-2 py-1 font-semibold text-primary-foreground hover:bg-secondary/80 md:px-4 md:py-2;
 	}
 
 	p {
