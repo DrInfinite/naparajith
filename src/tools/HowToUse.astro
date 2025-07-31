@@ -1,0 +1,11 @@
+---
+interface Props {
+	instructions: string[];
+}
+
+const { instructions } = Astro.props;
+---
+
+<h2>How to use?</h2>
+
+<ol>{instructions.map((instruction) => <li>{instruction}</li>)}</ol>
