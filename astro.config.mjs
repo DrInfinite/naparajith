@@ -32,6 +32,8 @@ import ReadingTime from "./reading-time.mjs";
 
 import mdx from "@astrojs/mdx";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
 	adapter: vercel(),
@@ -54,7 +56,12 @@ export default defineConfig({
 		objectPosition: "center",
 		objectFit: "cover",
 	},
-	integrations: [tailwind({ applyBaseStyles: false }), sitemap(), mdx()],
+	integrations: [
+		tailwind({ applyBaseStyles: false }),
+		sitemap(),
+		mdx(),
+		react(),
+	],
 	output: "static",
 	markdown: {
 		remarkPlugins: [ReadingTime],

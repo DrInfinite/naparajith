@@ -78,11 +78,11 @@
 	}
 
 	body {
-		@apply prose prose-sm mx-auto scroll-smooth bg-background text-foreground antialiased ~px-4/0 md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl;
+		@apply prose prose-sm mx-auto scroll-smooth bg-background px-4 text-foreground antialiased md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl md:px-0;
 	}
 
 	button {
-		@apply rounded-none border border-border bg-secondary font-semibold text-primary-foreground ~px-2/4 ~py-1/2 hover:bg-secondary/80;
+		@apply rounded-none border border-border bg-secondary px-2 py-1 font-semibold text-secondary-foreground hover:bg-secondary/80 md:px-4 md:py-2;
 	}
 
 	p {
@@ -113,7 +113,7 @@
 	}
 
 	details {
-		@apply border border-border ~p-4/8;
+		@apply border border-border p-2 sm:p-4 lg:p-6 2xl:p-8;
 	}
 
 	summary {

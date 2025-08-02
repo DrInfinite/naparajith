@@ -46,15 +46,17 @@ const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
 // const author = await getEntry(post.data.author);
 
-const links = [
+const pages = [
 	{ href: "/profile", title: "Profile", innerHTML: "Profile" },
 	{ href: "/quick-view", title: "Quick View", innerHTML: "Quick View" },
-	{ href: "/contact", title: "Contact", innerHTML: "Contact" },
 	{ href: "/blog", title: "Blog", innerHTML: "Blog" },
 	{ href: "/quotes", title: "Quotes", innerHTML: "Quotes" },
 	{ href: "/design", title: "Design", innerHTML: "Design" },
 	{ href: "/projects", title: "Projects", innerHTML: "Projects" },
 	{ href: "/tools", title: "Tools", innerHTML: "Tools" },
+];
+
+const socials = [
 	{
 		href: "/quick-view/github",
 		title: "GitHub - DrInfinite",
@@ -90,7 +92,6 @@ const links = [
 	title="Home"
 	description="The personal portfolio of T L Naparajith, a Software Engineer from India."
 >
-	<h1 class="text-center">Naparajith (Naps) T L</h1>
 	<article>
 		<figure
 			class="flex flex-col content-around items-center justify-around ~gap-6/12"
@@ -115,22 +116,35 @@ const links = [
 		</figure>
 		<p>
 			<strong>
-				A SDET committed to solving problems, I am dedicated to deepening my
-				expertise in every technology that drives software excellence.
+				An engineer committed to solving problems, I am dedicated to deepening
+				my expertise in every technology that drives software excellence.
 			</strong>
 		</p>
 	</article>
 
-	<div
-		class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
-	>
-		{
-			links.map((link) => (
-				<A href={link.href} title={link.title} target={link.target}>
-					{link.innerHTML}
-				</A>
-			))
-		}
+	<div class="space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8">
+		<div
+			class="flex flex-wrap justify-evenly gap-2 rounded-none border border-border ~p-2/4 md:gap-4"
+		>
+			{
+				pages.map((link) => (
+					<A href={link.href} title={link.title}>
+						{link.innerHTML}
+					</A>
+				))
+			}
+		</div>
+		<div
+			class="flex flex-wrap justify-evenly gap-2 rounded-none border border-border ~p-2/4 md:gap-4"
+		>
+			{
+				socials.map((link) => (
+					<A href={link.href} title={link.title} target={link.target}>
+						{link.innerHTML}
+					</A>
+				))
+			}
+		</div>
 	</div>
 	<main>
 		<p class="text-center">

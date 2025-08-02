@@ -25,14 +25,18 @@ import "@/styles/globals.css";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import { Font } from "astro:assets";
+import FAQs, { type FAQ } from "@/tools/FAQ.astro";
+import HowToUse from "@/tools/HowToUse.astro";
 
 interface Props {
 	title: string;
 	description: string;
+	instructions: string[];
+	faqs?: FAQ[];
 	ogImage?: string;
 }
 
-const { title, description, ogImage } = Astro.props;
+const { title, description, instructions, faqs, ogImage } = Astro.props;
 const defaultOgImage = "../images/arch-rainbow-1920x1080.png";
 ---
 
@@ -86,7 +90,12 @@ const defaultOgImage = "../images/arch-rainbow-1920x1080.png";
 	</head>
 	<body>
 		<Header />
+		<h1>{title}</h1>
+		<p>{description}</p>
 		<slot />
+
+		<HowToUse instructions={instructions} />
+		<FAQs faqs={faqs} />
 		<Footer />
 	</body>
 </html>

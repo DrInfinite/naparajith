@@ -21,45 +21,47 @@
  */
 
 import A from "@/components/A.astro";
-import Button from "./Button.astro";
+import Button from "@/components/Button.astro";
 ---
 
-<header
-	class="my-10 border border-l-0 border-r-0 border-t-0 border-border pb-4"
->
-	<h3 class="text-start font-sans">
-		~/{
-			Astro.url.pathname.startsWith("/blog") ||
-			Astro.url.pathname.startsWith("/quotes")
-				? Astro.url.pathname
-						.toString()
-						.replace("/", "")
-						.replace(/\/.*/, "")
-						.replace("/", "")
-				: Astro.url.pathname.startsWith("/profile")
-					? Astro.url.pathname
-							.toString()
-							.replace("/", "")
-							.replace(/\/\d+-/, "/")
-					: Astro.url.pathname.toString().replace("/", "")
-		}<span class="animate-pulse">&#x25AE</span>
-		<!-- ~/{Astro.url.pathname.toString().replace("/", "").replace(/\/.*/, "")} -->
-	</h3>
-	<div class="flex justify-between" transition:persist>
-		<div class="flex flex-wrap justify-evenly ~gap-2/4">
-			<A href="/">Home</A>
-			<A href="/profile"> Profile </A>
-			<A href="/quick-view"> Quick View </A>
-		</div>
-
-		<span>
-			<Button
-				href="https://flowcv.com/resume/mdrssqq018"
-				title="Resume"
-				target="_blank"
-			>
-				Resume
-			</Button>
-		</span>
+<header class="my-10" transition:persist>
+	<div class="mb-2 flex items-center justify-between ~gap-2/4">
+		<strong>
+			~/{
+				Astro.url.pathname === "/"
+					? ""
+					: Astro.url.pathname.startsWith("/blog") ||
+						  Astro.url.pathname.startsWith("/quotes")
+						? Astro.url.pathname
+								.toString()
+								.replace("/", "")
+								.replace(/\/.*/, "")
+								.replace("/", "")
+						: Astro.url.pathname.startsWith("/profile")
+							? Astro.url.pathname
+									.toString()
+									.replace("/", "")
+									.replace(/\/\d+-/, "/")
+							: Astro.url.pathname.toString().replace("/", "")
+			}
+		</strong>
+		<strong>naparajith | sdet 2</strong>
 	</div>
+
+	<span
+		class="flex flex-wrap items-center justify-evenly border-b border-t border-border py-4 ~gap-2/4"
+	>
+		<A href="/" title="Home"> Home </A>
+		<A href="/profile" title="Profile"> Profile </A>
+		<A href="/quick-view" title="Quick View"> Quick View </A>
+		<A href="/projects" title="Projects"> Projects </A>
+		<!-- <A href="/design" title="Design"> Designs </A> -->
+		<Button
+			title="Resume"
+			target="_blank"
+			href="https://flowcv.com/resume/mdrssqq018"
+		>
+			Resume
+		</Button>
+	</span>
 </header>

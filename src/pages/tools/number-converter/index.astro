@@ -1,0 +1,21 @@
+---
+import ToolsLayout from "@/layouts/ToolsLayout.astro";
+import NumberConverter from "@/tools/number-converter";
+
+const instructions = [
+	"Select the initial numerical system from the dropdown",
+	"Select the target numerical system from the dropdown",
+	"Enter a number in that numerical system",
+	"See the numbers get converted in real time.",
+	"Copy the converted values if needed",
+	"Repeat for any other conversions",
+];
+---
+
+<ToolsLayout
+	title="Number Converter"
+	description="Convert between binary, decimal, hexadecimal and octal number systems."
+	instructions={instructions}
+>
+	<NumberConverter client:load />
+</ToolsLayout>
