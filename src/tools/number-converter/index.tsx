@@ -117,12 +117,7 @@ export default function NumberConverter() {
 					</label>
 				</div>
 
-				<button
-					type="button"
-					onClick={handleSwapBases}
-					// className="hover:text-accent-foreground mt-6 h-10 w-10 shrink-0 rounded-full border border-border bg-background text-foreground shadow-sm transition hover:bg-muted focus:outline-none focus:ring-2 focus:ring-ring"
-					title="Swap bases"
-				>
+				<button type="button" onClick={handleSwapBases} title="Swap bases">
 					Swap
 				</button>
 
