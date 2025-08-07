@@ -6,32 +6,37 @@ const leetcode = await LeetcodeProfile();
 ---
 
 <ACard href="/quick-view/leetcode" title="LeetCode">
-	<span class="flex flex-col">
-		Leetcode
-		<div
-			class="h-[2px] bg-gradient-to-r from-[#1e57b7] to-[#4762f4] transition-all duration-300 ~my-0/2"
-		>
-		</div>
-		<small class="font-normal">
-			<u>Last Solved:</u>{" "}
-			<strong>
-				{
-					process.env.NODE_ENV === "development"
-						? new Date(
-								parseInt(leetcode.recentSubmissionList?.at(0)?.timestamp!) *
-									1000,
-							)
-								.toDateString()
-								.slice(4, 10)
-						: new Date(
-								(parseInt(leetcode.recentSubmissionList?.at(0)?.timestamp!) +
-									19800) *
-									1000,
-							)
-								.toDateString()
-								.slice(4, 10)
-				}
-			</strong>
-		</small>
-	</span>
+    <span class="flex flex-col">
+        Leetcode
+        <div
+            class="h-[2px] bg-gradient-to-r from-[#1e57b7] to-[#4762f4] transition-all duration-300 ~my-0/2"
+        >
+        </div>
+        <small class="font-normal">
+            <u>Last Solved:</u>{" "}
+            <strong>
+                {
+                    process.env.NODE_ENV === "development"
+                        ? new Date(
+                              parseInt(
+                                  leetcode.recentSubmissionList?.at(0)
+                                      ?.timestamp!,
+                              ) * 1000,
+                          )
+                              .toDateString()
+                              .slice(4, 10)
+                        : new Date(
+                              (parseInt(
+                                  leetcode.recentSubmissionList?.at(0)
+                                      ?.timestamp!,
+                              ) +
+                                  19800) *
+                                  1000,
+                          )
+                              .toDateString()
+                              .slice(4, 10)
+                }
+            </strong>
+        </small>
+    </span>
 </ACard>

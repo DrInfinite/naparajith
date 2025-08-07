@@ -2,25 +2,22 @@
 export type FAQ = { question: string; answer: string };
 
 interface Props {
-	faqs?: FAQ[];
+    faqs?: FAQ[];
 }
 
 let list: FAQ[] = [
-	{
-		question: "Why is this attached to your portfolio?",
-		answer:
-			"I wanted to challenge myself by reusing an existing architecture to build on top of. This allowed me to extend my existing codebase with additional functionality for tools without having to build a separate setup for the same.",
-	},
-	{
-		question: "Is this free to use?",
-		answer:
-			"Yes, since most of the logical processing is happening on the client side, there are no server costs associated with this setup. Therefore, it is available to use for free.",
-	},
-	{
-		question: "Why is the tool not working?",
-		answer:
-			"You might have client-side JS disabled on your browser. Enable it to use the tool the way it was intented.",
-	},
+    {
+        question: "Why is this attached to your portfolio?",
+        answer: "I wanted to challenge myself by reusing an existing architecture to build on top of. This allowed me to extend my existing codebase with additional functionality for tools without having to build a separate setup for the same.",
+    },
+    {
+        question: "Is this free to use?",
+        answer: "Yes, since most of the logical processing is happening on the client side, there are no server costs associated with this setup. Therefore, it is available to use for free.",
+    },
+    {
+        question: "Why is the tool not working?",
+        answer: "You might have client-side JS disabled on your browser. Enable it to use the tool the way it was intented.",
+    },
 ];
 
 const { faqs } = Astro.props;
@@ -31,10 +28,10 @@ list.push(...(faqs ?? []));
 <h2>Frequently Asked Questions</h2>
 
 {
-	list?.map(({ question, answer }) => (
-		<div>
-			<h3>{question}</h3>
-			<p>{answer}</p>
-		</div>
-	))
+    list?.map(({ question, answer }) => (
+        <div>
+            <h3>{question}</h3>
+            <p>{answer}</p>
+        </div>
+    ))
 }

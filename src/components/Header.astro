@@ -25,43 +25,43 @@ import Button from "@/components/Button.astro";
 ---
 
 <header class="my-10" transition:persist>
-	<div class="mb-2 flex items-center justify-between ~gap-2/4">
-		<strong>
-			~/{
-				Astro.url.pathname === "/"
-					? ""
-					: Astro.url.pathname.startsWith("/blog") ||
-						  Astro.url.pathname.startsWith("/quotes")
-						? Astro.url.pathname
-								.toString()
-								.replace("/", "")
-								.replace(/\/.*/, "")
-								.replace("/", "")
-						: Astro.url.pathname.startsWith("/profile")
-							? Astro.url.pathname
-									.toString()
-									.replace("/", "")
-									.replace(/\/\d+-/, "/")
-							: Astro.url.pathname.toString().replace("/", "")
-			}
-		</strong>
-		<strong>naparajith | sdet 2</strong>
-	</div>
+    <div class="mb-2 flex items-center justify-between ~gap-2/4">
+        <strong>
+            ~/{
+                Astro.url.pathname === "/"
+                    ? ""
+                    : Astro.url.pathname.startsWith("/blog") ||
+                        Astro.url.pathname.startsWith("/quotes")
+                      ? Astro.url.pathname
+                            .toString()
+                            .replace("/", "")
+                            .replace(/\/.*/, "")
+                            .replace("/", "")
+                      : Astro.url.pathname.startsWith("/profile")
+                        ? Astro.url.pathname
+                              .toString()
+                              .replace("/", "")
+                              .replace(/\/\d+-/, "/")
+                        : Astro.url.pathname.toString().replace("/", "")
+            }
+        </strong>
+        <strong>naparajith | sdet 2</strong>
+    </div>
 
-	<span
-		class="flex flex-wrap items-center justify-evenly border-b border-t border-border py-4 ~gap-2/4"
-	>
-		<A href="/" title="Home"> Home </A>
-		<A href="/profile" title="Profile"> Profile </A>
-		<A href="/quick-view" title="Quick View"> Quick View </A>
-		<A href="/projects" title="Projects"> Projects </A>
-		<!-- <A href="/design" title="Design"> Designs </A> -->
-		<Button
-			title="Resume"
-			target="_blank"
-			href="https://flowcv.com/resume/mdrssqq018"
-		>
-			Resume
-		</Button>
-	</span>
+    <span
+        class="flex flex-wrap items-center justify-evenly border-b border-t border-border py-4 ~gap-2/4"
+    >
+        <A href="/" title="Home"> Home </A>
+        <A href="/profile" title="Profile"> Profile </A>
+        <A href="/quick-view" title="Quick View"> Quick View </A>
+        <A href="/projects" title="Projects"> Projects </A>
+        <!-- <A href="/design" title="Design"> Designs </A> -->
+        <Button
+            title="Resume"
+            target="_blank"
+            href="https://flowcv.com/resume/mdrssqq018"
+        >
+            Resume
+        </Button>
+    </span>
 </header>

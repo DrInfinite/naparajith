@@ -32,115 +32,124 @@ import LeetcodeCard from "@/components/quick-view/LeetcodeCard.astro";
 const blog = await getCollection("blog");
 
 const cards = [
-	{
-		href: "/",
-		title: "Portfolio",
-		innerHTML: "Portfolio",
-	},
-	{
-		href: "/profile",
-		title: "Profile",
-		innerHTML: "Profile",
-	},
-	{
-		href: "https://www.linkedin.com/in/naparajith/",
-		title: "LinkedIn - Naparajith T L",
-		innerHTML: "LinkedIn",
-		target: "_blank",
-	},
-	{
-		href: "/design",
-		title: "Design",
-		innerHTML: "Design",
-	},
-	{
-		href: "/projects",
-		title: "Projects",
-		innerHTML: "Projects",
-	},
-	{
-		href: "/tools",
-		title: "Simple Tools",
-		innerHTML: "Tools",
-	},
-	{
-		href: "/quotes",
-		title: "Quotes",
-		innerHTML: "Quotes",
-	},
-	{
-		href: "https://bsky.app/profile/naparajith.in",
-		title: "Naparajith | DrInfinite (@naparajith.in)",
-		innerHTML: "BlueSky",
-		target: "_blank",
-	},
-	{
-		href: "https://mastodon.social/@naparajith",
-		title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
-		innerHTML: "Mastodon",
-		target: "_blank",
-	},
+    {
+        href: "/",
+        title: "Portfolio",
+        innerHTML: "Portfolio",
+    },
+    {
+        href: "/profile",
+        title: "Profile",
+        innerHTML: "Profile",
+    },
+    {
+        href: "https://www.linkedin.com/in/naparajith/",
+        title: "LinkedIn - Naparajith T L",
+        innerHTML: "LinkedIn",
+        target: "_blank",
+    },
+    {
+        href: "/design",
+        title: "Design",
+        innerHTML: "Design",
+    },
+    {
+        href: "/projects",
+        title: "Projects",
+        innerHTML: "Projects",
+    },
+    {
+        href: "/tools",
+        title: "Simple Tools",
+        innerHTML: "Tools",
+    },
+    {
+        href: "/quotes",
+        title: "Quotes",
+        innerHTML: "Quotes",
+    },
+    {
+        href: "https://bsky.app/profile/naparajith.in",
+        title: "Naparajith | DrInfinite (@naparajith.in)",
+        innerHTML: "BlueSky",
+        target: "_blank",
+    },
+    {
+        href: "https://mastodon.social/@naparajith",
+        title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
+        innerHTML: "Mastodon",
+        target: "_blank",
+    },
 ];
 ---
 
 <Layout
-	title="Quick View"
-	description="A collection of Quick Links for my personal website"
+    title="Quick View"
+    description="A collection of Quick Links for my personal website"
 >
-	<main class="flex flex-col justify-around ~gap-8/16">
-		<article
-			class="flex flex-col items-center justify-evenly align-middle ~gap-8/4 md:flex-row"
-		>
-			<span class="~size-32/64">
-				<Image
-					alt={"DrInfinite"}
-					class="mx-auto rounded-none"
-					width={540}
-					height={540}
-					priority
-					src={"https://avatars.githubusercontent.com/u/74095696?v=4"}
-				/>
-			</span>
-			<div>
-				<h2 class="text-center">Naparajith (Naps) T L</h2>
-				<h3 class="text-center">SAFe 6.0 Certified SDET</h3>
-			</div>
-		</article>
+    <main class="flex flex-col justify-around ~gap-8/16">
+        <article
+            class="flex flex-col items-center justify-evenly align-middle ~gap-8/4 md:flex-row"
+        >
+            <span class="~size-32/64">
+                <Image
+                    alt={"DrInfinite"}
+                    class="mx-auto rounded-none"
+                    width={540}
+                    height={540}
+                    priority
+                    src={"https://avatars.githubusercontent.com/u/74095696?v=4"}
+                />
+            </span>
+            <div>
+                <h2 class="text-center">Naparajith (Naps) T L</h2>
+                <h3 class="text-center">SAFe 6.0 Certified SDET</h3>
+            </div>
+        </article>
 
-		<hr class="border-t-2 border-t-border ~my-2/4" />
+        <hr class="border-t-2 border-t-border ~my-2/4" />
 
-		<div class="mt-0 flex flex-col-reverse ~gap-4/8 md:flex-col">
-			<div class="mx-auto grid w-full max-w-6xl grid-cols-3 gap-4 p-4">
-				{
-					cards.map((card) => (
-						<ACard href={card.href} title={card.title} target={card.target}>
-							{card.innerHTML}
-						</ACard>
-					))
-				}
-			</div>
+        <div class="mt-0 flex flex-col-reverse ~gap-4/8 md:flex-col">
+            <div class="mx-auto grid w-full max-w-6xl grid-cols-3 gap-4 p-4">
+                {
+                    cards.map((card) => (
+                        <ACard
+                            href={card.href}
+                            title={card.title}
+                            target={card.target}
+                        >
+                            {card.innerHTML}
+                        </ACard>
+                    ))
+                }
+            </div>
 
-			<div
-				class="mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 p-4 text-left sm:grid-cols-2 md:grid-cols-3"
-			>
-				<GitHubCard />
-				<LeetcodeCard />
-				<ACard href="/blog" title="Portfolio - Blog">
-					<span class="flex flex-col">
-						Blog
-						<div
-							class="h-[2px] bg-gradient-to-r from-[#1e57b7] to-[#4762f4] transition-all duration-300 ~my-0/2"
-						>
-						</div>
-						<small class="font-normal">
-							<u>Last Posted:</u>{" "}
-							<strong
-								>{blog.at(0)?.data.created.toDateString().slice(4, 10)}</strong
-							>
-						</small>
-					</span>
-				</ACard>
-			</div>
-		</div>
-	</main>
+            <div
+                class="mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 p-4 text-left sm:grid-cols-2 md:grid-cols-3"
+            >
+                <GitHubCard />
+                <LeetcodeCard />
+                <ACard href="/blog" title="Portfolio - Blog">
+                    <span class="flex flex-col">
+                        Blog
+                        <div
+                            class="h-[2px] bg-gradient-to-r from-[#1e57b7] to-[#4762f4] transition-all duration-300 ~my-0/2"
+                        >
+                        </div>
+                        <small class="font-normal">
+                            <u>Last Posted:</u>{" "}
+                            <strong
+                                >{
+                                    blog
+                                        .at(0)
+                                        ?.data.created.toDateString()
+                                        .slice(4, 10)
+                                }</strong
+                            >
+                        </small>
+                    </span>
+                </ACard>
+            </div>
+        </div>
+    </main>
 </Layout>

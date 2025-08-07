@@ -25,11 +25,11 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
-	const policies = await getCollection("policy");
-	return policies.map((policy) => ({
-		params: { slug: policy.id },
-		props: { policy },
-	}));
+    const policies = await getCollection("policy");
+    return policies.map((policy) => ({
+        params: { slug: policy.id },
+        props: { policy },
+    }));
 }) satisfies GetStaticPaths;
 
 const { policy } = Astro.props;
@@ -37,14 +37,18 @@ const { Content } = await render(policy);
 ---
 
 <Layout title={policy.data.title} description={policy.data.description}>
-	<h1>{policy.data.title}</h1>
-	<div class="-mb-4 flex flex-row flex-wrap justify-between">
-		<p>Published on <strong>{policy.data.created.toDateString()}</strong></p>
-		<p>
-			Last updated on <strong>{policy.data.updated?.toDateString()}</strong>
-		</p>
-	</div>
-	<article>
-		<Content />
-	</article>
+    <h1>{policy.data.title}</h1>
+    <div class="-mb-4 flex flex-row flex-wrap justify-between">
+        <p>
+            Published on <strong>{policy.data.created.toDateString()}</strong>
+        </p>
+        <p>
+            Last updated on <strong
+                >{policy.data.updated?.toDateString()}</strong
+            >
+        </p>
+    </div>
+    <article>
+        <Content />
+    </article>
 </Layout>

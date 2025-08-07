@@ -5,16 +5,16 @@ title: Tools I Use
 <!--toc:start-->
 
 - [Workstation Setup](#workstation-setup)
-  - [System Information](#system-information)
-  - [Hardware Specifications](#hardware-specifications)
+    - [System Information](#system-information)
+    - [Hardware Specifications](#hardware-specifications)
 - [Display Configuration](#display-configuration)
-  - [Built-in Display](#built-in-display)
-  - [External Monitor](#external-monitor)
+    - [Built-in Display](#built-in-display)
+    - [External Monitor](#external-monitor)
 - [Software Stack](#software-stack)
-  - [Graphical Applications (GUI)](#graphical-applications-gui)
-  - [Terminal Applications (TUI)](#terminal-applications-tui)
-  - [Shell Tools and Utilities](#shell-tools-and-utilities)
-  <!--toc:end-->
+    - [Graphical Applications (GUI)](#graphical-applications-gui)
+    - [Terminal Applications (TUI)](#terminal-applications-tui)
+    - [Shell Tools and Utilities](#shell-tools-and-utilities)
+        <!--toc:end-->
 
 <!--
 This website is only meant to showcase the work and and skills of the author,

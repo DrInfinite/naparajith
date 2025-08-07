@@ -5,12 +5,12 @@ title: Education
 <!--toc:start-->
 
 - [**Chennai Institute of Technology**](#chennai-institute-of-technology)
-  - [Bachelor of Engineering: Computer Science and Engineering](#bachelor-of-engineering-computer-science-and-engineering)
+    - [Bachelor of Engineering: Computer Science and Engineering](#bachelor-of-engineering-computer-science-and-engineering)
 - [**Chettinad Vidyashram**](#chettinad-vidyashram)
-  - [All India Senior School Certificate Examination (Class XII)](#all-india-senior-school-certificate-examination-class-xii)
+    - [All India Senior School Certificate Examination (Class XII)](#all-india-senior-school-certificate-examination-class-xii)
 - [**DAV School**](#dav-school)
-  - [All India Secondary School Examination (Class X)](#all-india-secondary-school-examination-class-x)
-  <!--toc:end-->
+    - [All India Secondary School Examination (Class X)](#all-india-secondary-school-examination-class-x)
+        <!--toc:end-->
 
 <!--
 This website is only meant to showcase the work and and skills of the author,

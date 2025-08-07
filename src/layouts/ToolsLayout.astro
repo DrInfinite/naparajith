@@ -29,11 +29,11 @@ import FAQs, { type FAQ } from "@/tools/FAQ.astro";
 import HowToUse from "@/tools/HowToUse.astro";
 
 interface Props {
-	title: string;
-	description: string;
-	instructions: string[];
-	faqs?: FAQ[];
-	ogImage?: string;
+    title: string;
+    description: string;
+    instructions: string[];
+    faqs?: FAQ[];
+    ogImage?: string;
 }
 
 const { title, description, instructions, faqs, ogImage } = Astro.props;
@@ -41,61 +41,64 @@ const defaultOgImage = "../images/arch-rainbow-1920x1080.png";
 ---
 
 <script is:inline>
-	const getThemePreference = () => {
-		if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-			return localStorage.getItem("theme");
-		}
-		return window.matchMedia("(prefers-color-scheme: dark)").matches
-			? "dark"
-			: "light";
-	};
-	const isDark = getThemePreference() === "dark";
-	document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    const getThemePreference = () => {
+        if (
+            typeof localStorage !== "undefined" &&
+            localStorage.getItem("theme")
+        ) {
+            return localStorage.getItem("theme");
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+    };
+    const isDark = getThemePreference() === "dark";
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-	if (typeof localStorage !== "undefined") {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains("dark");
-			localStorage.setItem("theme", isDark ? "dark" : "light");
-		});
-		observer.observe(document.documentElement, {
-			attributes: true,
-			attributeFilter: ["class"],
-		});
-	}
+    if (typeof localStorage !== "undefined") {
+        const observer = new MutationObserver(() => {
+            const isDark = document.documentElement.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["class"],
+        });
+    }
 </script>
 
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link href="https://mastodon.social/@naparajith" rel="me" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Naparajith</title>
-		<meta name="description" content={description} />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link href="https://mastodon.social/@naparajith" rel="me" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title} | Naparajith</title>
+        <meta name="description" content={description} />
 
-		<meta property="og:description" content={description} />
-		<meta property="og:locale" content="en_IN" />
-		<meta property="og:site_name" content="Naparajith" />
-		<meta property="og:title" content=`${title} | Naparajith` />
-		<meta property="og:url" content={Astro.url} />
-		<meta property="og:image" content={ogImage || defaultOgImage} />
+        <meta property="og:description" content={description} />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Naparajith" />
+        <meta property="og:title" content=`${title} | Naparajith` />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="og:image" content={ogImage || defaultOgImage} />
 
-		<meta property="twitter:title" content=`${title} | Naparajith` />
-		<meta property="twitter:description" content={description} />
+        <meta property="twitter:title" content=`${title} | Naparajith` />
+        <meta property="twitter:description" content={description} />
 
-		<Font cssVariable="--font-sans" preload />
-		<Font cssVariable="--font-serif" preload />
-		<Font cssVariable="--font-quote" preload />
-	</head>
-	<body>
-		<Header />
-		<h1>{title}</h1>
-		<p>{description}</p>
-		<slot />
+        <Font cssVariable="--font-sans" preload />
+        <Font cssVariable="--font-serif" preload />
+        <Font cssVariable="--font-quote" preload />
+    </head>
+    <body>
+        <Header />
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <slot />
 
-		<HowToUse instructions={instructions} />
-		<FAQs faqs={faqs} />
-		<Footer />
-	</body>
+        <HowToUse instructions={instructions} />
+        <FAQs faqs={faqs} />
+        <Footer />
+    </body>
 </html>

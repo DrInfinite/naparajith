@@ -28,171 +28,179 @@ const license = await getCollection("license");
 ---
 
 <Layout
-	title="License"
-	description="The official license page for Naparajith's Portfolio, containing a comprehensive list of open-source licenses for code, content and images"
+    title="License"
+    description="The official license page for Naparajith's Portfolio, containing a comprehensive list of open-source licenses for code, content and images"
 >
-	<p>
-		This page outlines the various licenses that govern the use of the content
-		and assets on this website. As this site built on open and transparent
-		principles, I believe it's important to clearly communicate the rights and
-		permissions associated with my intellectual property.
-	</p>
-	<p>
-		The image and content licenses are based on the Creative Commons framework,
-		which provides a standardized way for creators to grant public permissions
-		for the use of their work. The source code license is based on the GNU
-		Public License framework, which provides a standardized way for source code
-		distribution. Please review the details of each license to understand the
-		terms and conditions that apply to the corresponding content on my site.
-	</p>
-	<p>
-		Below you will find links to the specific licenses covering the site's
-		source code, images, and overall content.
-	</p>
-	<ul>
-		{
-			license.map((policy) => (
-				<li>
-					<p>
-						<A href={`/license/${policy.id}`} title={policy.data.license_name}>
-							{policy.data.title}
-						</A>{" "}
-						<span>({policy.data.license_name})</span>
-					</p>
-				</li>
-			))
-		}
-	</ul>
+    <p>
+        This page outlines the various licenses that govern the use of the
+        content and assets on this website. As this site built on open and
+        transparent principles, I believe it's important to clearly communicate
+        the rights and permissions associated with my intellectual property.
+    </p>
+    <p>
+        The image and content licenses are based on the Creative Commons
+        framework, which provides a standardized way for creators to grant
+        public permissions for the use of their work. The source code license is
+        based on the GNU Public License framework, which provides a standardized
+        way for source code distribution. Please review the details of each
+        license to understand the terms and conditions that apply to the
+        corresponding content on my site.
+    </p>
+    <p>
+        Below you will find links to the specific licenses covering the site's
+        source code, images, and overall content.
+    </p>
+    <ul>
+        {
+            license.map((policy) => (
+                <li>
+                    <p>
+                        <A
+                            href={`/license/${policy.id}`}
+                            title={policy.data.license_name}
+                        >
+                            {policy.data.title}
+                        </A>{" "}
+                        <span>({policy.data.license_name})</span>
+                    </p>
+                </li>
+            ))
+        }
+    </ul>
 
-	<h2>Overview of GNU Public License</h2>
-	<p>
-		Nobody should be restricted by the software they use. There are four
-		freedoms that every user should have:
-	</p>
+    <h2>Overview of GNU Public License</h2>
+    <p>
+        Nobody should be restricted by the software they use. There are four
+        freedoms that every user should have:
+    </p>
 
-	<ul>
-		<li>the freedom to use the software for any purpose,</li>
-		<li>the freedom to change the software to suit your needs,</li>
-		<li>
-			the freedom to share the software with your friends and neighbors, and
-		</li>
-		<li>the freedom to share the changes you make.</li>
-	</ul>
+    <ul>
+        <li>the freedom to use the software for any purpose,</li>
+        <li>the freedom to change the software to suit your needs,</li>
+        <li>
+            the freedom to share the software with your friends and neighbors,
+            and
+        </li>
+        <li>the freedom to share the changes you make.</li>
+    </ul>
 
-	<p>
-		When a program offers users all of these freedoms, we call it <A
-			href="https://www.gnu.org/philosophy/free-sw.html"
-			target="_blank"
-			title="What is Free Software?">free software</A
-		>.
-	</p>
+    <p>
+        When a program offers users all of these freedoms, we call it <A
+            href="https://www.gnu.org/philosophy/free-sw.html"
+            target="_blank"
+            title="What is Free Software?">free software</A
+        >.
+    </p>
 
-	<p>
-		Developers who write software can release it under the terms of the GNU GPL.
-		When they do, it will be free software and stay free software, no matter who
-		changes or distributes the program. We call this copyleft: the software is
-		copyrighted, but instead of using those rights to restrict users like
-		proprietary software does, we use them to ensure that every user has
-		freedom.
-	</p>
+    <p>
+        Developers who write software can release it under the terms of the GNU
+        GPL. When they do, it will be free software and stay free software, no
+        matter who changes or distributes the program. We call this copyleft:
+        the software is copyrighted, but instead of using those rights to
+        restrict users like proprietary software does, we use them to ensure
+        that every user has freedom.
+    </p>
 
-	<h3>The GNU Affero General Public License</h3>
+    <h3>The GNU Affero General Public License</h3>
 
-	<p>
-		The GNU Affero General Public License is based on the GNU GPL, but has an
-		additional term to allow users who interact with the licensed software over
-		a network to receive the source for that program. We recommend that people
-		consider using the GNU AGPL for any software which will commonly be run over
-		a network. The latest version is version 3.
-	</p>
+    <p>
+        The GNU Affero General Public License is based on the GNU GPL, but has
+        an additional term to allow users who interact with the licensed
+        software over a network to receive the source for that program. We
+        recommend that people consider using the GNU AGPL for any software which
+        will commonly be run over a network. The latest version is version 3.
+    </p>
 
-	<p>
-		The GNU Affero General Public License text is available in various formats,
-		which can be viewed <A
-			href="https://www.gnu.org/licenses/agpl-3.0.en.html"
-			title="GNU Affero General Public License - GNU Project">here.</A
-		>
-		These documents are not formatted for standalone publishing, and are intended
-		to be included in another document.
-	</p>
+    <p>
+        The GNU Affero General Public License text is available in various
+        formats, which can be viewed <A
+            href="https://www.gnu.org/licenses/agpl-3.0.en.html"
+            title="GNU Affero General Public License - GNU Project">here.</A
+        >
+        These documents are not formatted for standalone publishing, and are intended
+        to be included in another document.
+    </p>
 
-	<h3>Why the Affero GPL?</h3>
+    <h3>Why the Affero GPL?</h3>
 
-	<p>
-		The GNU Affero General Public License is a modified version of the ordinary
-		GNU GPL version 3. It has one added requirement: if you run a modified
-		program on a server and let other users communicate with it there, your
-		server must also allow them to download the source code corresponding to the
-		modified version running there.
-	</p>
+    <p>
+        The GNU Affero General Public License is a modified version of the
+        ordinary GNU GPL version 3. It has one added requirement: if you run a
+        modified program on a server and let other users communicate with it
+        there, your server must also allow them to download the source code
+        corresponding to the modified version running there.
+    </p>
 
-	<p>
-		The purpose of the GNU Affero GPL is to prevent a problem that affects
-		developers of free programs that are often used on servers.
-	</p>
+    <p>
+        The purpose of the GNU Affero GPL is to prevent a problem that affects
+        developers of free programs that are often used on servers.
+    </p>
 
-	<h2>Overview of Creative Commons</h2>
+    <h2>Overview of Creative Commons</h2>
 
-	<p>
-		Creative Commons Corporation (“Creative Commons”) is not a law firm and does
-		not provide legal services or legal advice. Distribution of Creative Commons
-		public licenses does not create a lawyer-client or other relationship.
-		Creative Commons makes its licenses and related information available on an
-		“as-is” basis. Creative Commons gives no warranties regarding its licenses,
-		any material licensed under their terms and conditions, or any related
-		information. Creative Commons disclaims all liability for damages resulting
-		from their use to the fullest extent possible.
-	</p>
+    <p>
+        Creative Commons Corporation (“Creative Commons”) is not a law firm and
+        does not provide legal services or legal advice. Distribution of
+        Creative Commons public licenses does not create a lawyer-client or
+        other relationship. Creative Commons makes its licenses and related
+        information available on an “as-is” basis. Creative Commons gives no
+        warranties regarding its licenses, any material licensed under their
+        terms and conditions, or any related information. Creative Commons
+        disclaims all liability for damages resulting from their use to the
+        fullest extent possible.
+    </p>
 
-	<h3>Using Creative Commons Public Licenses</h3>
+    <h3>Using Creative Commons Public Licenses</h3>
 
-	<p>
-		Creative Commons public licenses provide a standard set of terms and
-		conditions that creators and other rights holders may use to share original
-		works of authorship and other material subject to copyright and certain
-		other rights specified in the public license below. The following
-		considerations are for informational purposes only, are not exhaustive, and
-		do not form part of our licenses.
-	</p>
+    <p>
+        Creative Commons public licenses provide a standard set of terms and
+        conditions that creators and other rights holders may use to share
+        original works of authorship and other material subject to copyright and
+        certain other rights specified in the public license below. The
+        following considerations are for informational purposes only, are not
+        exhaustive, and do not form part of our licenses.
+    </p>
 
-	<ul>
-		<li>
-			<strong>Considerations for licensors:</strong> Our public licenses are intended
-			for use by those authorized to give the public permission to use material in
-			ways otherwise restricted by copyright and certain other rights. Our licenses
-			are irrevocable. Licensors should read and understand the terms and conditions
-			of the license they choose before applying it. Licensors should also secure
-			all rights necessary before applying our licenses so that the public can reuse
-			the material as expected. Licensors should clearly mark any material not subject
-			to the license. This includes other CC-licensed material, or material used
-			under an exception or limitation to copyright. <A
-				href="http://wiki.creativecommons.org/Considerations_for_licensors_and_licensees#Considerations_for_licensors"
-				target="_blank"
-				title="More considerations for licensors"
-			>
-				More considerations for licensors.
-			</A>
-		</li>
+    <ul>
+        <li>
+            <strong>Considerations for licensors:</strong> Our public licenses are
+            intended for use by those authorized to give the public permission to
+            use material in ways otherwise restricted by copyright and certain other
+            rights. Our licenses are irrevocable. Licensors should read and understand
+            the terms and conditions of the license they choose before applying it.
+            Licensors should also secure all rights necessary before applying our
+            licenses so that the public can reuse the material as expected. Licensors
+            should clearly mark any material not subject to the license. This includes
+            other CC-licensed material, or material used under an exception or limitation
+            to copyright. <A
+                href="http://wiki.creativecommons.org/Considerations_for_licensors_and_licensees#Considerations_for_licensors"
+                target="_blank"
+                title="More considerations for licensors"
+            >
+                More considerations for licensors.
+            </A>
+        </li>
 
-		<li>
-			<strong>Considerations for the public:</strong> By using one of our public
-			licenses, a licensor grants the public permission to use the licensed material
-			under specified terms and conditions. If the licensor’s permission is not necessary
-			for any reason–for example, because of any applicable exception or limitation
-			to copyright–then that use is not regulated by the license. Our licenses grant
-			only permissions under copyright and certain other rights that a licensor has
-			authority to grant. Use of the licensed material may still be restricted for
-			other reasons, including because others have copyright or other rights in the
-			material. A licensor may make special requests, such as asking that all changes
-			be marked or described. Although not required by our licenses, you are encouraged
-			to respect those requests where reasonable.
-			<A
-				href="http://wiki.creativecommons.org/Considerations_for_licensors_and_licensees#Considerations_for_licensees"
-				target="_blank"
-				title="More considerations for the public"
-			>
-				More considerations for the public.
-			</A>
-		</li>
-	</ul>
+        <li>
+            <strong>Considerations for the public:</strong> By using one of our public
+            licenses, a licensor grants the public permission to use the licensed
+            material under specified terms and conditions. If the licensor’s permission
+            is not necessary for any reason–for example, because of any applicable
+            exception or limitation to copyright–then that use is not regulated by
+            the license. Our licenses grant only permissions under copyright and
+            certain other rights that a licensor has authority to grant. Use of the
+            licensed material may still be restricted for other reasons, including
+            because others have copyright or other rights in the material. A licensor
+            may make special requests, such as asking that all changes be marked
+            or described. Although not required by our licenses, you are encouraged
+            to respect those requests where reasonable.
+            <A
+                href="http://wiki.creativecommons.org/Considerations_for_licensors_and_licensees#Considerations_for_licensees"
+                target="_blank"
+                title="More considerations for the public"
+            >
+                More considerations for the public.
+            </A>
+        </li>
+    </ul>
 </Layout>

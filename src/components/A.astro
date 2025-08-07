@@ -21,22 +21,22 @@
  */
 
 type Props = {
-	css?: string | null | undefined;
+    css?: string | null | undefined;
 } & astroHTML.JSX.AnchorHTMLAttributes;
 
 const { href, title, target, css } = Astro.props;
 ---
 
 <a
-	class={`group relative inline-flex w-fit flex-col no-underline decoration-0 ${css}`}
-	href={href}
-	title={title}
-	target={target}
+    class={`group relative inline-flex w-fit flex-col no-underline decoration-0 ${css}`}
+    href={href}
+    title={title}
+    target={target}
 >
-	<span class="z-50 group-hover:invert dark:group-hover:invert-0">
-		<slot />
-	</span>
-	<span
-		class="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-[#1e57b7] to-[#4762f4] group-hover:h-full group-active:from-[#4762f4] group-active:to-[#1e57b7] md:h-[2px]"
-	></span>
+    <span class="z-50 group-hover:invert dark:group-hover:invert-0">
+        <slot />
+    </span>
+    <span
+        class="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-[#1e57b7] to-[#4762f4] group-hover:h-full group-active:from-[#4762f4] group-active:to-[#1e57b7] md:h-[2px]"
+    ></span>
 </a>

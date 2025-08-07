@@ -26,195 +26,198 @@ import { getCollection } from "astro:content";
 
 const profile = await getCollection("profile");
 const translations = [
-	{ lang: "Sanskrit (Hindi/Marathi)", name: "नपराजित" },
-	{ lang: "Bengali", name: "নপরাজিৎ" },
-	{ lang: "Telugu", name: "నాపరాజిత్" },
-	{ lang: "Tamil", name: "நபராஜித்" },
-	{ lang: "Gujarati", name: "નાપરાજિત" },
-	{ lang: "Kannada", name: "ನಪರಾಜಿತ್" },
-	{ lang: "Odia", name: "ନାପାରାଜିଥ୍" },
-	{ lang: "Malayalam", name: "നപരാജിത്ത്" },
-	{ lang: "Punjabi", name: "ਨਪਰਾਜਿਤ" },
+    { lang: "Sanskrit (Hindi/Marathi)", name: "नपराजित" },
+    { lang: "Bengali", name: "নপরাজিৎ" },
+    { lang: "Telugu", name: "నాపరాజిత్" },
+    { lang: "Tamil", name: "நபராஜித்" },
+    { lang: "Gujarati", name: "નાપરાજિત" },
+    { lang: "Kannada", name: "ನಪರಾಜಿತ್" },
+    { lang: "Odia", name: "ନାପାରାଜିଥ୍" },
+    { lang: "Malayalam", name: "നപരാജിത്ത്" },
+    { lang: "Punjabi", name: "ਨਪਰਾਜਿਤ" },
 ];
 
 const links = [
-	{
-		href: "https://www.linkedin.com/in/naparajith/",
-		title: "LinkedIn - Naparajith T L",
-		innerHTML: "LinkedIn",
-		target: "_blank",
-	},
-	{
-		href: "/quick-view/github",
-		title: "GitHub - DrInfinite",
-		innerHTML: "GitHub",
-	},
-	{
-		href: "/quick-view/leetcode",
-		title: "Leetcode",
-		innerHTML: "Leetcode",
-	},
-	{
-		href: "https://bsky.app/profile/naparajith.in",
-		title: "Naparajith | DrInfinite (@naparajith.in)",
-		innerHTML: "BlueSky",
-		target: "_blank",
-	},
-	{
-		href: "https://mastodon.social/@naparajith",
-		title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
-		innerHTML: "Mastodon",
-		target: "_blank",
-	},
-	{
-		href: "/blog",
-		title: "Blog",
-		innerHTML: "Blog",
-	},
+    {
+        href: "https://www.linkedin.com/in/naparajith/",
+        title: "LinkedIn - Naparajith T L",
+        innerHTML: "LinkedIn",
+        target: "_blank",
+    },
+    {
+        href: "/quick-view/github",
+        title: "GitHub - DrInfinite",
+        innerHTML: "GitHub",
+    },
+    {
+        href: "/quick-view/leetcode",
+        title: "Leetcode",
+        innerHTML: "Leetcode",
+    },
+    {
+        href: "https://bsky.app/profile/naparajith.in",
+        title: "Naparajith | DrInfinite (@naparajith.in)",
+        innerHTML: "BlueSky",
+        target: "_blank",
+    },
+    {
+        href: "https://mastodon.social/@naparajith",
+        title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
+        innerHTML: "Mastodon",
+        target: "_blank",
+    },
+    {
+        href: "/blog",
+        title: "Blog",
+        innerHTML: "Blog",
+    },
 ];
 ---
 
 <Layout
-	title="Profile"
-	description="The official profile page for T L Naparajith, a Software Engineer from India"
+    title="Profile"
+    description="The official profile page for T L Naparajith, a Software Engineer from India"
 >
-	<article>
-		<h3>Who I am</h3>
-		<p>
-			I am Naparajith, a Software Development Engineer in Test from India. I am
-			passionate about solving coding challenges, simple and complex everyday
-			problems and leveraging technology to better the lives of the people
-			around me.
-		</p>
-		<p>
-			My career spans software development, engineering, quality assurance, test
-			automation, and internal tool development.
-		</p>
-		<p>
-			If you are interested in learning more about my work experience, my
-			skills, or the tools I use on a daily basis, you can pruse through the
-			pages below:
-		</p>
+    <article>
+        <h3>Who I am</h3>
+        <p>
+            I am Naparajith, a Software Development Engineer in Test from India.
+            I am passionate about solving coding challenges, simple and complex
+            everyday problems and leveraging technology to better the lives of
+            the people around me.
+        </p>
+        <p>
+            My career spans software development, engineering, quality
+            assurance, test automation, and internal tool development.
+        </p>
+        <p>
+            If you are interested in learning more about my work experience, my
+            skills, or the tools I use on a daily basis, you can pruse through
+            the pages below:
+        </p>
 
-		<div
-			class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
-		>
-			{
-				profile.map((about) => (
-					<span>
-						<A href={`/profile/${about.id}`}>{about.data.title}</A>
-					</span>
-				))
-			}
-		</div>
+        <div
+            class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
+        >
+            {
+                profile.map((about) => (
+                    <span>
+                        <A href={`/profile/${about.id}`}>{about.data.title}</A>
+                    </span>
+                ))
+            }
+        </div>
 
-		<h3>What I do</h3>
-		<ol>
-			<li>
-				Working with Software Businesses
-				<ul>
-					<li>
-						Scaled businesses successfully, emphasizing customer-centric
-						decisions
-					</li>
-					<li>
-						Excel in executing ambitious projects and relying on data for
-						decisions
-					</li>
-				</ul>
-			</li>
+        <h3>What I do</h3>
+        <ol>
+            <li>
+                Working with Software Businesses
+                <ul>
+                    <li>
+                        Scaled businesses successfully, emphasizing
+                        customer-centric decisions
+                    </li>
+                    <li>
+                        Excel in executing ambitious projects and relying on
+                        data for decisions
+                    </li>
+                </ul>
+            </li>
 
-			<li>
-				Working with Product Teams
+            <li>
+                Working with Product Teams
 
-				<ul>
-					<li>
-						Align, contribute to, and grow product teams (10 to 100 people)
-					</li>
-					<li>
-						Fluent in technical and executive languages, crafting narratives for
-						inspiration
-					</li>
-					<li>Significantly contribute to project outcomes</li>
-				</ul>
-			</li>
+                <ul>
+                    <li>
+                        Align, contribute to, and grow product teams (10 to 100
+                        people)
+                    </li>
+                    <li>
+                        Fluent in technical and executive languages, crafting
+                        narratives for inspiration
+                    </li>
+                    <li>Significantly contribute to project outcomes</li>
+                </ul>
+            </li>
 
-			<li>
-				Continuous Improvement
+            <li>
+                Continuous Improvement
 
-				<ul>
-					<li>Dedicated to personal and professional growth</li>
-					<li>
-						Constant learning, omposure in adversity, and high-quality
-						decision-making
-					</li>
-				</ul>
-			</li>
+                <ul>
+                    <li>Dedicated to personal and professional growth</li>
+                    <li>
+                        Constant learning, omposure in adversity, and
+                        high-quality decision-making
+                    </li>
+                </ul>
+            </li>
 
-			<li>
-				Networking and Collaboration
+            <li>
+                Networking and Collaboration
 
-				<ul>
-					<li>
-						Enjoy meeting fellow developers and discussing emerging technologies
-					</li>
-				</ul>
-			</li>
-		</ol>
+                <ul>
+                    <li>
+                        Enjoy meeting fellow developers and discussing emerging
+                        technologies
+                    </li>
+                </ul>
+            </li>
+        </ol>
 
-		<h3>More about me</h3>
-		<p>
-			Many people are curious about my name and what it means. So here is your
-			answer.
-		</p>
-		<p>
-			The name Naparajith is deeply rooted in ancient Indian culture and roughly
-			translates to <strong>
-				<em>
-					<u>a person who is undefeated.</u>
-				</em>
-			</strong>
-		</p>
-		<p>
-			Here is my name translated into a few regional languages, just as a sign
-			of my respect for the immense diversity of this wonderful nation.
-		</p>
-		<table class="caption-top">
-			<caption class="mb-4 font-semibold italic">
-				Translations in select Indian languages
-			</caption>
-			<thead>
-				<tr>
-					<th>Language</th>
-					<th>Name</th>
-				</tr>
-			</thead>
-			<tbody>
-				{
-					translations.map(({ lang, name }) => (
-						<tr>
-							<td>{lang}</td>
-							<td class="font-sans">{name}</td>
-						</tr>
-					))
-				}
-			</tbody>
-		</table>
-		<p>
-			Connect for discussions on programming, emerging tech, or software product
-			creation. Let's code and innovate together!
-		</p>
+        <h3>More about me</h3>
+        <p>
+            Many people are curious about my name and what it means. So here is
+            your answer.
+        </p>
+        <p>
+            The name Naparajith is deeply rooted in ancient Indian culture and
+            roughly translates to <strong>
+                <em>
+                    <u>a person who is undefeated.</u>
+                </em>
+            </strong>
+        </p>
+        <p>
+            Here is my name translated into a few regional languages, just as a
+            sign of my respect for the immense diversity of this wonderful
+            nation.
+        </p>
+        <table class="caption-top">
+            <caption class="mb-4 font-semibold italic">
+                Translations in select Indian languages
+            </caption>
+            <thead>
+                <tr>
+                    <th>Language</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    translations.map(({ lang, name }) => (
+                        <tr>
+                            <td>{lang}</td>
+                            <td class="font-sans">{name}</td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+        <p>
+            Connect for discussions on programming, emerging tech, or software
+            product creation. Let's code and innovate together!
+        </p>
 
-		<div
-			class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
-		>
-			{
-				links.map((link) => (
-					<A href={link.href} title={link.title} target={link.target}>
-						{link.innerHTML}
-					</A>
-				))
-			}
-		</div>
-	</article>
+        <div
+            class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
+        >
+            {
+                links.map((link) => (
+                    <A href={link.href} title={link.title} target={link.target}>
+                        {link.innerHTML}
+                    </A>
+                ))
+            }
+        </div>
+    </article>
 </Layout>

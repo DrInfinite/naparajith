@@ -27,13 +27,13 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const learning = [
-	"How to read large codebases without getting lost?",
-	"How do memory-corruption vulnerabilities work?",
-	"Ethical exploitation of web applications",
-	"Building a programming language from scratch using LLVM",
-	"An in-depth explanation of how a Syscall works",
-	"An in-depth explanation of how to build Firefox extensions.",
-	"Reading a codebase without getting lost or stuck.",
+    "How to read large codebases without getting lost?",
+    "How do memory-corruption vulnerabilities work?",
+    "Ethical exploitation of web applications",
+    "Building a programming language from scratch using LLVM",
+    "An in-depth explanation of how a Syscall works",
+    "An in-depth explanation of how to build Firefox extensions.",
+    "Reading a codebase without getting lost or stuck.",
 ];
 
 const quotes = await getCollection("quotes");
@@ -47,198 +47,204 @@ const quote = quotes[Math.floor(Math.random() * quotes.length)];
 // const author = await getEntry(post.data.author);
 
 const pages = [
-	{ href: "/profile", title: "Profile", innerHTML: "Profile" },
-	{ href: "/quick-view", title: "Quick View", innerHTML: "Quick View" },
-	{ href: "/blog", title: "Blog", innerHTML: "Blog" },
-	{ href: "/quotes", title: "Quotes", innerHTML: "Quotes" },
-	{ href: "/design", title: "Design", innerHTML: "Design" },
-	{ href: "/projects", title: "Projects", innerHTML: "Projects" },
-	{ href: "/tools", title: "Tools", innerHTML: "Tools" },
+    { href: "/profile", title: "Profile", innerHTML: "Profile" },
+    { href: "/quick-view", title: "Quick View", innerHTML: "Quick View" },
+    { href: "/blog", title: "Blog", innerHTML: "Blog" },
+    { href: "/quotes", title: "Quotes", innerHTML: "Quotes" },
+    { href: "/design", title: "Design", innerHTML: "Design" },
+    { href: "/projects", title: "Projects", innerHTML: "Projects" },
+    { href: "/tools", title: "Tools", innerHTML: "Tools" },
 ];
 
 const socials = [
-	{
-		href: "/quick-view/github",
-		title: "GitHub - DrInfinite",
-		innerHTML: "GitHub",
-	},
-	{
-		href: "https://www.linkedin.com/in/naparajith/",
-		title: "LinkedIn - Naparajith T L",
-		innerHTML: "LinkedIn",
-		target: "_blank",
-	},
-	{
-		href: "/quick-view/leetcode",
-		title: "Leetcode - DrInfinite",
-		innerHTML: "Leetcode",
-	},
-	{
-		href: "https://bsky.app/profile/naparajith.in",
-		title: "Naparajith | DrInfinite (@naparajith.in)",
-		innerHTML: "BlueSky",
-		target: "_blank",
-	},
-	{
-		href: "https://mastodon.social/@naparajith",
-		title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
-		innerHTML: "Mastodon",
-		target: "_blank",
-	},
+    {
+        href: "/quick-view/github",
+        title: "GitHub - DrInfinite",
+        innerHTML: "GitHub",
+    },
+    {
+        href: "https://www.linkedin.com/in/naparajith/",
+        title: "LinkedIn - Naparajith T L",
+        innerHTML: "LinkedIn",
+        target: "_blank",
+    },
+    {
+        href: "/quick-view/leetcode",
+        title: "Leetcode - DrInfinite",
+        innerHTML: "Leetcode",
+    },
+    {
+        href: "https://bsky.app/profile/naparajith.in",
+        title: "Naparajith | DrInfinite (@naparajith.in)",
+        innerHTML: "BlueSky",
+        target: "_blank",
+    },
+    {
+        href: "https://mastodon.social/@naparajith",
+        title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
+        innerHTML: "Mastodon",
+        target: "_blank",
+    },
 ];
 ---
 
 <Layout
-	title="Home"
-	description="The personal portfolio of T L Naparajith, a Software Engineer from India."
+    title="Home"
+    description="The personal portfolio of T L Naparajith, a Software Engineer from India."
 >
-	<article>
-		<figure
-			class="flex flex-col content-around items-center justify-around ~gap-6/12"
-		>
-			<span class="-my-px ~size-48/96">
-				<Image
-					alt="DrInfinite"
-					class="mx-auto scale-90 rounded-none"
-					width={540}
-					height={540}
-					priority
-					src="https://avatars.githubusercontent.com/u/74095696?v=4"
-				/>
-			</span>
+    <article>
+        <figure
+            class="flex flex-col content-around items-center justify-around ~gap-6/12"
+        >
+            <span class="-my-px ~size-48/96">
+                <Image
+                    alt="DrInfinite"
+                    class="mx-auto scale-90 rounded-none"
+                    width={540}
+                    height={540}
+                    priority
+                    src="https://avatars.githubusercontent.com/u/74095696?v=4"
+                />
+            </span>
 
-			<figcaption class="text-center font-semibold ~p-2/4">
-				<span class="italic">This image comes from my</span>
-				<A href="https://github.com/DrInfinite" target="_blank">
-					GitHub Profile
-				</A>
-			</figcaption>
-		</figure>
-		<p>
-			<strong>
-				An engineer committed to solving problems, I am dedicated to deepening
-				my expertise in every technology that drives software excellence.
-			</strong>
-		</p>
-	</article>
+            <figcaption class="text-center font-semibold ~p-2/4">
+                <span class="italic">This image comes from my</span>
+                <A href="https://github.com/DrInfinite" target="_blank">
+                    GitHub Profile
+                </A>
+            </figcaption>
+        </figure>
+        <p>
+            <strong>
+                An engineer committed to solving problems, I am dedicated to
+                deepening my expertise in every technology that drives software
+                excellence.
+            </strong>
+        </p>
+    </article>
 
-	<div class="space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8">
-		<div
-			class="flex flex-wrap justify-evenly gap-2 rounded-none border border-border ~p-2/4 md:gap-4"
-		>
-			{
-				pages.map((link) => (
-					<A href={link.href} title={link.title}>
-						{link.innerHTML}
-					</A>
-				))
-			}
-		</div>
-		<div
-			class="flex flex-wrap justify-evenly gap-2 rounded-none border border-border ~p-2/4 md:gap-4"
-		>
-			{
-				socials.map((link) => (
-					<A href={link.href} title={link.title} target={link.target}>
-						{link.innerHTML}
-					</A>
-				))
-			}
-		</div>
-	</div>
-	<main>
-		<p class="text-center">
-			<A
-				href="https://flowcv.com/resume/mdrssqq018"
-				title="Resume"
-				target="_blank"
-			>
-				Resume: Download latest version
-			</A>
-		</p>
-		<div class="~space-y-4/8">
-			<hr class="my-4 border-t-2 border-t-border" />
-			<h2>A random quote that I like</h2>
-			<figure
-				class="place-content-center rounded-none border border-border p-4 ~gap-2/4"
-			>
-				<blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
-				<figcaption>
-					<cite>
-						-{" "}
-						<a
-							href={quote.data.cite}
-							title={`${quote.data.author} - ${quote.data.cite}`}
-							target="_blank"
-							class="text-inherit no-underline"
-						>
-							{quote.data.author}
-						</a>
-					</cite>
-				</figcaption>
-				<div class="float-end">
-					<A href="/quotes" title="Quotes">more like this</A>
-				</div>
-			</figure>
-			<!-- <h2>A random blog post</h2> -->
-			<!-- <a -->
-			<!-- 	href={`/blog/${post.id}`} -->
-			<!-- 	class="flex w-full flex-col justify-evenly border border-border decoration-transparent rounded-none hover:bg-foreground/10" -->
-			<!-- > -->
-			<!-- 	<article class="flex flex-col ~gap-2/4 ~p-2/4"> -->
-			<!-- 		<h4 class="-my-px" transition:name="post-title"> -->
-			<!-- 			{post.data.title} -->
-			<!-- 		</h4> -->
-			<!-- 		<small class="-my-px line-clamp-2" transition:name="post-description"> -->
-			<!-- 			{post.data.description} -->
-			<!-- 		</small> -->
-			<!-- 	</article> -->
-			<!-- 	<article -->
-			<!-- 		class="flex justify-between bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent ~p-2/4" -->
-			<!-- 	> -->
-			<!-- 		<small>{post.data.created.toDateString()}</small> -->
-			<!-- 		<small>{author.data.name}</small> -->
-			<!-- 	</article> -->
-			<!-- </a> -->
-			<hr class="my-4 border-t-2 border-t-border" />
-		</div>
-		<div>
-			<p>
-				When I was a kid, I was told a really inspiring quote about learning,
-				which goes something like this:
-			</p>
-			<figure>
-				<blockquote
-					cite={process.env.NODE_ENV === "development"
-						? "http://localhost:4321/"
-						: "https://naparajith.in/"}
-				>
-					From the teacher is learned a quarter, a quarter from the student's
-					own intelligence, a quarter from fellow students, and a quarter with
-					the passage of time.
-				</blockquote>
-				<figcaption>
-					<cite> - <strong class="text-inherit"> Unknown </strong></cite>
-				</figcaption>
-			</figure>
-			<p>
-				I intened to make learning my long-term commitment, and that takes a lot
-				of support, effort and cooperation. Here are a few things I'm interested
-				in getting help on (not an exhaustive list):
-			</p>
-			<ul>
-				{learning.map((concept) => <li>{concept}</li>)}
-			</ul>
-			<p>
-				If you would like to help me out in learning any of these concepts or
-				would like to provide any feedback, please write to <A
-					href="mailto:naparajith@duck.com"
-					title="E-Mail Address"
-					target="_blank"
-				>
-					naparajith@duck.com.
-				</A> I really appreciate any support provided.
-			</p>
-		</div>
-	</main>
+    <div class="space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8">
+        <div
+            class="flex flex-wrap justify-evenly gap-2 rounded-none border border-border ~p-2/4 md:gap-4"
+        >
+            {
+                pages.map((link) => (
+                    <A href={link.href} title={link.title}>
+                        {link.innerHTML}
+                    </A>
+                ))
+            }
+        </div>
+        <div
+            class="flex flex-wrap justify-evenly gap-2 rounded-none border border-border ~p-2/4 md:gap-4"
+        >
+            {
+                socials.map((link) => (
+                    <A href={link.href} title={link.title} target={link.target}>
+                        {link.innerHTML}
+                    </A>
+                ))
+            }
+        </div>
+    </div>
+    <main>
+        <p class="text-center">
+            <A
+                href="https://flowcv.com/resume/mdrssqq018"
+                title="Resume"
+                target="_blank"
+            >
+                Resume: Download latest version
+            </A>
+        </p>
+        <div class="~space-y-4/8">
+            <hr class="my-4 border-t-2 border-t-border" />
+            <h2>A random quote that I like</h2>
+            <figure
+                class="place-content-center rounded-none border border-border p-4 ~gap-2/4"
+            >
+                <blockquote cite={quote.data.cite}>
+                    {quote.data.quote}
+                </blockquote>
+                <figcaption>
+                    <cite>
+                        -{" "}
+                        <a
+                            href={quote.data.cite}
+                            title={`${quote.data.author} - ${quote.data.cite}`}
+                            target="_blank"
+                            class="text-inherit no-underline"
+                        >
+                            {quote.data.author}
+                        </a>
+                    </cite>
+                </figcaption>
+                <div class="float-end">
+                    <A href="/quotes" title="Quotes">more like this</A>
+                </div>
+            </figure>
+            <!-- <h2>A random blog post</h2> -->
+            <!-- <a -->
+            <!-- 	href={`/blog/${post.id}`} -->
+            <!-- 	class="flex w-full flex-col justify-evenly border border-border decoration-transparent rounded-none hover:bg-foreground/10" -->
+            <!-- > -->
+            <!-- 	<article class="flex flex-col ~gap-2/4 ~p-2/4"> -->
+            <!-- 		<h4 class="-my-px" transition:name="post-title"> -->
+            <!-- 			{post.data.title} -->
+            <!-- 		</h4> -->
+            <!-- 		<small class="-my-px line-clamp-2" transition:name="post-description"> -->
+            <!-- 			{post.data.description} -->
+            <!-- 		</small> -->
+            <!-- 	</article> -->
+            <!-- 	<article -->
+            <!-- 		class="flex justify-between bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent ~p-2/4" -->
+            <!-- 	> -->
+            <!-- 		<small>{post.data.created.toDateString()}</small> -->
+            <!-- 		<small>{author.data.name}</small> -->
+            <!-- 	</article> -->
+            <!-- </a> -->
+            <hr class="my-4 border-t-2 border-t-border" />
+        </div>
+        <div>
+            <p>
+                When I was a kid, I was told a really inspiring quote about
+                learning, which goes something like this:
+            </p>
+            <figure>
+                <blockquote
+                    cite={process.env.NODE_ENV === "development"
+                        ? "http://localhost:4321/"
+                        : "https://naparajith.in/"}
+                >
+                    From the teacher is learned a quarter, a quarter from the
+                    student's own intelligence, a quarter from fellow students,
+                    and a quarter with the passage of time.
+                </blockquote>
+                <figcaption>
+                    <cite>
+                        - <strong class="text-inherit"> Unknown </strong></cite
+                    >
+                </figcaption>
+            </figure>
+            <p>
+                I intened to make learning my long-term commitment, and that
+                takes a lot of support, effort and cooperation. Here are a few
+                things I'm interested in getting help on (not an exhaustive
+                list):
+            </p>
+            <ul>
+                {learning.map((concept) => <li>{concept}</li>)}
+            </ul>
+            <p>
+                If you would like to help me out in learning any of these
+                concepts or would like to provide any feedback, please write to <A
+                    href="mailto:naparajith@duck.com"
+                    title="E-Mail Address"
+                    target="_blank"
+                >
+                    naparajith@duck.com.
+                </A> I really appreciate any support provided.
+            </p>
+        </div>
+    </main>
 </Layout>

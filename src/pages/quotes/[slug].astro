@@ -28,46 +28,48 @@ const author = Astro.params.slug;
 const authorQuotes = quotes.filter((quote) => quote.data.author === author);
 
 export const getStaticPaths = async () => {
-	const quotes = await getCollection("quotes");
-	const authors = [...new Set(quotes.map((quote) => quote.data.author))];
-	return authors.map((author) => ({
-		params: { slug: author },
-		props: {},
-	}));
+    const quotes = await getCollection("quotes");
+    const authors = [...new Set(quotes.map((quote) => quote.data.author))];
+    return authors.map((author) => ({
+        params: { slug: author },
+        props: {},
+    }));
 };
 ---
 
 <Layout
-	title={`Quotes by ${author}`}
-	description={`A collection of quotes by ${author}`}
+    title={`Quotes by ${author}`}
+    description={`A collection of quotes by ${author}`}
 >
-	<main class="min-h-[60vh]">
-		<p>
-			A collection of quotes by {author} that I resonate with and wish to share with
-			a wider audience.
-		</p>
+    <main class="min-h-[60vh]">
+        <p>
+            A collection of quotes by {author} that I resonate with and wish to share
+            with a wider audience.
+        </p>
 
-		{
-			authorQuotes
-				.sort((a, b) => parseInt(a.id) - parseInt(b.id))
-				.map((quote) => (
-					<figure>
-						<blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
-						<figcaption>
-							<cite>
-								-{" "}
-								<a
-									href={quote.data.cite}
-									title={`${quote.data.author} - ${quote.data.cite}`}
-									target="_blank"
-									class="text-inherit no-underline"
-								>
-									{quote.data.author}
-								</a>
-							</cite>
-						</figcaption>
-					</figure>
-				))
-		}
-	</main>
+        {
+            authorQuotes
+                .sort((a, b) => parseInt(a.id) - parseInt(b.id))
+                .map((quote) => (
+                    <figure>
+                        <blockquote cite={quote.data.cite}>
+                            {quote.data.quote}
+                        </blockquote>
+                        <figcaption>
+                            <cite>
+                                -{" "}
+                                <a
+                                    href={quote.data.cite}
+                                    title={`${quote.data.author} - ${quote.data.cite}`}
+                                    target="_blank"
+                                    class="text-inherit no-underline"
+                                >
+                                    {quote.data.author}
+                                </a>
+                            </cite>
+                        </figcaption>
+                    </figure>
+                ))
+        }
+    </main>
 </Layout>

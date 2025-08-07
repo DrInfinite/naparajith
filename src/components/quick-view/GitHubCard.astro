@@ -27,19 +27,21 @@ const updated_at = new Date((await GithubProfile()).updated_at).toDateString();
 ---
 
 <ACard href="/quick-view/github" title="GitHub" class="group">
-	<span class="flex flex-col">
-		GitHub
-		<div
-			class="h-[2px] bg-gradient-to-r from-[#1e57b7] to-[#4762f4] transition-all duration-300 ~my-0/2"
-		>
-		</div>
-		<small class="font-normal">
-			<u>Updated On:</u>{" "}
-			<strong
-				>{
-					updated_at !== "Invalid Date" ? updated_at.slice(4, 10) : "NA"
-				}</strong
-			>
-		</small>
-	</span>
+    <span class="flex flex-col">
+        GitHub
+        <div
+            class="h-[2px] bg-gradient-to-r from-[#1e57b7] to-[#4762f4] transition-all duration-300 ~my-0/2"
+        >
+        </div>
+        <small class="font-normal">
+            <u>Updated On:</u>{" "}
+            <strong
+                >{
+                    updated_at !== "Invalid Date"
+                        ? updated_at.slice(4, 10)
+                        : "NA"
+                }</strong
+            >
+        </small>
+    </span>
 </ACard>

@@ -29,37 +29,41 @@ const authors = [...new Set(quotes.map((quote) => quote.data.author))];
 ---
 
 <Layout
-	title="Quotes I Like"
-	description="A collection of quotes from various authors"
+    title="Quotes I Like"
+    description="A collection of quotes from various authors"
 >
-	<main class="min-h-[60vh]">
-		<p>
-			A collection of quotes by various people that I resonate with and want to
-			share with a wider audience.
-		</p>
-		<p class="text-center">
-			<A href="/quotes/all">A list of all the quotes that I like</A>
-		</p>
-		<p>Here is the list ordered by individual authors:</p>
-		<table>
-			<thead>
-				<th>Author</th>
-				<th>Count</th>
-			</thead>
-			<tbody>
-				{
-					authors.sort().map((author) => (
-						<tr>
-							<td>
-								<A href={`/quotes/${author}`}>{author}</A>
-							</td>
-							<td>
-								{quotes.filter((quote) => quote.data.author === author).length}
-							</td>
-						</tr>
-					))
-				}
-			</tbody>
-		</table>
-	</main>
+    <main class="min-h-[60vh]">
+        <p>
+            A collection of quotes by various people that I resonate with and
+            want to share with a wider audience.
+        </p>
+        <p class="text-center">
+            <A href="/quotes/all">A list of all the quotes that I like</A>
+        </p>
+        <p>Here is the list ordered by individual authors:</p>
+        <table>
+            <thead>
+                <th>Author</th>
+                <th>Count</th>
+            </thead>
+            <tbody>
+                {
+                    authors.sort().map((author) => (
+                        <tr>
+                            <td>
+                                <A href={`/quotes/${author}`}>{author}</A>
+                            </td>
+                            <td>
+                                {
+                                    quotes.filter(
+                                        (quote) => quote.data.author === author,
+                                    ).length
+                                }
+                            </td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+    </main>
 </Layout>
