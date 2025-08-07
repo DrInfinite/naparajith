@@ -34,7 +34,8 @@ Contact me through electronic mail: <naparajith@duck.com>
 - [**DigiTranIT Pvt Ltd**](#digitranit-pvt-ltd)
     - [**Full Stack Development Intern**](#full-stack-development-intern)
     - [**User Experience Design Intern**](#user-experience-design-intern)
-        <!--toc:end-->
+
+<!--toc:end-->
 
 ---
 

@@ -2,16 +2,6 @@
 title: Education
 ---
 
-<!--toc:start-->
-
-- [**Chennai Institute of Technology**](#chennai-institute-of-technology)
-    - [Bachelor of Engineering: Computer Science and Engineering](#bachelor-of-engineering-computer-science-and-engineering)
-- [**Chettinad Vidyashram**](#chettinad-vidyashram)
-    - [All India Senior School Certificate Examination (Class XII)](#all-india-senior-school-certificate-examination-class-xii)
-- [**DAV School**](#dav-school)
-    - [All India Secondary School Examination (Class X)](#all-india-secondary-school-examination-class-x)
-        <!--toc:end-->
-
 <!--
 This website is only meant to showcase the work and and skills of the author,
 on a professional level. It also has a blog, containing the author's observations
@@ -32,6 +22,17 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 
 Contact me through electronic mail: <naparajith@duck.com>
 -->
+
+<!--toc:start-->
+
+- [**Chennai Institute of Technology**](#chennai-institute-of-technology)
+    - [Bachelor of Engineering: Computer Science and Engineering](#bachelor-of-engineering-computer-science-and-engineering)
+- [**Chettinad Vidyashram**](#chettinad-vidyashram)
+    - [All India Senior School Certificate Examination (Class XII)](#all-india-senior-school-certificate-examination-class-xii)
+- [**DAV School**](#dav-school)
+    - [All India Secondary School Examination (Class X)](#all-india-secondary-school-examination-class-x)
+
+<!--toc:end-->
 
 ---
 
