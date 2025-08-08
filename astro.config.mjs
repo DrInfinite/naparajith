@@ -97,6 +97,11 @@ export default defineConfig({
                 name: "Noto Serif",
                 cssVariable: "--font-serif",
             },
+            {
+                provider: fontProviders.google(),
+                name: "Cascadia Code",
+                cssVariable: "--font-mono",
+            },
         ],
     },
     site:

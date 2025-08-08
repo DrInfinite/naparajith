@@ -35,6 +35,7 @@ export default {
             sans: ["var(--font-sans)"],
             quote: ["var(--font-quote)"],
             serif: ["var(--font-serif)"],
+            mono: ["var(--font-mono)"],
         },
         extend: {
             screens: { xs: "20rem" },
