@@ -2,7 +2,7 @@
 title: JavaScript Policy
 description: The official JavaScript Policy for Naparajith's Portfolio
 created: 03-18-2025
-updated: 05-18-2025
+updated: 08-08-2025
 ---
 
 {/* This website is only meant to showcase the work and and skills of the
@@ -72,37 +72,23 @@ user experience across the site. A few kB of JS is shipped and executed in the
 client for prefetching routes, handling dates, improving user navigation,
 switching between light and dark mode and fetching dynamic content.
 
+There is also some JS which is shipeed to assist with client-side state, such
+as some parts of the tools page.
+
 While the site may function as intended with JS blocked, some aspects may not be
 in the way the user expects. Some elements may break when JS is disabled.
 
-The following JS is executed on client-side to automatically set the theme based
-on the Browser/OS theme.
+In case you are interested in viewing this site's source code or its license,
+check out the following links:
 
-```js
-<script is:inline>
- const getThemePreference = () => {
-  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-   return localStorage.getItem('theme');
-  }
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
- };
- const isDark = getThemePreference() === 'dark';
- document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
-
- if (typeof localStorage !== 'undefined') {
-  const observer = new MutationObserver(() => {
-   const isDark = document.documentElement.classList.contains('dark');
-   localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
- }
-</script>
-```
+- Source Code License: <A href="/license/code">GNU AGPL 3.0 LICENSE</A>
+- Source Code: <A href="https://github.com/DrInfinite/naparajith" target="_blank">GitHub</A>
 
 ### Disabling JavaScript
 
-Disabling JS doesn't affect any of the site's core functionality, but the site
-is forced to be in light mode.
+Disabling JS can negatively affect some parts of the site's functionality. It
+also forces the site into light mode, as it disables the automatic system theme
+detection.
 
 If you are not comfortable with client-side script execution, don't like
 unauthorized access to local storage or just simply don't like non-free
