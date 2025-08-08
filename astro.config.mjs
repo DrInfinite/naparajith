@@ -84,17 +84,17 @@ export default defineConfig({
         fonts: [
             {
                 provider: fontProviders.google(),
-                name: "Noto Sans Display",
+                name: "Mozilla Text",
                 cssVariable: "--font-sans",
             },
             {
                 provider: fontProviders.google(),
-                name: "Noto Serif Display",
+                name: "Bona Nova SC",
                 cssVariable: "--font-quote",
             },
             {
                 provider: fontProviders.google(),
-                name: "Noto Serif",
+                name: "Mozilla Headline",
                 cssVariable: "--font-serif",
             },
             {
