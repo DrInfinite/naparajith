@@ -2,20 +2,6 @@
 title: Tools I Use
 ---
 
-<!--toc:start-->
-
-- [Workstation Setup](#workstation-setup)
-  - [System Information](#system-information)
-  - [Hardware Specifications](#hardware-specifications)
-- [Display Configuration](#display-configuration)
-  - [Built-in Display](#built-in-display)
-  - [External Monitor](#external-monitor)
-- [Software Stack](#software-stack)
-  - [Graphical Applications (GUI)](#graphical-applications-gui)
-  - [Terminal Applications (TUI)](#terminal-applications-tui)
-  - [Shell Tools and Utilities](#shell-tools-and-utilities)
-  <!--toc:end-->
-
 <!--
 This website is only meant to showcase the work and and skills of the author,
 on a professional level. It also has a blog, containing the author's observations
@@ -36,6 +22,23 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 
 Contact me through electronic mail: <naparajith@duck.com>
 -->
+
+<!--toc:start-->
+
+- [Workstation Setup](#workstation-setup)
+    - [System Information](#system-information)
+    - [Hardware Specifications](#hardware-specifications)
+- [Display Configuration](#display-configuration)
+    - [Built-in Display](#built-in-display)
+    - [External Monitor](#external-monitor)
+- [Software Stack](#software-stack)
+    - [Graphical Applications (GUI)](#graphical-applications-gui)
+    - [Terminal Applications (TUI)](#terminal-applications-tui)
+    - [Shell Tools and Utilities](#shell-tools-and-utilities)
+
+<!--toc:end-->
+
+---
 
 A curated collection of hardware and software tools that power my daily
 workflow. _**This list is under active development and updated periodically.**_
@@ -99,7 +102,7 @@ workflow. _**This list is under active development and updated periodically.**_
 | Application                                         | Purpose           |
 | --------------------------------------------------- | ----------------- |
 | [Emacs](https://www.gnu.org/software/emacs/)        | Note Taking & IDE |
-| [Firefox](https://www.mozilla.org/firefox)          | Web Browser       |
+| [Zen Browser](https://zen-browser.app/)             | Web Browser       |
 | [Kdenlive](https://kdenlive.org)                    | Video Editing     |
 | [Nautilus](https://wiki.gnome.org/Apps/Nautilus)    | File Manager      |
 | [PhotoGIMP](https://github.com/Diolinux/PhotoGIMP)  | Image Editing     |

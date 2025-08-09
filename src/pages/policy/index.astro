@@ -28,37 +28,39 @@ const policies = await getCollection("policy");
 ---
 
 <Layout
-	title="Policy"
-	description="The official Policy page for Naparajith's Portfolio. Contains a comprehensive list of all policies applicable to this site."
+    title="Policy"
+    description="The official Policy page for Naparajith's Portfolio. Contains a comprehensive list of all policies applicable to this site."
 >
-	<main>
-		<p>
-			This page outlines the various policies that govern the use, behavior, and
-			content on this website. As this site is built on open and transparent
-			principles, I believe it's important to clearly communicate the standards
-			and expectations that apply across the site.
-		</p>
-		<p>
-			The Privacy Policy details how user data is handled and protected. The
-			JavaScript Policy explains the types of scripts used and my commitment to
-			open, ethical development practices. The Content Policy sets the
-			guidelines for the creation, sharing, and moderation of content on the
-			site.
-		</p>
-		<div
-			class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
-		>
-			{
-				policies.map((policy) => (
-					<span>
-						<A href={`/policy/${policy.id}`}>{policy.data.title}</A>
-					</span>
-				))
-			}
-		</div>
-		<p>
-			Please review each policy to understand the principles and rules that
-			ensure a safe, respectful, and transparent experience for all visitors.
-		</p>
-	</main>
+    <main>
+        <p>
+            This page outlines the various policies that govern the use,
+            behavior, and content on this website. As this site is built on open
+            and transparent principles, I believe it's important to clearly
+            communicate the standards and expectations that apply across the
+            site.
+        </p>
+        <p>
+            The Privacy Policy details how user data is handled and protected.
+            The JavaScript Policy explains the types of scripts used and my
+            commitment to open, ethical development practices. The Content
+            Policy sets the guidelines for the creation, sharing, and moderation
+            of content on the site.
+        </p>
+        <div
+            class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
+        >
+            {
+                policies.map((policy) => (
+                    <span>
+                        <A href={`/policy/${policy.id}`}>{policy.data.title}</A>
+                    </span>
+                ))
+            }
+        </div>
+        <p>
+            Please review each policy to understand the principles and rules
+            that ensure a safe, respectful, and transparent experience for all
+            visitors.
+        </p>
+    </main>
 </Layout>

@@ -2,15 +2,6 @@
 title: Skills
 ---
 
-<!--toc:start-->
-
-- [Professional Skills](#professional-skills)
-- [Technical Skills](#technical-skills)
-- [Domain Knowledge](#domain-knowledge)
-<!--toc:end-->
-
----
-
 <!--
 This website is only meant to showcase the work and and skills of the author,
 on a professional level. It also has a blog, containing the author's observations
@@ -31,6 +22,16 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 
 Contact me through electronic mail: <naparajith@duck.com>
 -->
+
+<!--toc:start-->
+
+- [Professional Skills](#professional-skills)
+- [Technical Skills](#technical-skills)
+- [Domain Knowledge](#domain-knowledge)
+
+<!--toc:end-->
+
+---
 
 ## Professional Skills
 

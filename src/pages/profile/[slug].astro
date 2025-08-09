@@ -25,11 +25,11 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
-	const bio = await getCollection("profile");
-	return bio.map((about) => ({
-		params: { slug: about.id },
-		props: { about },
-	}));
+    const bio = await getCollection("profile");
+    return bio.map((about) => ({
+        params: { slug: about.id },
+        props: { about },
+    }));
 }) satisfies GetStaticPaths;
 
 const { about } = Astro.props;
@@ -37,16 +37,16 @@ const { Content } = await render(about);
 ---
 
 <Layout title={about.data.title} description={about.data.title}>
-	<main class="min-h-[60vh]">
-		<h1>
-			{about.data.title}
-		</h1>
-		<Content />
-	</main>
+    <main class="min-h-[60vh]">
+        <h1>
+            {about.data.title}
+        </h1>
+        <Content />
+    </main>
 </Layout>
 
 <style>
-	h2 {
-		@apply bg-gradient-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent;
-	}
+    h2 {
+        @apply bg-gradient-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent;
+    }
 </style>

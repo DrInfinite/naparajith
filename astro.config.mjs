@@ -36,71 +36,76 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-	adapter: vercel(),
-	image: {
-		remotePatterns: [
-			{ protocol: "https", hostname: "avatars.githubusercontent.com" },
-			{ protocol: "https", hostname: "upload.wikimedia.org" },
-			{ protocol: "https", hostname: "external-content.duckduckgo.com" },
-			{ protocol: "https", hostname: "brainmade.org" },
-			{ protocol: "https", hostname: "assets.leetcode.com" },
-		],
-		responsiveStyles: true,
-		service: {
-			entrypoint: "astro/assets/services/sharp",
-			config: {
-				limitInputPixels: true,
-			},
-		},
-		layout: "constrained",
-		objectPosition: "center",
-		objectFit: "cover",
-	},
-	integrations: [
-		tailwind({ applyBaseStyles: false }),
-		sitemap(),
-		mdx(),
-		react(),
-	],
-	output: "static",
-	markdown: {
-		remarkPlugins: [ReadingTime],
-		syntaxHighlight: "shiki",
-		shikiConfig: {
-			theme: "catppuccin-mocha",
-			langAlias: { cc: "cpp" },
-			wrap: true,
-		},
-	},
-	prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
-	redirects: {
-		"/links": "/quick-view",
-		"/bio": "/profile",
-		"/indian-legends": "/legends",
-		"/quotes-i-like": "/quotes",
-	},
-	experimental: {
-		clientPrerender: true,
-		fonts: [
-			{
-				provider: fontProviders.google(),
-				name: "Noto Sans Display",
-				cssVariable: "--font-sans",
-			},
-			{
-				provider: fontProviders.google(),
-				name: "Noto Serif Display",
-				cssVariable: "--font-quote",
-			},
-			{
-				provider: fontProviders.google(),
-				name: "Noto Serif",
-				cssVariable: "--font-serif",
-			},
-		],
-	},
-	site:
-		process.env.NODE_ENV === "development"
-			? "http://localhost:4321/"
-			: "https://naparajith.in/",
+    adapter: vercel(),
+    image: {
+        remotePatterns: [
+            { protocol: "https", hostname: "avatars.githubusercontent.com" },
+            { protocol: "https", hostname: "upload.wikimedia.org" },
+            { protocol: "https", hostname: "external-content.duckduckgo.com" },
+            { protocol: "https", hostname: "brainmade.org" },
+            { protocol: "https", hostname: "assets.leetcode.com" },
+        ],
+        responsiveStyles: true,
+        service: {
+            entrypoint: "astro/assets/services/sharp",
+            config: {
+                limitInputPixels: true,
+            },
+        },
+        layout: "constrained",
+        objectPosition: "center",
+        objectFit: "cover",
+    },
+    integrations: [
+        tailwind({ applyBaseStyles: false }),
+        sitemap(),
+        mdx(),
+        react(),
+    ],
+    output: "static",
+    markdown: {
+        remarkPlugins: [ReadingTime],
+        syntaxHighlight: "shiki",
+        shikiConfig: {
+            theme: "catppuccin-mocha",
+            langAlias: { cc: "cpp" },
+            wrap: true,
+        },
+    },
+    prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
+    redirects: {
+        "/links": "/quick-view",
+        "/bio": "/profile",
+        "/indian-legends": "/legends",
+        "/quotes-i-like": "/quotes",
+    },
+    experimental: {
+        clientPrerender: true,
+        fonts: [
+            {
+                provider: fontProviders.google(),
+                name: "Mozilla Text",
+                cssVariable: "--font-sans",
+            },
+            {
+                provider: fontProviders.google(),
+                name: "Bona Nova SC",
+                cssVariable: "--font-quote",
+            },
+            {
+                provider: fontProviders.google(),
+                name: "Mozilla Headline",
+                cssVariable: "--font-serif",
+            },
+            {
+                provider: fontProviders.google(),
+                name: "Cascadia Code",
+                cssVariable: "--font-mono",
+            },
+        ],
+    },
+    site:
+        process.env.NODE_ENV === "development"
+            ? "http://localhost:4321/"
+            : "https://naparajith.in/",
 });

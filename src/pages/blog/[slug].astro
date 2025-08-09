@@ -26,12 +26,12 @@ import { getImage, Image, Picture } from "astro:assets";
 import { getCollection, getEntry, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
-	const result = await getCollection("blog");
-	const posts = result.filter((acc) => acc.data.draft !== true);
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: { post },
-	}));
+    const result = await getCollection("blog");
+    const posts = result.filter((acc) => acc.data.draft !== true);
+    return posts.map((post) => ({
+        params: { slug: post.id },
+        props: { post },
+    }));
 }) satisfies GetStaticPaths;
 
 const { post } = Astro.props;
@@ -41,74 +41,74 @@ const postImage = await getImage({ src: post.data.image, format: "webp" });
 ---
 
 <head>
-	<meta name="fediverse:creator" content="@naparajith@mastodon.social" />
+    <meta name="fediverse:creator" content="@naparajith@mastodon.social" />
 </head>
 
 <Layout
-	title={`${post.data.title}`}
-	description=`Blog Post: ${post.data.title} - ${[post.data.description]}`
-	ogImage={postImage.src}
+    title={`${post.data.title}`}
+    description=`Blog Post: ${post.data.title} - ${[post.data.description]}`
+    ogImage={postImage.src}
 >
-	<h1 class="text-center font-quote" transition:name="post-title">
-		{post.data.title}
-	</h1>
-	<div class="flex flex-grow flex-col justify-evenly ~gap-4/8">
-		<p class="font-semibold" transition:name="post-description">
-			<span>{post.data.description}</span>
-		</p>
-		<a
-			href={author.data.social}
-			target="_blank"
-			title={author.data.name}
-			class="flex flex-row items-center justify-center rounded-none border border-border no-underline ~-my-2/4 ~gap-2/4 hover:bg-foreground/10"
-		>
-			<Image
-				src={author.data.image}
-				alt={author.data.name}
-				inferSize
-				priority
-				width={48}
-				height={48}
-				class="hidden rounded-full ~-my-2/4 ~size-6/12 md:inline"
-			/>
-			<p>{author.data.name}</p>
-			<small
-				class="bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent"
-			>
-				{author.data.occupation}
-			</small>
-		</a>
-		<div
-			class="flex flex-row flex-wrap justify-between rounded-none border border-border ~-mb-2/4 ~px-4/8 ~py-2/4"
-		>
-			<strong>{remarkPluginFrontmatter.minutesRead}</strong>
-			<strong>{post.data.created.toDateString().slice(4)}</strong>
-			<strong>{remarkPluginFrontmatter.words} words</strong>
-		</div>
-	</div>
-	<figure>
-		<Picture
-			src={postImage.src}
-			alt={post.data.title}
-			inferSize
-			width="1920"
-			height="1080"
-			formats={["webp", "avif"]}
-			priority
-			class="aspect-video rounded-none border border-border"
-			transition:name="image"
-		/>
-		<figcaption class="bg-background text-center text-foreground">
-			<span class="font-semibold italic">Image Source: </span><A
-				href={postImage.src}
-				title={post.data.title}
-				target="_blank"
-			>
-				{post.data.image_source}
-			</A>
-		</figcaption>
-	</figure>
-	<article>
-		<Content />
-	</article>
+    <h1 class="text-center font-quote" transition:name="post-title">
+        {post.data.title}
+    </h1>
+    <div class="flex flex-grow flex-col justify-evenly ~gap-4/8">
+        <p class="font-semibold" transition:name="post-description">
+            <span>{post.data.description}</span>
+        </p>
+        <a
+            href={author.data.social}
+            target="_blank"
+            title={author.data.name}
+            class="flex flex-row items-center justify-center rounded-none border border-border no-underline ~-my-2/4 ~gap-2/4 hover:bg-foreground/10"
+        >
+            <Image
+                src={author.data.image}
+                alt={author.data.name}
+                inferSize
+                priority
+                width={48}
+                height={48}
+                class="hidden rounded-full ~-my-2/4 ~size-6/12 md:inline"
+            />
+            <p>{author.data.name}</p>
+            <small
+                class="bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent"
+            >
+                {author.data.occupation}
+            </small>
+        </a>
+        <div
+            class="flex flex-row flex-wrap justify-between rounded-none border border-border ~-mb-2/4 ~px-4/8 ~py-2/4"
+        >
+            <strong>{remarkPluginFrontmatter.minutesRead}</strong>
+            <strong>{post.data.created.toDateString().slice(4)}</strong>
+            <strong>{remarkPluginFrontmatter.words} words</strong>
+        </div>
+    </div>
+    <figure>
+        <Picture
+            src={postImage.src}
+            alt={post.data.title}
+            inferSize
+            width="1920"
+            height="1080"
+            formats={["webp", "avif"]}
+            priority
+            class="aspect-video rounded-none border border-border"
+            transition:name="image"
+        />
+        <figcaption class="bg-background text-center text-foreground">
+            <span class="font-semibold italic">Image Source: </span><A
+                href={postImage.src}
+                title={post.data.title}
+                target="_blank"
+            >
+                {post.data.image_source}
+            </A>
+        </figcaption>
+    </figure>
+    <article>
+        <Content />
+    </article>
 </Layout>

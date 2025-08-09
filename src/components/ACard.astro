@@ -26,11 +26,11 @@ const { href, title, target, ...props } = Astro.props;
 ---
 
 <a
-	class="w-full place-self-center rounded-none border border-border no-underline ~p-2/8 hover:bg-foreground/10 active:bg-foreground active:text-background"
-	href={href}
-	title={title}
-	target={target}
-	{...props}
+    class="w-full place-self-center rounded-none border border-border no-underline ~p-2/8 hover:bg-foreground/10 active:bg-foreground active:text-background"
+    href={href}
+    title={title}
+    target={target}
+    {...props}
 >
-	<slot />
+    <slot />
 </a>

@@ -24,115 +24,115 @@
 @tailwind utilities;
 
 @view-transition {
-	navigation: auto;
+    navigation: auto;
 }
 
 @layer base {
-	:root {
-		--background: 0 0% 100%;
-		--foreground: 240 10% 3.9%;
-		--card: 0 0% 100%;
-		--card-foreground: 240 10% 3.9%;
-		--popover: 0 0% 100%;
-		--popover-foreground: 240 10% 3.9%;
-		--primary: 240 5.9% 10%;
-		--primary-foreground: 0 0% 98%;
-		--secondary: 240 4.8% 95.9%;
-		--secondary-foreground: 240 5.9% 10%;
-		--muted: 240 4.8% 95.9%;
-		--muted-foreground: 240 3.8% 46.1%;
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 46.1%;
 
-		--destructive: 0 84.2% 60.2%;
-		--destructive-foreground: 0 0% 98%;
-		--border: 240 5.9% 90%;
-		--input: 240 5.9% 90%;
-		--ring: 240 5.9% 10%;
-		--radius: 0.5rem;
-	}
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 5.9% 10%;
+        --radius: 0.5rem;
+    }
 
-	.dark {
-		--background: 240 10% 3.9%;
-		--foreground: 0 0% 98%;
-		--card: 240 10% 3.9%;
-		--card-foreground: 0 0% 98%;
-		--popover: 240 10% 3.9%;
-		--popover-foreground: 0 0% 98%;
-		--primary: 0 0% 98%;
-		--primary-foreground: 240 5.9% 10%;
-		--secondary: 240 3.7% 15.9%;
-		--secondary-foreground: 0 0% 98%;
-		--muted: 240 3.7% 15.9%;
-		--muted-foreground: 240 5% 64.9%;
+    .dark {
+        --background: 240 10% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 240 10% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 10% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 5.9% 10%;
+        --secondary: 240 3.7% 15.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 3.7% 15.9%;
+        --muted-foreground: 240 5% 64.9%;
 
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 0 0% 98%;
-		--border: 240 3.7% 15.9%;
-		--input: 240 3.7% 15.9%;
-		--ring: 240 4.9% 83.9%;
-	}
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 3.7% 15.9%;
+        --input: 240 3.7% 15.9%;
+        --ring: 240 4.9% 83.9%;
+    }
 }
 
 @layer base {
-	* {
-		@apply transition transition-all duration-100 ease-linear;
-	}
+    * {
+        @apply transition transition-all duration-100 ease-linear;
+    }
 
-	body {
-		@apply prose prose-sm mx-auto scroll-smooth bg-background px-4 text-foreground antialiased md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl md:px-0;
-	}
+    body {
+        @apply prose prose-sm mx-auto scroll-smooth bg-background px-4 text-foreground antialiased md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl md:px-0;
+    }
 
-	button {
-		@apply rounded-none border border-border bg-secondary px-2 py-1 font-semibold text-secondary-foreground hover:bg-secondary/80 md:px-4 md:py-2;
-	}
+    button {
+        @apply rounded-none border border-border bg-secondary px-2 py-1 font-semibold text-secondary-foreground hover:bg-secondary/80 md:px-4 md:py-2;
+    }
 
-	p {
-		@apply text-pretty text-justify;
-	}
+    p {
+        @apply text-pretty text-justify;
+    }
 
-	code {
-		@apply text-primary;
-	}
+    code {
+        @apply text-primary;
+    }
 
-	h1,
-	h2,
-	h3,
-	h4 {
-		@apply font-serif;
-	}
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-serif;
+    }
 
-	a,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	strong {
-		@apply text-foreground;
-	}
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    strong {
+        @apply text-foreground;
+    }
 
-	details {
-		@apply border border-border p-2 sm:p-4 lg:p-6 2xl:p-8;
-	}
+    details {
+        @apply border border-border p-2 sm:p-4 lg:p-6 2xl:p-8;
+    }
 
-	summary {
-		@apply font-semibold;
-	}
+    summary {
+        @apply font-semibold;
+    }
 
-	blockquote {
-		@apply font-quote font-bold text-primary;
-	}
+    blockquote {
+        @apply font-quote font-bold text-primary;
+    }
 
-	cite {
-		@apply bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent;
-	}
+    cite {
+        @apply bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent;
+    }
 
-	details[open] summary {
-		@apply border border-l-0 border-r-0 border-t-0 border-border pb-0;
-	}
+    details[open] summary {
+        @apply border border-l-0 border-r-0 border-t-0 border-border pb-0;
+    }
 
-	th {
-		@apply text-primary;
-	}
+    th {
+        @apply text-primary;
+    }
 }

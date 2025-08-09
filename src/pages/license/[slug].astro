@@ -25,11 +25,11 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
-	const licenses = await getCollection("license");
-	return licenses.map((license) => ({
-		params: { slug: license.id },
-		props: { license },
-	}));
+    const licenses = await getCollection("license");
+    return licenses.map((license) => ({
+        params: { slug: license.id },
+        props: { license },
+    }));
 }) satisfies GetStaticPaths;
 
 const { license } = Astro.props;
@@ -37,8 +37,8 @@ const { Content } = await render(license);
 ---
 
 <Layout title={license.data.title} description={license.data.description}>
-	<h1>{license.data.license_name}</h1>
-	<article class="font-serif">
-		<Content />
-	</article>
+    <h1>{license.data.license_name}</h1>
+    <article class="font-serif">
+        <Content />
+    </article>
 </Layout>

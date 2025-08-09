@@ -33,137 +33,140 @@ const badges = leetcode.matchedUser.badges.slice(0, 8);
 ---
 
 <Layout
-	title="Leetcode"
-	description="A quick overview of my Leetcode stats, directly from the source"
+    title="Leetcode"
+    description="A quick overview of my Leetcode stats, directly from the source"
 >
-	<div class="flex items-center justify-center ~gap-4/8">
-		<span>
-			<A
-				href={"https://leetcode.com/u/DrInfinite/"}
-				title="LeetCode Profile"
-				target={"_blank"}
-				css={"~text-xl/5xl"}
-			>
-				{leetcode.matchedUser.username}
-			</A>
-		</span>
+    <div class="flex items-center justify-center ~gap-4/8">
+        <span>
+            <A
+                href={"https://leetcode.com/u/DrInfinite/"}
+                title="LeetCode Profile"
+                target={"_blank"}
+                css={"~text-xl/5xl"}
+            >
+                {leetcode.matchedUser.username}
+            </A>
+        </span>
 
-		<span class="~size-8/16">
-			<Image
-				src={badges[0].icon}
-				alt={badges[0].displayName}
-				style="margin-bottom: 0px;margin-top: 0px;"
-				width={96}
-				height={96}
-				priority
-			/>
-		</span>
-	</div>
-	<div class="flex justify-evenly pb-8">
-		{
-			badges.slice(1, 8).map((badge) => (
-				<span class="~size-8/16">
-					<Image
-						src={badge.icon}
-						alt={badge.displayName}
-						width={96}
-						height={96}
-					/>
-				</span>
-			))
-		}
-	</div>
+        <span class="~size-8/16">
+            <Image
+                src={badges[0].icon}
+                alt={badges[0].displayName}
+                style="margin-bottom: 0px;margin-top: 0px;"
+                width={96}
+                height={96}
+                priority
+            />
+        </span>
+    </div>
+    <div class="flex justify-evenly pb-8">
+        {
+            badges.slice(1, 8).map((badge) => (
+                <span class="~size-8/16">
+                    <Image
+                        src={badge.icon}
+                        alt={badge.displayName}
+                        width={96}
+                        height={96}
+                    />
+                </span>
+            ))
+        }
+    </div>
 
-	<h2>Overview</h2>
-	<div
-		class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
-	>
-		<span>Rank: <strong>{leetcode.matchedUser.profile?.ranking}</strong></span>
-		<span>
-			Points: <strong>
-				{leetcode.matchedUser.contributions.points}
-			</strong>
-		</span>
-		<span>
-			Stars: <strong>
-				{"*".repeat(leetcode.matchedUser.profile?.starRating)}
-			</strong>
-		</span>
-	</div>
+    <h2>Overview</h2>
+    <div
+        class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
+    >
+        <span
+            >Rank: <strong>{leetcode.matchedUser.profile?.ranking}</strong
+            ></span
+        >
+        <span>
+            Points: <strong>
+                {leetcode.matchedUser.contributions.points}
+            </strong>
+        </span>
+        <span>
+            Stars: <strong>
+                {"*".repeat(leetcode.matchedUser.profile?.starRating)}
+            </strong>
+        </span>
+    </div>
 
-	<h2>Solved Problems</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>Difficulty</th>
-				<th>Solved</th>
-				<th>Percentage</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Easy</td>
-				<td>
-					{leetcode.completedCount.easy}
-				</td>
-				<td>{leetcode.completedPercentage.easy}</td>
-			</tr>
-			<tr>
-				<td>Medium</td>
-				<td>
-					{leetcode.completedCount.medium}
-				</td>
-				<td>{leetcode.completedPercentage.medium}</td>
-			</tr>
-			<tr>
-				<td>Hard</td>
-				<td>
-					{leetcode.completedCount.hard}
-				</td>
-				<td>{leetcode.completedPercentage.hard}</td>
-			</tr>
-		</tbody>
-		<tfoot>
-			<tr>
-				<td>Total</td>
-				<td>
-					{leetcode.completedCount.total}
-				</td>
-				<td>{leetcode.completedPercentage.total}</td>
-			</tr>
-		</tfoot>
-	</table>
+    <h2>Solved Problems</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Difficulty</th>
+                <th>Solved</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Easy</td>
+                <td>
+                    {leetcode.completedCount.easy}
+                </td>
+                <td>{leetcode.completedPercentage.easy}</td>
+            </tr>
+            <tr>
+                <td>Medium</td>
+                <td>
+                    {leetcode.completedCount.medium}
+                </td>
+                <td>{leetcode.completedPercentage.medium}</td>
+            </tr>
+            <tr>
+                <td>Hard</td>
+                <td>
+                    {leetcode.completedCount.hard}
+                </td>
+                <td>{leetcode.completedPercentage.hard}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>
+                    {leetcode.completedCount.total}
+                </td>
+                <td>{leetcode.completedPercentage.total}</td>
+            </tr>
+        </tfoot>
+    </table>
 
-	<h2>Recent Submissions</h2>
-	{
-		leetcode.recentSubmissionList?.slice(0, 5).map((sub) => (
-			<a
-				href={`https://leetcode.com/problems/${sub.titleSlug}/description/`}
-				class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent ~mb-4/8 hover:bg-foreground/10"
-				target="_blank"
-			>
-				<article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
-					<h4 class="-my-px truncate" transition:name="post-title">
-						{sub.title}
-					</h4>
-					<small class="bg-gradient-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent">
-						{sub.lang}
-					</small>
-				</article>
-				<article class="flex justify-between ~p-2/4">
-					<small class="italic">
-						{process.env.NODE_ENV === "development"
-							? new Date(parseInt(sub.timestamp) * 1000)
-									.toLocaleString()
-									.toUpperCase()
-							: new Date((parseInt(sub.timestamp) + 19800) * 1000)
-									.toLocaleString()
-									.toUpperCase()}{" "}
-						IST
-					</small>
-					<small>{sub.statusDisplay}</small>
-				</article>
-			</a>
-		))
-	}
+    <h2>Recent Submissions</h2>
+    {
+        leetcode.recentSubmissionList?.slice(0, 5).map((sub) => (
+            <a
+                href={`https://leetcode.com/problems/${sub.titleSlug}/description/`}
+                class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent ~mb-4/8 hover:bg-foreground/10"
+                target="_blank"
+            >
+                <article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
+                    <h4 class="-my-px truncate" transition:name="post-title">
+                        {sub.title}
+                    </h4>
+                    <small class="bg-gradient-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent">
+                        {sub.lang}
+                    </small>
+                </article>
+                <article class="flex justify-between ~p-2/4">
+                    <small class="italic">
+                        {process.env.NODE_ENV === "development"
+                            ? new Date(parseInt(sub.timestamp) * 1000)
+                                  .toLocaleString()
+                                  .toUpperCase()
+                            : new Date((parseInt(sub.timestamp) + 19800) * 1000)
+                                  .toLocaleString()
+                                  .toUpperCase()}{" "}
+                        IST
+                    </small>
+                    <small>{sub.statusDisplay}</small>
+                </article>
+            </a>
+        ))
+    }
 </Layout>
