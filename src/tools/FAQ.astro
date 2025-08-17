@@ -2,7 +2,7 @@
 export type FAQ = { question: string; answer: string };
 
 interface Props {
-    faqs?: FAQ[];
+    faqs?: FAQ[] | undefined;
 }
 
 let list: FAQ[] = [

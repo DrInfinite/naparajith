@@ -30,8 +30,8 @@ interface Props {
     title: string;
     description: string;
     instructions: string[];
-    faqs?: FAQ[];
-    ogImage?: string;
+    faqs?: FAQ[] | undefined;
+    ogImage?: string | undefined;
 }
 
 const { title, description, instructions, faqs, ogImage } = Astro.props;

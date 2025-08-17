@@ -163,19 +163,19 @@ const socials = [
             <figure
                 class="place-content-center rounded-none border border-border p-4 ~gap-2/4"
             >
-                <blockquote cite={quote.data.cite}>
-                    {quote.data.quote}
+                <blockquote cite={quote?.data.cite}>
+                    {quote?.data.quote}
                 </blockquote>
                 <figcaption>
                     <cite>
                         -{" "}
                         <a
-                            href={quote.data.cite}
-                            title={`${quote.data.author} - ${quote.data.cite}`}
+                            href={quote?.data.cite}
+                            title={`${quote?.data.author} - ${quote?.data.cite}`}
                             target="_blank"
                             class="text-inherit no-underline"
                         >
-                            {quote.data.author}
+                            {quote?.data.author}
                         </a>
                     </cite>
                 </figcaption>

@@ -29,7 +29,7 @@ import { Font } from "astro:assets";
 interface Props {
     title: string;
     description: string;
-    ogImage?: string;
+    ogImage?: string | undefined;
 }
 
 const { title, description, ogImage } = Astro.props;

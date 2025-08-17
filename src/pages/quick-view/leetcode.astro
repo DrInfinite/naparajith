@@ -23,13 +23,17 @@
 export const prerender = false;
 
 import Layout from "@/layouts/Layout.astro";
-import { LeetcodeProfile } from "@/actions/leetcode-profile";
+import {
+    LeetcodeProfile,
+    type TLeetcodeProfileReturn,
+    type Badge,
+} from "@/actions/leetcode-profile";
 import A from "@/components/A.astro";
 import { Image } from "astro:assets";
 
-const leetcode = await LeetcodeProfile();
+const leetcode: TLeetcodeProfileReturn = await LeetcodeProfile();
 
-const badges = leetcode.matchedUser.badges.slice(0, 8);
+const badges: Badge[] = leetcode.matchedUser.badges.slice(0, 8);
 ---
 
 <Layout
@@ -50,8 +54,8 @@ const badges = leetcode.matchedUser.badges.slice(0, 8);
 
         <span class="~size-8/16">
             <Image
-                src={badges[0].icon}
-                alt={badges[0].displayName}
+                src={badges.at(0)!.icon}
+                alt={badges.at(0)!.displayName}
                 style="margin-bottom: 0px;margin-top: 0px;"
                 width={96}
                 height={96}
@@ -61,7 +65,7 @@ const badges = leetcode.matchedUser.badges.slice(0, 8);
     </div>
     <div class="flex justify-evenly pb-8">
         {
-            badges.slice(1, 8).map((badge) => (
+            badges.slice(1, 8).map((badge: Badge) => (
                 <span class="~size-8/16">
                     <Image
                         src={badge.icon}
