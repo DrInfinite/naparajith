@@ -92,17 +92,17 @@ const defaultOgImage = "../images/arch-rainbow-1920x1080.png";
         <Header />
         <slot />
         <Footer />
-
-        <script>
-            const originalTitle = document.title;
-
-            document.addEventListener("visibilitychange", () => {
-                if (document.hidden) {
-                    document.title = "👋 Come back!";
-                } else {
-                    document.title = originalTitle;
-                }
-            });
-        </script>
     </body>
 </html>
+
+<script is:inline>
+    const originalTitle = document.title;
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            document.title = "👋 Come back!";
+        } else {
+            document.title = originalTitle;
+        }
+    });
+</script>
