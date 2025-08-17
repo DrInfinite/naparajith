@@ -2,7 +2,25 @@
     "name": "naparajith",
     "type": "module",
     "version": "0.0.1",
+    "description": "Personal portfolio and blog built with Astro",
+    "keywords": [
+        "astro",
+        "portfolio",
+        "blog",
+        "react",
+        "tailwindcss"
+    ],
+    "author": {
+        "name": "Naparajith (Naps) T L [DrInfinite]",
+        "email": "naparajith@duck.com"
+    },
     "license": "AGPL-3.0-only",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DrInfinite/naparajith"
+    },
+    "homepage": "https://naparajith.in",
+    "bugs": "https://github.com/DrInfinite/naparajith/issues",
     "scripts": {
         "dev": "astro dev",
         "build": "astro check && astro build",
