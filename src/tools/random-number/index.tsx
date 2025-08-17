@@ -4,7 +4,7 @@ import DisplayGeneratedNumber from "@/tools/random-number/display-generated-numb
 
 export default function RandomNumber() {
     const [min, setMin] = useState<number>(0);
-    const [max, setMax] = useState<number>(100);
+    const [max, setMax] = useState<number>(Number.MAX_SAFE_INTEGER);
     const [randomNumber, setRandomNumber] = useState<number | null>(null);
     const [count, setCount] = useState<number>(0);
 
@@ -48,16 +48,26 @@ export default function RandomNumber() {
         setCount((prev) => prev + 1);
     }
 
+    function reset() {
+        setMin(0);
+        setMax(Number.MAX_SAFE_INTEGER);
+    }
+
     return (
         <div className="space-y-4">
             <RangeInput min={min} max={max} setMin={setMin} setMax={setMax} />
-            <button
-                type="button"
-                onClick={generate}
-                title="Generate Random Number"
-            >
-                Generate
-            </button>
+            <div className="space-x-4">
+                <button
+                    type="button"
+                    onClick={generate}
+                    title="Generate Random Number"
+                >
+                    Generate
+                </button>
+                <button type="button" onClick={reset} title="Reset Min and Max">
+                    Reset
+                </button>
+            </div>
             <DisplayGeneratedNumber randomNumber={randomNumber} count={count} />
         </div>
     );
