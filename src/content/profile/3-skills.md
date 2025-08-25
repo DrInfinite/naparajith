@@ -79,9 +79,8 @@ Contact me through electronic mail: <naparajith@duck.com>
   Proficient in React, HTML, CSS, JavaScript, and backend frameworks like
   Node.js and Spring.
 
-- **Application Development Architectures**  
-  Experience working with monolithic, microservices, and serverless
-  architectures.
+- **Application Architectures** Experience with monolithic, microservices, and
+  serverless architectures.
 
 - **SQL, NoSQL, and NewSQL**  
   Skilled in data modeling, query optimization, and managing relational and
@@ -98,9 +97,8 @@ Contact me through electronic mail: <naparajith@duck.com>
 - **Shell Scripting**  
   Automating repetitive tasks and system configurations using Bash and Zsh.
 
-- **Microsoft Office Suite**  
-  Advanced proficiency in Excel (including macros), Word, and PowerPoint for
-  documentation and reporting.
+- **Office & Documentation** Advanced Excel (including macros), Word, and
+  PowerPoint for documentation and reporting.
 
 - **UX/UI Design**  
   Experience in creating intuitive interfaces using Figma, Adobe XD, and
