@@ -19,15 +19,27 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
-import { LeetCode } from "leetcode-query";
+import {
+    LeetCode,
+    type AllQuestionsCount,
+    type MatchedUser,
+    type RecentSubmission,
+} from "leetcode-query";
+
+export type { Badge } from "leetcode-query";
+
+export type TLeetcodeProfileReturn = Awaited<
+    ReturnType<typeof LeetcodeProfile>
+>;
 
 export async function LeetcodeProfile() {
     const leetcode = new LeetCode();
     const result = await leetcode.user("DrInfinite");
 
-    const matchedUser = result.matchedUser!;
-    const recentSubmissionList = result.recentSubmissionList;
-    const allQuestionsCount = result.allQuestionsCount;
+    const matchedUser: MatchedUser = result.matchedUser!;
+    const recentSubmissionList: RecentSubmission[] =
+        result.recentSubmissionList!;
+    const allQuestionsCount: AllQuestionsCount[] = result.allQuestionsCount;
 
     // const totalSubmissionNum = user.matchedUser?.submitStats.totalSubmissionNum;
     const acSubmissionNum = matchedUser.submitStats.acSubmissionNum;
