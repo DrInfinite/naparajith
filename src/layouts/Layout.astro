@@ -70,7 +70,13 @@ const defaultOgImage = "../images/arch-rainbow-1920x1080.png";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link href="https://mastodon.social/@naparajith" rel="me" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title} | Naparajith</title>
+        <title>
+            {
+                Astro.url.pathname === "/"
+                    ? "Naparajith (Naps) T L"
+                    : `${title} | Naps ∘ DrInfinite`
+            }
+        </title>
         <meta name="description" content={description} />
 
         <meta property="og:description" content={description} />
@@ -100,7 +106,7 @@ const defaultOgImage = "../images/arch-rainbow-1920x1080.png";
 
     document.addEventListener("visibilitychange", () => {
         if (document.hidden) {
-            document.title = "👋 Come back!";
+            document.title = "👋 Continue exploring!";
         } else {
             document.title = originalTitle;
         }
