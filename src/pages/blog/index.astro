@@ -32,6 +32,19 @@ process.env.NODE_ENV === "development"
     : (posts = posts
           .filter((acc) => acc.data.draft !== true)
           .sort((a, b) => b.data.created.getTime() - a.data.created.getTime()));
+
+const hydratedPosts = await Promise.all(
+    posts.map(async (post) => ({
+        post,
+        imageSrc: (
+            await getImage({
+                src: post.data.image,
+                format: "webp",
+            })
+        ).src,
+        authorName: (await getEntry(post.data.author)).data.name,
+    })),
+);
 ---
 
 <Layout
@@ -42,21 +55,14 @@ process.env.NODE_ENV === "development"
         class="flex min-h-[60vh] flex-row flex-wrap place-content-center justify-evenly ~gap-2/4"
     >
         {
-            posts.map(async (post) => (
+            hydratedPosts.map(({ post, imageSrc, authorName }) => (
                 <a
                     href={`/blog/${post.id}`}
                     class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent hover:bg-foreground/10"
                 >
                     <div class="rounded-none p-2">
                         <Image
-                            src={
-                                (
-                                    await getImage({
-                                        src: post.data.image,
-                                        format: "webp",
-                                    })
-                                ).src
-                            }
+                            src={imageSrc}
                             alt={post.data.title}
                             inferSize
                             width={1920}
@@ -68,9 +74,7 @@ process.env.NODE_ENV === "development"
                     </div>
                     <article class="flex justify-between bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent ~p-2/4">
                         <small>{post.data.created.toDateString()}</small>
-                        <small>
-                            {(await getEntry(post.data.author)).data.name}
-                        </small>
+                        <small>{authorName}</small>
                     </article>
                     <article class="flex flex-col ~gap-2/4 ~p-2/4">
                         <h3 class="-my-px" transition:name="post-title">
