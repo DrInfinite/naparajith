@@ -25,7 +25,13 @@ import { getImage, Image } from "astro:assets";
 import { getCollection, getEntry } from "astro:content";
 
 let posts = await getCollection("blog");
-posts = posts.filter((acc) => acc.data.draft !== true);
+process.env.NODE_ENV === "development"
+    ? (posts = posts.sort(
+          (a, b) => b.data.created.getTime() - a.data.created.getTime(),
+      ))
+    : (posts = posts
+          .filter((acc) => acc.data.draft !== true)
+          .sort((a, b) => b.data.created.getTime() - a.data.created.getTime()));
 ---
 
 <Layout
