@@ -46,42 +46,42 @@ const quote = quotes[Math.floor(Math.random() * quotes.length)];
 // const author = await getEntry(post.data.author);
 
 const pages = [
-    { href: "/profile", title: "Profile", innerHTML: "Profile" },
-    { href: "/quick-view", title: "Quick View", innerHTML: "Quick View" },
-    { href: "/blog", title: "Blog", innerHTML: "Blog" },
-    { href: "/quotes", title: "Quotes", innerHTML: "Quotes" },
-    { href: "/design", title: "Design", innerHTML: "Design" },
-    { href: "/projects", title: "Projects", innerHTML: "Projects" },
-    { href: "/tools", title: "Tools", innerHTML: "Tools" },
+    { href: "/profile", title: "Profile", label: "Profile" },
+    { href: "/quick-view", title: "Quick View", label: "Quick View" },
+    { href: "/blog", title: "Blog", label: "Blog" },
+    { href: "/quotes", title: "Quotes", label: "Quotes" },
+    { href: "/design", title: "Design", label: "Design" },
+    { href: "/projects", title: "Projects", label: "Projects" },
+    { href: "/tools", title: "Tools", label: "Tools" },
 ];
 
 const socials = [
     {
         href: "/quick-view/github",
         title: "GitHub - DrInfinite",
-        innerHTML: "GitHub",
+        label: "GitHub",
     },
     {
         href: "https://www.linkedin.com/in/naparajith/",
         title: "LinkedIn - Naparajith T L",
-        innerHTML: "LinkedIn",
+        label: "LinkedIn",
         target: "_blank",
     },
     {
         href: "/quick-view/leetcode",
         title: "Leetcode - DrInfinite",
-        innerHTML: "Leetcode",
+        label: "Leetcode",
     },
     {
         href: "https://bsky.app/profile/naparajith.in",
         title: "Naparajith | DrInfinite (@naparajith.in)",
-        innerHTML: "BlueSky",
+        label: "BlueSky",
         target: "_blank",
     },
     {
         href: "https://mastodon.social/@naparajith",
         title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
-        innerHTML: "Mastodon",
+        label: "Mastodon",
         target: "_blank",
     },
 ];
@@ -128,7 +128,7 @@ const socials = [
             {
                 pages.map((link) => (
                     <A href={link.href} title={link.title}>
-                        {link.innerHTML}
+                        {link.label}
                     </A>
                 ))
             }
@@ -138,8 +138,13 @@ const socials = [
         >
             {
                 socials.map((link) => (
-                    <A href={link.href} title={link.title} target={link.target}>
-                        {link.innerHTML}
+                    <A
+                        href={link.href}
+                        title={link.title}
+                        target={link.target}
+                        rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
+                    >
+                        {link.label}
                     </A>
                 ))
             }
