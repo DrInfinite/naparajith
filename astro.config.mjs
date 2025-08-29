@@ -88,21 +88,21 @@ export default defineConfig({
                 weights: ["400", "500", "600", "700"],
                 cssVariable: "--font-sans",
                 display: "swap",
-                subsets: ["latin"]
+                subsets: ["latin"],
             },
             {
                 provider: fontProviders.google(),
                 name: "Bona Nova SC",
                 cssVariable: "--font-quote",
                 display: "swap",
-                subsets: ["latin"]
+                subsets: ["latin"],
             },
             {
                 provider: fontProviders.google(),
                 name: "Mozilla Headline",
                 cssVariable: "--font-serif",
                 display: "swap",
-                subsets: ["latin"]
+                subsets: ["latin"],
             },
             {
                 provider: fontProviders.google(),
@@ -110,7 +110,7 @@ export default defineConfig({
                 weights: ["400"],
                 cssVariable: "--font-mono",
                 display: "swap",
-                subsets: ["latin"]
+                subsets: ["latin"],
             },
         ],
     },
