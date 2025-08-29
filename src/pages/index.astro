@@ -24,7 +24,7 @@ export const prerender = false;
 import A from "@/components/A.astro";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 
 const learning = [
     "Reading large codebases in a sequential way without getting lost",
@@ -39,11 +39,11 @@ const quotes = await getCollection("quotes");
 quotes.sort((a, b) => a.data.author.localeCompare(b.data.author));
 const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
-// let posts = await getCollection("blog");
-// posts = posts.filter((acc) => acc.data.draft !== true);
-// const post = posts[Math.floor(Math.random() * posts.length)];
+let posts = await getCollection("blog");
+posts = posts.filter((acc) => acc.data.draft !== true);
+const post = posts[Math.floor(Math.random() * posts.length)]!;
 
-// const author = await getEntry(post.data.author);
+const author = await getEntry(post.data.author);
 
 const pages = [
     { href: "/profile", title: "Profile", label: "Profile" },
@@ -192,26 +192,29 @@ const socials = [
                     <A href="/quotes" title="Quotes">more like this</A>
                 </div>
             </figure>
-            <!-- <h2>A random blog post</h2> -->
-            <!-- <a -->
-            <!-- 	href={`/blog/${post.id}`} -->
-            <!-- 	class="flex w-full flex-col justify-evenly border border-border decoration-transparent rounded-none hover:bg-foreground/10" -->
-            <!-- > -->
-            <!-- 	<article class="flex flex-col ~gap-2/4 ~p-2/4"> -->
-            <!-- 		<h4 class="-my-px" transition:name="post-title"> -->
-            <!-- 			{post.data.title} -->
-            <!-- 		</h4> -->
-            <!-- 		<small class="-my-px line-clamp-2" transition:name="post-description"> -->
-            <!-- 			{post.data.description} -->
-            <!-- 		</small> -->
-            <!-- 	</article> -->
-            <!-- 	<article -->
-            <!-- 		class="flex justify-between bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent ~p-2/4" -->
-            <!-- 	> -->
-            <!-- 		<small>{post.data.created.toDateString()}</small> -->
-            <!-- 		<small>{author.data.name}</small> -->
-            <!-- 	</article> -->
-            <!-- </a> -->
+            <h2>Featured Blog Post</h2>
+            <a
+                href={`/blog/${post.id}`}
+                class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent hover:bg-foreground/10"
+            >
+                <article class="flex flex-col ~gap-2/4 ~p-2/4">
+                    <h4 class="-my-px" transition:name="post-title">
+                        {post.data.title}
+                    </h4>
+                    <small
+                        class="-my-px line-clamp-2"
+                        transition:name="post-description"
+                    >
+                        {post.data.description}
+                    </small>
+                </article>
+                <article
+                    class="flex justify-between bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent ~p-2/4"
+                >
+                    <small>{post.data.created.toDateString()}</small>
+                    <small>{author.data.name}</small>
+                </article>
+            </a>
             <hr class="my-4 border-t-2 border-t-border" />
         </div>
         <div>
