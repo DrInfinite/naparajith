@@ -223,18 +223,17 @@ const socials = [
                 learning, which goes something like this:
             </p>
             <figure>
-                <blockquote
-                    cite={process.env.NODE_ENV === "development"
-                        ? "http://localhost:4321/"
-                        : "https://naparajith.in/"}
-                >
-                    From the teacher is learned a quarter, a quarter from the
-                    student's own intelligence, a quarter from fellow students,
-                    and a quarter with the passage of time.
+                <blockquote cite={Astro.url.toString()}>
+                    A disciple learns one quarter from the acharya [teacher],
+                    one quarter through his own intelligence, one quarter comes
+                    to him through the influence of time, and one quarter from
+                    his fellow students.
                 </blockquote>
                 <figcaption>
                     <cite>
-                        - <strong class="text-inherit"> Unknown </strong></cite
+                        - <strong class="text-inherit">
+                            Adi Shankaracharya
+                        </strong></cite
                     >
                 </figcaption>
             </figure>
