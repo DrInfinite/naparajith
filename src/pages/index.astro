@@ -142,7 +142,11 @@ const socials = [
                         href={link.href}
                         title={link.title}
                         target={link.target}
-                        rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
+                        rel={
+                            link.target === "_blank"
+                                ? "noopener noreferrer"
+                                : undefined
+                        }
                     >
                         {link.label}
                     </A>
@@ -156,6 +160,7 @@ const socials = [
                 href="https://flowcv.com/resume/mdrssqq018"
                 title="Resume"
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 Download my latest Resume
             </A>
@@ -176,6 +181,7 @@ const socials = [
                             href={quote?.data.cite}
                             title={`${quote?.data.author} - ${quote?.data.cite}`}
                             target="_blank"
+                            rel="noopener noreferrer"
                             class="text-inherit no-underline"
                         >
                             {quote?.data.author}
@@ -243,6 +249,7 @@ const socials = [
                     href="mailto:naparajith@duck.com"
                     title="E-Mail Address"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     naparajith@duck.com
                 </A>.
