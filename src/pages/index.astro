@@ -24,65 +24,64 @@ export const prerender = false;
 import A from "@/components/A.astro";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 
 const learning = [
-    "How to read large codebases without getting lost?",
-    "How do memory-corruption vulnerabilities work?",
+    "Reading large codebases in a sequential way without getting lost",
+    "The intricacies of memory-corruption vulnerabilities",
     "Ethical exploitation of web applications",
-    "Building a programming language from scratch using LLVM",
-    "An in-depth explanation of how a Syscall works",
-    "An in-depth explanation of how to build Firefox extensions.",
-    "Reading a codebase without getting lost or stuck.",
+    "Building a programming language from scratch",
+    "Implementing large, dynamic websites without a significant amount of JavaScript",
+    "Building a Web Browser from Scratch",
 ];
 
 const quotes = await getCollection("quotes");
 quotes.sort((a, b) => a.data.author.localeCompare(b.data.author));
 const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
-// let posts = await getCollection("blog");
-// posts = posts.filter((acc) => acc.data.draft !== true);
-// const post = posts[Math.floor(Math.random() * posts.length)];
+let posts = await getCollection("blog");
+posts = posts.filter((acc) => acc.data.draft !== true);
+const post = posts[Math.floor(Math.random() * posts.length)]!;
 
-// const author = await getEntry(post.data.author);
+const author = await getEntry(post.data.author);
 
 const pages = [
-    { href: "/profile", title: "Profile", innerHTML: "Profile" },
-    { href: "/quick-view", title: "Quick View", innerHTML: "Quick View" },
-    { href: "/blog", title: "Blog", innerHTML: "Blog" },
-    { href: "/quotes", title: "Quotes", innerHTML: "Quotes" },
-    { href: "/design", title: "Design", innerHTML: "Design" },
-    { href: "/projects", title: "Projects", innerHTML: "Projects" },
-    { href: "/tools", title: "Tools", innerHTML: "Tools" },
+    { href: "/profile", title: "Profile", label: "Profile" },
+    { href: "/quick-view", title: "Quick View", label: "Quick View" },
+    { href: "/blog", title: "Blog", label: "Blog" },
+    { href: "/quotes", title: "Quotes", label: "Quotes" },
+    { href: "/projects", title: "Projects", label: "Projects" },
+    { href: "/tools", title: "Tools", label: "Tools" },
+    { href: "/design", title: "Design", label: "Design" },
 ];
 
 const socials = [
     {
         href: "/quick-view/github",
         title: "GitHub - DrInfinite",
-        innerHTML: "GitHub",
+        label: "GitHub",
     },
     {
         href: "https://www.linkedin.com/in/naparajith/",
         title: "LinkedIn - Naparajith T L",
-        innerHTML: "LinkedIn",
+        label: "LinkedIn",
         target: "_blank",
     },
     {
         href: "/quick-view/leetcode",
         title: "Leetcode - DrInfinite",
-        innerHTML: "Leetcode",
+        label: "Leetcode",
     },
     {
         href: "https://bsky.app/profile/naparajith.in",
         title: "Naparajith | DrInfinite (@naparajith.in)",
-        innerHTML: "BlueSky",
+        label: "BlueSky",
         target: "_blank",
     },
     {
         href: "https://mastodon.social/@naparajith",
         title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
-        innerHTML: "Mastodon",
+        label: "Mastodon",
         target: "_blank",
     },
 ];
@@ -129,7 +128,7 @@ const socials = [
             {
                 pages.map((link) => (
                     <A href={link.href} title={link.title}>
-                        {link.innerHTML}
+                        {link.label}
                     </A>
                 ))
             }
@@ -139,8 +138,17 @@ const socials = [
         >
             {
                 socials.map((link) => (
-                    <A href={link.href} title={link.title} target={link.target}>
-                        {link.innerHTML}
+                    <A
+                        href={link.href}
+                        title={link.title}
+                        target={link.target}
+                        rel={
+                            link.target === "_blank"
+                                ? "noopener noreferrer"
+                                : undefined
+                        }
+                    >
+                        {link.label}
                     </A>
                 ))
             }
@@ -152,6 +160,7 @@ const socials = [
                 href="https://flowcv.com/resume/mdrssqq018"
                 title="Resume"
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 Download my latest Resume
             </A>
@@ -172,6 +181,7 @@ const socials = [
                             href={quote?.data.cite}
                             title={`${quote?.data.author} - ${quote?.data.cite}`}
                             target="_blank"
+                            rel="noopener noreferrer"
                             class="text-inherit no-underline"
                         >
                             {quote?.data.author}
@@ -182,26 +192,29 @@ const socials = [
                     <A href="/quotes" title="Quotes">more like this</A>
                 </div>
             </figure>
-            <!-- <h2>A random blog post</h2> -->
-            <!-- <a -->
-            <!-- 	href={`/blog/${post.id}`} -->
-            <!-- 	class="flex w-full flex-col justify-evenly border border-border decoration-transparent rounded-none hover:bg-foreground/10" -->
-            <!-- > -->
-            <!-- 	<article class="flex flex-col ~gap-2/4 ~p-2/4"> -->
-            <!-- 		<h4 class="-my-px" transition:name="post-title"> -->
-            <!-- 			{post.data.title} -->
-            <!-- 		</h4> -->
-            <!-- 		<small class="-my-px line-clamp-2" transition:name="post-description"> -->
-            <!-- 			{post.data.description} -->
-            <!-- 		</small> -->
-            <!-- 	</article> -->
-            <!-- 	<article -->
-            <!-- 		class="flex justify-between bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent ~p-2/4" -->
-            <!-- 	> -->
-            <!-- 		<small>{post.data.created.toDateString()}</small> -->
-            <!-- 		<small>{author.data.name}</small> -->
-            <!-- 	</article> -->
-            <!-- </a> -->
+            <h2>Featured Blog Post</h2>
+            <a
+                href={`/blog/${post.id}`}
+                class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent hover:bg-foreground/10"
+            >
+                <article class="flex flex-col ~gap-2/4 ~p-2/4">
+                    <h4 class="-my-px" transition:name="post-title">
+                        {post.data.title}
+                    </h4>
+                    <small
+                        class="-my-px line-clamp-2"
+                        transition:name="post-description"
+                    >
+                        {post.data.description}
+                    </small>
+                </article>
+                <article
+                    class="flex justify-between bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent ~p-2/4"
+                >
+                    <small>{post.data.created.toDateString()}</small>
+                    <small>{author.data.name}</small>
+                </article>
+            </a>
             <hr class="my-4 border-t-2 border-t-border" />
         </div>
         <div>
@@ -210,18 +223,17 @@ const socials = [
                 learning, which goes something like this:
             </p>
             <figure>
-                <blockquote
-                    cite={process.env.NODE_ENV === "development"
-                        ? "http://localhost:4321/"
-                        : "https://naparajith.in/"}
-                >
-                    From the teacher is learned a quarter, a quarter from the
-                    student's own intelligence, a quarter from fellow students,
-                    and a quarter with the passage of time.
+                <blockquote cite={Astro.url.toString()}>
+                    A disciple learns one quarter from the acharya [teacher],
+                    one quarter through his own intelligence, one quarter comes
+                    to him through the influence of time, and one quarter from
+                    his fellow students.
                 </blockquote>
                 <figcaption>
                     <cite>
-                        - <strong class="text-inherit"> Unknown </strong></cite
+                        - <strong class="text-inherit">
+                            Adi Shankaracharya
+                        </strong></cite
                     >
                 </figcaption>
             </figure>
@@ -239,6 +251,7 @@ const socials = [
                     href="mailto:naparajith@duck.com"
                     title="E-Mail Address"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     naparajith@duck.com
                 </A>.

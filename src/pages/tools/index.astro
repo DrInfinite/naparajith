@@ -41,26 +41,27 @@ const tools = [
 <Layout
     title="Tools"
     description="A collection of simple tools for everyday tasks"
-/>
-<h1>Tools</h1>
-<p>A collection of simple tools that make everyday tasks a bit easier.</p>
-{
-    tools.map((tool) => (
-        <a
-            href={`/tools/${tool.url}`}
-            class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent ~mb-4/8 hover:bg-foreground/10"
-        >
-            <article class="~gap-2/4 ~p-2/4">
-                <h4
-                    class="-my-px truncate font-sans"
-                    transition:name="post-title"
-                >
-                    {tool.name}
-                </h4>
-                <small class="bg-gradient-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-white/25">
-                    {tool.description}
-                </small>
-            </article>
-        </a>
-    ))
-}
+>
+    <h1>Tools</h1>
+    <p>A collection of simple tools that make everyday tasks a bit easier.</p>
+    {
+        tools.map((tool) => (
+            <a
+                href={`/tools/${tool.url}`}
+                class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent ~mb-4/8 hover:bg-foreground/10"
+            >
+                <article class="~gap-2/4 ~p-2/4">
+                    <h4
+                        class="-my-px truncate font-sans"
+                        transition:name="post-title"
+                    >
+                        {tool.name}
+                    </h4>
+                    <small class="bg-gradient-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-white/25">
+                        {tool.description}
+                    </small>
+                </article>
+            </a>
+        ))
+    }
+</Layout>

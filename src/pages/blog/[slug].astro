@@ -26,8 +26,16 @@ import { getImage, Image, Picture } from "astro:assets";
 import { getCollection, getEntry, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
-    const result = await getCollection("blog");
-    const posts = result.filter((acc) => acc.data.draft !== true);
+    let posts = await getCollection("blog");
+    process.env.NODE_ENV === "development"
+        ? (posts = posts.sort(
+              (a, b) => b.data.created.getTime() - a.data.created.getTime(),
+          ))
+        : (posts = posts
+              .filter((acc) => acc.data.draft !== true)
+              .sort(
+                  (a, b) => b.data.created.getTime() - a.data.created.getTime(),
+              ));
     return posts.map((post) => ({
         params: { slug: post.id },
         props: { post },
@@ -49,7 +57,7 @@ const postImage = await getImage({ src: post.data.image, format: "webp" });
     description=`Blog Post: ${post.data.title} - ${[post.data.description]}`
     ogImage={postImage.src}
 >
-    <h1 class="text-center font-quote" transition:name="post-title">
+    <h1 class="text-center font-serif" transition:name="post-title">
         {post.data.title}
     </h1>
     <div class="flex flex-grow flex-col justify-evenly ~gap-4/8">

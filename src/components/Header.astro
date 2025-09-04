@@ -30,6 +30,12 @@ const links = [
     { href: "/blog", title: "Blog" },
     { href: "/projects", title: "Projects" },
 ];
+const linksWithoutBlog = [
+    { href: "/", title: "Home" },
+    { href: "/profile", title: "Profile" },
+    { href: "/quick-view", title: "Quick View" },
+    { href: "/projects", title: "Projects" },
+];
 ---
 
 <header class="my-10" transition:persist>
@@ -60,11 +66,26 @@ const links = [
         class="flex flex-wrap items-center justify-evenly border-b border-t border-border py-4 ~gap-2/4"
     >
         {
-            links.map((link) => (
-                <A href={link.href} title={link.title}>
-                    {link.title}
-                </A>
-            ))
+            Astro.url.pathname.startsWith("/blog/") ? (
+                <Button href="/blog" title="Go Back">
+                    &larr; Back
+                </Button>
+            ) : (
+                <span class="hidden">Back</span>
+            )
+        }
+        {
+            Astro.url.pathname.startsWith("/blog/")
+                ? linksWithoutBlog.map((link) => (
+                      <A href={link.href} title={link.title}>
+                          {link.title}
+                      </A>
+                  ))
+                : links.map((link) => (
+                      <A href={link.href} title={link.title}>
+                          {link.title}
+                      </A>
+                  ))
         }
         <Button
             title="Resume"
