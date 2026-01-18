@@ -6,7 +6,7 @@ title: Tools I Use
 This website is only meant to showcase the work and and skills of the author,
 on a professional level. It also has a blog, containing the author's observations
 and opinions on various topics. The views expressed are the author's own.
-Copyright (C) 2025  T L Naparajith
+Copyright (C) 2026  T L Naparajith
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License Version 3 as published
@@ -59,15 +59,15 @@ workflow. _**This list is under active development and updated periodically.**_
 
 ### Hardware Specifications
 
-| Component          | Specification                          |
-| ------------------ | -------------------------------------- |
+| Component          | Specification                        |
+| ------------------ | ------------------------------------ |
 | **CPU**            | 8 × Intel® Core™ i7-1165G7 @ 2.80GHz |
-| **RAM**            | 15.4 GiB DDR4                          |
+| **RAM**            | 15.4 GiB DDR4                        |
 | **Discrete GPU**   | Intel® Iris® Xe MAX Graphics         |
 | **Integrated GPU** | Intel® Iris® Xe Graphics             |
-| **Manufacturer**   | Acer                                   |
-| **Model**          | Swift SF314-510G                       |
-| **System Version** | V1.12                                  |
+| **Manufacturer**   | Acer                                 |
+| **Model**          | Swift SF314-510G                     |
+| **System Version** | V1.12                                |
 
 ---
 
