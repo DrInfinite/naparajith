@@ -33,6 +33,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# workspace files
+pnpm-workspace.yaml
+
 # environment variables
 .env
 .env.production
