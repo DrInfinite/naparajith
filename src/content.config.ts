@@ -20,7 +20,8 @@
  */
 
 import { glob } from "astro/loaders";
-import { defineCollection, reference, z } from "astro:content";
+import { defineCollection, reference } from "astro:content";
+import { z } from "astro/zod";
 
 const blog = defineCollection({
     loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/blog" }),
@@ -62,7 +63,11 @@ const license = defineCollection({
 });
 
 const quotes = defineCollection({
-    type: "data",
+    // type: "data",
+    loader: glob({
+        pattern: "*.{json,jsonc}",
+        base: "./src/content/quotes",
+    }),
     schema: z.object({
         cite: z.string(),
         quote: z.string(),
@@ -71,12 +76,16 @@ const quotes = defineCollection({
 });
 
 const authors = defineCollection({
-    type: "data",
+    // type: "data",
+    loader: glob({
+        pattern: "*.{json,jsonc}",
+        base: "./src/content/authors",
+    }),
     schema: z.object({
         name: z.string(),
         occupation: z.string(),
-        social: z.string().url(),
-        image: z.string().url(),
+        social: z.url(),
+        image: z.url(),
     }),
 });
 
