@@ -22,7 +22,7 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
 
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -56,12 +56,7 @@ export default defineConfig({
         objectPosition: "center",
         objectFit: "cover",
     },
-    integrations: [
-        tailwind({ applyBaseStyles: false }),
-        sitemap(),
-        mdx(),
-        react(),
-    ],
+    integrations: [sitemap(), mdx(), react()],
     output: "static",
     markdown: {
         remarkPlugins: [ReadingTime],
@@ -79,15 +74,10 @@ export default defineConfig({
         "/indian-legends": "/legends",
         "/quotes-i-like": "/quotes",
     },
+    experimental: {
+        clientPrerender: true,
+    },
     fonts: [
-        {
-            provider: fontProviders.google(),
-            name: "Mozilla Text",
-            weights: ["400", "500", "600", "700"],
-            cssVariable: "--font-sans",
-            display: "swap",
-            subsets: ["latin"],
-        },
         {
             provider: fontProviders.google(),
             name: "Bona Nova SC",
@@ -95,25 +85,8 @@ export default defineConfig({
             display: "swap",
             subsets: ["latin"],
         },
-        {
-            provider: fontProviders.google(),
-            name: "Mozilla Headline",
-            cssVariable: "--font-serif",
-            display: "swap",
-            subsets: ["latin"],
-        },
-        {
-            provider: fontProviders.google(),
-            name: "Cascadia Code",
-            weights: ["400"],
-            cssVariable: "--font-mono",
-            display: "swap",
-            subsets: ["latin"],
-        },
     ],
-    experimental: {
-        clientPrerender: true,
-    },
+    vite: { plugins: [tailwindcss()] },
     site:
         process.env.NODE_ENV === "development"
             ? "http://localhost:4321/"

@@ -21,6 +21,7 @@
  */
 
 import Layout from "@/layouts/Layout.astro";
+import Quote from "@/components/Quote.astro";
 import { getCollection } from "astro:content";
 
 const quotes = await getCollection("quotes");
@@ -51,24 +52,9 @@ export const getStaticPaths = async () => {
             authorQuotes
                 .sort((a, b) => parseInt(a.id) - parseInt(b.id))
                 .map((quote) => (
-                    <figure>
-                        <blockquote cite={quote.data.cite}>
-                            {quote.data.quote}
-                        </blockquote>
-                        <figcaption>
-                            <cite>
-                                -{" "}
-                                <a
-                                    href={quote.data.cite}
-                                    title={`${quote.data.author} - ${quote.data.cite}`}
-                                    target="_blank"
-                                    class="text-inherit no-underline"
-                                >
-                                    {quote.data.author}
-                                </a>
-                            </cite>
-                        </figcaption>
-                    </figure>
+                    <Quote cite={quote.data.cite} author={quote.data.author}>
+                        {quote.data.quote}
+                    </Quote>
                 ))
         }
     </main>

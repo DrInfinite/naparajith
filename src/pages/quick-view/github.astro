@@ -23,7 +23,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { GithubRepositories } from "@/actions/github/repositories.ts";
 import { GithubProfile } from "@/actions/github-profile";
-import A from "@/components/A.astro";
+import A from "@/components/Link.astro";
 
 const github = await GithubProfile();
 const result = await GithubRepositories();
@@ -34,17 +34,16 @@ const result = await GithubRepositories();
     description="A quick overview of my GitHub stats, directly from the source"
 >
     <main>
-        <span class="flex flex-row items-center justify-center ~gap-4/8">
+        <span class="~gap-4/8 flex flex-row items-center justify-center">
             <A
                 href={github.html_url}
                 title="LeetCode Profile"
                 target={"_blank"}
-                css={"~text-xl/5xl"}
             >
                 {github.login}
             </A>
             <div
-                class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
+                class="border-border ~gap-2/4 ~p-2/4 flex flex-wrap justify-evenly rounded-none border"
             >
                 <span>
                     Since <strong>
@@ -56,7 +55,7 @@ const result = await GithubRepositories();
         <p>{github.bio}</p>
         <h2>Overview</h2>
         <div
-            class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
+            class="border-border ~gap-2/4 ~p-2/4 flex flex-wrap justify-evenly rounded-none border"
         >
             <span>Repositories: <strong>{github.public_repos}</strong></span>
             <span>Followers: <strong>{github.followers}</strong></span>
@@ -68,21 +67,21 @@ const result = await GithubRepositories();
             result.map((repo) => (
                 <a
                     href={repo.clone_url}
-                    class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent ~mb-4/8 hover:bg-foreground/10"
+                    class="border-border ~mb-4/8 hover:bg-foreground/10 flex w-full flex-col justify-evenly rounded-none border decoration-transparent"
                     target="_blank"
                 >
-                    <article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
+                    <article class="~gap-2/4 ~p-2/4 flex flex-col justify-between md:flex-row">
                         <h4
                             class="-my-px truncate"
                             transition:name="post-title"
                         >
                             {repo.name}
                         </h4>
-                        <small class="bg-gradient-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent">
+                        <small class="bg-linear-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent">
                             {repo.language}
                         </small>
                     </article>
-                    <article class="flex justify-between ~p-2/4">
+                    <article class="~p-2/4 flex justify-between">
                         <small class="italic">
                             {new Date(repo.updated_at).toDateString()}
                         </small>

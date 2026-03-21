@@ -19,11 +19,12 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
-import A from "@/components/A.astro";
+import A from "@/components/Link.astro";
 import Layout from "@/layouts/Layout.astro";
 import type { GetStaticPaths } from "astro";
-import { getImage, Image, Picture } from "astro:assets";
+import { getImage, Picture } from "astro:assets";
 import { getCollection, getEntry, render } from "astro:content";
+import AuthorContainer from "@/components/containers/Author.astro";
 
 export const getStaticPaths = (async () => {
     let posts = await getCollection("blog");
@@ -60,37 +61,24 @@ const postImage = await getImage({ src: post.data.image, format: "webp" });
     <h1 class="text-center font-serif" transition:name="post-title">
         {post.data.title}
     </h1>
-    <div class="flex flex-grow flex-col justify-evenly ~gap-4/8">
-        <p class="font-semibold" transition:name="post-description">
-            <span>{post.data.description}</span>
-        </p>
-        <a
-            href={author.data.social}
-            target="_blank"
-            title={author.data.name}
-            class="flex flex-row items-center justify-center rounded-none border border-border no-underline ~-my-2/4 ~gap-2/4 hover:bg-foreground/10"
-        >
-            <Image
-                src={author.data.image}
-                alt={author.data.name}
-                inferSize
-                priority
-                width={48}
-                height={48}
-                class="hidden rounded-full ~-my-2/4 ~size-6/12 md:inline"
-            />
-            <p>{author.data.name}</p>
-            <small
-                class="bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent"
-            >
-                {author.data.occupation}
-            </small>
-        </a>
+    <div
+        class="flex grow flex-col justify-evenly gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8"
+    >
+        <AuthorContainer
+            name={author.data.name}
+            occupation={author.data.occupation}
+            social={author.data.social}
+            image={author.data.image}
+        />
         <div
-            class="flex flex-row flex-wrap justify-between rounded-none border border-border ~-mb-2/4 ~px-4/8 ~py-2/4"
+            class="flex justify-evenly gap-2 rounded-none border p-2 md:gap-4 md:p-2.5 lg:p-3 xl:p-3.5 2xl:p-4"
         >
+            <strong
+                class="border-l-2 border-gray-400 pl-2 text-gray-400 md:pl-2.5 lg:pl-3 xl:pl-3.5 2xl:pl-4"
+            >
+                {post.data.created.toDateString().slice(4)}
+            </strong>
             <strong>{remarkPluginFrontmatter.minutesRead}</strong>
-            <strong>{post.data.created.toDateString().slice(4)}</strong>
             <strong>{remarkPluginFrontmatter.words} words</strong>
         </div>
     </div>
@@ -103,20 +91,25 @@ const postImage = await getImage({ src: post.data.image, format: "webp" });
             height="1080"
             formats={["webp", "avif"]}
             priority
-            class="aspect-square rounded-none border border-border"
+            class="aspect-video"
             transition:name="image"
         />
-        <figcaption class="bg-background text-center text-foreground">
+        <figcaption
+            class="mt-2 text-center md:mt-2.5 lg:mt-3 xl:mt-3.5 2xl:mt-4"
+        >
             <span class="font-semibold italic">Image Source: </span><A
                 href={postImage.src}
                 title={post.data.title}
-                target="_blank"
+                class={"after:content-['_(i)']"}
             >
                 {post.data.image_source}
             </A>
         </figcaption>
     </figure>
     <article>
+        <p class="font-semibold" transition:name="post-description">
+            <span class="text-center">{post.data.description}</span>
+        </p>
         <Content />
     </article>
 </Layout>

@@ -48,7 +48,7 @@ export default function RangeInput({
                     type="number"
                     value={min}
                     onChange={handleMinChange}
-                    className="w-full flex-1 rounded-none border border-border bg-background px-3 py-2 text-foreground placeholder-muted-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="border-border bg-background text-foreground placeholder-muted-foreground focus:ring-ring w-full flex-1 rounded-none border px-3 py-2 shadow-xs focus:ring-2 focus:outline-hidden"
                 />
             </label>
             <label className="flex flex-col justify-evenly">
@@ -57,7 +57,7 @@ export default function RangeInput({
                     type="number"
                     value={max}
                     onChange={handleMaxChange}
-                    className="w-full flex-1 rounded-none border border-border bg-background px-3 py-2 text-foreground placeholder-muted-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="border-border bg-background text-foreground placeholder-muted-foreground focus:ring-ring w-full flex-1 rounded-none border px-3 py-2 shadow-xs focus:ring-2 focus:outline-hidden"
                 />
             </label>
         </div>

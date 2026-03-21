@@ -1,0 +1,20 @@
+---
+import Link from "@/components/Link.astro";
+interface Props {
+    author: string;
+    cite: string | null | undefined;
+}
+
+const { author, cite } = Astro.props;
+---
+
+<figure class="space-y-4 p-4">
+    <blockquote cite={cite}>
+        <slot />
+    </blockquote>
+    <figcaption>
+        <Link cite href={cite} title=`${author} - ${cite}`>
+            {author}
+        </Link>
+    </figcaption>
+</figure>

@@ -20,7 +20,7 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
-import A from "@/components/A.astro";
+import A from "@/components/Link.astro";
 import Button from "@/components/Button.astro";
 
 const links = [
@@ -29,17 +29,22 @@ const links = [
     { href: "/quick-view", title: "Quick View" },
     { href: "/blog", title: "Blog" },
     { href: "/projects", title: "Projects" },
+    { href: "https://flowcv.com/resume/mdrssqq018", title: "Resume" },
 ];
 const linksWithoutBlog = [
     { href: "/", title: "Home" },
     { href: "/profile", title: "Profile" },
     { href: "/quick-view", title: "Quick View" },
     { href: "/projects", title: "Projects" },
+    { href: "https://flowcv.com/resume/mdrssqq018", title: "Resume" },
 ];
 ---
 
-<header class="my-10" transition:persist>
-    <div class="mb-2 flex items-center justify-between font-serif ~gap-2/4">
+<header
+    class="my-8 space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8"
+    transition:persist
+>
+    <span class="flex items-center justify-between gap-4 border p-2">
         <strong>
             ~/{
                 Astro.url.pathname === "/"
@@ -60,11 +65,9 @@ const linksWithoutBlog = [
             }
         </strong>
         <strong>naparajith | sdet 2</strong>
-    </div>
+    </span>
 
-    <span
-        class="flex flex-wrap items-center justify-evenly border-b border-t border-border py-4 ~gap-2/4"
-    >
+    <span class="flex flex-wrap items-center justify-evenly gap-4 border p-2">
         {
             Astro.url.pathname.startsWith("/blog/") ? (
                 <Button href="/blog" title="Go Back">
@@ -87,12 +90,5 @@ const linksWithoutBlog = [
                       </A>
                   ))
         }
-        <Button
-            title="Resume"
-            target="_blank"
-            href="https://flowcv.com/resume/mdrssqq018"
-        >
-            Resume
-        </Button>
     </span>
 </header>

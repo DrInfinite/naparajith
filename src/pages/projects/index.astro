@@ -21,6 +21,7 @@
  */
 
 import Layout from "@/layouts/Layout.astro";
+import Link from "@/components/Link.astro";
 
 const projects: {
     url: string;
@@ -48,33 +49,24 @@ const projects: {
     title="Projects"
     description="A curated list of technical projects that I have worked on"
 >
-    <h1>Projects</h1>
+    <h2>Projects</h2>
     <p>
         A curated list of technical projects that I have worked on / contributed
         to.
     </p>
     {
         projects.map((project) => (
-            <a
-                href={project.url}
-                class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent ~mb-4/8 hover:bg-foreground/10"
-                target="_blank"
-            >
-                <article class="~gap-2/4 ~p-2/4">
-                    <div class="flex justify-between">
-                        <h4
-                            class="-my-px truncate font-sans"
-                            transition:name="post-title"
-                        >
+            <span class="flex flex-col gap-2 border border-black p-2">
+                <div class="flex justify-between">
+                    <h4>
+                        <Link href={project.url} title={project.name}>
                             {project.name}
-                        </h4>
-                        <small class="bg-gradient-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-white/25">
-                            {project.source}
-                        </small>
-                    </div>
-                    <small>{project.description}</small>
-                </article>
-            </a>
+                        </Link>
+                    </h4>
+                    <small>{project.source}</small>
+                </div>
+                <strong>{project.description}</strong>
+            </span>
         ))
     }
     <p class="italic">

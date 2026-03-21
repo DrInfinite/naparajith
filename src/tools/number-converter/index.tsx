@@ -117,12 +117,12 @@ export default function NumberConverter() {
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                                 placeholder={`Enter a ${getLabelForBase(base)} number`}
-                                className="w-full flex-1 rounded-none border border-border bg-background px-3 py-2 text-foreground placeholder-muted-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                                className="border-border bg-background text-foreground placeholder-muted-foreground focus:ring-ring w-full flex-1 rounded-none border px-3 py-2 shadow-xs focus:ring-2 focus:outline-hidden"
                             />
                             <select
                                 value={base}
                                 onChange={handleInputBaseChange}
-                                className="ml-2 cursor-pointer rounded-none border border-border bg-background px-3 py-2 text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                                className="border-border bg-background text-foreground focus:ring-ring ml-2 cursor-pointer rounded-none border px-3 py-2 shadow-xs focus:ring-2 focus:outline-hidden"
                             >
                                 {baseOptions.map((opt) => (
                                     <option
@@ -159,13 +159,13 @@ export default function NumberConverter() {
                                 type="text"
                                 value={converted}
                                 placeholder={`Converted ${getLabelForBase(target)} number`}
-                                className="w-full flex-1 rounded-none border border-border bg-background px-3 py-2 text-foreground placeholder-muted shadow-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                                className="border-border bg-background text-foreground placeholder-muted focus:ring-ring w-full flex-1 rounded-none border px-3 py-2 shadow-xs focus:ring-2 focus:outline-hidden"
                                 disabled
                             />
                             <select
                                 value={target}
                                 onChange={handleTargetBaseChange}
-                                className="ml-2 cursor-pointer rounded-none border border-border bg-background px-3 py-2 text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                                className="border-border bg-background text-foreground focus:ring-ring ml-2 cursor-pointer rounded-none border px-3 py-2 shadow-xs focus:ring-2 focus:outline-hidden"
                             >
                                 {baseOptions.map((opt) => (
                                     <option

@@ -19,12 +19,13 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
-export const prerender = false;
-
-import A from "@/components/A.astro";
+import Link from "@/components/Link.astro";
+import Quote from "@/components/Quote.astro";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import LinksContainer from "@/components/containers/Links.astro";
 import { getCollection, getEntry } from "astro:content";
+import { formatDate } from "@/utils/helpers";
 
 const learning = [
     "Reading large codebases in a sequential way without getting lost",
@@ -40,8 +41,10 @@ quotes.sort((a, b) => a.data.author.localeCompare(b.data.author));
 const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
 let posts = await getCollection("blog");
-posts = posts.filter((acc) => acc.data.draft !== true);
+if (process.env.NODE_ENV === "production")
+    posts = posts.filter((acc) => acc.data.draft !== true);
 const post = posts[Math.floor(Math.random() * posts.length)]!;
+const post_createdDate = formatDate(post.data.created);
 
 const author = await getEntry(post.data.author);
 
@@ -93,24 +96,28 @@ const socials = [
 >
     <article>
         <figure
-            class="flex flex-col content-around items-center justify-around ~gap-6/12"
+            class="flex flex-col content-around items-center justify-around"
         >
-            <span class="-my-px ~size-48/96">
+            <span
+                class="-my-px size-48 sm:size-56 md:size-64 lg:size-72 xl:size-84 2xl:size-96"
+            >
                 <Image
                     alt="DrInfinite"
                     class="mx-auto scale-90 rounded-none"
-                    width={540}
-                    height={540}
+                    width={480}
+                    height={480}
                     priority
                     src="https://avatars.githubusercontent.com/u/74095696?v=4"
                 />
             </span>
 
-            <figcaption class="text-center font-semibold ~p-2/4">
+            <figcaption
+                class="p-2 text-center font-semibold md:p-2.5 lg:p-3 xl:p-3.5 2xl:p-4"
+            >
                 <span class="italic">This image comes from my</span>
-                <A href="https://github.com/DrInfinite" target="_blank">
+                <Link href="https://github.com/DrInfinite" target="_blank">
                     GitHub Profile
-                </A>
+                </Link>
             </figcaption>
         </figure>
         <p>
@@ -121,125 +128,99 @@ const socials = [
         </p>
     </article>
 
-    <div class="space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8">
-        <div
-            class="flex flex-wrap justify-evenly gap-2 rounded-none border border-border ~p-2/4 md:gap-4"
+    <!-- <div class="space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8"> -->
+    <LinksContainer>
+        {
+            pages.map((link) => (
+                <Link href={link.href} title={link.title}>
+                    {link.label}
+                </Link>
+            ))
+        }
+    </LinksContainer>
+    <LinksContainer>
+        {
+            socials.map((link) => (
+                <Link
+                    href={link.href}
+                    title={link.title}
+                    target={link.target}
+                    rel={
+                        link.target === "_blank"
+                            ? "noopener noreferrer"
+                            : undefined
+                    }
+                >
+                    {link.label}
+                </Link>
+            ))
+        }
+    </LinksContainer>
+    <p class="text-center font-semibold">
+        <Link
+            href="https://flowcv.com/resume/mdrssqq018"
+            title="Resume"
+            target="_blank"
+            rel="noopener noreferrer"
         >
-            {
-                pages.map((link) => (
-                    <A href={link.href} title={link.title}>
-                        {link.label}
-                    </A>
-                ))
-            }
-        </div>
-        <div
-            class="flex flex-wrap justify-evenly gap-2 rounded-none border border-border ~p-2/4 md:gap-4"
-        >
-            {
-                socials.map((link) => (
-                    <A
-                        href={link.href}
-                        title={link.title}
-                        target={link.target}
-                        rel={
-                            link.target === "_blank"
-                                ? "noopener noreferrer"
-                                : undefined
-                        }
-                    >
-                        {link.label}
-                    </A>
-                ))
-            }
-        </div>
-    </div>
+            Download my latest Resume
+        </Link>
+    </p>
+    <!-- </div> -->
     <main>
-        <p class="text-center">
-            <A
-                href="https://flowcv.com/resume/mdrssqq018"
-                title="Resume"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Download my latest Resume
-            </A>
-        </p>
-        <div class="~space-y-4/8">
-            <hr class="my-4 border-t-2 border-t-border" />
+        <div
+            class="space-y-4 md:space-y-5 lg:space-y-6 xl:space-y-7 2xl:space-y-8"
+        >
+            <hr class="my-4 border" />
             <h2>Featured Quote</h2>
-            <figure
-                class="place-content-center rounded-none border border-border p-4 ~gap-2/4"
-            >
-                <blockquote cite={quote?.data.cite}>
+            <figure class="place-content-center rounded-none border p-2">
+                <Quote cite={quote?.data.cite} author={quote?.data.author!}>
                     {quote?.data.quote}
-                </blockquote>
-                <figcaption>
-                    <cite>
-                        -{" "}
-                        <a
-                            href={quote?.data.cite}
-                            title={`${quote?.data.author} - ${quote?.data.cite}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-inherit no-underline"
-                        >
-                            {quote?.data.author}
-                        </a>
-                    </cite>
-                </figcaption>
+                </Quote>
                 <div class="float-end">
-                    <A href="/quotes" title="Quotes">more like this</A>
+                    <Link href="/quotes" title="Quotes">more like this</Link>
                 </div>
             </figure>
             <h2>Featured Blog Post</h2>
-            <a
-                href={`/blog/${post.id}`}
-                class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent hover:bg-foreground/10"
-            >
-                <article class="flex flex-col ~gap-2/4 ~p-2/4">
-                    <h4 class="-my-px" transition:name="post-title">
+            <figure class="place-content-center rounded-none border p-2">
+                <article class="flex w-full flex-col gap-2 p-2">
+                    <h4 transition:name="post-title">
                         {post.data.title}
                     </h4>
                     <small
-                        class="-my-px line-clamp-2"
                         transition:name="post-description"
+                        class="truncate py-2"
                     >
                         {post.data.description}
                     </small>
+                    <div class="flex justify-between">
+                        <small>{post_createdDate}</small>
+                        <small>{author.data.name}</small>
+                    </div>
                 </article>
-                <article
-                    class="flex justify-between bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent ~p-2/4"
-                >
-                    <small>{post.data.created.toDateString()}</small>
-                    <small>{author.data.name}</small>
-                </article>
-            </a>
-            <hr class="my-4 border-t-2 border-t-border" />
+                <div class="float-end">
+                    <Link href={`/blog/${post.id}`} title="Quotes"
+                        >Read Article</Link
+                    >
+                </div>
+            </figure>
+            <hr class="my-4 border" />
         </div>
         <div>
             <p>
                 When I was a kid, I was told a really inspiring quote about
                 learning, which goes something like this:
-            </p>
-            <figure>
-                <blockquote cite={Astro.url.toString()}>
+                <Quote
+                    author="Mahābhārata Udyoga Parva 44:16"
+                    cite="https://blog.practicalsanskrit.com/2009/12/how-we-learn-and-grow.html"
+                >
                     A disciple learns one quarter from the acharya [teacher],
                     one quarter through his own intelligence, one quarter comes
                     to him through the influence of time, and one quarter from
                     his fellow students.
-                </blockquote>
-                <figcaption>
-                    <cite>
-                        - <strong class="text-inherit">
-                            Adi Shankaracharya
-                        </strong></cite
-                    >
-                </figcaption>
-            </figure>
-            <p>
-                I intend to make learning a long-term commitment. Here are a few
-                areas I'm actively exploring:
+                </Quote>
+                I intend to make learning a long-term commitment. Here are a few areas
+                I'm actively exploring:
             </p>
             <ul>
                 {learning.map((concept) => <li>{concept}</li>)}
@@ -247,14 +228,14 @@ const socials = [
             <p>
                 If you’d like to collaborate or share feedback on any of these
                 topics, please write to
-                <A
+                <Link
                     href="mailto:naparajith@duck.com"
                     title="E-Mail Address"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     naparajith@duck.com
-                </A>.
+                </Link>.
             </p>
         </div>
     </main>

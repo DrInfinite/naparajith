@@ -28,7 +28,7 @@ import {
     type TLeetcodeProfileReturn,
     type Badge,
 } from "@/actions/leetcode-profile";
-import A from "@/components/A.astro";
+import A from "@/components/Link.astro";
 import { Image } from "astro:assets";
 
 const leetcode: TLeetcodeProfileReturn = await LeetcodeProfile();
@@ -40,13 +40,12 @@ const badges: Badge[] = leetcode.matchedUser.badges.slice(0, 8);
     title="Leetcode"
     description="A quick overview of my Leetcode stats, directly from the source"
 >
-    <div class="flex items-center justify-center ~gap-4/8">
+    <div class="~gap-4/8 flex items-center justify-center">
         <span>
             <A
                 href={"https://leetcode.com/u/DrInfinite/"}
                 title="LeetCode Profile"
                 target={"_blank"}
-                css={"~text-xl/5xl"}
             >
                 {leetcode.matchedUser.username}
             </A>
@@ -80,7 +79,7 @@ const badges: Badge[] = leetcode.matchedUser.badges.slice(0, 8);
 
     <h2>Overview</h2>
     <div
-        class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
+        class="border-border ~gap-2/4 ~p-2/4 flex flex-wrap justify-evenly rounded-none border"
     >
         <span
             >Rank: <strong>{leetcode.matchedUser.profile?.ranking}</strong
@@ -146,18 +145,18 @@ const badges: Badge[] = leetcode.matchedUser.badges.slice(0, 8);
         leetcode.recentSubmissionList?.slice(0, 5).map((sub) => (
             <a
                 href={`https://leetcode.com/problems/${sub.titleSlug}/description/`}
-                class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent ~mb-4/8 hover:bg-foreground/10"
+                class="border-border ~mb-4/8 hover:bg-foreground/10 flex w-full flex-col justify-evenly rounded-none border decoration-transparent"
                 target="_blank"
             >
-                <article class="flex flex-col justify-between ~gap-2/4 ~p-2/4 md:flex-row">
+                <article class="~gap-2/4 ~p-2/4 flex flex-col justify-between md:flex-row">
                     <h4 class="-my-px truncate" transition:name="post-title">
                         {sub.title}
                     </h4>
-                    <small class="bg-gradient-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent">
+                    <small class="bg-linear-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent">
                         {sub.lang}
                     </small>
                 </article>
-                <article class="flex justify-between ~p-2/4">
+                <article class="~p-2/4 flex justify-between">
                     <small class="italic">
                         {process.env.NODE_ENV === "development"
                             ? new Date(parseInt(sub.timestamp) * 1000)

@@ -1,0 +1,27 @@
+h1 {
+    @apply scroll-m-20 text-center text-4xl font-bold tracking-tight text-balance;
+}
+
+h2 {
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+}
+
+h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+}
+
+h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+}
+
+p {
+    @apply text-justify leading-7 text-pretty not-first:mt-6;
+}
+
+code {
+    @apply relative rounded bg-gray-200 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+}
+
+small {
+    @apply text-sm leading-none font-medium;
+}

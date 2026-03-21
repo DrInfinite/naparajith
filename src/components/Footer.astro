@@ -20,28 +20,33 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
-import A from "@/components/A.astro";
+import A from "@/components/Link.astro";
 
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-border py-4 ~my-4/8" transition:persist>
-    <p class="text-pretty text-center ~space-x-2/4">
-        &copy; {year} by <A
-            rel="cc:attributionURL dct:creator"
-            property="cc:attributionName"
-            href="https://gravatar.com/naparajithtl"
-            target="_blank"
-            title={"Author"}
-        >
-            Naparajith T L
-        </A>.
-    </p>
-    <p class="text-pretty text-center ~space-x-2/4">
+<footer
+    class="my-8 space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8"
+    transition:persist
+>
+    <span class="flex flex-wrap items-center justify-evenly gap-4 border p-2">
         <A href={"/policy"} title={"Site Policies"}>Site Policies</A>
         <A href={"/license"} title={"License"}>License</A>
         <a rel="me" class="hidden" href="https://mastodon.social/@naparajith">
             Mastodon
         </a>
-    </p>
+    </span>
+    <span class="flex items-center justify-center gap-4 border p-2">
+        <span
+            >&copy; {year} by <A
+                rel="cc:attributionURL dct:creator"
+                property="cc:attributionName"
+                href="https://gravatar.com/naparajithtl"
+                target="_blank"
+                title={"Author"}
+            >
+                Naparajith T L
+            </A>.</span
+        >
+    </span>
 </footer>

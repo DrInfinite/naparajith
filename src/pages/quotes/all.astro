@@ -22,6 +22,7 @@
 
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import Quote from "@/components/Quote.astro";
 
 const quotes = await getCollection("quotes");
 quotes.sort((a, b) => a.data.author.localeCompare(b.data.author));
@@ -37,24 +38,9 @@ quotes.sort((a, b) => a.data.author.localeCompare(b.data.author));
     </p>
     {
         quotes.map((quote) => (
-            <figure>
-                <blockquote cite={quote.data.cite}>
-                    {quote.data.quote}
-                </blockquote>
-                <figcaption>
-                    <cite>
-                        -{" "}
-                        <a
-                            href={quote.data.cite}
-                            title={`${quote.data.author} - ${quote.data.cite}`}
-                            target="_blank"
-                            class="text-inherit no-underline"
-                        >
-                            {quote.data.author}
-                        </a>
-                    </cite>
-                </figcaption>
-            </figure>
+            <Quote cite={quote.data.cite} author={quote.data.author}>
+                {quote.data.quote}
+            </Quote>
         ))
     }
 </Layout>

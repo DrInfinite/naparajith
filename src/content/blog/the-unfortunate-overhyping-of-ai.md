@@ -1,8 +1,9 @@
 ---
 title: The Unfortunate over-hyping of Artificial Intelligence
 description:
-  AI has revolutionized the world in profound ways. But it's being portrayed
-  unfairly and in the wrong light.
+    AI has revolutionized the world in profound ways. But it's being portrayed
+    unfairly and in the wrong light. We need to focus beyond the hype to gain
+    meaning out of this new tool.
 created: 02-26-2025
 updated: 08-29-2025
 image: "../../images/the-unfortunate-overhyping-of-ai.jpeg"
@@ -11,25 +12,25 @@ author: naparajith
 draft: false
 ---
 
-{/* This website is only meant to showcase the work and and skills of the
-author, on a professional level. It also has a blog, containing the author's
-observations and opinions on various topics. The views expressed are the
-author's own. Copyright (C) 2026 T L Naparajith
+<!-- This website is only meant to showcase the work and and skills of the author, on -->
+<!-- a professional level. It also has a blog, containing the author's observations -->
+<!-- and opinions on various topics. The views expressed are the author's own. -->
+<!-- Copyright (C) 2026 T L Naparajith -->
+<!---->
+<!-- This program is free software: you can redistribute it and/or modify it under -->
+<!-- the terms of the GNU Affero General Public License Version 3 as published by the -->
+<!-- Free Software Foundation. -->
+<!---->
+<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY -->
+<!-- WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A -->
+<!-- PARTICULAR PURPOSE. See the GNU Affero General Public License for more details. -->
+<!---->
+<!-- You should have received a copy of the GNU Affero General Public License along -->
+<!-- with this program. If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>. -->
+<!---->
+<!-- Contact me through electronic mail: <naparajith@duck.com> -->
 
-This program is free software: you can redistribute it and/or modify it under
-the terms of the GNU Affero General Public License Version 3 as published by the
-Free Software Foundation.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License along
-with this program. If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
-
-Contact me through electronic mail: <naparajith@duck.com> */}
-
-import A from "@/components/A.astro";
+<!-- import A from "@/components/Link.astro"; -->
 
 Over the past few years, AI has made tremendous progress in innovation and
 growth, with the industry adopting it at an unprecedented rate. The release of
@@ -61,7 +62,7 @@ alarming but also unrealistic.
 There have been curious cases of AI "hallucination" or AI "bypassing training
 safeguards", like when Microsoft CoPilot asked a journalist to leave their wife
 or Google Gemini asked people to consume rocks as food. Or even the
-<A href="https://www.businessinsider.com/interview-with-sophia-ai-robot-hanson-said-it-would-destroy-humans-2017-11" target="_blank">curious case</A>
+[curious case](https://www.businessinsider.com/interview-with-sophia-ai-robot-hanson-said-it-would-destroy-humans-2017-11)
 of Sophia, who once said some "interesting" things.
 
 But it is very hard to say what the future holds when we are still in the early
@@ -72,8 +73,8 @@ do "questionable" things to humans.
 Researchers have been taking the appropriate precautions to ensure that we cut
 out the issues at the source and early on, before it becomes too serious and too
 big to be dealt with effectively. For a sample, you might want to read OpenAI's
-<A href="https://openai.com/index/operator-system-card/" target="_blank">Operator System Cards</A>
-and <A href="https://openai.com/index/deep-research-system-card/" target="_blank">Deep Research System Cards</A>
+[Operator System Cards](https://openai.com/index/operator-system-card/) and
+[Deep Research System Cards](https://openai.com/index/deep-research-system-card/)
 to gauge a better idea of how OpenAI takes AI safety very seriously.
 
 ## Setting the stage

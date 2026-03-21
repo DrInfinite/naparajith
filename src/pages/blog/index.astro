@@ -21,7 +21,8 @@
  */
 
 import Layout from "@/layouts/Layout.astro";
-import { getImage, Image } from "astro:assets";
+import ArticleContainer from "@/components/containers/Article.astro";
+import { getImage } from "astro:assets";
 import { getCollection, getEntry } from "astro:content";
 
 let posts = await getCollection("blog");
@@ -51,43 +52,20 @@ const hydratedPosts = await Promise.all(
     title="Blog"
     description="The Official Blog for Naparajith, a Software Engineer from India"
 >
+    <h2>Articles</h2>
     <main
-        class="flex min-h-[60vh] flex-row flex-wrap place-content-center justify-evenly ~gap-2/4"
+        class="flex min-h-[60vh] flex-row flex-wrap place-content-center justify-evenly gap-2 md:gap-2.5 lg:gap-3 xl:gap-3.5 2xl:gap-4"
     >
         {
             hydratedPosts.map(({ post, imageSrc, authorName }) => (
-                <a
-                    href={`/blog/${post.id}`}
-                    class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent hover:bg-foreground/10"
-                >
-                    <div class="rounded-none p-2">
-                        <Image
-                            src={imageSrc}
-                            alt={post.data.title}
-                            inferSize
-                            width={1920}
-                            height={1080}
-                            priority
-                            class="-my-px aspect-video rounded-none border border-border"
-                            transition:name="image"
-                        />
-                    </div>
-                    <article class="flex justify-between bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent ~p-2/4">
-                        <small>{post.data.created.toDateString()}</small>
-                        <small>{authorName}</small>
-                    </article>
-                    <article class="flex flex-col ~gap-2/4 ~p-2/4">
-                        <h3 class="-my-px" transition:name="post-title">
-                            {post.data.title}
-                        </h3>
-                        <small
-                            class="-my-px truncate"
-                            transition:name="post-description"
-                        >
-                            {post.data.description}
-                        </small>
-                    </article>
-                </a>
+                <ArticleContainer
+                    id={post.id}
+                    image={imageSrc}
+                    title={post.data.title}
+                    description={post.data.description}
+                    date={post.data.created.toDateString()}
+                    author={authorName}
+                />
             ))
         }
         <!-- <h1>Coming Soon!</h1> -->

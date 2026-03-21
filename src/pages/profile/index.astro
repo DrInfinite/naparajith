@@ -20,9 +20,11 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
-import A from "@/components/A.astro";
+import A from "@/components/Link.astro";
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
+
+import LinksContainer from "@/components/containers/Links.astro";
 
 const profile = await getCollection("profile");
 const translations = [
@@ -42,7 +44,6 @@ const links = [
         href: "https://www.linkedin.com/in/naparajith/",
         title: "LinkedIn - Naparajith T L",
         innerHTML: "LinkedIn",
-        target: "_blank",
     },
     {
         href: "/quick-view/github",
@@ -58,13 +59,11 @@ const links = [
         href: "https://bsky.app/profile/naparajith.in",
         title: "Naparajith | DrInfinite (@naparajith.in)",
         innerHTML: "BlueSky",
-        target: "_blank",
     },
     {
         href: "https://mastodon.social/@naparajith",
         title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
         innerHTML: "Mastodon",
-        target: "_blank",
     },
     {
         href: "/blog",
@@ -79,6 +78,7 @@ const links = [
     description="The official profile page for T L Naparajith, a Software Engineer from India"
 >
     <article>
+        <h2>Profile</h2>
         <h3>Who I am</h3>
         <p>
             I'm Naparajith, a Senior Software Engineer in Test based in India. I
@@ -94,9 +94,7 @@ const links = [
             please peruse the sections below:
         </p>
 
-        <div
-            class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
-        >
+        <LinksContainer>
             {
                 profile.map((about) => (
                     <span>
@@ -104,7 +102,17 @@ const links = [
                     </span>
                 ))
             }
-        </div>
+        </LinksContainer>
+
+        <LinksContainer>
+            {
+                links.map((link) => (
+                    <A href={link.href} title={link.title}>
+                        {link.innerHTML}
+                    </A>
+                ))
+            }
+        </LinksContainer>
 
         <h3>What I do</h3>
         <ol>
@@ -191,21 +199,5 @@ const links = [
                 }
             </tbody>
         </table>
-        <p>
-            Connect for discussions on programming, emerging tech, or software
-            product creation. Let's code and innovate together!
-        </p>
-
-        <div
-            class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
-        >
-            {
-                links.map((link) => (
-                    <A href={link.href} title={link.title} target={link.target}>
-                        {link.innerHTML}
-                    </A>
-                ))
-            }
-        </div>
     </article>
 </Layout>

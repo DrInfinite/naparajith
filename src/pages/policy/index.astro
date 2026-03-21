@@ -20,7 +20,7 @@
  * Contact me through electronic mail: <naparajith@duck.com>
  */
 
-import A from "@/components/A.astro";
+import A from "@/components/Link.astro";
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -47,7 +47,7 @@ const policies = await getCollection("policy");
             of content on the site.
         </p>
         <div
-            class="flex flex-wrap justify-evenly rounded-none border border-border ~gap-2/4 ~p-2/4"
+            class="border-border ~gap-2/4 ~p-2/4 flex flex-wrap justify-evenly rounded-none border"
         >
             {
                 policies.map((policy) => (

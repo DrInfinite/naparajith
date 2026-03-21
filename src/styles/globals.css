@@ -19,101 +19,69 @@
 * Contact me through electronic mail: <naparajith@duck.com>
 */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
 
-@view-transition {
-    navigation: auto;
+@import "./table.css";
+@import "./typography.css";
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+/* @layer base { */
+/*     *, */
+/*     ::after, */
+/*     ::before, */
+/*     ::backdrop, */
+/*     ::file-selector-button { */
+/*         border-color: var(--color-gray-200, currentcolor); */
+/*     } */
+/* } */
+
+@theme {
+    --font-sans: sans-serif;
+    --font-serif: serif;
+    --font-quote: ;
 }
 
-@layer base {
-    :root {
-        --background: 0 0% 100%;
-        --foreground: 240 10% 3.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 240 10% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 3.9%;
-        --primary: 240 5.9% 10%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
-        --muted: 240 4.8% 95.9%;
-        --muted-foreground: 240 3.8% 46.1%;
-
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 240 5.9% 10%;
-        --radius: 0.5rem;
-    }
-
-    .dark {
-        --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 240 10% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 240 10% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 240 3.7% 15.9%;
-        --muted-foreground: 240 5% 64.9%;
-
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
+@layer utilities {
+    @view-transition {
+        navigation: auto;
     }
 }
 
 @layer base {
     * {
-        @apply transition transition-all duration-100 ease-linear;
+        @apply transition-all duration-100 ease-linear;
     }
 
     body {
-        @apply prose prose-sm mx-auto scroll-smooth bg-background px-4 text-foreground antialiased md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl md:px-0;
+        @apply container mx-auto space-y-2 scroll-smooth px-4 antialiased sm:px-6 md:space-y-4 lg:space-y-6 lg:px-8 xl:space-y-8;
+    }
+
+    article {
+        @apply space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8;
+    }
+
+    a {
+        @apply text-blue-700 underline visited:text-purple-700 hover:text-fuchsia-700 active:text-red-700 [&:has(>cite)]:no-underline [&:has(>cite)]:after:content-['_(c)'] [[href^='mailto:']]:after:content-['_(m)'] [&[href^='http']:not(:has(cite))]:after:content-['_(e)'];
+
+        /* &:visited { */
+        /*      visited:text-purple-700 visited:hover:text-fuchsia-700 visited:active:text-red-700 */
+        /* } */
     }
 
     button {
-        @apply rounded-none border border-border bg-secondary px-2 py-1 font-semibold text-secondary-foreground hover:bg-secondary/80 md:px-4 md:py-2;
-    }
-
-    p {
-        @apply text-pretty text-justify;
-    }
-
-    code {
-        @apply text-primary;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-        @apply font-serif;
-    }
-
-    a,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    strong {
-        @apply text-foreground;
+        @apply rounded-none border px-2 py-1 font-semibold md:px-4 md:py-2;
     }
 
     details {
-        @apply border border-border p-2 sm:p-4 lg:p-6 2xl:p-8;
+        @apply border p-2 sm:p-4 lg:p-6 2xl:p-8;
     }
 
     summary {
@@ -121,18 +89,14 @@
     }
 
     blockquote {
-        @apply font-quote font-bold text-primary;
-    }
-
-    cite {
-        @apply bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent;
+        @apply font-quote mt-6 border-l-2 pl-6 text-base font-black italic md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl;
     }
 
     details[open] summary {
-        @apply border border-l-0 border-r-0 border-t-0 border-border pb-0;
+        @apply border border-t-0 border-r-0 border-l-0 pb-0;
     }
 
-    th {
-        @apply text-primary;
+    ul {
+        @apply my-6 ml-6 list-disc [&>li]:mt-2;
     }
 }
