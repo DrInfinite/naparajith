@@ -1,26 +1,10 @@
 /**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
+ * Copyright Naparajith T L (DrInfinite) 2024, 2026
+ * SPDX-License-Identifier: MIT
  */
 
 // @ts-check
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -30,9 +14,13 @@ import vercel from "@astrojs/vercel";
 
 import ReadingTime from "./reading-time.mjs";
 
-import mdx from "@astrojs/mdx";
-
 import react from "@astrojs/react";
+
+import strip from "vite-plugin-strip-comments";
+
+/** @type import('astro').AstroIntegration */
+// @ts-ignore
+const stripSafe = strip({});
 
 // https://astro.build/config
 export default defineConfig({
@@ -44,7 +32,12 @@ export default defineConfig({
             { protocol: "https", hostname: "external-content.duckduckgo.com" },
             { protocol: "https", hostname: "brainmade.org" },
             { protocol: "https", hostname: "assets.leetcode.com" },
+            {
+                protocol: "https",
+                hostname: "images.ctfassets.net",
+            },
         ],
+        domains: ["images.ctfassets.net"],
         responsiveStyles: true,
         service: {
             entrypoint: "astro/assets/services/sharp",
@@ -56,7 +49,7 @@ export default defineConfig({
         objectPosition: "center",
         objectFit: "cover",
     },
-    integrations: [sitemap(), mdx(), react()],
+    integrations: [sitemap(), react(), stripSafe],
     output: "static",
     markdown: {
         remarkPlugins: [ReadingTime],
@@ -77,15 +70,6 @@ export default defineConfig({
     experimental: {
         clientPrerender: true,
     },
-    fonts: [
-        {
-            provider: fontProviders.google(),
-            name: "Bona Nova SC",
-            cssVariable: "--font-quote",
-            display: "swap",
-            subsets: ["latin"],
-        },
-    ],
     vite: { plugins: [tailwindcss()] },
     site:
         process.env.NODE_ENV === "development"

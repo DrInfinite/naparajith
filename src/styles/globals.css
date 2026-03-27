@@ -1,52 +1,18 @@
 /**
-* This website is only meant to showcase the work and and skills of the author,
-* on a professional level. It also has a blog, containing the author's observations
-* and opinions on various topics. The views expressed are the author's own.
-* Copyright (C) 2026  T L Naparajith
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Affero General Public License Version 3 as published
-* by the Free Software Foundation.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU Affero General Public License for more details.
-*
-* You should have received a copy of the GNU Affero General Public License
-* along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
-*
-* Contact me through electronic mail: <naparajith@duck.com>
-*/
+ * Copyright Naparajith T L (DrInfinite) 2024, 2026
+ * SPDX-License-Identifier: MIT
+ */
 
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 
+@import "./forms.css";
 @import "./table.css";
 @import "./typography.css";
-
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-/* @layer base { */
-/*     *, */
-/*     ::after, */
-/*     ::before, */
-/*     ::backdrop, */
-/*     ::file-selector-button { */
-/*         border-color: var(--color-gray-200, currentcolor); */
-/*     } */
-/* } */
 
 @theme {
     --font-sans: sans-serif;
     --font-serif: serif;
-    --font-quote: ;
 }
 
 @layer utilities {
@@ -61,23 +27,15 @@
     }
 
     body {
-        @apply container mx-auto space-y-2 scroll-smooth px-4 antialiased sm:px-6 md:space-y-4 lg:space-y-6 lg:px-8 xl:space-y-8;
+        @apply container mx-auto max-w-7xl space-y-2 scroll-smooth px-4 antialiased sm:px-6 md:space-y-4 lg:space-y-6 lg:px-8 xl:space-y-8;
     }
 
     article {
         @apply space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8;
     }
 
-    a {
-        @apply text-blue-700 underline visited:text-purple-700 hover:text-fuchsia-700 active:text-red-700 [&:has(>cite)]:no-underline [&:has(>cite)]:after:content-['_(c)'] [[href^='mailto:']]:after:content-['_(m)'] [&[href^='http']:not(:has(cite))]:after:content-['_(e)'];
-
-        /* &:visited { */
-        /*      visited:text-purple-700 visited:hover:text-fuchsia-700 visited:active:text-red-700 */
-        /* } */
-    }
-
     button {
-        @apply rounded-none border px-2 py-1 font-semibold md:px-4 md:py-2;
+        @apply rounded-full border bg-gray-200 px-2 font-semibold hover:cursor-pointer hover:bg-gray-300;
     }
 
     details {
@@ -88,15 +46,19 @@
         @apply font-semibold;
     }
 
-    blockquote {
-        @apply font-quote mt-6 border-l-2 pl-6 text-base font-black italic md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl;
-    }
-
     details[open] summary {
         @apply border border-t-0 border-r-0 border-l-0 pb-0;
     }
 
     ul {
         @apply my-6 ml-6 list-disc [&>li]:mt-2;
+    }
+
+    ol {
+        @apply my-6 ml-6 list-decimal [&>li]:mt-2;
+    }
+
+    a {
+        @apply text-blue-700 underline visited:text-purple-700 hover:text-fuchsia-700 active:text-red-700 active:no-underline [&:has(>cite)]:no-underline [&:has(>cite)]:after:content-['_(c)'] [[href^='mailto:']]:after:content-['_(m)'] [&[href^='http']:not(:has(cite))]:after:content-['_(e)'];
     }
 }

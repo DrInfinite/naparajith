@@ -1,26 +1,6 @@
 ---
-/**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
- */
-
 import Layout from "@/layouts/Layout.astro";
+import Link from "@/components/Link.astro";
 
 const tools = [
     {
@@ -38,6 +18,10 @@ const tools = [
 ];
 ---
 
+<!--
+ Copyright Naparajith T L (DrInfinite) 2024, 2026
+ SPDX-License-Identifier: MIT
+-->
 <Layout
     title="Tools"
     description="A collection of simple tools for everyday tasks"
@@ -46,22 +30,14 @@ const tools = [
     <p>A collection of simple tools that make everyday tasks a bit easier.</p>
     {
         tools.map((tool) => (
-            <a
-                href={`/tools/${tool.url}`}
-                class="border-border ~mb-4/8 hover:bg-foreground/10 flex w-full flex-col justify-evenly rounded-none border decoration-transparent"
-            >
-                <article class="~gap-2/4 ~p-2/4">
-                    <h4
-                        class="-my-px truncate font-sans"
-                        transition:name="post-title"
-                    >
+            <div class="flex w-full flex-col justify-evenly gap-2 rounded-md border p-2 md:p-2.5 lg:p-3 xl:p-3.5 2xl:p-4">
+                <h4 class="truncate" transition:name="post-title">
+                    <Link href={`/tools/${tool.url}`} title={tool.name}>
                         {tool.name}
-                    </h4>
-                    <small class="bg-linear-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-white/25">
-                        {tool.description}
-                    </small>
-                </article>
-            </a>
+                    </Link>
+                </h4>
+                <small>{tool.description}</small>
+            </div>
         ))
     }
 </Layout>

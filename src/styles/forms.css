@@ -1,0 +1,12 @@
+/**
+ * Copyright Naparajith T L (DrInfinite) 2024, 2026
+ * SPDX-License-Identifier: MIT
+ */
+
+input {
+    @apply mt-2 rounded-md;
+}
+
+select {
+    @apply mt-2 ml-2 rounded-md;
+}

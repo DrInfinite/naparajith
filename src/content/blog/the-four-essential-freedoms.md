@@ -7,9 +7,14 @@ created: 09-02-2025
 updated: 09-02-2025
 image: "../../images/the-four-essential-freedoms.jpg"
 image_source: Generated using Bing Image Creator
-author: naparajith
+author: 4PYrm3HYr6TZIPLgvLdu77
 draft: true
 ---
+
+<!--
+ Copyright Naparajith T L (DrInfinite) 2024, 2026
+ SPDX-License-Identifier: MIT
+-->
 
 In the immortal words of the 32nd President of the United States, Franklin
 Delano Roosevelt, there are 4 essential freedoms:

@@ -1,3 +1,15 @@
+/**
+ * Copyright Naparajith T L (DrInfinite) 2024, 2026
+ * SPDX-License-Identifier: MIT
+ */
+
+h1,
+h2,
+h3,
+h4 {
+    @apply font-serif;
+}
+
 h1 {
     @apply scroll-m-20 text-center text-4xl font-bold tracking-tight text-balance;
 }
@@ -15,7 +27,11 @@ h4 {
 }
 
 p {
-    @apply text-justify leading-7 text-pretty not-first:mt-6;
+    @apply text-justify leading-7 text-pretty not-first:mt-4;
+}
+
+blockquote {
+    @apply mt-6 border-l-2 pl-6 font-serif text-lg font-black italic md:text-xl lg:text-2xl xl:text-3xl;
 }
 
 code {

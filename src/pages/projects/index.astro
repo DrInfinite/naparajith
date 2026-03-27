@@ -1,25 +1,4 @@
 ---
-/**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
- */
-
 import Layout from "@/layouts/Layout.astro";
 import Link from "@/components/Link.astro";
 
@@ -27,7 +6,12 @@ const projects: {
     url: string;
     name: string;
     description: string;
-    source: "Internal Link" | "GitHub" | "GitLab" | "External Website";
+    source:
+        | "Internal Link"
+        | "Codeberg"
+        | "GitHub"
+        | "GitLab"
+        | "External Website";
 }[] = [
     {
         url: "https://github.com/basecamp/omarchy",
@@ -45,6 +29,10 @@ const projects: {
 ];
 ---
 
+<!--
+ Copyright Naparajith T L (DrInfinite) 2024, 2026
+ SPDX-License-Identifier: MIT
+-->
 <Layout
     title="Projects"
     description="A curated list of technical projects that I have worked on"
@@ -56,17 +44,17 @@ const projects: {
     </p>
     {
         projects.map((project) => (
-            <span class="flex flex-col gap-2 border border-black p-2">
-                <div class="flex justify-between">
+            <div class="flex w-full flex-col justify-evenly gap-2 rounded-md border p-2 md:p-2.5 lg:p-3 xl:p-3.5 2xl:p-4">
+                <span class="flex justify-between">
                     <h4>
                         <Link href={project.url} title={project.name}>
                             {project.name}
                         </Link>
                     </h4>
                     <small>{project.source}</small>
-                </div>
+                </span>
                 <strong>{project.description}</strong>
-            </span>
+            </div>
         ))
     }
     <p class="italic">

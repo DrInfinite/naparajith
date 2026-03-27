@@ -1,27 +1,23 @@
 /**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
+ * Copyright Naparajith T L (DrInfinite) 2024, 2026
+ * SPDX-License-Identifier: MIT
  */
 
 import { glob } from "astro/loaders";
 import { defineCollection, reference } from "astro:content";
 import { z } from "astro/zod";
+import { contentLoader } from "@/lib/contentful";
+import type { Author, LearningObjectives, Quote } from "@/lib/content";
+
+const authors = defineCollection({
+    loader: contentLoader<Author>("author"),
+    schema: z.object({
+        name: z.string(),
+        occupation: z.string(),
+        social: z.url(),
+        image: z.url(),
+    }),
+});
 
 const blog = defineCollection({
     loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/blog" }),
@@ -50,42 +46,20 @@ const policy = defineCollection({
     }),
 });
 
-const license = defineCollection({
-    loader: glob({
-        pattern: "**/[^_]*.{md,mdx}",
-        base: "./src/content/license",
-    }),
-    schema: z.object({
-        title: z.string(),
-        license_name: z.string(),
-        description: z.string(),
-    }),
-});
-
 const quotes = defineCollection({
-    // type: "data",
-    loader: glob({
-        pattern: "*.{json,jsonc}",
-        base: "./src/content/quotes",
-    }),
+    loader: contentLoader<Quote>("quotes"),
     schema: z.object({
-        cite: z.string(),
-        quote: z.string(),
+        quoteId: z.string(),
         author: z.string(),
+        quote: z.string(),
+        cite: z.url(),
     }),
 });
 
-const authors = defineCollection({
-    // type: "data",
-    loader: glob({
-        pattern: "*.{json,jsonc}",
-        base: "./src/content/authors",
-    }),
+const learning = defineCollection({
+    loader: contentLoader<LearningObjectives>("learning"),
     schema: z.object({
-        name: z.string(),
-        occupation: z.string(),
-        social: z.url(),
-        image: z.url(),
+        objective: z.string(),
     }),
 });
 
@@ -103,5 +77,5 @@ export const collections = {
     policy: policy,
     profile: profile,
     quotes: quotes,
-    license: license,
+    learning: learning,
 };

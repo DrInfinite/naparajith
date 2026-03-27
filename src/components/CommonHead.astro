@@ -1,0 +1,43 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    ogImage?: string | undefined;
+}
+
+const { title, description, ogImage } = Astro.props;
+const defaultOgImage = "https://avatars.githubusercontent.com/u/74095696?v=4";
+---
+
+<!--
+ Copyright Naparajith T L (DrInfinite) 2024, 2026
+ SPDX-License-Identifier: MIT
+-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://mastodon.social/@naparajith" rel="me" />
+
+    <title>
+        {
+            Astro.url.pathname === "/"
+                ? "Naparajith (Naps) T L"
+                : `${title} | Naps ∘ DrInfinite`
+        }
+    </title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="Naparajith" />
+    <meta property="og:title" content=`${title} | Naparajith` />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content={ogImage || defaultOgImage} />
+
+    <meta property="twitter:title" content=`${title} | Naparajith` />
+    <meta property="twitter:description" content={description} />
+</head>

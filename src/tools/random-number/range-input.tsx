@@ -1,22 +1,6 @@
 /**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
+ * Copyright Naparajith T L (DrInfinite) 2024, 2026
+ * SPDX-License-Identifier: MIT
  */
 
 import type { ChangeEvent } from "react";
@@ -44,21 +28,11 @@ export default function RangeInput({
         <div className="space-y-4">
             <label className="flex flex-col justify-evenly">
                 Lower Limit
-                <input
-                    type="number"
-                    value={min}
-                    onChange={handleMinChange}
-                    className="border-border bg-background text-foreground placeholder-muted-foreground focus:ring-ring w-full flex-1 rounded-none border px-3 py-2 shadow-xs focus:ring-2 focus:outline-hidden"
-                />
+                <input type="number" value={min} onChange={handleMinChange} />
             </label>
             <label className="flex flex-col justify-evenly">
                 Upper Limit
-                <input
-                    type="number"
-                    value={max}
-                    onChange={handleMaxChange}
-                    className="border-border bg-background text-foreground placeholder-muted-foreground focus:ring-ring w-full flex-1 rounded-none border px-3 py-2 shadow-xs focus:ring-2 focus:outline-hidden"
-                />
+                <input type="number" value={max} onChange={handleMaxChange} />
             </label>
         </div>
     );

@@ -26,9 +26,10 @@ import { GithubProfile } from "@/actions/github-profile";
 const updated_at = new Date((await GithubProfile()).updated_at).toDateString();
 ---
 
-<span class="flex flex-col border border-black p-2">
+<span class="flex flex-col rounded-md border p-2">
     <span>
-        <Link href="/quick-view/github" title={"GitHub"}>GitHub</Link>
+        <Link href="https://github.com/DrInfinite" title={"GitHub"}>GitHub</Link
+        >
     </span>
     <div class="my-2 border border-black transition-all duration-300"></div>
     <small class="font-normal">

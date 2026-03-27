@@ -3,13 +3,19 @@ import Link from "@/components/Link.astro";
 interface Props {
     author: string;
     cite: string | null | undefined;
+    id?: string | null | undefined;
+    quoteId?: string | null | undefined;
 }
 
-const { author, cite } = Astro.props;
+const { author, cite, id, quoteId } = Astro.props;
 ---
 
-<figure class="space-y-4 p-4">
-    <blockquote cite={cite}>
+<!--
+ Copyright Naparajith T L (DrInfinite) 2024, 2026
+ SPDX-License-Identifier: MIT
+-->
+<figure class="space-y-4 p-4" id={id}>
+    <blockquote cite={cite} id={quoteId}>
         <slot />
     </blockquote>
     <figcaption>

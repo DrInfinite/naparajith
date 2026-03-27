@@ -1,25 +1,4 @@
 ---
-/**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
- */
-
 export const prerender = false;
 
 import Layout from "@/layouts/Layout.astro";
@@ -28,7 +7,6 @@ import { Image } from "astro:assets";
 import GitHubCard from "@/components/quick-view/GitHubCard.astro";
 import LeetcodeCard from "@/components/quick-view/LeetcodeCard.astro";
 import Link from "@/components/Link.astro";
-// import LinksContainer from "@/components/containers/Links.astro";
 
 const blog = await getCollection("blog");
 
@@ -81,6 +59,10 @@ const cards = [
 ];
 ---
 
+<!--
+ Copyright Naparajith T L (DrInfinite) 2024, 2026
+ SPDX-License-Identifier: MIT
+-->
 <Layout
     title="Quick View"
     description="A collection of Quick Links for my personal website"
@@ -96,7 +78,7 @@ const cards = [
             >
                 <Image
                     alt="DrInfinite"
-                    class="mx-auto scale-90 rounded-none"
+                    class="mx-auto scale-90 rounded-md"
                     width={480}
                     height={480}
                     priority
@@ -105,7 +87,7 @@ const cards = [
             </span>
             <div>
                 <h2 class="text-center">Naparajith (Naps) T L</h2>
-                <h3 class="text-center">SAFe 6.0 Certified SDET</h3>
+                <h3 class="text-center">Software Engineer in Test (SDET) 2</h3>
             </div>
         </article>
 
@@ -117,7 +99,7 @@ const cards = [
             <div class="mx-auto grid w-full max-w-6xl grid-cols-3 gap-4 p-4">
                 {
                     cards.map((card) => (
-                        <span class="border border-black p-2">
+                        <span class="rounded-md border p-2">
                             <Link href={card.href} title={card.title}>
                                 {card.innerHTML}
                             </Link>
@@ -126,29 +108,16 @@ const cards = [
                 }
             </div>
 
-            <!-- <LinksContainer> -->
-            <!--     { -->
-            <!--         cards.map((card) => ( -->
-            <!--             <Link href={card.href} title={card.title}> -->
-            <!--                 {card.innerHTML} -->
-            <!--             </Link> -->
-            <!--         )) -->
-            <!--     } -->
-            <!-- </LinksContainer> -->
-
             <div
                 class="mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 p-4 text-left sm:grid-cols-2 md:grid-cols-3"
             >
                 <GitHubCard />
                 <LeetcodeCard />
-                <span class="flex flex-col border border-black p-2">
+                <span class="flex flex-col rounded-md border p-2">
                     <span>
                         <Link href="/blog" title="Portfolio - Blog"> Blog</Link>
                     </span>
-                    <div
-                        class="my-2 border border-black transition-all duration-300"
-                    >
-                    </div>
+                    <div class="my-2 border transition-all duration-300"></div>
                     <small class="font-normal">
                         <u>Last Posted:</u>{" "}
                         <strong

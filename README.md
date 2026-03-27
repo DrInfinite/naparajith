@@ -1,58 +1,60 @@
+<!--
+ Copyright Naparajith T L (DrInfinite) 2024, 2026
+ SPDX-License-Identifier: MIT
+-->
+
 # Naparajith's Developer Portfolio
+
+My developer portfolio built with advanced web standards, optimised SEO and
+blazingly fast performance.
+
+## 📊 Tech Stack
+
+This project is built with a modern tech stack optimized for performance and
+developer experience:
+
+- **Astro** (44.3%) - Frontend framework for blazing-fast static site generation
+- **MDX** (36.5%) - Markdown with embedded component support for dynamic content
+- **TypeScript** (12.5%) - Type-safe scripting for robust code
+- **JavaScript** (5%) - Client-side interactivity
+- **CSS** (1.7%) - Styling and design system
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside of this Astro project, you'll see the following folders and files:
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   ├── A.astro
-│   │   ├── ACard.astro
-│   │   └── Header.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   ├── pages/
-│   │   ├── index.astro
-│   │   ├── quick-view/
-│   │   │   ├── index.astro
-│   │   │   └── github.astro
-│   │   └── quotes/
-│   │       └── [slug].astro
-│   ├── actions/
-│   │   ├── github/
-│   │   │   └── repositories.ts
-│   │   └── github-profile.ts
-│   ├── content/
-│   │   ├── blog/
-│   │   │   └── *.md
-│   │   ├── license/
-│   │   │   └── code.mdx
-│   │   ├── policy/
-│   │   │   └── *.md
-│   │   └── profile/
-│   │       └── *.md
-│   ├── content.config.ts
-│   └── tailwind.config.mjs
+├── .gitignore
+├── .husky/
+├── .prettierignore
+├── .prettierrc.mjs
+├── .vscode/
+├── LICENSE
+├── README.md
+├── astro.config.mjs
+├── commitlint.config.js
 ├── package.json
-└── README.md
+├── pnpm-lock.yaml
+├── public/
+├── reading-time.mjs
+├── src/
+├── tailwind.config.mjs
+└── tsconfig.json
 ```
 
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command                    | Action                                           |
+| :------------------------- | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm run build`           | Build your production site to `./dist/`          |
+| `pnpm run preview`         | Preview your build locally, before deploying     |
+| `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm run astro -- --help` | Get help using the Astro CLI                     |
 
 ## 🪪 License
 

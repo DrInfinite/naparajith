@@ -2,35 +2,19 @@
 title: The Unfortunate over-hyping of Artificial Intelligence
 description:
     AI has revolutionized the world in profound ways. But it's being portrayed
-    unfairly and in the wrong light. We need to focus beyond the hype to gain
-    meaning out of this new tool.
+    unfairly and in the wrong light.
 created: 02-26-2025
 updated: 08-29-2025
 image: "../../images/the-unfortunate-overhyping-of-ai.jpeg"
 image_source: Generated using Bing Image Creator
-author: naparajith
+author: 4PYrm3HYr6TZIPLgvLdu77
 draft: false
 ---
 
-<!-- This website is only meant to showcase the work and and skills of the author, on -->
-<!-- a professional level. It also has a blog, containing the author's observations -->
-<!-- and opinions on various topics. The views expressed are the author's own. -->
-<!-- Copyright (C) 2026 T L Naparajith -->
-<!---->
-<!-- This program is free software: you can redistribute it and/or modify it under -->
-<!-- the terms of the GNU Affero General Public License Version 3 as published by the -->
-<!-- Free Software Foundation. -->
-<!---->
-<!-- This program is distributed in the hope that it will be useful, but WITHOUT ANY -->
-<!-- WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A -->
-<!-- PARTICULAR PURPOSE. See the GNU Affero General Public License for more details. -->
-<!---->
-<!-- You should have received a copy of the GNU Affero General Public License along -->
-<!-- with this program. If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>. -->
-<!---->
-<!-- Contact me through electronic mail: <naparajith@duck.com> -->
-
-<!-- import A from "@/components/Link.astro"; -->
+<!--
+ Copyright Naparajith T L (DrInfinite) 2024, 2026
+ SPDX-License-Identifier: MIT
+-->
 
 Over the past few years, AI has made tremendous progress in innovation and
 growth, with the industry adopting it at an unprecedented rate. The release of
