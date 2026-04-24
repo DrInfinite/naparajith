@@ -1,20 +1,15 @@
 ---
-title: The Unfortunate over-hyping of Artificial Intelligence
+title: 'The Unfortunate over-hyping of Artificial Intelligence'
 description:
-    AI has revolutionized the world in profound ways. But it's being portrayed
-    unfairly and in the wrong light.
+  "AI has revolutionized the world in profound ways. But it's being portrayed
+  unfairly and in the wrong light."
 created: 02-26-2025
 updated: 08-29-2025
-image: "../../images/the-unfortunate-overhyping-of-ai.jpeg"
-image_source: Generated using Bing Image Creator
-author: 4PYrm3HYr6TZIPLgvLdu77
+image: '../../images/the-unfortunate-overhyping-of-ai.jpeg'
+image_source: 'Generated using Bing Image Creator'
+author: 'naparajith'
 draft: false
 ---
-
-<!--
- Copyright Naparajith T L (DrInfinite) 2024, 2026
- SPDX-License-Identifier: MIT
--->
 
 Over the past few years, AI has made tremendous progress in innovation and
 growth, with the industry adopting it at an unprecedented rate. The release of

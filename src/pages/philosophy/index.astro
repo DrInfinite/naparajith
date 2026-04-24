@@ -1,18 +1,26 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import BackIcon from '@/components/icons/Back.astro';
+import Layout from '@/layouts/Layout.astro';
 ---
 
-<!--
- Copyright Naparajith T L (DrInfinite) 2024, 2026
- SPDX-License-Identifier: MIT
--->
-<Layout
-    title="Philosophy"
-    description="A curated list of philosophies that I adhere by"
->
-    <h1>Coming Soon...</h1>
-    <p>
-        I am currently working on fleshing this page with meaningful content.
-        Check back in some time to see the fully built page.
-    </p>
+<Layout title="philosophy" description="good things take time...">
+  <div class="mx-auto w-full max-w-4xl px-6 py-16">
+    <Header title="philosophy"> good things take time </Header>
+    <div class="flex flex-col gap-3">
+      <h4>this page is currently a work in progress</h4>
+    </div>
+    <aside class="mb-8 text-center">
+      <a
+        href="/"
+        title="back"
+        class="group mt-8 -mb-4 inline-flex items-center justify-center gap-2"
+      >
+        <BackIcon />
+        <span class="text-sm tracking-wide">back</span>
+      </a>
+    </aside>
+    <Footer />
+  </div>
 </Layout>

@@ -1,211 +1,27 @@
 ---
-import Link from "@/components/Link.astro";
-import Quote from "@/components/Quote.astro";
-import { Image } from "astro:assets";
-import Layout from "@/layouts/Layout.astro";
-import LinksContainer from "@/components/containers/Links.astro";
-import ArticleContainer from "@/components/containers/Article.astro";
-import { getCollection, getEntry } from "astro:content";
-
-const learning = await getCollection("learning");
-const quotes = await getCollection("quotes");
-let posts = await getCollection("blog");
-
-quotes.sort((a, b) => a.data.author.localeCompare(b.data.author));
-const quote = quotes[Math.floor(Math.random() * quotes.length)];
-
-if (process.env.NODE_ENV === "production")
-    posts = posts.filter((acc) => acc.data.draft !== true);
-const post = posts[Math.floor(Math.random() * posts.length)]!;
-
-const author = await getEntry(post.data.author);
-
-const pages = [
-    { href: "/profile", title: "Profile", label: "Profile" },
-    { href: "/quick-view", title: "Quick View", label: "Quick View" },
-    { href: "/blog", title: "Blog", label: "Blog" },
-    { href: "/quotes", title: "Quotes", label: "Quotes" },
-    { href: "/projects", title: "Projects", label: "Projects" },
-    { href: "/tools", title: "Tools", label: "Tools" },
-    { href: "/design", title: "Design", label: "Design" },
-    { href: "/philosophy", title: "Philosophy", label: "Philosophy" },
-    { href: "/philosophy/freedoms", title: "Freedoms", label: "Freedoms" },
-    { href: "/heroes", title: "Wall of Heroes", label: "Wall of Heroes" },
-];
-
-const socials = [
-    {
-        href: "https://github.com/DrInfinite",
-        title: "GitHub - DrInfinite",
-        label: "GitHub",
-    },
-    {
-        href: "https://www.linkedin.com/in/naparajith/",
-        title: "LinkedIn - Naparajith T L",
-        label: "LinkedIn",
-    },
-    {
-        href: "https://leetcode.com/u/DrInfinite/",
-        title: "Leetcode - DrInfinite",
-        label: "Leetcode",
-    },
-    {
-        href: "https://bsky.app/profile/naparajith.in",
-        title: "Naparajith | DrInfinite (@naparajith.in)",
-        label: "BlueSky",
-    },
-    {
-        href: "https://mastodon.social/@naparajith",
-        title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
-        label: "Mastodon",
-    },
-].sort((a, b) => a.label.localeCompare(b.label));
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import CTALink from '@/components/links/CTALink.astro';
+import { INTERNAL } from '@/data/links';
+import Layout from '@/layouts/Layout.astro';
 ---
 
-<!--
- Copyright Naparajith T L (DrInfinite) 2024, 2026
- SPDX-License-Identifier: MIT
--->
-<Layout
-    title="Home"
-    description="The personal portfolio of T L Naparajith, a Software Engineer from India."
->
-    <article>
-        <figure
-            class="flex flex-col content-around items-center justify-around"
-        >
-            <span
-                class="-my-px size-48 sm:size-56 md:size-64 lg:size-72 xl:size-84 2xl:size-96"
-            >
-                <Image
-                    alt="DrInfinite"
-                    class="mx-auto scale-90 rounded-md"
-                    width={480}
-                    height={480}
-                    priority
-                    src="https://avatars.githubusercontent.com/u/74095696?v=4"
-                />
-            </span>
-
-            <figcaption
-                class="p-2 text-center font-semibold md:p-2.5 lg:p-3 xl:p-3.5 2xl:p-4"
-            >
-                <span class="italic">This image comes from my</span>
-                <Link href="https://github.com/DrInfinite">
-                    GitHub Profile
-                </Link>
-            </figcaption>
-        </figure>
-        <p class="flex flex-row justify-center-safe font-bold">
-            I'm a software engineer focused on solving meaningful problems and
-            continually deepening my expertise across the stack.
-        </p>
-    </article>
-
-    <LinksContainer>
+<Layout title="home" description="hi! i'm naps and i break things!!">
+  <div
+    class="relative flex min-h-screen flex-col items-center justify-center px-6"
+  >
+    <div class="relative z-10 w-full max-w-xs">
+      <Header title="naps">breaks things</Header>
+      <nav class="flex flex-col gap-3">
         {
-            pages.map((link) => (
-                <Link href={link.href} title={link.title}>
-                    {link.label}
-                </Link>
-            ))
+          INTERNAL.HOME.CTA.map((link) => (
+            <CTALink href={link.url} title={link.title}>
+              {link.title.toLocaleLowerCase()}
+            </CTALink>
+          ))
         }
-    </LinksContainer>
-    <LinksContainer>
-        {
-            socials.map((link) => (
-                <Link href={link.href} title={link.title}>
-                    {link.label}
-                </Link>
-            ))
-        }
-    </LinksContainer>
-
-    <div class="text-center">
-        <Link
-            href="https://flowcv.com/resume/mdrssqq018"
-            title="Resume"
-            class="font-semibold"
-        >
-            Download my latest Resume
-        </Link>
+      </nav>
+      <Footer />
     </div>
-
-    <div class="flex flex-row justify-center-safe">
-        <p>
-            Before proceeding to interact with this site, parse through its
-            content or analyse its source code,{" "}
-            <Link href="/notice" title="Notice" class="font-semibold">
-                please be informed.
-            </Link>
-        </p>
-    </div>
-
-    <main>
-        <div
-            class="space-y-4 md:space-y-5 lg:space-y-6 xl:space-y-7 2xl:space-y-8"
-        >
-            <hr class="my-4 border" />
-            <h2>Featured Quote</h2>
-            <div class="place-content-center rounded-md border p-2">
-                <Quote
-                    cite={quote?.data.cite}
-                    author={quote?.data.author!}
-                    id={quote?.id}
-                    quoteId={quote?.data.quoteId}
-                >
-                    {quote?.data.quote}
-                </Quote>
-                <div class="float-end">
-                    <Link href="/quotes" title="Quotes">more like this</Link>
-                </div>
-            </div>
-            <h2>Featured Blog Post</h2>
-            <ArticleContainer
-                id={post.id}
-                image={post.data.image}
-                title={post.data.title}
-                description={post.data.description}
-                date={post.data.created.toDateString()}
-                author={author.data.name}
-            />
-            <hr class="my-4 border" />
-        </div>
-        <div>
-            <p>
-                When I was a kid, I was told a really inspiring quote about
-                learning, which goes something like this:
-                <Quote
-                    author="Mahābhārata Udyoga Parva 44:16"
-                    cite="https://blog.practicalsanskrit.com/2009/12/how-we-learn-and-grow.html"
-                >
-                    A disciple learns one quarter from the acharya [teacher],
-                    one quarter through his own intelligence, one quarter comes
-                    to him through the influence of time, and one quarter from
-                    his fellow students.
-                </Quote>
-                I intend to make learning a long-term commitment. Here are a few areas
-                I'm actively exploring:
-            </p>
-            <ul>
-                {
-                    learning.map((concept) => (
-                        <li id={concept.id}>{concept.data.objective}</li>
-                    ))
-                }
-            </ul>
-            <p>
-                If you’d like to collaborate or share feedback on any of these
-                topics, please write to
-                <Link
-                    href="mailto:naparajith@duck.com"
-                    title="E-Mail Address"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    naparajith@duck.com
-                </Link>.
-            </p>
-        </div>
-    </main>
+  </div>
 </Layout>

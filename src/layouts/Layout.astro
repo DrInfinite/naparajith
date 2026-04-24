@@ -1,28 +1,73 @@
 ---
-import "@/styles/globals.css";
-
-import Footer from "@/components/Footer.astro";
-import Header from "@/components/Header.astro";
-import Head from "@/components/CommonHead.astro";
+import '@/styles/global.css';
 
 interface Props {
-    title: string;
-    description: string;
-    ogImage?: string | undefined;
+  title: string;
+  description: string;
+  ogImage?: string | undefined;
 }
 
 const { title, description, ogImage } = Astro.props;
 ---
 
-<!--
- Copyright Naparajith T L (DrInfinite) 2024, 2026
- SPDX-License-Identifier: MIT
--->
-<html lang="en">
-    <Head title={title} description={description} ogImage={ogImage} />
-    <body>
-        <Header />
-        <slot />
-        <Footer />
-    </body>
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme'))
+      return localStorage.getItem('theme');
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  };
+
+  const isDark = getThemePreference() === 'dark';
+  document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+  if (typeof localStorage !== 'undefined') {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+  }
+</script>
+
+<html lang="en" style="view-transition-name:root">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://mastodon.social/@naparajith" rel="me" />
+    <meta name="generator" content={Astro.generator} />
+    <title>
+      {Astro.url.pathname === '/' ? 'naps ∘ drinfinite' : `${title} | naps`}
+    </title>
+    <meta name="description" content={description} />
+
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="naparajith" />
+    <meta property="og:title" content=`${title} | naparajith` />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta property="twitter:title" content=`${title} | naparajith` />
+    <meta property="twitter:description" content={description} />
+  </head>
+  <body
+    class="bg-background text-foreground selection:bg-accent selection:text-accent-foreground container mx-auto min-h-full"
+  >
+    <div
+      class="pointer-events-none absolute top-1/2 left-1/2 size-150 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,var(--color-primary)_0%,transparent_70%)] opacity-[0.05]"
+    >
+    </div>
+    <main class="flex flex-col">
+      <slot />
+    </main>
+  </body>
 </html>

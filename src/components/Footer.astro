@@ -1,37 +1,20 @@
 ---
-import A from "@/components/Link.astro";
-import LinksContainer from "@/components/containers/Links.astro";
-
-const year = new Date().getFullYear();
+import Link from '@/components/links/Link.astro';
+import { EXTERNAL_ARRAY } from '@/data/links';
 ---
 
-<!--
- Copyright Naparajith T L (DrInfinite) 2024, 2026
- SPDX-License-Identifier: MIT
--->
 <footer
-    class="my-8 space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8"
-    transition:persist
+  class="border-border mt-16 flex items-center justify-center gap-x-5 border-t pt-6 tracking-wider"
 >
-    <LinksContainer>
-        <A href={"/policy"} title={"Policy"}>Policy</A>
-        <A href={"/notice"} title={"Notice"}>Notice</A>
-        <A href={"/license"} title={"License"}>License</A>
-        <a rel="me" class="hidden" href="https://mastodon.social/@naparajith">
-            Mastodon
-        </a>
-    </LinksContainer>
-    <span class="flex items-center justify-center gap-4 rounded-md border p-2">
-        <span
-            >&copy; {year} by <A
-                rel="cc:attributionURL dct:creator"
-                property="cc:attributionName"
-                href="https://gravatar.com/naparajithtl"
-                target="_blank"
-                title={"Author"}
-            >
-                Naparajith T L
-            </A>.</span
-        >
-    </span>
+  {
+    EXTERNAL_ARRAY.sort((a, b) =>
+      a.value.title.localeCompare(b.value.title),
+    ).map(({ value: { url, title, icon } }) => (
+      <small>
+        <Link href={url} title={title}>
+          {icon}
+        </Link>
+      </small>
+    ))
+  }
 </footer>

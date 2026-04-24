@@ -1,49 +1,66 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Quote from "@/components/Quote.astro";
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
+import Quote from '@/components/Quote.astro';
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import BackIcon from '@/components/icons/Back.astro';
 
-const quotes = await getCollection("quotes");
-const author = Astro.params.slug;
+const quotes = await getCollection('quotes');
+const author = Astro.params.slug
+  .split('-')
+  .map((word) => String(word).charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
 const authorQuotes = quotes.filter((quote) => quote.data.author === author);
 
 export const getStaticPaths = async () => {
-    const quotes = await getCollection("quotes");
-    const authors = [...new Set(quotes.map((quote) => quote.data.author))];
-    return authors.map((author) => ({
-        params: { slug: author },
-        props: {},
-    }));
+  const quotes = await getCollection('quotes');
+  const authors = [...new Set(quotes.map((quote) => quote.data.author))];
+  return authors.map((author) => ({
+    params: {
+      slug: author
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-'),
+    },
+    props: {},
+  }));
 };
 ---
 
-<!--
- Copyright Naparajith T L (DrInfinite) 2024, 2026
- SPDX-License-Identifier: MIT
--->
 <Layout
-    title={`Quotes by ${author}`}
-    description={`A collection of quotes by ${author}`}
+  title={`quotes by ${author}`}
+  description={`a collection of quotes by ${author}`}
 >
-    <main class="min-h-[60vh]">
-        <p>
-            A collection of quotes attributed to {author} that I resonate with and
-            wish to share with a wider audience.
-        </p>
-
-        {
-            authorQuotes
-                .sort((a, b) => parseInt(a.id) - parseInt(b.id))
-                .map((quote) => (
-                    <Quote
-                        cite={quote.data.cite}
-                        author={quote.data.author}
-                        id={quote?.id}
-                        quoteId={quote?.data.quoteId}
-                    >
-                        {quote.data.quote}
-                    </Quote>
-                ))
-        }
-    </main>
+  <div class="mx-auto w-full max-w-4xl px-6 py-16">
+    <Header title=`quotes by ${author.toLocaleLowerCase()}`>
+      A collection of quotes attributed to {author} that I resonate with
+    </Header>
+    {
+      authorQuotes
+        .sort((a, b) => parseInt(a.id) - parseInt(b.id))
+        .map((quote) => (
+          <Quote
+            cite={quote.data.cite}
+            author={quote.data.author}
+            id={quote?.id}
+            quoteId={quote?.data.quoteId}
+          >
+            {quote.data.quote}
+          </Quote>
+        ))
+    }
+    <aside class="mb-8 text-center">
+      <a
+        href="/quotes"
+        title="back"
+        class="group mt-8 -mb-4 inline-flex items-center justify-center gap-2"
+      >
+        <BackIcon />
+        <span class="text-sm tracking-wide">back</span>
+      </a>
+    </aside>
+    <Footer />
+  </div>
 </Layout>

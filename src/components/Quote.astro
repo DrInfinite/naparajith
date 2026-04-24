@@ -1,10 +1,11 @@
 ---
-import Link from "@/components/Link.astro";
+import Link from '@/components/links/Link.astro';
+
 interface Props {
-    author: string;
-    cite: string | null | undefined;
-    id?: string | null | undefined;
-    quoteId?: string | null | undefined;
+  author: string;
+  cite: string | null | undefined;
+  id?: string | null | undefined;
+  quoteId?: string | null | undefined;
 }
 
 const { author, cite, id, quoteId } = Astro.props;
@@ -15,12 +16,12 @@ const { author, cite, id, quoteId } = Astro.props;
  SPDX-License-Identifier: MIT
 -->
 <figure class="space-y-4 p-4" id={id}>
-    <blockquote cite={cite} id={quoteId}>
-        <slot />
-    </blockquote>
-    <figcaption>
-        <Link cite href={cite} title=`${author} - ${cite}`>
-            {author}
-        </Link>
-    </figcaption>
+  <blockquote cite={cite} id={quoteId}>
+    <slot />
+  </blockquote>
+  <figcaption>
+    <Link cite href={cite} title=`${author} - ${cite}`>
+      {author}
+    </Link>
+  </figcaption>
 </figure>

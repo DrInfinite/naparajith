@@ -1,45 +1,62 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import ArticleContainer from "@/components/containers/Article.astro";
-import { getCollection, getEntry } from "astro:content";
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import BackIcon from '@/components/icons/Back.astro';
+import { getImage, Image } from 'astro:assets';
+import Layout from '@/layouts/Layout.astro';
+import { getCollection, getEntry } from 'astro:content';
+import CTALink from '@/components/links/CTALink.astro';
 
-let posts = await getCollection("blog");
-process.env.NODE_ENV === "development"
-    ? (posts = posts.sort(
-          (a, b) => b.data.created.getTime() - a.data.created.getTime(),
-      ))
-    : (posts = posts
-          .filter((acc) => acc.data.draft !== true)
-          .sort((a, b) => b.data.created.getTime() - a.data.created.getTime()));
+let posts = await getCollection('blog');
+process.env.NODE_ENV === 'development'
+  ? (posts = posts.sort(
+      (a, b) => b.data.created.getTime() - a.data.created.getTime(),
+    ))
+  : (posts = posts
+      .filter((acc) => acc.data.draft !== true)
+      .sort((a, b) => b.data.created.getTime() - a.data.created.getTime()));
+
+const hydratedPosts = await Promise.all(
+  posts.map(async (post) => ({
+    post,
+    imageSrc: (
+      await getImage({
+        src: post.data.image,
+        format: 'webp',
+      })
+    ).src,
+    authorName: (await getEntry(post.data.author)).data.name,
+  })),
+);
 ---
 
-<!--
- Copyright Naparajith T L (DrInfinite) 2024, 2026
- SPDX-License-Identifier: MIT
--->
-<Layout
-    title="Blog"
-    description="The Official Blog for Naparajith, a Software Engineer from India"
->
-    <h2>Articles</h2>
-    <main
-        class="inline-flex flex-col place-content-center justify-evenly gap-2 md:gap-2.5 lg:flex-row lg:gap-3 xl:gap-3.5 2xl:gap-4"
-    >
-        {
-            posts.map(async (post) => {
-                const author = await getEntry(post.data.author);
-                return (
-                    <ArticleContainer
-                        id={post.id}
-                        image={post.data.image}
-                        title={post.data.title}
-                        description={post.data.description}
-                        date={post.data.created.toDateString()}
-                        author={author.data.name}
-                    />
-                );
-            })
-        }
-        <!-- <h1>Coming Soon!</h1> -->
-    </main>
+<Layout title="blog" description="good things take time...">
+  <div class="mx-auto w-full max-w-4xl px-6 py-16">
+    <Header title="blog"> good things take time </Header>
+    <!-- <div -->
+    <!--   class="flex min-h-[60vh] flex-row flex-wrap place-content-center justify-evenly gap-2" -->
+    <!-- > -->
+    {
+      hydratedPosts.map(({ post, imageSrc, authorName }) => (
+        <CTALink
+          href={`/blog/${post.id}`}
+          rightTxt={post.data.created.toDateString()}
+        >
+          {post.data.title}
+        </CTALink>
+      ))
+    }
+    <!-- </div> -->
+    <aside class="mb-8 text-center">
+      <a
+        href="/"
+        title="back"
+        class="group mt-8 -mb-4 inline-flex items-center justify-center gap-2"
+      >
+        <BackIcon />
+        <span class="text-sm tracking-wide">back</span>
+      </a>
+    </aside>
+    <Footer />
+  </div>
 </Layout>

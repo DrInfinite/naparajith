@@ -1,52 +1,52 @@
 ---
-import A from "@/components/Link.astro";
-import Layout from "@/layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import BackIcon from '@/components/icons/Back.astro';
+import CTALink from '@/components/links/CTALink.astro';
+import Layout from '@/layouts/Layout.astro';
 
-const quotes = await getCollection("quotes");
+const quotes = await getCollection('quotes');
 const authors = [...new Set(quotes.map((quote) => quote.data.author))];
 ---
 
-<!--
- Copyright Naparajith T L (DrInfinite) 2024, 2026
- SPDX-License-Identifier: MIT
--->
 <Layout
-    title="Quotes I Like"
-    description="A collection of quotes from various authors"
+  title="quotes"
+  description="a collection of quotes by various people that a resonate with"
 >
-    <main class="min-h-[60vh]">
-        <p>
-            A collection of quotes by various people that I resonate with and
-            want to share with a wider audience.
-        </p>
-        <p class="text-center">
-            <A href="/quotes/all">A list of all the quotes that I like</A>
-        </p>
-        <p>Here is the list ordered by individual authors:</p>
-        <table>
-            <thead>
-                <th>Author</th>
-                <th>Count</th>
-            </thead>
-            <tbody>
-                {
-                    authors.sort().map((author) => (
-                        <tr>
-                            <td>
-                                <A href={`/quotes/${author}`}>{author}</A>
-                            </td>
-                            <td>
-                                {
-                                    quotes.filter(
-                                        (quote) => quote.data.author === author,
-                                    ).length
-                                }
-                            </td>
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table>
-    </main>
+  <div class="mx-auto w-full max-w-4xl px-6 py-16">
+    <Header title="quotes">
+      A collection of quotes by various people that I resonate with
+    </Header>
+    <div class="flex flex-col gap-3">
+      <h4>Authors</h4>
+      {
+        authors.sort().map((author) => (
+          <CTALink
+            href={`/quotes/${author
+              .toLowerCase()
+              .trim()
+              .replace(/[^\w\s-]/g, '')
+              .replace(/\s+/g, '-')}`}
+            rightTxt={quotes
+              .filter((quote) => quote.data.author === author)
+              .length.toString()}
+          >
+            {author}
+          </CTALink>
+        ))
+      }
+    </div>
+    <aside class="mb-8 text-center">
+      <a
+        href="/"
+        title="back"
+        class="group mt-8 -mb-4 inline-flex items-center justify-center gap-2"
+      >
+        <BackIcon />
+        <span class="text-sm tracking-wide">back</span>
+      </a>
+    </aside>
+    <Footer />
+  </div>
 </Layout>

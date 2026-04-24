@@ -1,6 +1,6 @@
 /**
- * Copyright Naparajith T L (DrInfinite) 2024, 2026
+ * Copyright Naparajith T L (DrInfinite) 2026
  * SPDX-License-Identifier: MIT
  */
 
-export default { extends: ["@commitlint/config-conventional"] };
+export default { extends: ['@commitlint/config-conventional'] };

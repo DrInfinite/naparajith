@@ -1,20 +1,20 @@
 /**
- * Copyright Naparajith T L (DrInfinite) 2024, 2026
+ * Copyright Naparajith T L (DrInfinite) 2026
  * SPDX-License-Identifier: MIT
  */
 
-import { toString } from "mdast-util-to-string";
-import getReadingTime from "reading-time";
+import { toString } from 'mdast-util-to-string';
+import getReadingTime from 'reading-time';
 
 function ReadingTime() {
-    return function (tree, { data }) {
-        const textOnPage = toString(tree);
-        const readingTime = getReadingTime(textOnPage);
-        // readingTime.text will give us minutes read as a friendly string,
-        // i.e. "3 min read"
-        data.astro.frontmatter.minutesRead = readingTime.text;
-        data.astro.frontmatter.words = readingTime.words;
-    };
+  return function (tree, { data }) {
+    const textOnPage = toString(tree);
+    const readingTime = getReadingTime(textOnPage);
+    // readingTime.text will give us minutes read as a friendly string,
+    // i.e. "3 min read"
+    data.astro.frontmatter.minutesRead = readingTime.text;
+    data.astro.frontmatter.words = readingTime.words;
+  };
 }
 
 export { ReadingTime };

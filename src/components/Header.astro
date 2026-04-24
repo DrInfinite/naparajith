@@ -1,66 +1,12 @@
 ---
-import A from "@/components/Link.astro";
-import LinksContainer from "@/components/containers/Links.astro";
+interface Props {
+  title: string;
+}
 
-const links = [
-    { href: "/", title: "Home" },
-    { href: "/profile", title: "Profile" },
-    { href: "/quick-view", title: "Quick View" },
-    { href: "/blog", title: "Blog" },
-    { href: "/projects", title: "Projects" },
-    { href: "https://flowcv.com/resume/mdrssqq018", title: "Resume" },
-].filter((link) => {
-    if (Astro.url.pathname.startsWith("/blog/")) {
-        return link.title !== "Blog";
-    }
-    return link;
-});
+const { title } = Astro.props;
 ---
 
-<!--
- Copyright Naparajith T L (DrInfinite) 2024, 2026
- SPDX-License-Identifier: MIT
--->
-<header
-    class="my-8 space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8"
-    transition:persist
->
-    <span class="flex items-center justify-between gap-4 rounded-md border p-2">
-        <strong>
-            ~/{
-                Astro.url.pathname.startsWith("/blog") ||
-                Astro.url.pathname.startsWith("/quotes")
-                    ? Astro.url.pathname
-                          .toString()
-                          .replace("/", "")
-                          .replace(/\/.*/, "")
-                          .replace("/", "")
-                    : Astro.url.pathname.startsWith("/profile")
-                      ? Astro.url.pathname
-                            .toString()
-                            .replace("/", "")
-                            .replace(/\/\d+-/, "/")
-                      : Astro.url.pathname.toString().replace("/", "")
-            }
-        </strong>
-        <strong>naparajith | sdet 2</strong>
-    </span>
-
-    <LinksContainer>
-        {
-            Astro.url.pathname !== "/" &&
-                Astro.url.pathname !== "/quick-view" && (
-                    <button onclick="history.back()" title="Go Back">
-                        &larr; Back
-                    </button>
-                )
-        }
-        {
-            links.map((link) => (
-                <A href={link.href} title={link.title}>
-                    {link.title}
-                </A>
-            ))
-        }
-    </LinksContainer>
+<header class="mb-16">
+  <h2>{title}</h2>
+  <p class="text-muted-foreground"><slot /></p>
 </header>

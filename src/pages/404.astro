@@ -1,35 +1,29 @@
 ---
-import Button from "@/components/Button.astro";
-import Layout from "@/layouts/Layout.astro";
+import { Button } from '@/components/ui/button';
+import Layout from '@/layouts/Layout.astro';
 ---
 
-<!--
- Copyright Naparajith T L (DrInfinite) 2024, 2026
- SPDX-License-Identifier: MIT
--->
 <Layout
-    title="404"
-    description="the page that you are looking for doesn't exist"
+  title="404"
+  description="the page that you are looking for doesn't exist"
 >
-    <div class="flex h-[60vh] flex-col place-content-center gap-4">
-        <h3 class="text-center">
-            404 | the page you are looking for has moved or doesn't exist ;(
-        </h3>
-        <div class="flex flex-row justify-center-safe">
-            <p>
-                Try reloading the page or, go home to start over. Sorry for any
-                inconviences caused!
-            </p>
-        </div>
-        <div
-            class="flex flex-row justify-center-safe gap-2 md:gap-3 lg:gap-4 xl:gap-5 2xl:gap-6"
-        >
-            <button onclick="history.back()" title="Go Back">
-                &larr; Back
-            </button>
-            <button onclick="location.href = '/'" title="Go Home">
-                &hamilt; Go Home
-            </button>
-        </div>
+  <div class="flex h-[60vh] flex-col place-content-center gap-4">
+    <h3 class="text-center">
+      404 | the page you are looking for has moved or doesn't exist ;(
+    </h3>
+    <div class="flex flex-row justify-center-safe">
+      <p>
+        Try reloading the page or, go home to start over. Sorry for any
+        inconviences caused!
+      </p>
     </div>
+    <div
+      class="flex flex-row justify-center-safe gap-2 md:gap-3 lg:gap-4 xl:gap-5 2xl:gap-6"
+    >
+      <button onclick="history.back()" title="Go Back"> &larr; Back </button>
+      <button onclick="location.href = '/'" title="Go Home">
+        &hamilt; Go Home
+      </button>
+    </div>
+  </div>
 </Layout>
