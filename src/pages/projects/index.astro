@@ -1,84 +1,49 @@
 ---
-/**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
- */
-
-import Layout from "@/layouts/Layout.astro";
+import Layout from '@/layouts/Layout.astro';
 
 const projects: {
-    url: string;
-    name: string;
-    description: string;
-    source: "Internal Link" | "GitHub" | "GitLab" | "External Website";
+  url: string;
+  name: string;
+  description: string;
+  source: 'Internal Link' | 'GitHub' | 'GitLab' | 'External Website';
 }[] = [
-    {
-        url: "https://github.com/basecamp/omarchy",
-        name: "Omarchy",
-        description: "Opinionated Arch/Hyprland Setup",
-        source: "GitHub",
-    },
-    {
-        url: "/tools",
-        name: "Tools",
-        description:
-            "A collection of simple tools that makes everyday tasks just a bit simpler.",
-        source: "Internal Link",
-    },
+  {
+    url: 'https://github.com/basecamp/omarchy',
+    name: 'Omarchy',
+    description: 'Opinionated Arch/Hyprland Setup',
+    source: 'GitHub',
+  },
 ];
 ---
 
 <Layout
-    title="Projects"
-    description="A curated list of technical projects that I have worked on"
+  title="projects"
+  description="a curated list of technical projects that i have worked on"
 >
-    <h1>Projects</h1>
+  <main class="min-h-[60vh]">
+    <h2>{Astro.url.pathname.replace('/', '')}</h2>
     <p>
-        A curated list of technical projects that I have worked on / contributed
-        to.
+      A curated list of technical projects that I have worked on / contributed
+      to.
     </p>
+    <br />
     {
-        projects.map((project) => (
-            <a
-                href={project.url}
-                class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent ~mb-4/8 hover:bg-foreground/10"
-                target="_blank"
-            >
-                <article class="~gap-2/4 ~p-2/4">
-                    <div class="flex justify-between">
-                        <h4
-                            class="-my-px truncate font-sans"
-                            transition:name="post-title"
-                        >
-                            {project.name}
-                        </h4>
-                        <small class="bg-gradient-to-r from-[#1e57b7] to-[#4762f4] bg-clip-text text-white/25">
-                            {project.source}
-                        </small>
-                    </div>
-                    <small>{project.description}</small>
-                </article>
-            </a>
-        ))
+      projects.map((project) => (
+        <div class="mb-2 flex w-full flex-col justify-evenly gap-2 rounded-md border p-2">
+          <div class="flex justify-between">
+            <h4>{project.name}</h4>
+            <small>{project.source}</small>
+          </div>
+          <small>{project.description}</small>
+          <a href={project.url} class="text-right">
+            view
+          </a>
+        </div>
+      ))
     }
-    <p class="italic">
-        Very much a work in progress, please don't be shocked by the emptiness
-        ;)
-    </p>
+    <br />
+    <i>
+      Very much a work in progress, please don't be shocked by the emptiness ;)
+    </i>
+  </main>
 </Layout>

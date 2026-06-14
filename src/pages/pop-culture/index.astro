@@ -1,0 +1,57 @@
+---
+// TODO: Implement this page
+
+import Layout from '@/layouts/Layout.astro';
+// import { getData } from '@/actions/imdb/titles';
+// import PopCulture from '@/components/containers/pop-culture.astro';
+
+// const imdbMovieIds = [
+//   'tt33014583',
+//   'tt39139925',
+//   'tt8178634',
+//   'tt8239946',
+//   'tt1259521',
+//   'tt1301698',
+//   'tt4263482',
+//   'tt27564844',
+//   'tt7784604',
+// ].sort();
+// const imdbTV = [];
+---
+
+<Layout
+  title="pop culture"
+  description="this is the pop culture that i enjoy every now and then"
+>
+  <main class="space-y-4">
+    <h2>{Astro.url.pathname.replace('/', '')}</h2>
+
+    <strong>VODs</strong>
+    <h3>Creator Canvas</h3>
+    <p>The majority of my entertainment, independent creators.</p>
+
+    <strong>Music</strong>
+    <h3>Golden Record</h3>
+    <p>The soundtrack to my life (and my sanity)</p>
+
+    <strong>Movies</strong>
+    <h3>Silver Screen</h3>
+    <p>
+      The stuff you watch and then go, "Absolute Cinema" (theres a lot of horror
+      movies in here)
+    </p>
+
+    <strong>Gaming</strong>
+    <h3>1/4 Arcade</h3>
+    <p>
+      I play not because I don't have a life, but because chose to have many
+    </p>
+
+    <strong>TV/Streaming</strong>
+    <h3>Small Screen</h3>
+    <p>
+      The occasional entertainment (I can't commit to 7 million seasons of the
+      same show)
+    </p>
+  </main>
+</Layout>

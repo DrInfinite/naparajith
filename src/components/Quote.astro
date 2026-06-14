@@ -1,0 +1,21 @@
+---
+interface Props {
+  author: string;
+  cite: string | null | undefined;
+  id?: string | null | undefined;
+  quoteId?: string | null | undefined;
+}
+
+const { author, cite, id, quoteId } = Astro.props;
+---
+
+<figure class="space-y-4 p-4" id={id}>
+  <blockquote cite={cite} id={quoteId}>
+    <slot />
+  </blockquote>
+  <figcaption>
+    <a href={cite} title=`${author} - ${cite}`>
+      <cite> - {author} </cite>
+    </a>
+  </figcaption>
+</figure>

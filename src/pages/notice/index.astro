@@ -1,0 +1,65 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import LinksContainer from '@/components/containers/links.astro';
+import { getCollection } from 'astro:content';
+
+const policies = await getCollection('policy');
+
+const notice = [
+  { href: 'https://brainmade.org/', title: 'The Brainmade Mark' },
+  {
+    href: 'https://www.anybrowser.org/campaign/index.html',
+    title: 'Anybrowser Campaign',
+  },
+];
+---
+
+<Layout
+  title="notice"
+  description="before proceeding to interacting with this site and consume the content
+    present within it, consider being informed."
+>
+  <article>
+    <h2>{Astro.url.pathname.replace('/', '')}</h2>
+    <p>
+      The contents of this website, such as text, graphics, images, and other
+      material contained on my personal site (“Content”) serve the sole purpose
+      of showcasing my work. The Content is not intended to be a substitute for
+      professional advice, analysis, or support. <span class="font-bold">
+        Views and ideas expressed here are my own and do not represent my
+        employer or my academic institute.
+      </span>
+    </p>
+
+    <p>
+      For more info on the policies that govern this site, check out the below
+      links.
+    </p>
+
+    <LinksContainer>
+      {
+        policies.map((policy) => (
+          <a href={`/policy/${policy.id}`} title={policy.data.title}>
+            {policy.data.title}
+          </a>
+        ))
+      }
+    </LinksContainer>
+
+    <p>
+      To better understand some of the design, content and technical decisions,
+      check out the below sources. They are also a reflection of my beliefs and
+      what I stand for.
+    </p>
+
+    <LinksContainer>
+      {
+        notice.map((item) => (
+          <a href={item.href} title={item.title}>
+            {item.title}
+          </a>
+        ))
+      }
+    </LinksContainer>
+  </article>
+</Layout>

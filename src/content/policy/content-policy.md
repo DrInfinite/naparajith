@@ -1,6 +1,6 @@
 ---
 title: Content Policy
-description: The official JavaScript Policy for Naparajith's Portfolio
+description: The official Content Policy for Naparajith's Portfolio
 created: 03-18-2025
 updated: 05-20-2025
 ---
@@ -26,7 +26,17 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 Contact me through electronic mail: <naparajith@duck.com>
 -->
 
-Page under active development
+<!--toc:start-->
+
+- [Purpose](#purpose)
+- [Scope](#scope)
+- [Terms and Abbreviations](#terms-and-abbreviations)
+- [Policy](#policy)
+- [Feedback and Future Revisions](#feedback-and-future-revisions)
+
+<!--toc:end-->
+
+---
 
 ## Purpose
 

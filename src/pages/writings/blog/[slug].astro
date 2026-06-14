@@ -1,0 +1,126 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import type { GetStaticPaths } from 'astro';
+import { getImage, Image, Picture } from 'astro:assets';
+import { getCollection, getEntry, render } from 'astro:content';
+
+export const getStaticPaths = (async () => {
+  let posts = await getCollection('blog');
+  process.env.NODE_ENV === 'development'
+    ? (posts = posts.sort(
+        (a, b) => b.data.created.getTime() - a.data.created.getTime(),
+      ))
+    : (posts = posts
+        .filter((acc) => acc.data.draft !== true)
+        .sort((a, b) => b.data.created.getTime() - a.data.created.getTime()));
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const author = await getEntry(post.data.author);
+const { Content, remarkPluginFrontmatter } = await render(post);
+const postImage = await getImage({ src: post.data.image, format: 'webp' });
+---
+
+<head>
+  <meta name="fediverse:creator" content="@naparajith@mastodon.social" />
+</head>
+
+<Layout
+  title={`${post.data.title.toLocaleLowerCase()}`}
+  description=`Blog Post: ${post.data.title.toLocaleLowerCase()} - ${[post.data.description.toLocaleLowerCase()]}`
+  ogImage={postImage.src}
+>
+  <header class="space-y-4">
+    <h1 transition:name="post-title">
+      {post.data.title}
+    </h1>
+  </header>
+
+  <div class="mt-8 grid gap-6 lg:grid-cols-[2fr_1fr]">
+    <figure class="space-y-3">
+      <Picture
+        src={postImage.src}
+        alt={post.data.title}
+        width="1920"
+        height="1080"
+        formats={['webp', 'avif']}
+        priority
+        class="aspect-video w-full rounded-lg object-cover"
+        transition:name="image"
+      />
+
+      <figcaption class="text-muted-foreground text-sm">
+        <span class="font-medium">Image source:{' '}</span>
+        <a href={postImage.src} title={post.data.title}>
+          {post.data.image_source}
+        </a>
+      </figcaption>
+    </figure>
+
+    <aside class="flex flex-col gap-4">
+      <div class="rounded-lg border p-4" transition:name="post-description">
+        <strong>
+          {post.data.description}
+        </strong>
+      </div>
+
+      <div class="rounded-lg border p-4">
+        <dl class="space-y-3">
+          <div class="flex justify-between">
+            <dt class="text-muted-foreground">Reading time</dt>
+            <dd>{remarkPluginFrontmatter.minutesRead}</dd>
+          </div>
+
+          <div class="flex justify-between">
+            <dt class="text-muted-foreground">Published</dt>
+            <dd>
+              {post.data.created.toDateString().slice(4)}
+            </dd>
+          </div>
+
+          <div class="flex justify-between">
+            <dt class="text-muted-foreground">Words</dt>
+            <dd>{remarkPluginFrontmatter.words}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="rounded-lg border p-4">
+        <div class="flex items-center gap-4">
+          <Image
+            src={author.data.image}
+            alt={author.data.name}
+            inferSize
+            priority
+            width={64}
+            height={64}
+            class="rounded-full"
+          />
+
+          <div>
+            <strong class="block">
+              <a href={author.data.social} title={author.data.name}>
+                {author.data.name}
+                <span class="text-muted-foreground font-normal">
+                  [{author.data.nickname}]
+                </span>
+              </a>
+            </strong>
+
+            <small class="text-muted-foreground">
+              {author.data.occupation}
+            </small>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <article class="mt-4">
+    <Content />
+  </article>
+</Layout>

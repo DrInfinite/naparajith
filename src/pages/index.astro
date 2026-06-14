@@ -1,261 +1,154 @@
 ---
-/**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
- */
-
 export const prerender = false;
 
-import A from "@/components/A.astro";
-import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
-import { getCollection, getEntry } from "astro:content";
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import LinksContainer from '@/components/containers/links.astro';
+import ArticleContainer from '@/components/containers/article.astro';
+import Quote from '@/components/Quote.astro';
+import { getCollection, getEntry } from 'astro:content';
+import { links } from '@/data/links';
 
 const learning = [
-    "Reading large codebases in a sequential way without getting lost",
-    "The intricacies of memory-corruption vulnerabilities",
-    "Ethical exploitation of web applications",
-    "Building a programming language from scratch",
-    "Implementing large, dynamic websites without a significant amount of JavaScript",
-    "Building a Web Browser from Scratch",
+  'Reading large codebases in a sequential way without getting lost',
+  'The intricacies of memory-corruption vulnerabilities',
+  'Ethical exploitation of web applications',
+  'Building a programming language from scratch',
+  'Implementing large, dynamic websites without a significant amount of JavaScript',
+  'Building a Web Browser from Scratch',
 ];
 
-const quotes = await getCollection("quotes");
+const quotes = await getCollection('quotes');
 quotes.sort((a, b) => a.data.author.localeCompare(b.data.author));
 const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
-let posts = await getCollection("blog");
-posts = posts.filter((acc) => acc.data.draft !== true);
+let posts = await getCollection('blog');
+posts = posts.filter((post) => post.data.draft !== true);
 const post = posts[Math.floor(Math.random() * posts.length)]!;
 
 const author = await getEntry(post.data.author);
-
-const pages = [
-    { href: "/profile", title: "Profile", label: "Profile" },
-    { href: "/quick-view", title: "Quick View", label: "Quick View" },
-    { href: "/blog", title: "Blog", label: "Blog" },
-    { href: "/quotes", title: "Quotes", label: "Quotes" },
-    { href: "/projects", title: "Projects", label: "Projects" },
-    { href: "/tools", title: "Tools", label: "Tools" },
-    { href: "/design", title: "Design", label: "Design" },
-];
-
-const socials = [
-    {
-        href: "/quick-view/github",
-        title: "GitHub - DrInfinite",
-        label: "GitHub",
-    },
-    {
-        href: "https://www.linkedin.com/in/naparajith/",
-        title: "LinkedIn - Naparajith T L",
-        label: "LinkedIn",
-        target: "_blank",
-    },
-    {
-        href: "/quick-view/leetcode",
-        title: "Leetcode - DrInfinite",
-        label: "Leetcode",
-    },
-    {
-        href: "https://bsky.app/profile/naparajith.in",
-        title: "Naparajith | DrInfinite (@naparajith.in)",
-        label: "BlueSky",
-        target: "_blank",
-    },
-    {
-        href: "https://mastodon.social/@naparajith",
-        title: "Naparajith | DrInfinite (@naparajjith.mastodon.social)",
-        label: "Mastodon",
-        target: "_blank",
-    },
-];
 ---
 
 <Layout
-    title="Home"
-    description="The personal portfolio of T L Naparajith, a Software Engineer from India."
+  title="Home"
+  description="The personal portfolio of T L Naparajith, a Software Engineer from India."
 >
-    <article>
-        <figure
-            class="flex flex-col content-around items-center justify-around ~gap-6/12"
-        >
-            <span class="-my-px ~size-48/96">
-                <Image
-                    alt="DrInfinite"
-                    class="mx-auto scale-90 rounded-none"
-                    width={540}
-                    height={540}
-                    priority
-                    src="https://avatars.githubusercontent.com/u/74095696?v=4"
-                />
-            </span>
+  <article class="space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8">
+    <figure
+      class="flex flex-col content-around items-center justify-around gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8"
+    >
+      <span class="size-48 md:size-60 lg:size-72 xl:size-84 2xl:size-96">
+        <Image
+          alt="DrInfinite"
+          class="rounded-md"
+          width={540}
+          height={540}
+          priority
+          src="https://avatars.githubusercontent.com/u/74095696?v=4"
+        />
+      </span>
 
-            <figcaption class="text-center font-semibold ~p-2/4">
-                <span class="italic">This image comes from my</span>
-                <A href="https://github.com/DrInfinite" target="_blank">
-                    GitHub Profile
-                </A>
-            </figcaption>
-        </figure>
-        <p>
-            <strong>
-                I'm a software engineer focused on solving meaningful problems
-                and continually deepening my expertise across the stack.
-            </strong>
-        </p>
-    </article>
+      <figcaption
+        class="p-2 text-center font-semibold md:p-2.5 lg:p-3 xl:p-3.5 2xl:p-4"
+      >
+        <span class="italic">This image comes from my {' '}</span>
+        <a
+          href="https://github.com/DrInfinite"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Profile
+        </a>
+      </figcaption>
+    </figure>
 
-    <div class="space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8">
-        <div
-            class="flex flex-wrap justify-evenly gap-2 rounded-none border border-border ~p-2/4 md:gap-4"
-        >
-            {
-                pages.map((link) => (
-                    <A href={link.href} title={link.title}>
-                        {link.label}
-                    </A>
-                ))
-            }
-        </div>
-        <div
-            class="flex flex-wrap justify-evenly gap-2 rounded-none border border-border ~p-2/4 md:gap-4"
-        >
-            {
-                socials.map((link) => (
-                    <A
-                        href={link.href}
-                        title={link.title}
-                        target={link.target}
-                        rel={
-                            link.target === "_blank"
-                                ? "noopener noreferrer"
-                                : undefined
-                        }
-                    >
-                        {link.label}
-                    </A>
-                ))
-            }
-        </div>
-    </div>
-    <main>
-        <p class="text-center">
-            <A
-                href="https://flowcv.com/resume/mdrssqq018"
-                title="Resume"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Download my latest Resume
-            </A>
-        </p>
-        <div class="~space-y-4/8">
-            <hr class="my-4 border-t-2 border-t-border" />
-            <h2>Featured Quote</h2>
-            <figure
-                class="place-content-center rounded-none border border-border p-4 ~gap-2/4"
-            >
-                <blockquote cite={quote?.data.cite}>
-                    {quote?.data.quote}
-                </blockquote>
-                <figcaption>
-                    <cite>
-                        -{" "}
-                        <a
-                            href={quote?.data.cite}
-                            title={`${quote?.data.author} - ${quote?.data.cite}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-inherit no-underline"
-                        >
-                            {quote?.data.author}
-                        </a>
-                    </cite>
-                </figcaption>
-                <div class="float-end">
-                    <A href="/quotes" title="Quotes">more like this</A>
-                </div>
-            </figure>
-            <h2>Featured Blog Post</h2>
-            <a
-                href={`/blog/${post.id}`}
-                class="flex w-full flex-col justify-evenly rounded-none border border-border decoration-transparent hover:bg-foreground/10"
-            >
-                <article class="flex flex-col ~gap-2/4 ~p-2/4">
-                    <h4 class="-my-px" transition:name="post-title">
-                        {post.data.title}
-                    </h4>
-                    <small
-                        class="-my-px line-clamp-2"
-                        transition:name="post-description"
-                    >
-                        {post.data.description}
-                    </small>
-                </article>
-                <article
-                    class="flex justify-between bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent ~p-2/4"
-                >
-                    <small>{post.data.created.toDateString()}</small>
-                    <small>{author.data.name}</small>
-                </article>
+    <p>
+      <strong>
+        Specialisation is for insects. That's why I'm a generalist, working on
+        problems that challenge me (piss me off) in a meaningful way. I also
+        work relentlessly towards deepening my expertise across the stack.
+      </strong>
+    </p>
+
+    <LinksContainer>
+      {
+        links.home.map((link) =>
+          process.env.NODE_ENV === 'development' ? (
+            <a href={link.href} title={link.title}>
+              {link.title}
             </a>
-            <hr class="my-4 border-t-2 border-t-border" />
+          ) : (
+            !link.draft && (
+              <a href={link.href} title={link.title}>
+                {link.title}
+              </a>
+            )
+          ),
+        )
+      }
+    </LinksContainer>
+
+    <p class="text-center">
+      Before proceeding to interact with this site, parse through its content or
+      analyse its source code, <a href="/notice"> please be informed. </a>
+    </p>
+  </article>
+
+  <main>
+    <div class="space-y-8">
+      <hr class="my-4 border" />
+      <h2>Featured Quote</h2>
+      <div class="place-content-center p-2">
+        <Quote
+          id={quote?.id}
+          author={quote?.data.author!}
+          cite={quote?.data.cite}
+          quoteId={quote?.data.quote}
+        >
+          {quote?.data.quote}
+        </Quote>
+        <div class="float-end">
+          <a href="/quotes" title="Quotes">more like this</a>
         </div>
-        <div>
-            <p>
-                When I was a kid, I was told a really inspiring quote about
-                learning, which goes something like this:
-            </p>
-            <figure>
-                <blockquote cite={Astro.url.toString()}>
-                    A disciple learns one quarter from the acharya [teacher],
-                    one quarter through his own intelligence, one quarter comes
-                    to him through the influence of time, and one quarter from
-                    his fellow students.
-                </blockquote>
-                <figcaption>
-                    <cite>
-                        - <strong class="text-inherit">
-                            Adi Shankaracharya
-                        </strong></cite
-                    >
-                </figcaption>
-            </figure>
-            <p>
-                I intend to make learning a long-term commitment. Here are a few
-                areas I'm actively exploring:
-            </p>
-            <ul>
-                {learning.map((concept) => <li>{concept}</li>)}
-            </ul>
-            <p>
-                If you’d like to collaborate or share feedback on any of these
-                topics, please write to
-                <A
-                    href="mailto:naparajith@duck.com"
-                    title="E-Mail Address"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    naparajith@duck.com
-                </A>.
-            </p>
-        </div>
-    </main>
+      </div>
+      <h2>Featured Blog Post</h2>
+      <ArticleContainer
+        id={post.id}
+        image={post.data.image}
+        title={post.data.title}
+        description={post.data.description}
+        date={post.data.created.toDateString()}
+        author={author.data.name}
+      />
+      <hr class="my-4 border" />
+    </div>
+    <div>
+      <p>
+        When I was a kid, I was told a really inspiring quote about learning,
+        which goes something like this:
+      </p>
+      <Quote
+        author="Mahābhārata Udyoga Parva 44:16"
+        cite="https://blog.practicalsanskrit.com/2009/12/how-we-learn-and-grow.html"
+      >
+        A disciple learns one quarter from the acharya [teacher], one quarter
+        through his own intelligence, one quarter comes to him through the
+        influence of time, and one quarter from his fellow students.
+      </Quote>
+      <p>
+        I intend to make learning a long-term commitment. Here are a few areas
+        I'm actively exploring:
+      </p>
+      <ul>
+        {learning.map((concept) => <li>{concept}</li>)}
+      </ul>
+      <p>
+        If you’d like to collaborate or share feedback on any of these topics,
+        please write to{' '}
+        <a href="mailto:naparajith@duck.com" title="E-Mail Address">
+          naparajith@duck.com
+        </a>.
+      </p>
+    </div>
+  </main>
 </Layout>

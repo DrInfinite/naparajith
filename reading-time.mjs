@@ -1,36 +1,20 @@
 /**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
+ * Copyright DrInfinite 2024, 2026
+ * SPDX-License-Identifier: MIT
  */
 
-import { toString } from "mdast-util-to-string";
-import getReadingTime from "reading-time";
+import { toString } from 'mdast-util-to-string';
+import getReadingTime from 'reading-time';
 
 function ReadingTime() {
-    return function (tree, { data }) {
-        const textOnPage = toString(tree);
-        const readingTime = getReadingTime(textOnPage);
-        // readingTime.text will give us minutes read as a friendly string,
-        // i.e. "3 min read"
-        data.astro.frontmatter.minutesRead = readingTime.text;
-        data.astro.frontmatter.words = readingTime.words;
-    };
+  return function (tree, { data }) {
+    const textOnPage = toString(tree);
+    const readingTime = getReadingTime(textOnPage);
+    // readingTime.text will give us minutes read as a friendly string,
+    // i.e. "3 min read"
+    data.astro.frontmatter.minutesRead = readingTime.text;
+    data.astro.frontmatter.words = readingTime.words;
+  };
 }
 
 export { ReadingTime };

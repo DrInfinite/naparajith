@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets';
+
+import AnyBrowserEver from '@/images/abcbttn.gif';
+import Neovim from '@/images/2020-02-29-neovim.png';
+import Linux from '@/images/2020-03-01-gnu-linux.gif';
+
+import { links } from '@/data/links';
+
+import LinksContainer from '@/components/containers/links.astro';
+
+interface Props extends astroHTML.JSX.HTMLAttributes {}
+
+const date = new Date();
+
+// const day = date.getDay();
+// const month = date.getMonth();
+const year = date.getFullYear();
+
+const { ...props } = Astro.props;
+---
+
+<footer
+  class="my-8 space-y-2 border-t pt-4 md:space-y-4 lg:space-y-6 xl:space-y-8"
+  transition:animate="fade"
+  transition:persist
+  {...props}
+>
+  <div
+    class="flex flex-col items-center justify-between gap-4 border p-2 md:flex-row"
+  >
+    <p class="text-center text-pretty">
+      <span class="inline-block rotate-180">&copy;</span>
+      {' '}2024 &dash; {year}, <a
+        rel="cc:attributionURL dct:creator"
+        property="cc:attributionName"
+        href="https://gravatar.com/naparajithtl"
+        title={'Author'}
+      >
+        Naparajith T L
+      </a>.
+    </p>
+    <span class="flex flex-row items-center justify-evenly gap-4">
+      {
+        links.footer.map((link) => (
+          <a href={link.href} title={link.title}>
+            {link.title}
+          </a>
+        ))
+      }
+    </span>
+  </div>
+  <LinksContainer>
+    <a href="https://brainmade.org/" target="_blank" title="The Brainmade Mark">
+      <Image
+        alt="BrainMade.org"
+        class="inline-block dark:hidden"
+        inferSize
+        src="https://brainmade.org/88x31-dark.png"
+      />
+      <Image
+        alt="BrainMade.org"
+        class="hidden dark:inline-block"
+        inferSize
+        src="https://brainmade.org/88x31-light.png"
+      />
+    </a>
+    <a
+      href="https://www.anybrowser.org/campaign/"
+      target="_blank"
+      title="What is this?"
+    >
+      <Image src={AnyBrowserEver} alt="Viewable With Any Browser" inferSize />
+    </a>
+    <a href="https://neovim.io/" target="_blank" title="Made with Neovim">
+      <Image src={Neovim} alt="Made with Neovim" inferSize />
+    </a>
+
+    <a href="https://www.linux.org/" target="_blank" title="Made on GNU/Linux">
+      <Image src={Linux} alt="Made on GNU/Linux" inferSize />
+    </a>
+  </LinksContainer>
+  <!-- <small>Last updated on {`${day}/${month}/${year}`}</small> -->
+  <a rel="me" class="hidden" href="https://mastodon.social/@naparajith">
+    Mastodon
+  </a>
+</footer>
