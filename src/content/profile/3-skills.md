@@ -31,8 +31,6 @@ Contact me through electronic mail: <naparajith@duck.com>
 
 <!--toc:end-->
 
----
-
 ## Professional Skills
 
 - **Agile Development**  
@@ -70,8 +68,6 @@ Contact me through electronic mail: <naparajith@duck.com>
 - **Business Development**  
   Adept at identifying new opportunities, expanding offerings, and fostering
   sustainable growth.
-
----
 
 ## Technical Skills
 
@@ -111,8 +107,6 @@ Contact me through electronic mail: <naparajith@duck.com>
 - **Product Analytics**  
   Measuring product usage, defining KPIs, and interpreting engagement metrics to
   drive decisions.
-
----
 
 ## Domain Knowledge
 

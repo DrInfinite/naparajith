@@ -1,138 +1,57 @@
 /**
-* This website is only meant to showcase the work and and skills of the author,
-* on a professional level. It also has a blog, containing the author's observations
-* and opinions on various topics. The views expressed are the author's own.
-* Copyright (C) 2026  T L Naparajith
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Affero General Public License Version 3 as published
-* by the Free Software Foundation.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU Affero General Public License for more details.
-*
-* You should have received a copy of the GNU Affero General Public License
-* along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
-*
-* Contact me through electronic mail: <naparajith@duck.com>
-*/
+ * Copyright DrInfinite 2024, 2026
+ * SPDX-License-Identifier: MIT
+ */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@view-transition {
+@plugin '@tailwindcss/forms';
+
+@import './anchor.css';
+@import './forms.css';
+@import './table.css';
+@import './typography.css';
+
+@theme inline {
+  --color-dark: rgb(22, 22, 22);
+  --color-light: rgb(241, 241, 241);
+
+  --font-quote: var(--font-quote);
+  --font-display: var(--font-display);
+}
+
+@layer utilities {
+  @view-transition {
     navigation: auto;
+  }
 }
 
 @layer base {
-    :root {
-        --background: 0 0% 100%;
-        --foreground: 240 10% 3.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 240 10% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 3.9%;
-        --primary: 240 5.9% 10%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
-        --muted: 240 4.8% 95.9%;
-        --muted-foreground: 240 3.8% 46.1%;
+  * {
+    @apply selection:text-light selection:bg-dark dark:selection:text-dark dark:selection:bg-light font-serif transition-all;
+  }
 
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 240 5.9% 10%;
-        --radius: 0.5rem;
-    }
+  article {
+    @apply space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8;
+  }
 
-    .dark {
-        --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 240 10% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 240 10% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 240 3.7% 15.9%;
-        --muted-foreground: 240 5% 64.9%;
+  body {
+    @apply bg-light text-dark dark:bg-dark dark:text-light container mx-auto max-w-7xl space-y-2 scroll-smooth px-4 antialiased sm:px-6 md:space-y-4 lg:space-y-6 lg:px-8 xl:space-y-8;
+  }
 
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 3.7% 15.9%;
-        --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
-    }
-}
+  button {
+    @apply bg-dark hover:bg-dark/90 text-light dark:bg-light dark:hover:bg-light/85 dark:text-dark border px-2 uppercase hover:cursor-pointer hover:underline hover:underline-offset-2;
+  }
 
-@layer base {
-    * {
-        @apply transition transition-all duration-100 ease-linear;
-    }
+  details {
+    @apply border p-2 sm:p-4 lg:p-6 2xl:p-8;
+  }
 
-    body {
-        @apply prose prose-sm mx-auto scroll-smooth bg-background px-4 text-foreground antialiased md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl selection:bg-primary selection:text-primary-foreground prose-a:font-semibold prose-blockquote:~text-base/3xl md:px-0;
-    }
+  summary {
+    @apply font-semibold;
+  }
 
-    button {
-        @apply rounded-none border border-border bg-secondary px-2 py-1 font-semibold text-secondary-foreground hover:bg-secondary/80 md:px-4 md:py-2;
-    }
-
-    p {
-        @apply text-pretty text-justify;
-    }
-
-    code {
-        @apply text-primary;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-        @apply font-serif;
-    }
-
-    a,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    strong {
-        @apply text-foreground;
-    }
-
-    details {
-        @apply border border-border p-2 sm:p-4 lg:p-6 2xl:p-8;
-    }
-
-    summary {
-        @apply font-semibold;
-    }
-
-    blockquote {
-        @apply font-quote font-bold text-primary;
-    }
-
-    cite {
-        @apply bg-gradient-to-br from-[#1e57b7] to-[#4762f4] bg-clip-text text-transparent;
-    }
-
-    details[open] summary {
-        @apply border border-l-0 border-r-0 border-t-0 border-border pb-0;
-    }
-
-    th {
-        @apply text-primary;
-    }
+  details[open] summary {
+    @apply border border-t-0 border-r-0 border-l-0 pb-0;
+  }
 }

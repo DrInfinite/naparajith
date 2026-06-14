@@ -1,0 +1,63 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { links } from '@/data/links';
+---
+
+<Layout
+  title="writings"
+  description="all the original written content that i have produced over the years."
+>
+  <h2>{Astro.url.pathname.replace('/', '')}</h2>
+
+  <p>
+    <small>
+      <b>Notice:</b> Please read and review <a href="/notice">
+        this important information
+      </a> before proceeding.
+    </small>
+  </p>
+
+  <br />
+
+  <strong>
+    The central hub for exploring all of my written work. Browse each section to
+    discover the topics and types of content it contains.
+  </strong>
+
+  <p>
+    I've always had many thoughts running through my mind. Some are fleeting
+    observations, some are philosophical, and others are technical. Having a
+    central place to collect and share these ideas with a wider audience is
+    something I find deeply rewarding.
+  </p>
+
+  <p>
+    The content is organized by subject area and broad categories to make
+    navigation easier. This also highlights the spread of domains that I love
+    talking about.
+  </p>
+
+  <ul>
+    {
+      links.writings.map((link) =>
+        process.env.NODE_ENV === 'development' ? (
+          <li>
+            <a href={link.href} title={link.title}>
+              {link.title}
+            </a>
+            - <small>{link.description}</small>
+          </li>
+        ) : (
+          !link.draft && (
+            <li>
+              <a href={link.href} title={link.title}>
+                {link.title}
+              </a>
+              - <small>{link.description}</small>
+            </li>
+          )
+        ),
+      )
+    }
+  </ul>
+</Layout>

@@ -1,0 +1,12 @@
+---
+interface Props extends astroHTML.JSX.HTMLAttributes {}
+
+const { ...props } = Astro.props;
+---
+
+<div
+  class="flex flex-wrap items-center justify-evenly gap-2 border p-2 md:gap-4 md:p-2.5 lg:p-3 xl:p-3.5 2xl:p-4"
+  {...props}
+>
+  <slot />
+</div>

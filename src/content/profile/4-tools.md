@@ -26,15 +26,15 @@ Contact me through electronic mail: <naparajith@duck.com>
 <!--toc:start-->
 
 - [Workstation Setup](#workstation-setup)
-    - [System Information](#system-information)
-    - [Hardware Specifications](#hardware-specifications)
+  - [System Information](#system-information)
+  - [Hardware Specifications](#hardware-specifications)
 - [Display Configuration](#display-configuration)
-    - [Built-in Display](#built-in-display)
-    - [External Monitor](#external-monitor)
+  - [Built-in Display](#built-in-display)
+  - [External Monitor](#external-monitor)
 - [Software Stack](#software-stack)
-    - [Graphical Applications (GUI)](#graphical-applications-gui)
-    - [Terminal Applications (TUI)](#terminal-applications-tui)
-    - [Shell Tools and Utilities](#shell-tools-and-utilities)
+  - [Graphical Applications (GUI)](#graphical-applications-gui)
+  - [Terminal Applications (TUI)](#terminal-applications-tui)
+  - [Shell Tools and Utilities](#shell-tools-and-utilities)
 
 <!--toc:end-->
 
@@ -42,8 +42,6 @@ Contact me through electronic mail: <naparajith@duck.com>
 
 A curated collection of hardware and software tools that power my daily
 workflow. _**This list is under active development and updated periodically.**_
-
----
 
 ## Workstation Setup
 
@@ -69,8 +67,6 @@ workflow. _**This list is under active development and updated periodically.**_
 | **Model**          | Swift SF314-510G                     |
 | **System Version** | V1.12                                |
 
----
-
 ## Display Configuration
 
 ### Built-in Display
@@ -93,21 +89,18 @@ workflow. _**This list is under active development and updated periodically.**_
 | **Resolution**   | 1920×1080    |
 | **Refresh Rate** | 75Hz         |
 
----
-
 ## Software Stack
 
 ### Graphical Applications (GUI)
 
-| Application                                         | Purpose           |
-| --------------------------------------------------- | ----------------- |
-| [Emacs](https://www.gnu.org/software/emacs/)        | Note Taking & IDE |
-| [Zen Browser](https://zen-browser.app/)             | Web Browser       |
-| [Kdenlive](https://kdenlive.org)                    | Video Editing     |
-| [Nautilus](https://wiki.gnome.org/Apps/Nautilus)    | File Manager      |
-| [PhotoGIMP](https://github.com/Diolinux/PhotoGIMP)  | Image Editing     |
-| [Thunderbird](https://www.thunderbird.net)          | Email Client      |
-| [Visual Studio Code](https://code.visualstudio.com) | Code Editor       |
+| Application                                         | Purpose       |
+| --------------------------------------------------- | ------------- |
+| [Brave Origin](https://brave.com/origin/)           | Web Browser   |
+| [Kdenlive](https://kdenlive.org)                    | Video Editing |
+| [Nautilus](https://wiki.gnome.org/Apps/Nautilus)    | File Manager  |
+| [PhotoGIMP](https://github.com/Diolinux/PhotoGIMP)  | Image Editing |
+| [Thunderbird](https://www.thunderbird.net)          | Email Client  |
+| [Visual Studio Code](https://code.visualstudio.com) | Code Editor   |
 
 ### Terminal Applications (TUI)
 
@@ -118,7 +111,7 @@ workflow. _**This list is under active development and updated periodically.**_
 | [Neovim](https://neovim.io)                               | Advanced Text Editing         |
 | [Starship](https://starship.rs)                           | Terminal Prompt Customization |
 | [wikiman](https://github.com/mickael-menu/wikiman)        | Offline Manual Lookup         |
-| [zellij](https://zellij.dev)                              | Terminal Multiplexer          |
+| [tmux](https://github.com/tmux/tmux/wiki/)                | Terminal Multiplexer          |
 
 ### Shell Tools and Utilities
 
