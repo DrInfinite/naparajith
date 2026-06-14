@@ -1,121 +1,134 @@
 /**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
+ * Copyright DrInfinite 2024, 2026
+ * SPDX-License-Identifier: MIT
  */
 
-// @ts-check
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, fontProviders } from 'astro/config';
 
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from '@tailwindcss/vite';
 
-import sitemap from "@astrojs/sitemap";
+import sitemap from '@astrojs/sitemap';
 
-import vercel from "@astrojs/vercel";
+import vercel from '@astrojs/vercel';
 
-import ReadingTime from "./reading-time.mjs";
+import { cacheVercel } from '@astrojs/vercel/cache';
 
-import mdx from "@astrojs/mdx";
+import ReadingTime from './reading-time.mjs';
 
-import react from "@astrojs/react";
+import mdx from '@astrojs/mdx';
+
+import { unified } from '@astrojs/markdown-remark';
+
+import strip from 'vite-plugin-strip-comments';
+
+/** @type import('astro').AstroIntegration */
+// @ts-ignore
+const stripSafe = strip({});
 
 // https://astro.build/config
 export default defineConfig({
-    adapter: vercel(),
-    image: {
-        remotePatterns: [
-            { protocol: "https", hostname: "avatars.githubusercontent.com" },
-            { protocol: "https", hostname: "upload.wikimedia.org" },
-            { protocol: "https", hostname: "external-content.duckduckgo.com" },
-            { protocol: "https", hostname: "brainmade.org" },
-            { protocol: "https", hostname: "assets.leetcode.com" },
-        ],
-        responsiveStyles: true,
-        service: {
-            entrypoint: "astro/assets/services/sharp",
-            config: {
-                limitInputPixels: true,
-            },
-        },
-        layout: "constrained",
-        objectPosition: "center",
-        objectFit: "cover",
-    },
-    integrations: [
-        tailwind({ applyBaseStyles: false }),
-        sitemap(),
-        mdx(),
-        react(),
+  adapter: vercel(),
+  cache: { provider: cacheVercel() },
+  image: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'avatars.githubusercontent.com' },
+      { protocol: 'https', hostname: 'upload.wikimedia.org' },
+      { protocol: 'https', hostname: 'external-content.duckduckgo.com' },
+      { protocol: 'https', hostname: 'm.media-amazon.com' },
+      { protocol: 'https', hostname: 'brainmade.org' },
+      { protocol: 'https', hostname: 'assets.leetcode.com' },
     ],
-    output: "static",
-    markdown: {
-        remarkPlugins: [ReadingTime],
-        syntaxHighlight: "shiki",
-        shikiConfig: {
-            theme: "catppuccin-mocha",
-            langAlias: { cc: "cpp" },
-            wrap: true,
-        },
+    responsiveStyles: true,
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        limitInputPixels: true,
+      },
     },
-    prefetch: { prefetchAll: true, defaultStrategy: "viewport" },
-    redirects: {
-        "/links": "/quick-view",
-        "/bio": "/profile",
-        "/indian-legends": "/legends",
-        "/quotes-i-like": "/quotes",
+    layout: 'constrained',
+    objectPosition: 'center',
+    objectFit: 'cover',
+  },
+  integrations: [sitemap(), mdx(), stripSafe],
+  output: 'static',
+  markdown: {
+    processor: unified({ remarkPlugins: [ReadingTime] }),
+    syntaxHighlight: 'shiki',
+    shikiConfig: {
+      theme: 'catppuccin-mocha',
+      langAlias: { cc: 'cpp' },
+      wrap: true,
     },
-    experimental: {
-        clientPrerender: true,
-        fonts: [
-            {
-                provider: fontProviders.google(),
-                name: "Mozilla Text",
-                weights: ["400", "500", "600", "700"],
-                cssVariable: "--font-sans",
-                display: "swap",
-                subsets: ["latin"],
-            },
-            {
-                provider: fontProviders.google(),
-                name: "Bona Nova SC",
-                cssVariable: "--font-quote",
-                display: "swap",
-                subsets: ["latin"],
-            },
-            {
-                provider: fontProviders.google(),
-                name: "Mozilla Headline",
-                cssVariable: "--font-serif",
-                display: "swap",
-                subsets: ["latin"],
-            },
-            {
-                provider: fontProviders.google(),
-                name: "Cascadia Code",
-                weights: ["400"],
-                cssVariable: "--font-mono",
-                display: "swap",
-                subsets: ["latin"],
-            },
-        ],
+  },
+  prefetch: { prefetchAll: true, defaultStrategy: 'hover' },
+  redirects: {
+    '/links': '/quick-view',
+    '/quick-view': '/',
+    '/bio': '/profile',
+    '/blog': '/writings/blog',
+    '/quotes-i-like': '/quotes',
+  },
+  experimental: {
+    clientPrerender: true,
+  },
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: 'Noto Sans',
+      weights: ['400', '500', '600', '700'],
+      cssVariable: '--font-sans',
+      display: 'swap',
+      subsets: ['latin', 'devanagari', 'tamil'],
+      fallbacks: ['sans-serif'],
     },
-    site:
-        process.env.NODE_ENV === "development"
-            ? "http://localhost:4321/"
-            : "https://naparajith.in/",
+    {
+      provider: fontProviders.google(),
+      name: 'Bona Nova SC',
+      cssVariable: '--font-quote',
+      display: 'swap',
+      subsets: ['latin'],
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Noto Serif',
+      weights: ['400', '500', '600', '700'],
+      cssVariable: '--font-serif',
+      display: 'swap',
+      subsets: ['latin', 'devanagari', 'tamil'],
+      fallbacks: ['serif'],
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Noto Serif Display',
+      weights: ['400', '500', '600', '700'],
+      cssVariable: '--font-serif-display',
+      display: 'swap',
+      subsets: ['latin'],
+      fallbacks: ['serif'],
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Noto Sans Display',
+      weights: ['400', '500', '600', '700'],
+      cssVariable: '--font-sans-display',
+      display: 'swap',
+      subsets: ['latin'],
+      fallbacks: ['sans-serif'],
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Cascadia Code',
+      weights: ['400'],
+      cssVariable: '--font-mono',
+      display: 'swap',
+      subsets: ['latin'],
+    },
+  ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  site:
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:4321/'
+      : 'https://naparajith.in/',
 });

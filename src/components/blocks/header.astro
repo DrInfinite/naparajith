@@ -1,0 +1,58 @@
+---
+import LinksContainer from '@/components/containers/links.astro';
+import { links } from '@/data/links';
+---
+
+<header
+  class="my-8 space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8"
+  transition:animate="fade"
+  transition:persist
+>
+  <span class="flex items-center justify-between gap-4 border p-2">
+    <strong>
+      ~/{
+        Astro.url.pathname === '/'
+          ? ''
+          : Astro.url.pathname.startsWith('/quotes')
+            ? Astro.url.pathname
+                .toString()
+                .replace('/', '')
+                .replace(/\/.*/, '')
+                .replace('/', '')
+            : Astro.url.pathname.startsWith('/profile') ||
+                Astro.url.pathname.startsWith('/writings')
+              ? Astro.url.pathname
+                  .toString()
+                  .replace('/', '')
+                  .replace(/\/\d+-/, '/')
+              : Astro.url.pathname.toString().replace('/', '')
+      }
+    </strong>
+    <strong>naps</strong>
+  </span>
+
+  <LinksContainer>
+    {
+      Astro.url.pathname != '/' && (
+        <button onclick="history.back()" title="Go Back">
+          Go Back
+        </button>
+      )
+    }
+    {
+      links.header.map((link) =>
+        process.env.NODE_ENV === 'development' ? (
+          <a href={link.href} title={link.title}>
+            {link.title.toLocaleUpperCase()}
+          </a>
+        ) : (
+          !link.draft && (
+            <a href={link.href} title={link.title}>
+              {link.title.toLocaleUpperCase()}
+            </a>
+          )
+        ),
+      )
+    }
+  </LinksContainer>
+</header>

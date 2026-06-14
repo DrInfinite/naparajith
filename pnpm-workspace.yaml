@@ -1,0 +1,13 @@
+# Copyright DrInfinite 2024, 2026
+# SPDX-License-Identifier: MIT
+
+packages:
+  - .
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
