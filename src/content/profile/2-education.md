@@ -2,6 +2,19 @@
 title: Education
 ---
 
+<!--toc:start-->
+
+- [Master of Technology, Software Systems](#master-of-technology-software-systems)
+  - [Birla Institute of Technology and Sciences, Pilani](#birla-institute-of-technology-and-sciences-pilani)
+- [Bachelor of Engineering, Computer Science and Engineering](#bachelor-of-engineering-computer-science-and-engineering)
+  - [Chennai Institute of Technology](#chennai-institute-of-technology)
+- [All India Senior School Certificate Examination (Class XII)](#all-india-senior-school-certificate-examination-class-xii)
+  - [Chettinad Vidyashram](#chettinad-vidyashram)
+- [All India Secondary School Examination (Class X)](#all-india-secondary-school-examination-class-x)
+  - [DAV School](#dav-school)
+
+<!--toc:end-->
+
 <!--
 This website is only meant to showcase the work and and skills of the author,
 on a professional level. It also has a blog, containing the author's observations
@@ -23,24 +36,22 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 Contact me through electronic mail: <naparajith@duck.com>
 -->
 
-<!--toc:start-->
+## Master of Technology, Software Systems
 
-- [**Chennai Institute of Technology**](#chennai-institute-of-technology)
-    - [Bachelor of Engineering: Computer Science and Engineering](#bachelor-of-engineering-computer-science-and-engineering)
-- [**Chettinad Vidyashram**](#chettinad-vidyashram)
-    - [All India Senior School Certificate Examination (Class XII)](#all-india-senior-school-certificate-examination-class-xii)
-- [**DAV School**](#dav-school)
-    - [All India Secondary School Examination (Class X)](#all-india-secondary-school-examination-class-x)
+_Work Integrated Learning Programme_
 
-<!--toc:end-->
+### Birla Institute of Technology and Sciences, Pilani
 
----
+📅 _July 2026 – Present_
 
-## **Chennai Institute of Technology**
+- Incoming M.Tech. (Software Systems) @ Birla Institute of Technology and
+  Science, Pilani
+
+## Bachelor of Engineering, Computer Science and Engineering
 
 _Affiliated to Anna University_
 
-### Bachelor of Engineering: Computer Science and Engineering
+### Chennai Institute of Technology
 
 📅 _October 2020 – April 2024_
 
@@ -50,13 +61,11 @@ _Affiliated to Anna University_
 - Participated in multiple innovation challenges and academic projects aligned
   with industry practices.
 
----
-
-## **Chettinad Vidyashram**
+## All India Senior School Certificate Examination (Class XII)
 
 _Affiliated to CBSE, New Delhi_
 
-### All India Senior School Certificate Examination (Class XII)
+### Chettinad Vidyashram
 
 📅 _April 2018 – March 2020_
 
@@ -64,13 +73,11 @@ _Affiliated to CBSE, New Delhi_
 - Excelled in Computer Science, Mathematics, and Physics.
 - Represented school in regional tech symposiums and coding competitions.
 
----
-
-## **DAV School**
+## All India Secondary School Examination (Class X)
 
 _Affiliated to CBSE, New Delhi_
 
-### All India Secondary School Examination (Class X)
+### DAV School
 
 📅 _April 2016 – March 2018_
 

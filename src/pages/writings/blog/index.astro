@@ -1,0 +1,53 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getImage } from 'astro:assets';
+import ArticleContainer from '@/components/containers/article.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+let posts = await getCollection('blog');
+process.env.NODE_ENV === 'development'
+  ? (posts = posts.sort(
+      (a, b) => b.data.created.getTime() - a.data.created.getTime(),
+    ))
+  : (posts = posts
+      .filter((acc) => acc.data.draft !== true)
+      .sort((a, b) => b.data.created.getTime() - a.data.created.getTime()));
+
+const hydratedPosts = await Promise.all(
+  posts.map(async (post) => ({
+    post,
+    imageSrc: (
+      await getImage({
+        src: post.data.image,
+        format: 'webp',
+      })
+    ).src,
+    authorName: (await getEntry(post.data.author)).data.name,
+  })),
+);
+---
+
+<Layout
+  title="blog"
+  description="the official blog for naparajith, a software engineer from india"
+>
+  <!-- DONE: spacing issue between header and article container -->
+  <h2>Articles</h2>
+  <br />
+  <main
+    class="inline-flex flex-col place-content-center justify-evenly gap-2 md:gap-2.5 lg:flex-row lg:gap-3 xl:gap-3.5 2xl:gap-4"
+  >
+    {
+      hydratedPosts.map(({ post, imageSrc, authorName }) => (
+        <ArticleContainer
+          id={post.id}
+          image={imageSrc}
+          title={post.data.title}
+          description={post.data.description}
+          date={post.data.created.toDateString()}
+          author={authorName}
+        />
+      ))
+    }
+  </main>
+</Layout>

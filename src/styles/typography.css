@@ -1,0 +1,57 @@
+/**
+ * Copyright DrInfinite 2024, 2026
+ * SPDX-License-Identifier: MIT
+ */
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  h1 {
+    @apply scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance;
+  }
+
+  h2 {
+    @apply mt-2 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+  }
+
+  h3 {
+    @apply scroll-m-20 pt-2 text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  p {
+    @apply leading-7 not-first:mt-6;
+  }
+
+  blockquote {
+    @apply font-quote mt-6 scroll-m-20 border-l-2 pl-6 text-lg font-black italic xl:text-xl 2xl:text-2xl;
+  }
+
+  ul {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+
+  ol {
+    @apply my-6 ml-6 list-decimal [&>li]:mt-2;
+  }
+
+  code {
+    @apply relative rounded bg-gray-100 px-[0.3rem] py-[0.2rem] text-sm font-semibold dark:bg-gray-900;
+  }
+
+  small {
+    @apply text-sm leading-none font-medium;
+  }
+
+  strong {
+    @apply text-lg font-semibold;
+  }
+}

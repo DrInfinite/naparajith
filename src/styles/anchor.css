@@ -1,0 +1,48 @@
+/**
+ * Copyright DrInfinite 2024, 2026
+ * SPDX-License-Identifier: MIT
+ */
+
+@layer base {
+  a {
+    @apply text-blue-600 underline decoration-dotted underline-offset-4 hover:decoration-solid dark:text-blue-400;
+
+    &:visited {
+      @apply text-violet-600 dark:text-violet-400;
+    }
+
+    &:hover {
+      @apply text-blue-700 dark:text-blue-300;
+
+      &:visited {
+        @apply text-violet-700 dark:text-violet-300;
+      }
+    }
+
+    &:active {
+      @apply text-red-600 dark:text-red-400;
+
+      &:visited {
+        @apply text-red-700 dark:text-red-300;
+      }
+    }
+
+    &:has(cite) {
+      @apply italic no-underline;
+
+      &::after {
+        @apply content-['_(c)'];
+      }
+    }
+
+    &:not(:has(img), :has(cite)) {
+      &[href^='http']::after {
+        @apply content-['_(e)'];
+      }
+
+      &[href^='mailto']::after {
+        @apply content-['_(m)'];
+      }
+    }
+  }
+}

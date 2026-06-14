@@ -1,69 +1,53 @@
 ---
-/**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
- */
+import Layout from '@/layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
-import A from "@/components/A.astro";
-import Layout from "@/layouts/Layout.astro";
-import { getCollection } from "astro:content";
-
-const quotes = await getCollection("quotes");
+const quotes = await getCollection('quotes');
 const authors = [...new Set(quotes.map((quote) => quote.data.author))];
 ---
 
 <Layout
-    title="Quotes I Like"
-    description="A collection of quotes from various authors"
+  title="quotes i like"
+  description="a collection of quotes from various authors"
 >
-    <main class="min-h-[60vh]">
-        <p>
-            A collection of quotes by various people that I resonate with and
-            want to share with a wider audience.
-        </p>
-        <p class="text-center">
-            <A href="/quotes/all">A list of all the quotes that I like</A>
-        </p>
-        <p>Here is the list ordered by individual authors:</p>
-        <table>
-            <thead>
-                <th>Author</th>
-                <th>Count</th>
-            </thead>
-            <tbody>
-                {
-                    authors.sort().map((author) => (
-                        <tr>
-                            <td>
-                                <A href={`/quotes/${author}`}>{author}</A>
-                            </td>
-                            <td>
-                                {
-                                    quotes.filter(
-                                        (quote) => quote.data.author === author,
-                                    ).length
-                                }
-                            </td>
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table>
-    </main>
+  <h2>{Astro.url.pathname.replace('/', '')}</h2>
+  <p>
+    A collection of quotes by various people that I resonate with and want to
+    share with a wider audience.
+  </p>
+  <p class="text-center">
+    <a href="/quotes/all" class="A list of all the quotes that I like"
+      >A list of all the quotes that I like</a
+    >
+  </p>
+  <p>Here is the list ordered by individual authors:</p>
+  <table>
+    <thead>
+      <th>Author</th>
+      <th>Count</th>
+    </thead>
+    <tbody>
+      {
+        authors.sort().map((author) => (
+          <tr>
+            <td>
+              <a
+                href={`/quotes/${author
+                  .toLowerCase()
+                  .trim()
+                  .replace(/[^\w\s-]/g, '')
+                  .replace(/\s+/g, '-')}`}
+                title={author}
+              >
+                {author}
+              </a>
+            </td>
+            <td>
+              {quotes.filter((quote) => quote.data.author === author).length}
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
 </Layout>

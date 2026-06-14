@@ -26,7 +26,21 @@ along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt
 Contact me through electronic mail: <naparajith@duck.com>
 -->
 
-Page under active development
+<!--toc:start-->
+
+- [Purpose](#purpose)
+- [Scope](#scope)
+- [Terms and Abbreviations](#terms-and-abbreviations)
+- [Policy](#policy)
+  - [API Usage](#api-usage)
+  - [Link Policy](#link-policy)
+    - [Links to Internal Sources](#links-to-internal-sources)
+    - [Links to External Sources](#links-to-external-sources)
+- [Feedback and Future Revisions](#feedback-and-future-revisions)
+
+<!--toc:end-->
+
+---
 
 ## Purpose
 

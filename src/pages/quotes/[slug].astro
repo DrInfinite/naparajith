@@ -1,75 +1,57 @@
 ---
-/**
- * This website is only meant to showcase the work and and skills of the author,
- * on a professional level. It also has a blog, containing the author's observations
- * and opinions on various topics. The views expressed are the author's own.
- * Copyright (C) 2026  T L Naparajith
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License Version 3 as published
- * by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/agpl-3.0.txt>.
- *
- * Contact me through electronic mail: <naparajith@duck.com>
- */
+import Layout from '@/layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
-import Layout from "@/layouts/Layout.astro";
-import { getCollection } from "astro:content";
-
-const quotes = await getCollection("quotes");
-const author = Astro.params.slug;
+const quotes = await getCollection('quotes');
+const author = Astro.params.slug
+  .split('-')
+  .map((word) => String(word).charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
 const authorQuotes = quotes.filter((quote) => quote.data.author === author);
 
 export const getStaticPaths = async () => {
-    const quotes = await getCollection("quotes");
-    const authors = [...new Set(quotes.map((quote) => quote.data.author))];
-    return authors.map((author) => ({
-        params: { slug: author },
-        props: {},
-    }));
+  const quotes = await getCollection('quotes');
+  const authors = [...new Set(quotes.map((quote) => quote.data.author))];
+  return authors.map((author) => ({
+    params: {
+      slug: author
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-'),
+    },
+    props: {},
+  }));
 };
 ---
 
 <Layout
-    title={`Quotes by ${author}`}
-    description={`A collection of quotes by ${author}`}
+  title={`quotes by ${author}`}
+  description={`a collection of quotes by ${author}`}
 >
-    <main class="min-h-[60vh]">
-        <p>
-            A collection of quotes attributed to {author} that I resonate with and
-            wish to share with a wider audience.
-        </p>
+  <main class="min-h-[60vh]">
+    <p>
+      A collection of quotes attributed to {author} that I resonate with and wish
+      to share with a wider audience.
+    </p>
 
-        {
-            authorQuotes
-                .sort((a, b) => parseInt(a.id) - parseInt(b.id))
-                .map((quote) => (
-                    <figure>
-                        <blockquote cite={quote.data.cite}>
-                            {quote.data.quote}
-                        </blockquote>
-                        <figcaption>
-                            <cite>
-                                -{" "}
-                                <a
-                                    href={quote.data.cite}
-                                    title={`${quote.data.author} - ${quote.data.cite}`}
-                                    target="_blank"
-                                    class="text-inherit no-underline"
-                                >
-                                    {quote.data.author}
-                                </a>
-                            </cite>
-                        </figcaption>
-                    </figure>
-                ))
-        }
-    </main>
+    {
+      authorQuotes
+        .sort((a, b) => parseInt(a.id) - parseInt(b.id))
+        .map((quote) => (
+          <figure>
+            <blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
+            <figcaption>
+              -{' '}
+              <a
+                href={quote?.data.cite}
+                title={`${quote?.data.author} - ${quote?.data.cite}`}
+              >
+                <cite>{quote?.data.author}</cite>
+              </a>
+            </figcaption>
+          </figure>
+        ))
+    }
+  </main>
 </Layout>
