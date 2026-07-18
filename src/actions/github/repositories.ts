@@ -115,8 +115,6 @@ export type TOwnerProps = {
   site_admin: boolean;
 };
 
-// stuff
-
 export async function GithubRepositories() {
   const response = await fetch('https://api.github.com/users/DrInfinite/repos');
   const repositories: TGithubRepositoryProps[] = await response.json();
