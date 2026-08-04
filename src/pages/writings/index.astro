@@ -1,13 +1,15 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import { links } from '@/data/links';
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <Layout
-  title="writings"
+  title={pathname}
   description="all the original written content that i have produced over the years."
 >
-  <h2>{Astro.url.pathname.replace('/', '')}</h2>
+  <h2>{pathname}</h2>
 
   <p>
     <small>

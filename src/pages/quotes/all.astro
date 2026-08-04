@@ -4,10 +4,12 @@ import { getCollection } from 'astro:content';
 
 const quotes = await getCollection('quotes');
 quotes.sort((a, b) => a.data.author.localeCompare(b.data.author));
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <Layout
-  title="quotes i like"
+  title={pathname}
   description="a collection of quotes that i really like."
 >
   <p>

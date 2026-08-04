@@ -2,13 +2,15 @@
 import Layout from '@/layouts/Layout.astro';
 import LinksContainer from '@/components/containers/links.astro';
 import { socials } from '@/data/links';
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <Layout
-  title="contact"
+  title={pathname}
   description="get in touch with me. let's  connect and solve meaningful problems!!"
 >
-  <h2>{Astro.url.pathname.replace('/', '')}</h2>
+  <h2>{pathname}</h2>
   <p>
     Reach out to me on my social links below (LinkedIn for the fastest
     responses).

@@ -14,14 +14,16 @@ const projects: {
     source: 'GitHub',
   },
 ];
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <Layout
-  title="projects"
+  title={pathname}
   description="a curated list of technical projects that i have worked on"
 >
   <main class="min-h-[60vh]">
-    <h2>{Astro.url.pathname.replace('/', '')}</h2>
+    <h2>{pathname}</h2>
     <p>
       A curated list of technical projects that I have worked on / contributed
       to.

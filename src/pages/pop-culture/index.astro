@@ -17,14 +17,16 @@ import Layout from '@/layouts/Layout.astro';
 //   'tt7784604',
 // ].sort();
 // const imdbTV = [];
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <Layout
-  title="pop culture"
+  title={pathname}
   description="this is the pop culture that i enjoy every now and then"
 >
   <main class="space-y-4">
-    <h2>{Astro.url.pathname.replace('/', '')}</h2>
+    <h2>{pathname}</h2>
 
     <strong>VODs</strong>
     <h3>Creator Canvas</h3>

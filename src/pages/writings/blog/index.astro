@@ -25,14 +25,16 @@ const hydratedPosts = await Promise.all(
     authorName: (await getEntry(post.data.author)).data.name,
   })),
 );
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <Layout
-  title="blog"
+  title={pathname}
   description="the official blog for naparajith, a software engineer from india"
 >
   <!-- DONE: spacing issue between header and article container -->
-  <h2>Articles</h2>
+  <h2>{pathname}</h2>
   <br />
   <main
     class="inline-flex flex-col place-content-center justify-evenly gap-2 md:gap-2.5 lg:flex-row lg:gap-3 xl:gap-3.5 2xl:gap-4"

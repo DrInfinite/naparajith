@@ -4,13 +4,15 @@ import { getCollection } from 'astro:content';
 
 const quotes = await getCollection('quotes');
 const authors = [...new Set(quotes.map((quote) => quote.data.author))];
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <Layout
-  title="quotes i like"
+  title={pathname}
   description="a collection of quotes from various authors"
 >
-  <h2>{Astro.url.pathname.replace('/', '')}</h2>
+  <h2>{pathname}</h2>
   <p>
     A collection of quotes by various people that I resonate with and want to
     share with a wider audience.

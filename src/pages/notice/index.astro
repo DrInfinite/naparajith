@@ -12,15 +12,17 @@ const notice = [
     title: 'Anybrowser Campaign',
   },
 ];
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <Layout
-  title="notice"
+  title={pathname}
   description="before proceeding to interacting with this site and consume the content
     present within it, consider being informed."
 >
   <article>
-    <h2>{Astro.url.pathname.replace('/', '')}</h2>
+    <h2>{pathname}</h2>
     <p>
       The contents of this website, such as text, graphics, images, and other
       material contained on my personal site (“Content”) serve the sole purpose

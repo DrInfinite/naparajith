@@ -4,13 +4,14 @@ import LinksContainer from '@/components/containers/links.astro';
 import { getCollection } from 'astro:content';
 
 const policies = await getCollection('policy');
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <Layout
-  title="policy"
+  title={pathname}
   description="the official policy page for naparajith's portfolio. contains a comprehensive list of all policies applicable to this site."
 >
-  <h2>{Astro.url.pathname.replace('/', '')}</h2>
+  <h2>{pathname}</h2>
   <br />
   <main>
     <p>

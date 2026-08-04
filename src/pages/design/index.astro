@@ -1,12 +1,14 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <Layout
-  title="design"
+  title={pathname}
   description="this page is dedicated to explain the site' design"
 >
-  <h2>{Astro.url.pathname.replace('/', '')}</h2>
+  <h2>{pathname}</h2>
   <p>
     This page is dedicated to explain the various design decisions that I have
     made over the course of the site's development. This will give you an

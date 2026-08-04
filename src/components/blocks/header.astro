@@ -1,6 +1,8 @@
 ---
 import LinksContainer from '@/components/containers/links.astro';
 import { links } from '@/data/links';
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <header
@@ -11,21 +13,21 @@ import { links } from '@/data/links';
   <span class="flex items-center justify-between gap-4 border p-2">
     <strong>
       ~/{
-        Astro.url.pathname === '/'
+        pathname === '/'
           ? ''
-          : Astro.url.pathname.startsWith('/quotes')
-            ? Astro.url.pathname
+          : pathname.startsWith('/quotes')
+            ? pathname
                 .toString()
                 .replace('/', '')
                 .replace(/\/.*/, '')
                 .replace('/', '')
-            : Astro.url.pathname.startsWith('/profile') ||
-                Astro.url.pathname.startsWith('/writings')
-              ? Astro.url.pathname
+            : pathname.startsWith('/profile') ||
+                pathname.startsWith('/writings')
+              ? pathname
                   .toString()
                   .replace('/', '')
                   .replace(/\/\d+-/, '/')
-              : Astro.url.pathname.toString().replace('/', '')
+              : pathname.toString().replace('/', '')
       }
     </strong>
     <strong>naps</strong>

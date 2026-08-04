@@ -19,13 +19,15 @@ const licenses = [
     type: 'Site-wide Image License',
   },
 ];
+
+const pathname = Astro.url.pathname.replace(/\/+$/, '');
 ---
 
 <Layout
-  title="license"
+  title={pathname}
   description="the official license page for naparajith's portfolio, containing a comprehensive list of open-source licenses for code, content and images"
 >
-  <h2>{Astro.url.pathname.replace('/', '')}</h2>
+  <h2>{pathname}</h2>
   <p>
     This page outlines the various licenses that govern the use of the content
     and assets on this website. As this site built on open and transparent
