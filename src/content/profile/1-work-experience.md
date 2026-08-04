@@ -5,10 +5,8 @@ title: Work Experience
 <!--toc:start-->
 
 - [AT&T Communication Services India](#att-communication-services-india)
-  - [Forward Deployed Engineer II](#forward-deployed-engineer-ii)
-  - [Software Engineer in Test II](#software-engineer-in-test-ii)
-  - [Software Quality Assurance Engineer II](#software-quality-assurance-engineer-ii)
-  - [Software Quality Assurance Engineer I](#software-quality-assurance-engineer-i)
+  - [Senior Technical Associate 2](#senior-technical-associate-2)
+  - [Senior Technical Associate I](#senior-technical-associate-i)
   - [Software Engineer Intern](#software-engineer-intern)
 - [DigiTranIT Pvt Ltd](#digitranit-pvt-ltd)
   - [Software Engineer Intern](#software-engineer-intern-1)
@@ -40,37 +38,23 @@ Contact me through electronic mail: <naparajith@duck.com>
 
 ## AT&T Communication Services India
 
-### Forward Deployed Engineer II
+### Senior Technical Associate 2
 
-📅 _April 2026 – Present_
+📅 _March 2026 – Present_
 
-- Designation: Senior Associate, App/Prod Support
+- Designation: Senior Associate, Quality Engineering
 - Org: CTX Engineering Operations, India Development Centre
 
-### Software Engineer in Test II
+### Senior Technical Associate I
 
-📅 _May 2025 – March 2026_
+📅 _June 2024 – February 2026_
 
 - Designation: Senior Associate, Quality Engineering
 - Org: CTX Quality Engineering, India Development Centre
 
-### Software Quality Assurance Engineer II
-
-📅 _June 2024 – April 2025_
-
-- Designation: Senior Associate, Quality Assurance
-- Org: CTX Quality Engineering, India Development Centre
-
-### Software Quality Assurance Engineer I
-
-📅 _January 2024 – May 2024_
-
-- Designation: Staff Associate, Quality Assurance
-- Org: CTX Quality Engineering, India Development Centre
-
 ### Software Engineer Intern
 
-📅 _May 2023 – December 2023_
+📅 _May 2023 – May 2024_
 
 - Designation: Staff Associate, Technical Intern
 - Org: CTX Digital Engineering, India Development Centre
