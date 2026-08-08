@@ -6,12 +6,19 @@ import Header from '@/components/blocks/header.astro';
 import { Font } from 'astro:assets';
 
 interface Props {
-  title: string;
+  title?: string | undefined;
   description: string;
   ogImage?: string | undefined;
 }
 
-const { title, description, ogImage } = Astro.props;
+const pathname = Astro.url.pathname.split('/').join('').replace('writings', '');
+
+let { title, description, ogImage } = Astro.props;
+
+if (title === undefined || title === null) {
+  title = pathname;
+}
+
 const defaultOgImage = '../images/arch-rainbow-1920x1080.png';
 ---
 

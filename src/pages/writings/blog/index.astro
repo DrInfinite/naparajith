@@ -26,11 +26,10 @@ const hydratedPosts = await Promise.all(
   })),
 );
 
-const pathname = Astro.url.pathname.replace(/\/+$/, '');
+const pathname = Astro.url.pathname.split('/').join('').replace('writings', '');
 ---
 
 <Layout
-  title={pathname}
   description="the official blog for naparajith, a software engineer from india"
 >
   <!-- DONE: spacing issue between header and article container -->

@@ -17,11 +17,10 @@ const translations = [
   { lang: 'Punjabi', name: 'ਨਪਰਾਜਿਤ' },
 ];
 
-const pathname = Astro.url.pathname.replace(/\/+$/, '');
+const pathname = Astro.url.pathname.split('/').join('');
 ---
 
 <Layout
-  title={pathname}
   description="the official profile page for t l naparajith, a software engineer from india"
 >
   <h2>{pathname}</h2>

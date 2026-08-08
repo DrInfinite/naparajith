@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import { links } from '@/data/links';
 
-const pathname = Astro.url.pathname.replace(/\/+$/, '');
+const pathname = Astro.url.pathname.split('/').join('');
 ---
 
 <Layout
