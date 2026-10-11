@@ -35,9 +35,7 @@ const postImage = await getImage({ src: post.data.image, format: 'webp' });
   ogImage={postImage.src}
 >
   <header class="space-y-4">
-    <h1 transition:name="post-title">
-      {post.data.title}
-    </h1>
+    <h1 transition:name="post-title">{post.data.title}</h1>
   </header>
 
   <div class="mt-8 grid gap-6 lg:grid-cols-[2fr_1fr]">
@@ -54,7 +52,7 @@ const postImage = await getImage({ src: post.data.image, format: 'webp' });
       />
 
       <figcaption class="text-muted-foreground text-sm">
-        <span class="font-medium">Image source:{' '}</span>
+        <span class="font-medium">Image source: </span>
         <a href={postImage.src} title={post.data.title}>
           {post.data.image_source}
         </a>
@@ -63,9 +61,7 @@ const postImage = await getImage({ src: post.data.image, format: 'webp' });
 
     <aside class="flex flex-col gap-4">
       <div class="rounded-lg border p-4" transition:name="post-description">
-        <strong>
-          {post.data.description}
-        </strong>
+        <strong>{post.data.description}</strong>
       </div>
 
       <div class="rounded-lg border p-4">
@@ -77,9 +73,7 @@ const postImage = await getImage({ src: post.data.image, format: 'webp' });
 
           <div class="flex justify-between">
             <dt class="text-muted-foreground">Published</dt>
-            <dd>
-              {post.data.created.toDateString().slice(4)}
-            </dd>
+            <dd>{post.data.created.toDateString().slice(4)}</dd>
           </div>
 
           <div class="flex justify-between">

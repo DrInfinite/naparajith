@@ -15,20 +15,19 @@ import { socials } from '@/data/links';
   </p>
   <br />
   <LinksContainer>
-    {
-      socials.map((social) => (
-        <span>
-          <a href={social.href} title={social.title}>
-            {social.label}
-          </a>
-        </span>
-      ))
-    }
+    {socials.map((social) => (
+      <span>
+        <a href={social.href} title={social.title}>
+          {social.label}
+        </a>
+      </span>
+    ))}
   </LinksContainer>
   <p>
     If you prefer e-mail, reach out to me on{' '}
     <a href="mailto:naparajith@duck.com" title="E-Mail Address">
       naparajith@duck.com
-    </a>.
+    </a>
+    .
   </p>
 </Layout>

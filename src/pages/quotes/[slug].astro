@@ -31,27 +31,25 @@ export const getStaticPaths = async () => {
 >
   <main class="min-h-[60vh]">
     <p>
-      A collection of quotes attributed to {author} that I resonate with and wish
-      to share with a wider audience.
+      A collection of quotes attributed to {author} that I resonate with and
+      wish to share with a wider audience.
     </p>
 
-    {
-      authorQuotes
-        .sort((a, b) => parseInt(a.id) - parseInt(b.id))
-        .map((quote) => (
-          <figure>
-            <blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
-            <figcaption>
-              -{' '}
-              <a
-                href={quote?.data.cite}
-                title={`${quote?.data.author} - ${quote?.data.cite}`}
-              >
-                <cite>{quote?.data.author}</cite>
-              </a>
-            </figcaption>
-          </figure>
-        ))
-    }
+    {authorQuotes
+      .sort((a, b) => parseInt(a.id) - parseInt(b.id))
+      .map((quote) => (
+        <figure>
+          <blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
+          <figcaption>
+            -{' '}
+            <a
+              href={quote?.data.cite}
+              title={`${quote?.data.author} - ${quote?.data.cite}`}
+            >
+              <cite>{quote?.data.author}</cite>
+            </a>
+          </figcaption>
+        </figure>
+      ))}
   </main>
 </Layout>

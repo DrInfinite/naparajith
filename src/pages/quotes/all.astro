@@ -14,20 +14,18 @@ quotes.sort((a, b) => a.data.author.localeCompare(b.data.author));
     A collection of quotes by various people that I resonate with and wish to
     share with a wider audience.
   </p>
-  {
-    quotes.map((quote) => (
-      <figure>
-        <blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
-        <figcaption>
-          -{' '}
-          <a
-            href={quote?.data.cite}
-            title={`${quote?.data.author} - ${quote?.data.cite}`}
-          >
-            <cite>{quote?.data.author}</cite>
-          </a>
-        </figcaption>
-      </figure>
-    ))
-  }
+  {quotes.map((quote) => (
+    <figure>
+      <blockquote cite={quote.data.cite}>{quote.data.quote}</blockquote>
+      <figcaption>
+        -{' '}
+        <a
+          href={quote?.data.cite}
+          title={`${quote?.data.author} - ${quote?.data.cite}`}
+        >
+          <cite>{quote?.data.author}</cite>
+        </a>
+      </figcaption>
+    </figure>
+  ))}
 </Layout>

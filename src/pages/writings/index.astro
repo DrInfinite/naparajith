@@ -11,9 +11,8 @@ import { links } from '@/data/links';
 
   <p>
     <small>
-      <b>Notice:</b> Please read and review <a href="/notice">
-        this important information
-      </a> before proceeding.
+      <b>Notice:</b> Please read and review{' '}
+      <a href="/notice">this important information</a> before proceeding.
     </small>
   </p>
 
@@ -38,26 +37,24 @@ import { links } from '@/data/links';
   </p>
 
   <ul>
-    {
-      links.writings.map((link) =>
-        process.env.NODE_ENV === 'development' ? (
+    {links.writings.map((link) =>
+      process.env.NODE_ENV === 'development' ? (
+        <li>
+          <a href={link.href} title={link.title}>
+            {link.title}
+          </a>
+          - <small>{link.description}</small>
+        </li>
+      ) : (
+        !link.draft && (
           <li>
             <a href={link.href} title={link.title}>
               {link.title}
             </a>
             - <small>{link.description}</small>
           </li>
-        ) : (
-          !link.draft && (
-            <li>
-              <a href={link.href} title={link.title}>
-                {link.title}
-              </a>
-              - <small>{link.description}</small>
-            </li>
-          )
-        ),
-      )
-    }
+        )
+      ),
+    )}
   </ul>
 </Layout>

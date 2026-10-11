@@ -26,10 +26,10 @@ const translations = [
   <article>
     <h3>Who I am</h3>
     <p>
-      I'm Naparajith, a {timeSince(new Date('2002-11-07')).years} year old Computer
-      Programmer/Engineer based out of India. I enjoy working on problems that challenge
-      me (piss me off) in a meaningful way. I also work relentlessly towards deepening
-      my expertise across the stack.
+      I'm Naparajith, a {timeSince(new Date('2002-11-07')).years} year old
+      Computer Programmer/Engineer based out of India. I enjoy working on
+      problems that challenge me (piss me off) in a meaningful way. I also work
+      relentlessly towards deepening my expertise across the stack.
     </p>
     <p>
       My experience spans software development, engineering, quality assurance,
@@ -41,13 +41,11 @@ const translations = [
     </p>
 
     <LinksContainer>
-      {
-        profile.map((about) => (
-          <span>
-            <a href={`/profile/${about.id}`}>{about.data.title}</a>
-          </span>
-        ))
-      }
+      {profile.map((about) => (
+        <span>
+          <a href={`/profile/${about.id}`}>{about.data.title}</a>
+        </span>
+      ))}
     </LinksContainer>
 
     <h3>What I do</h3>
@@ -96,7 +94,8 @@ const translations = [
     </p>
     <p>
       The name Naparajith is deeply rooted in ancient Indian culture and roughly
-      translates to <strong>
+      translates to{' '}
+      <strong>
         <em>
           "<u>a person who is undefeated.</u>"
         </em>
@@ -117,19 +116,20 @@ const translations = [
         </tr>
       </thead>
       <tbody>
-        {
-          translations.map(({ lang, name }) => (
-            <tr>
-              <td>{lang}</td>
-              <td class="font-sans">{name}</td>
-            </tr>
-          ))
-        }
+        {translations.map(({ lang, name }) => (
+          <tr>
+            <td>{lang}</td>
+            <td class="font-sans">{name}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
     <p>
-      <a href="/contact" title="Contact">Connect</a> for discussions on programming,
-      emerging tech, or software product creation. Let's code and innovate together!
+      <a href="/contact" title="Contact">
+        Connect
+      </a>{' '}
+      for discussions on programming, emerging tech, or software product
+      creation. Let's code and innovate together!
     </p>
   </article>
 </Layout>

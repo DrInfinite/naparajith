@@ -28,13 +28,11 @@ const policies = await getCollection('policy');
     </p>
     <br />
     <LinksContainer>
-      {
-        policies.map((policy) => (
-          <a href={`/policy/${policy.id}`} title={policy.data.title}>
-            {policy.data.title}
-          </a>
-        ))
-      }
+      {policies.map((policy) => (
+        <a href={`/policy/${policy.id}`} title={policy.data.title}>
+          {policy.data.title}
+        </a>
+      ))}
     </LinksContainer>
     <p>
       Please review each policy to understand the principles and rules that

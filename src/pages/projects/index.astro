@@ -27,20 +27,18 @@ const projects: {
       to.
     </p>
     <br />
-    {
-      projects.map((project) => (
-        <div class="mb-2 flex w-full flex-col justify-evenly gap-2 rounded-md border p-2">
-          <div class="flex justify-between">
-            <h4>{project.name}</h4>
-            <small>{project.source}</small>
-          </div>
-          <small>{project.description}</small>
-          <a href={project.url} class="text-right">
-            view
-          </a>
+    {projects.map((project) => (
+      <div class="mb-2 flex w-full flex-col justify-evenly gap-2 rounded-md border p-2">
+        <div class="flex justify-between">
+          <h4>{project.name}</h4>
+          <small>{project.source}</small>
         </div>
-      ))
-    }
+        <small>{project.description}</small>
+        <a href={project.url} class="text-right">
+          view
+        </a>
+      </div>
+    ))}
     <br />
     <i>
       Very much a work in progress, please don't be shocked by the emptiness ;)

@@ -20,9 +20,7 @@ const { Content } = await render(about);
   description={about.data.title.toLocaleLowerCase()}
 >
   <main class="min-h-[60vh]">
-    <h1>
-      {about.data.title}
-    </h1>
+    <h1>{about.data.title}</h1>
     <Content />
   </main>
 </Layout>

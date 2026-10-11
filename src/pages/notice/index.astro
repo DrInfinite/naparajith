@@ -25,7 +25,8 @@ const notice = [
       The contents of this website, such as text, graphics, images, and other
       material contained on my personal site (“Content”) serve the sole purpose
       of showcasing my work. The Content is not intended to be a substitute for
-      professional advice, analysis, or support. <span class="font-bold">
+      professional advice, analysis, or support.{' '}
+      <span class="font-bold">
         Views and ideas expressed here are my own and do not represent my
         employer or my academic institute.
       </span>
@@ -37,13 +38,11 @@ const notice = [
     </p>
 
     <LinksContainer>
-      {
-        policies.map((policy) => (
-          <a href={`/policy/${policy.id}`} title={policy.data.title}>
-            {policy.data.title}
-          </a>
-        ))
-      }
+      {policies.map((policy) => (
+        <a href={`/policy/${policy.id}`} title={policy.data.title}>
+          {policy.data.title}
+        </a>
+      ))}
     </LinksContainer>
 
     <p>
@@ -53,13 +52,11 @@ const notice = [
     </p>
 
     <LinksContainer>
-      {
-        notice.map((item) => (
-          <a href={item.href} title={item.title}>
-            {item.title}
-          </a>
-        ))
-      }
+      {notice.map((item) => (
+        <a href={item.href} title={item.title}>
+          {item.title}
+        </a>
+      ))}
     </LinksContainer>
   </article>
 </Layout>
