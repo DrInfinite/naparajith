@@ -13,11 +13,12 @@
 @import './typography.css';
 
 @theme inline {
-  --color-dark: rgb(22, 22, 22);
-  --color-light: rgb(241, 241, 241);
+  /* --color-dark: rgb(22, 22, 22); */
+  /* --color-light: rgb(241, 241, 241); */
 
   --font-quote: var(--font-quote);
-  --font-display: var(--font-display);
+  /* --font-serif-display: var(--font-serif-display); */
+  /* --font-sans-display: var(--font-sans-display); */
 }
 
 @layer utilities {
@@ -28,7 +29,7 @@
 
 @layer base {
   * {
-    @apply selection:text-light selection:bg-dark dark:selection:text-dark dark:selection:bg-light font-serif transition-all;
+    @apply transition-all;
   }
 
   article {
@@ -36,11 +37,11 @@
   }
 
   body {
-    @apply bg-light text-dark dark:bg-dark dark:text-light container mx-auto max-w-7xl space-y-2 scroll-smooth px-4 antialiased sm:px-6 md:space-y-4 lg:space-y-6 lg:px-8 xl:space-y-8;
+    @apply container mx-auto max-w-7xl space-y-2 scroll-smooth px-4 antialiased sm:px-6 md:space-y-4 lg:space-y-6 lg:px-8 xl:space-y-8;
   }
 
   button {
-    @apply bg-dark hover:bg-dark/90 text-light dark:bg-light dark:hover:bg-light/85 dark:text-dark border px-2 uppercase hover:cursor-pointer hover:underline hover:underline-offset-2;
+    @apply border bg-gray-200 px-2 uppercase hover:cursor-pointer hover:bg-gray-300 hover:underline hover:underline-offset-2;
   }
 
   details {

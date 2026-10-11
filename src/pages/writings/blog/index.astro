@@ -34,20 +34,16 @@ const hydratedPosts = await Promise.all(
   <!-- DONE: spacing issue between header and article container -->
   <h2>Articles</h2>
   <br />
-  <main
-    class="inline-flex flex-col place-content-center justify-evenly gap-2 md:gap-2.5 lg:flex-row lg:gap-3 xl:gap-3.5 2xl:gap-4"
-  >
-    {
-      hydratedPosts.map(({ post, imageSrc, authorName }) => (
-        <ArticleContainer
-          id={post.id}
-          image={imageSrc}
-          title={post.data.title}
-          description={post.data.description}
-          date={post.data.created.toDateString()}
-          author={authorName}
-        />
-      ))
-    }
+  <main class="inline-flex flex-col place-content-center justify-evenly gap-2 md:gap-2.5 lg:flex-row lg:gap-3 xl:gap-3.5 2xl:gap-4">
+    {hydratedPosts.map(({ post, imageSrc, authorName }) => (
+      <ArticleContainer
+        id={post.id}
+        image={imageSrc}
+        title={post.data.title}
+        description={post.data.description}
+        date={post.data.created.toDateString()}
+        author={authorName}
+      />
+    ))}
   </main>
 </Layout>

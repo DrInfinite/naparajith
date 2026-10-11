@@ -16,9 +16,9 @@ const authors = [...new Set(quotes.map((quote) => quote.data.author))];
     share with a wider audience.
   </p>
   <p class="text-center">
-    <a href="/quotes/all" class="A list of all the quotes that I like"
-      >A list of all the quotes that I like</a
-    >
+    <a href="/quotes/all" class="A list of all the quotes that I like">
+      A list of all the quotes that I like
+    </a>
   </p>
   <p>Here is the list ordered by individual authors:</p>
   <table>
@@ -27,27 +27,25 @@ const authors = [...new Set(quotes.map((quote) => quote.data.author))];
       <th>Count</th>
     </thead>
     <tbody>
-      {
-        authors.sort().map((author) => (
-          <tr>
-            <td>
-              <a
-                href={`/quotes/${author
-                  .toLowerCase()
-                  .trim()
-                  .replace(/[^\w\s-]/g, '')
-                  .replace(/\s+/g, '-')}`}
-                title={author}
-              >
-                {author}
-              </a>
-            </td>
-            <td>
-              {quotes.filter((quote) => quote.data.author === author).length}
-            </td>
-          </tr>
-        ))
-      }
+      {authors.sort().map((author) => (
+        <tr>
+          <td>
+            <a
+              href={`/quotes/${author
+                .toLowerCase()
+                .trim()
+                .replace(/[^\w\s-]/g, '')
+                .replace(/\s+/g, '-')}`}
+              title={author}
+            >
+              {author}
+            </a>
+          </td>
+          <td>
+            {quotes.filter((quote) => quote.data.author === author).length}
+          </td>
+        </tr>
+      ))}
     </tbody>
   </table>
 </Layout>

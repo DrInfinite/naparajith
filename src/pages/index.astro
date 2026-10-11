@@ -34,9 +34,7 @@ const author = await getEntry(post.data.author);
   description="The personal portfolio of T L Naparajith, a Software Engineer from India."
 >
   <article class="space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8">
-    <figure
-      class="flex flex-col content-around items-center justify-around gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8"
-    >
+    <figure class="flex flex-col content-around items-center justify-around gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8">
       <span class="size-48 md:size-60 lg:size-72 xl:size-84 2xl:size-96">
         <Image
           alt="DrInfinite"
@@ -48,10 +46,8 @@ const author = await getEntry(post.data.author);
         />
       </span>
 
-      <figcaption
-        class="p-2 text-center font-semibold md:p-2.5 lg:p-3 xl:p-3.5 2xl:p-4"
-      >
-        <span class="italic">This image comes from my {' '}</span>
+      <figcaption class="p-2 text-center font-semibold md:p-2.5 lg:p-3 xl:p-3.5 2xl:p-4">
+        <span class="italic">This image comes from my </span>
         <a
           href="https://github.com/DrInfinite"
           target="_blank"
@@ -71,21 +67,19 @@ const author = await getEntry(post.data.author);
     </p>
 
     <LinksContainer>
-      {
-        links.home.map((link) =>
-          process.env.NODE_ENV === 'development' ? (
+      {links.home.map((link) =>
+        process.env.NODE_ENV === 'development' ? (
+          <a href={link.href} title={link.title}>
+            {link.title}
+          </a>
+        ) : (
+          !link.draft && (
             <a href={link.href} title={link.title}>
               {link.title}
             </a>
-          ) : (
-            !link.draft && (
-              <a href={link.href} title={link.title}>
-                {link.title}
-              </a>
-            )
-          ),
-        )
-      }
+          )
+        ),
+      )}
     </LinksContainer>
 
     <p class="text-center">
@@ -108,7 +102,9 @@ const author = await getEntry(post.data.author);
           {quote?.data.quote}
         </Quote>
         <div class="float-end">
-          <a href="/quotes" title="Quotes">more like this</a>
+          <a href="/quotes" title="Quotes">
+            more like this
+          </a>
         </div>
       </div>
       <h2>Featured Blog Post</h2>
@@ -140,14 +136,17 @@ const author = await getEntry(post.data.author);
         I'm actively exploring:
       </p>
       <ul>
-        {learning.map((concept) => <li>{concept}</li>)}
+        {learning.map((concept) => (
+          <li>{concept}</li>
+        ))}
       </ul>
       <p>
         If you’d like to collaborate or share feedback on any of these topics,
         please write to{' '}
         <a href="mailto:naparajith@duck.com" title="E-Mail Address">
           naparajith@duck.com
-        </a>.
+        </a>
+        .
       </p>
     </div>
   </main>

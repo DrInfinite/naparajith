@@ -5,25 +5,25 @@
 
 @layer base {
   a {
-    @apply text-blue-600 underline decoration-dotted underline-offset-4 hover:decoration-solid dark:text-blue-400;
+    @apply text-blue-600 underline decoration-dotted underline-offset-4 hover:decoration-solid;
 
     &:visited {
-      @apply text-violet-600 dark:text-violet-400;
+      @apply text-violet-600;
     }
 
     &:hover {
-      @apply text-blue-700 dark:text-blue-300;
+      @apply text-blue-700;
 
       &:visited {
-        @apply text-violet-700 dark:text-violet-300;
+        @apply text-violet-700;
       }
     }
 
     &:active {
-      @apply text-red-600 dark:text-red-400;
+      @apply text-red-600;
 
       &:visited {
-        @apply text-red-700 dark:text-red-300;
+        @apply text-red-700;
       }
     }
 
